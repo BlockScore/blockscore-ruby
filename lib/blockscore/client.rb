@@ -26,9 +26,9 @@ module BlockScore
       self.post '/verifications/', options
     end
 
-    def get_question_set(id)
-      self.get '/questions/' + id.to_s
-    end
+    # def get_question_set(id)
+    #   self.get '/questions/' + id.to_s
+    # end
 
     def create_question_set(options = {})
       self.post '/questions/', options
