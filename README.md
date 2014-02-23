@@ -42,23 +42,23 @@ gem 'blockscore', '~> 1.0.0'
 
 ```ruby
 @blockscore.create_verification({
-  "type" => "us_citizen",
-  "date_of_birth" => "1993-08-23",
-  "identification" => {
-    "ssn" => "0001"
+  type: "us_citizen",
+  date_of_birth: "1993-08-23",
+  identification: {
+    ssn: "0000"
   },
-  "name" => {
-    "first" => "John",
-    "middle" => "Pearce",
-    "last" => "Doe"
+  name: {
+    first: "Alain",
+    middle: nil,
+    last: "Meier"
   },
-  "address" => {
-    "street1" => "1 Infinite Loop",
-    "street2" => nil,
-    "city" => "Cupertino",
-    "state" => "CA",
-    "postal_code" => "95014",
-    "country" => "US"
+  address: {
+    street1: "1 Infinite Loop",
+    street2: nil,
+    city: "Cupertino",
+    state: "CA",
+    postal_code: "95014",
+    country: "US"
   }
 })
 ```
@@ -69,7 +69,7 @@ gem 'blockscore', '~> 1.0.0'
 
 ```ruby
 @blockscore.create_question_set({
-  "verification_id" => "53099a636274639ebb0e0000"
+  verification_id: "53099a636274639ebb0e0000"
 })
 ```
 
@@ -77,28 +77,28 @@ gem 'blockscore', '~> 1.0.0'
 
 ```ruby
 @blockscore.score_question_set({
-  "verification_id" => "53099a636274639ebb0e0000",
-  "question_set_id" => "53099c5f6274639ebb7e0000",
-  "answers" => [
+  verification_id: "53099a636274639ebb0e0000",
+  question_set_id: "53099c5f6274639ebb7e0000",
+  answers: [
     {
-      "question_id" => 1,
-      "answer_id" => 1
+      question_id: 1,
+      answer_id: 1
     },
     {
-      "question_id" => 2,
-      "answer_id" => 1
+      question_id: 2,
+      answer_id: 1
     },
     {
-      "question_id" => 3,
-      "answer_id" => 1
+      question_id: 3,
+      answer_id: 1
     },
     {
-      "question_id" => 4,
-      "answer_id" => 1
+      question_id: 4,
+      answer_id: 1
     },
     {
-      "question_id" => 5,
-      "answer_id" => 1
+      question_id: 5,
+      answer_id: 1
     }
   ]
 })
