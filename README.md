@@ -1,53 +1,65 @@
 ## BlockScore Ruby Library
 
-This is the official library for Ruby clients of the BlockScore API. (Click here to read the full documentation)[https://manage.blockscore.com/docs].
+This is the official library for Ruby clients of the BlockScore API. [Click here to read the full documentation](https://manage.blockscore.com/docs).
 
 ### Install
 
 Via rubygems.org:
 
-    gem install blockscore
+```ruby
+gem install blockscore
+```
 
 If you are using rails, add the following to your `Gemfile`:
 
-    gem 'blockscore', '~> 1.0.0'
+```ruby
+gem 'blockscore', '~> 1.0.0'
+```
 
 ### Getting Started
 
 #### Initializing BlockScore
 
-    @blockscore = BlockScore::Client("your-api-key", version = 2)
+```ruby
+@blockscore = BlockScore::Client("your-api-key", version = 2)
+```
     
 #### List all verifications
 
-    @blockscore.verifications
+```ruby
+@blockscore.verifications
+```
     
 #### View a verification by ID
 
-    @blockscore.verification("526781407e7b0ace47000001")
-    
+```ruby
+@blockscore.verification("526781407e7b0ace47000001")
+```
+
 #### Create a new verification
 
-    @blockscore.create_verification({
-        "type" => "us_citizen",
-        "date_of_birth" => "1993-08-23",
-        "identification" => {
-          "ssn" => "0001"
-        },
-        "name" => {
-          "first" => "John",
-          "middle" => "Pearce",
-          "last" => "Doe"
-        },
-        "address" => {
-          "street1" => "1 Infinite Loop",
-          "street2" => nil,
-          "city" => "Cupertino",
-          "state" => "CA",
-          "postal_code" => "95014",
-          "country" => "US"
-        }
-      })
+```ruby
+@blockscore.create_verification({
+  "type" => "us_citizen",
+  "date_of_birth" => "1993-08-23",
+  "identification" => {
+    "ssn" => "0001"
+  },
+  "name" => {
+    "first" => "John",
+    "middle" => "Pearce",
+    "last" => "Doe"
+  },
+  "address" => {
+    "street1" => "1 Infinite Loop",
+    "street2" => nil,
+    "city" => "Cupertino",
+    "state" => "CA",
+    "postal_code" => "95014",
+    "country" => "US"
+  }
+})
+```
 
 ### Contributing to BlockScore
  
