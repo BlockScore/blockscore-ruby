@@ -49,3 +49,5 @@ pkg
 #*.rbc
 
 *.sublime-workspace
+
+blockscore-*.gem
