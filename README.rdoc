@@ -1,8 +1,8 @@
-= blockscore
+= BlockScore Ruby Library
 
-Description goes here.
+This is the official library for Ruby clients of the BlockScore API.
 
-== Contributing to blockscore
+== Contributing to BlockScore
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
@@ -14,6 +14,6 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2014 Alain Meier. See LICENSE.txt for
+Copyright (c) 2014 BlockScore. See LICENSE.txt for
 further details.
 
