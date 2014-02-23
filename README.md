@@ -29,13 +29,13 @@ gem 'blockscore', '~> 1.0.1'
 ### List all verifications
 
 ```ruby
-@blockscore.verifications
+@blockscore.get_verifications
 ```
     
 ### View a verification by ID
 
 ```ruby
-@blockscore.verification("526781407e7b0ace47000001")
+@blockscore.get_verification("526781407e7b0ace47000001")
 ```
 
 ### Create a new verification
