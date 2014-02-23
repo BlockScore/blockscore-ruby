@@ -1,13 +1,13 @@
-module Blockscore
+module BlockScore
   class Client
     include HTTParty
 
-    def initialize(api_key, options = {})
+    def initialize(api_key, version, options = {})
       @api_key = api_key
       @auth = { username: @api_key, password: "" }
 
       options[:base_uri] ||= "https://api.blockscore.com"
-      options[:headers] = { 'Accept' => 'application/vnd.blockscore+json;version=2' }
+      options[:headers] = { 'Accept' => 'application/vnd.blockscore+json;version=' + version.to_s }
       
       options.each do |k,v|
         self.class.send k, v

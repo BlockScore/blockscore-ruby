@@ -1,9 +1,9 @@
 require 'helper'
 
-class TestBlockscore < Test::Unit::TestCase
+class TestBlockScore < Test::Unit::TestCase
   context "a verification" do
     setup do
-      @blockscore = Blockscore::Client.new("sk_test_74d0a2e9649c8eed8bbef051666e1aa2")
+      @blockscore = BlockScore::Client.new("sk_test_74d0a2e9649c8eed8bbef051666e1aa2", version = 2)
     end
 
     should "return a list of verifications" do
