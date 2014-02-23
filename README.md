@@ -1,8 +1,8 @@
-## BlockScore Ruby Library
+# blockscore-ruby
 
 This is the official library for Ruby clients of the BlockScore API. [Click here to read the full documentation](https://manage.blockscore.com/docs).
 
-### Install
+## Install
 
 Via rubygems.org:
 
@@ -16,27 +16,29 @@ If you are using rails, add the following to your `Gemfile`:
 gem 'blockscore', '~> 1.0.0'
 ```
 
-### Getting Started
+## Getting Started
 
-#### Initializing BlockScore
+### Initializing BlockScore
 
 ```ruby
 @blockscore = BlockScore::Client("your-api-key", version = 2)
 ```
+
+## Verifications
     
-#### List all verifications
+### List all verifications
 
 ```ruby
 @blockscore.verifications
 ```
     
-#### View a verification by ID
+### View a verification by ID
 
 ```ruby
 @blockscore.verification("526781407e7b0ace47000001")
 ```
 
-#### Create a new verification
+### Create a new verification
 
 ```ruby
 @blockscore.create_verification({
@@ -61,7 +63,9 @@ gem 'blockscore', '~> 1.0.0'
 })
 ```
 
-#### Create a new question set
+## Question Sets
+
+### Create a new question set
 
 ```ruby
 @blockscore.create_question_set({
@@ -69,7 +73,7 @@ gem 'blockscore', '~> 1.0.0'
 })
 ```
 
-#### Score a question set
+### Score a question set
 
 ```ruby
 @blockscore.score_question_set({
@@ -100,7 +104,7 @@ gem 'blockscore', '~> 1.0.0'
 })
 ```
 
-### Contributing to BlockScore
+## Contributing to BlockScore
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
@@ -110,7 +114,7 @@ gem 'blockscore', '~> 1.0.0'
 * Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
 * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
-### Copyright
+## Copyright
 
 Copyright (c) 2014 BlockScore. See LICENSE.txt for
 further details.
