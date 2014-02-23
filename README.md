@@ -61,6 +61,45 @@ gem 'blockscore', '~> 1.0.0'
 })
 ```
 
+#### Create a new question set
+
+```ruby
+@blockscore.create_question_set({
+  "verification_id" => "53099a636274639ebb0e0000"
+})
+```
+
+#### Score a question set
+
+```ruby
+@blockscore.score_question_set({
+  "verification_id" => "53099a636274639ebb0e0000",
+  "question_set_id" => "53099c5f6274639ebb7e0000",
+  "answers" => [
+    {
+      "question_id" => 1,
+      "answer_id" => 1
+    },
+    {
+      "question_id" => 2,
+      "answer_id" => 1
+    },
+    {
+      "question_id" => 3,
+      "answer_id" => 1
+    },
+    {
+      "question_id" => 4,
+      "answer_id" => 1
+    },
+    {
+      "question_id" => 5,
+      "answer_id" => 1
+    }
+  ]
+})
+```
+
 ### Contributing to BlockScore
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
