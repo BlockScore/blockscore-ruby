@@ -21,7 +21,7 @@ gem 'blockscore', '~> 1.0.1'
 ### Initializing BlockScore
 
 ```ruby
-@blockscore = BlockScore::Client("your-api-key", version = 2)
+@blockscore = BlockScore::Client.new("your-api-key", version = 2)
 ```
 
 ## Verifications
