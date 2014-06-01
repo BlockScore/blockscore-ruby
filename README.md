@@ -104,6 +104,23 @@ gem 'blockscore', '~> 1.0.1'
 )
 ```
 
+## Exceptions and Errors
+
+### Error Description
+
+* The generic error class is BlockscoreError. All other types of errors are derived from BlockscoreError.
+* Errors contain information such as the HTTP response code, a short message describing the error, the type of error, and if applicable, the parameter and error code at issue.
+* Also available in the error object is the full JSON text representation of the data.
+
+### Error Types
+
+* BlockscoreError (Generic error, base class)
+* AuthenticationError (401 : Invalid API Key)
+* ValidationError (400 : Input could not be validated)
+* ParameterError (400 : Missing parameter)
+* NotFoundError (404 : Attempting to reference nonexistent endpoint)
+* InternalServerError (500 : Error on the Blockscore API)
+
 ## Contributing to BlockScore
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
