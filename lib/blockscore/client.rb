@@ -9,11 +9,12 @@ module BlockScore
     attr_reader :question_set
 
     def initialize(api_key, version, options = {})
-
+      
       @api_key = api_key
       @auth = { username: @api_key, password: "" }
       @verification = BlockScore::Verification.new(self)
       @question_set = BlockScore::QuestionSet.new(self)
+      @error_handler = BlockScore::ErrorHandler.new
 
       options[:base_uri] ||= "https://api.blockscore.com"
       options[:headers] = { 'Accept' => 'application/vnd.blockscore+json;version=' + version.to_s }
@@ -24,14 +25,32 @@ module BlockScore
     end
 
     def get(path, options = {})
+
       options = { body: options, basic_auth: @auth }
-      puts options
-      self.class.get(path, options)
+
+      response = self.class.get(path, options)
+
+      begin
+        result = @error_handler.check_error(response)
+      rescue BlockScore::BlockscoreError => e
+        raise
+      end
+
     end
 
     def post(path, options = {})
+
       options = { body: options, basic_auth: @auth }
-      self.class.post(path, options)
+
+      response = self.class.post(path, options)
+
+      begin
+        result = @error_handler.check_error(response)
+      rescue BlockScore::BlockscoreError => e
+        raise
+      end
+
     end
+
   end
 end

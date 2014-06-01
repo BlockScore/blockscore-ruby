@@ -1,4 +1,4 @@
-require 'helper'
+require_relative './helper'
 
 class TestBlockScore < Test::Unit::TestCase
   context "a verification" do
