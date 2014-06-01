@@ -1,54 +1,54 @@
 module BlockScore
-	class Verification
+  class Verification
 
-		def initialize(client)
+    def initialize(client)
 
-			@client = client
-		end
+      @client = client
+    end
 
-		# 
-		# /verifications POST
-		#
-		# type - 
-		# date_of_birth - 
-		# identification - 
-		# name - 
-		# address - 
-		def create(type, date_of_birth, identification, name, address, options = {})
-			
-			body = (options.include? :body) ? options[:body] : {}
-			body[:type] = type
-			body[:date_of_birth] = date_of_birth
-			body[:identification] = identification
-			body[:name] = name
-			body[:address] = address
+    # 
+    # /verifications POST
+    #
+    # type - 
+    # date_of_birth - 
+    # identification - 
+    # name - 
+    # address - 
+    def create(type, date_of_birth, identification, name, address, options = {})
+      
+      body = (options.include? :body) ? options[:body] : {}
+      body[:type] = type
+      body[:date_of_birth] = date_of_birth
+      body[:identification] = identification
+      body[:name] = name
+      body[:address] = address
 
-			response = @client.post '/verifications', body
-		end
+      response = @client.post '/verifications', body
+    end
 
-		# 
-		# /verifications/:id GET
-		#
-		# id -
-		def retrieve(id, options = {})
+    # 
+    # /verifications/:id GET
+    #
+    # id -
+    def retrieve(id, options = {})
 
-			body = (options.include? :query) ? options[:body] : {}
-			body[:verification_id] = id
+      body = (options.include? :query) ? options[:body] : {}
+      body[:verification_id] = id
 
-			response = @client.get '/verifications/'+id.to_s, body
-		end
+      response = @client.get '/verifications/'+id.to_s, body
+    end
 
-		# 
-		# '/verifications' GET
-		#
-		def all(count=nil, offset=nil, options = {})
+    # 
+    # '/verifications' GET
+    #
+    def all(count=nil, offset=nil, options = {})
 
-			body = (options.include? :body) ? options[:body] : {}
+      body = (options.include? :body) ? options[:body] : {}
 
-			body[:count] = count
-			body[:offset] = offset
+      body[:count] = count
+      body[:offset] = offset
 
-			@client.get '/verifications', body
-		end
-	end
+      @client.get '/verifications', body
+    end
+  end
 end

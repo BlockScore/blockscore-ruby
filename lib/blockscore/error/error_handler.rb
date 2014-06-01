@@ -1,9 +1,9 @@
 require 'json'
 module BlockScore
-	class ErrorHandler
+  class ErrorHandler
 
-		def initialize()
-		end
+    def initialize()
+    end
 
     # Function:
     # check_error()
@@ -28,14 +28,14 @@ module BlockScore
         raise BlockScore::InternalServerError.new(@message, @body, @error_type)
       end
 
-			if @body.include? 'error'
-				@error = @body['error']
-				@error_type = get_value(@error, 'type')
-				@error_code = get_value(@error, 'code')
-				@param = get_value(@error, 'param')
-			end # body.include? 'error'
+      if @body.include? 'error'
+        @error = @body['error']
+        @error_type = get_value(@error, 'type')
+        @error_code = get_value(@error, 'code')
+        @param = get_value(@error, 'param')
+      end # body.include? 'error'
 
-			process_code(@code)
+      process_code(@code)
 
     end # check_error
 
@@ -47,35 +47,35 @@ module BlockScore
     #
     # code -
     #
-		def process_code(code)
+    def process_code(code)
 
-			# Input data error
-			if code == 400
-				# Could not be validated.
-				# Which type of input error?
-				if @param
-					raise BlockScore::ValidationError.new(@message, @body, @error_type, @param, @error_code)
-				
-				# Required parameter is missing
-				else
-					raise BlockScore::ParameterError.new(@message, @body, @error_type)
-				end # if param
-			
-			# Error with an API Key
-			elsif code == 401
-				raise BlockScore::AuthorizationError.new(@message, @body, @error_type)
-			
-			# Trying to access nonexistent endpoint
-			elsif code == 404
-				raise BlockScore::NotFoundError.new(@message, @body, @error_type)
+      # Input data error
+      if code == 400
+        # Could not be validated.
+        # Which type of input error?
+        if @param
+          raise BlockScore::ValidationError.new(@message, @body, @error_type, @param, @error_code)
+        
+        # Required parameter is missing
+        else
+          raise BlockScore::ParameterError.new(@message, @body, @error_type)
+        end # if param
+      
+      # Error with an API Key
+      elsif code == 401
+        raise BlockScore::AuthorizationError.new(@message, @body, @error_type)
+      
+      # Trying to access nonexistent endpoint
+      elsif code == 404
+        raise BlockScore::NotFoundError.new(@message, @body, @error_type)
 
-			# Generic BlockscoreError (fallback)
-			else
-				raise BlockScore::BlockscoreError.new(@message, @body)
+      # Generic BlockscoreError (fallback)
+      else
+        raise BlockScore::BlockscoreError.new(@message, @body)
 
-			end # end code checking
+      end # end code checking
 
-		end # process code
+    end # process code
 
 
 
@@ -104,22 +104,22 @@ module BlockScore
     # body -
     #
     def get_message(body)
-    	message = ''
-			if body.is_a? String
-      	message = body
+      message = ''
+      if body.is_a? String
+        message = body
       
       elsif body.is_a? Hash
-      	if body.include? 'error'
-      		message = body['error']['message']
-    		else
-    			message = 'Unable to select error message from json returned by request responsible for error'
-    		end # if body.include?
-  		else
-				message = 'Unable to understand the content type of response returned by request responsible for error'
-    	end # if body.is_a? String
+        if body.include? 'error'
+          message = body['error']['message']
+        else
+          message = 'Unable to select error message from json returned by request responsible for error'
+        end # if body.include?
+      else
+        message = 'Unable to understand the content type of response returned by request responsible for error'
+      end # if body.is_a? String
 
-    	message
-  	end # def get_message
+      message
+    end # def get_message
 
 
     # Function:
@@ -128,14 +128,14 @@ module BlockScore
     # obj -
     # key -
     #
-  	def get_value(obj, key)
+    def get_value(obj, key)
 
-  		if obj.include? key
-  			return obj[key]
-			end
+      if obj.include? key
+        return obj[key]
+      end
 
-			nil
-		end
+      nil
+    end
 
-	end # class ErrorHandler
+  end # class ErrorHandler
 end # module BlockScore
