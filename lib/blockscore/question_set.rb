@@ -28,5 +28,17 @@ module BlockScore
 
 			response = @client.post "/questions/score", body
 		end
+
+		# 
+		# /questions/:id POST
+		#
+		# question_set_id -
+		# verification_id -
+		def retrieve(question_set_id, verification_id)
+			body = Hash.new
+			body[:verification_id] = verification_id
+
+			response = @client.post "/questions/#{question_set_id.to_s}", body
+		end
 	end
 end
