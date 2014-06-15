@@ -10,7 +10,7 @@ Via rubygems.org:
 gem install blockscore
 ```
 
-If you are using rails, add the following to your `Gemfile`:
+If you are using Rails, add the following to your `Gemfile`:
 
 ```ruby
 gem 'blockscore', '~> 1.0.1'
@@ -18,91 +18,13 @@ gem 'blockscore', '~> 1.0.1'
 
 ## Getting Started
 
-### Initializing BlockScore
+To get started, you can initialize the library with one line:
 
 ```ruby
-@blockscore = BlockScore::Client.new("your-api-key", version = 2)
+client = BlockScore::Client.new("your-api-key", version = 2)
 ```
 
-## Verifications
-    
-### List all verifications
-
-```ruby
-@blockscore.verification.all
-```
-    
-### View a verification by ID
-
-```ruby
-@blockscore.verification.retrieve("526781407e7b0ace47000001")
-```
-
-### Create a new verification
-
-```ruby
-@blockscore.verification.create(
-  type = "us_citizen",
-  date_of_birth = "1975-01-01",
-  identification = {
-    ssn: "0000"
-  },
-  name = {
-    first: "John",
-    middle: "J"
-    last: "Doe",
-  },
-  address = {
-    street1: "1 Infinite Loop",
-    street2: nil,
-    city: "Cupertino",
-    state: "CA",
-    postal_code: "95014",
-    country: "US"
-  }
-)
-```
-
-## Question Sets
-
-### Create a new question set
-
-```ruby
-@blockscore.question_set.create(
-  verification_id="53099a636274639ebb0e0000"
-)
-```
-
-### Score a question set
-
-```ruby
-@blockscore.question_set.score(
-  verification_id = "53099a636274639ebb0e0000",
-  question_set_id = "53099c5f6274639ebb7e0000",
-  answers = [
-    {
-      question_id: 1,
-      answer_id: 1
-    },
-    {
-      question_id: 2,
-      answer_id: 1
-    },
-    {
-      question_id: 3,
-      answer_id: 1
-    },
-    {
-      question_id: 4,
-      answer_id: 1
-    },
-    {
-      question_id: 5,
-      answer_id: 1
-    }
-  ]
-)
-```
+To see the list of calls you can make, please visit out [full Ruby API reference](docs.blockscore.com/ruby).
 
 ## Contributing to BlockScore
  
