@@ -21,10 +21,10 @@ gem 'blockscore', '~> 1.0.1'
 To get started, you can initialize the library with one line:
 
 ```ruby
-client = BlockScore::Client.new("your-api-key", version = 2)
+client = BlockScore::Client.new('your-api-key', version = 2)
 ```
 
-To see the list of calls you can make, please visit out [full Ruby API reference](docs.blockscore.com/ruby).
+To see the list of calls you can make, please visit out [full Ruby API reference](http://docs.blockscore.com/ruby).
 
 ## Contributing to BlockScore
  
