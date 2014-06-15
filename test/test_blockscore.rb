@@ -68,6 +68,21 @@ class TestBlockScore < Test::Unit::TestCase
       assert_equal 201, response.code
     end
 
+    should "return a list of question sets" do
+      response = @client.question_set.all
+      assert_equal 200, response.code
+    end
+
+    should "return count = 2 question sets" do
+      response = @client.question_set.all(count = 2)
+      assert_equal 200, response.code
+    end
+
+    should "return count = 2 offset = 2 question sets" do
+      response = @client.question_set.all(count = 2, offset = 2)
+      assert_equal 200, response.code
+    end
+
     should "return a score for the question set" do
       @answers = [
           {

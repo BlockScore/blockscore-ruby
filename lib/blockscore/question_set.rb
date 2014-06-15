@@ -40,5 +40,18 @@ module BlockScore
 
 			response = @client.post "/questions/#{question_set_id.to_s}", body
 		end
+
+		# 
+		# '/questions' GET
+		#
+		def all(count = nil, offset = nil, options = {})
+
+			body = (options.include? :body) ? options[:body] : {}
+
+			body[:count] = count
+			body[:offset] = offset
+
+			@client.get '/questions', body
+		end
 	end
 end
