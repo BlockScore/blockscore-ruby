@@ -14,16 +14,8 @@ module BlockScore
 		# identification - 
 		# name - 
 		# address - 
-		def create(type, date_of_birth, identification, name, address, options = {})
-			
-			body = (options.include? :body) ? options[:body] : {}
-			body[:type] = type
-			body[:date_of_birth] = date_of_birth
-			body[:identification] = identification
-			body[:name] = name
-			body[:address] = address
-
-			response = @client.post '/verifications', body
+		def create(options = {})
+			response = @client.post '/verifications', options
 		end
 
 		# 
@@ -41,7 +33,7 @@ module BlockScore
 		# 
 		# '/verifications' GET
 		#
-		def all(count=nil, offset=nil, options = {})
+		def all(count = nil, offset = nil, options = {})
 
 			body = (options.include? :body) ? options[:body] : {}
 

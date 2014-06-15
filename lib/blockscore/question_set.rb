@@ -27,7 +27,6 @@ module BlockScore
 			}
 
 			response = @client.post "/questions/score", body
-
 		end
 	end
 end
