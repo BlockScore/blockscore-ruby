@@ -27,7 +27,7 @@ module BlockScore
 			body = (options.include? :query) ? options[:body] : {}
 			body[:verification_id] = id
 
-			response = @client.get '/verifications/'+id.to_s, body
+			response = @client.get "/verifications/#{id.to_s}", body
 		end
 
 		# 
