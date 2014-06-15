@@ -50,4 +50,6 @@ pkg
 
 *.sublime-workspace
 
+*.DS_Store
+
 blockscore-*.gem
