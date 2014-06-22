@@ -1,4 +1,5 @@
-require_relative './blockscore_error'
+require File.join(File.dirname(__FILE__), 'blockscore_error')
+
 module BlockScore
   class AuthorizationError < BlockscoreError
 

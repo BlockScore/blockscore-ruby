@@ -1,4 +1,4 @@
-require_relative './helper'
+require File.join(File.dirname(__FILE__), 'helper')
 
 class TestBlockScore < Test::Unit::TestCase
   context "a verification" do
@@ -33,23 +33,23 @@ class TestBlockScore < Test::Unit::TestCase
 
     should "return create a verification" do
       verification_params = {
-        type: "us_citizen",
-        date_of_birth: "1975-01-01",
-        identification: {
-          ssn: "0000"
+        :type => "us_citizen",
+        :date_of_birth => "1975-01-01",
+        :identification => {
+          :ssn => "0000"
         },
-        name: {
-          first: "John",
-          middle: "P",
-          last: "Doe"
+        :name => {
+          :first => "John",
+          :middle => "P",
+          :last => "Doe"
         },
-        address: {
-          street1: "1 Infinite Loop",
-          street2: nil,
-          city: "Cupertino",
-          state: "CA",
-          postal_code: "95014",
-          country: "US"
+        :address => {
+          :street1 => "1 Infinite Loop",
+          :street2 => nil,
+          :city => "Cupertino",
+          :state => "CA",
+          :postal_code => "95014",
+          :country => "US"
         }
       }
 
@@ -86,24 +86,24 @@ class TestBlockScore < Test::Unit::TestCase
     should "return a score for the question set" do
       @answers = [
           {
-            question_id: 1,
-            answer_id: 1
+            :question_id => 1,
+            :answer_id => 1
           },
           {
-            question_id: 2,
-            answer_id: 1
+            :question_id => 2,
+            :answer_id => 1
           },
           {
-            question_id: 3,
-            answer_id: 1
+            :question_id => 3,
+            :answer_id => 1
           },
           {
-            question_id: 4,
-            answer_id: 1
+            :question_id => 4,
+            :answer_id => 1
           },
           {
-            question_id: 5,
-            answer_id: 1
+            :question_id => 5,
+            :answer_id => 1
           }
         ]
 

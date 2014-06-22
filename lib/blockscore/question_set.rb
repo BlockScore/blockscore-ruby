@@ -21,9 +21,9 @@ module BlockScore
     def score(verification_id, question_set_id, answers)
       
       body = { 
-           verification_id: verification_id,
-           question_set_id: question_set_id,
-           answers: answers
+           :verification_id => verification_id,
+           :question_set_id => question_set_id,
+           :answers => answers
       }
       
 			response = @client.post "/questions/score", body

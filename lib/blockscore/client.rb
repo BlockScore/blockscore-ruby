@@ -11,7 +11,7 @@ module BlockScore
     def initialize(api_key, version, options = {})
       
       @api_key = api_key
-      @auth = { username: @api_key, password: "" }
+      @auth = { :username => @api_key, :password => "" }
       @verification = BlockScore::Verification.new(self)
       @question_set = BlockScore::QuestionSet.new(self)
       @error_handler = BlockScore::ErrorHandler.new
@@ -26,7 +26,7 @@ module BlockScore
 
     def get(path, options = {})
 
-      options = { body: options, basic_auth: @auth }
+      options = { :body => options, :basic_auth => @auth }
 
       response = self.class.get(path, options)
 
@@ -40,7 +40,7 @@ module BlockScore
 
     def post(path, options = {})
 
-      options = { body: options, basic_auth: @auth }
+      options = { :body => options, :basic_auth => @auth }
 
       response = self.class.post(path, options)
 
