@@ -7,7 +7,7 @@ gem 'activesupport', '~> 3.1.0'
 
 gem 'nokogiri', '~> 1.5.10'
 
-gem 'faraday', '~> 0.7.4'
+gem 'httparty', '~> 0.11.0'
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.

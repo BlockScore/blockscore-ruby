@@ -1,4 +1,5 @@
-require_relative './blockscore_error'
+require 'lib/blockscore/error/blockscore_error'
+
 module BlockScore
   class ValidationError < BlockscoreError
 
