@@ -1,4 +1,4 @@
-require 'lib/blockscore/error/blockscore_error'
+require File.join(File.dirname(__FILE__), 'blockscore_error')
 
 module BlockScore
   class NotFoundError < BlockscoreError
