@@ -13,39 +13,31 @@ module BlockScore
     end
 
     # 
-    # '/questions/score' POST
+    # '/questions/:id/score' POST
     #
-    # verification_id - 
-    # question_set_id - 
     # answers - 
-    def score(verification_id, question_set_id, answers)
-      
-      body = { 
-           :verification_id => verification_id,
-           :question_set_id => question_set_id,
-           :answers => answers
-      }
-      
-			response = @client.post "/questions/score", body
+    def score(id, answers)
+    	body = {}
+      body[:answers] = answers
+
+			response = @client.post "/questions/#{id.to_s}/score", body
 		end
 
 		# 
-		# /questions/:id POST
+		# /questions/:id GET
 		#
 		# question_set_id -
 		# verification_id -
-		def retrieve(question_set_id, verification_id)
+		def retrieve(id)
 			body = Hash.new
-			body[:verification_id] = verification_id
 
-			response = @client.post "/questions/#{question_set_id.to_s}", body
+			response = @client.get "/questions/#{id.to_s}", body
 		end
 
 		# 
 		# '/questions' GET
 		#
 		def all(count = nil, offset = nil, options = {})
-
 			body = (options.include? :body) ? options[:body] : {}
 
 			body[:count] = count

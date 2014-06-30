@@ -5,15 +5,14 @@ module BlockScore
     @ssl_path = File.expand_path(File.join(File.dirname(__FILE__), '../blockscore-cert.crt'))
     ssl_ca_file @ssl_path
 
-    attr_reader :verification
-    attr_reader :question_set
+    attr_reader :verification, :question_set, :company
 
     def initialize(api_key, version, options = {})
-      
       @api_key = api_key
       @auth = { :username => @api_key, :password => "" }
       @verification = BlockScore::Verification.new(self)
       @question_set = BlockScore::QuestionSet.new(self)
+      @company = BlockScore::Company.new(self)
       @error_handler = BlockScore::ErrorHandler.new
 
       options[:base_uri] ||= "https://api.blockscore.com"
