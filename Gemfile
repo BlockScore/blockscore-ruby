@@ -3,10 +3,6 @@ source "https://rubygems.org"
 # Example:
 #   gem "activesupport", ">= 2.3.5"
 
-gem 'activesupport', '~> 3.1.0'
-
-gem 'nokogiri', '~> 1.5.10'
-
 gem 'httparty', '~> 0.11.0'
 
 # Add dependencies to develop your gem here.
