@@ -8,6 +8,7 @@ class TestBlockScore < Test::Unit::TestCase
 
   @@verification_id = ""
   @@question_set_id = ""
+  @@company_id = ""
   @@client = BlockScore::Client.new(@api_key, version = @version)
 
   context "a company" do
@@ -27,7 +28,7 @@ class TestBlockScore < Test::Unit::TestCase
     end
 
     should "return a single company" do
-      response = @@client.company.retrieve(@@verification_id)
+      response = @@client.company.retrieve(@@company_id)
       assert_equal 200, response.code
     end
 
@@ -51,7 +52,7 @@ class TestBlockScore < Test::Unit::TestCase
           :city => "Cupertino",
           :state => "CA",
           :postal_code => "95014",
-          :country => "US"
+          :country_code => "US"
         }
       }
 
@@ -99,7 +100,7 @@ class TestBlockScore < Test::Unit::TestCase
           :city => "Cupertino",
           :state => "CA",
           :postal_code => "95014",
-          :country => "US"
+          :country_code => "US"
         }
       }
 
