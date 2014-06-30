@@ -24,7 +24,6 @@ module BlockScore
     end
 
     def get(path, options = {})
-
       options = { :body => options, :basic_auth => @auth }
 
       response = self.class.get(path, options)
@@ -38,7 +37,6 @@ module BlockScore
     end
 
     def post(path, options = {})
-
       options = { :body => options, :basic_auth => @auth }
 
       response = self.class.post(path, options)
