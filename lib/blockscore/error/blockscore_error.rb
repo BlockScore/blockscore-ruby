@@ -10,11 +10,12 @@ module BlockScore
                     error_type="invalid_request_error")
       super(message)
 
-      @message = message
+      message_desc = "#{json_body["error"]["param"]} #{json_body["error"]["code"]}"
+
       @error_type = error_type 
       @http_status = http_status
       @json_body = json_body
-
+      @message = "#{message} (#{message_desc})"
     end
 
     def to_s
