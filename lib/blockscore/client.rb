@@ -2,9 +2,6 @@ module BlockScore
   class Client
     include HTTParty
 
-    @ssl_path = File.expand_path(File.join(File.dirname(__FILE__), '../blockscore-cert.crt'))
-    ssl_ca_file @ssl_path
-
     attr_reader :verification, :question_set, :company
 
     def initialize(api_key, version, options = {})
