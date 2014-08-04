@@ -10,6 +10,7 @@ module BlockScore
       @verification = BlockScore::Verification.new(self)
       @question_set = BlockScore::QuestionSet.new(self)
       @company = BlockScore::Company.new(self)
+      @watchlist_candidate = BlockScore::WatchlistCandidate.new(self)
       @error_handler = BlockScore::ErrorHandler.new
 
       options[:base_uri] ||= "https://api.blockscore.com"
