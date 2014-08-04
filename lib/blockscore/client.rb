@@ -46,5 +46,31 @@ module BlockScore
 
     end
 
+    def put(path, options = {})
+      options = { :body => options, :basic_auth => @auth }
+
+      response = self.class.put(path, options)
+
+      begin
+        result = @error_handler.check_error(response)
+      rescue BlockScore::BlockscoreError => e
+        raise
+      end
+
+    end
+
+    def delete(path, options = {})
+      options = { :body => options, :basic_auth => @auth }
+
+      response = self.class.delete(path, options)
+
+      begin
+        result = @error_handler.check_error(response)
+      rescue BlockScore::BlockscoreError => e
+        raise
+      end
+
+    end
+
   end
 end

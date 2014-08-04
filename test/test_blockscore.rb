@@ -4,7 +4,7 @@ class TestBlockScore < Test::Unit::TestCase
   # If you'd like to run the test suite, fill in your API key,
   # a verification ID and a question set ID below.
   @version = 3
-  @api_key = ""
+  @api_key = "sk_test_da5803c774d597b24aa2007d7e244686"
 
   @@verification_id = ""
   @@question_set_id = ""
