@@ -2,7 +2,7 @@ module BlockScore
   class Client
     include HTTParty
 
-    attr_reader :verification, :question_set, :company
+    attr_reader :verification, :question_set, :company, :watchlist_candidate
 
     def initialize(api_key, version, options = {})
       @api_key = api_key
