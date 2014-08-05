@@ -2,7 +2,7 @@ module BlockScore
   class Client
     include HTTParty
 
-    attr_reader :verification, :question_set, :company, :watchlist_candidate
+    attr_reader :verification, :question_set, :company, :watchlist_candidate, :watchlist
 
     def initialize(api_key, version, options = {})
       @api_key = api_key
@@ -11,6 +11,7 @@ module BlockScore
       @question_set = BlockScore::QuestionSet.new(self)
       @company = BlockScore::Company.new(self)
       @watchlist_candidate = BlockScore::WatchlistCandidate.new(self)
+      @watchlist = BlockScore::Watchlist.new(self)
       @error_handler = BlockScore::ErrorHandler.new
 
       options[:base_uri] ||= "https://api.blockscore.com"

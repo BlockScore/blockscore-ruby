@@ -9,9 +9,16 @@ class TestBlockScore < Test::Unit::TestCase
   @@verification_id = ""
   @@question_set_id = ""
   @@company_id = ""
-  @@watchlist_candidate_id = "53e004a43463330002eb0500"
+  @@watchlist_candidate_id = ""
 
   @@client = BlockScore::Client.new(@api_key, version = @version)
+
+  context "a watchlist" do
+    should "return search watchlists" do
+      response = @@client.watchlist.search(@@watchlist_candidate_id)
+      assert_equal 200, response.code
+    end
+  end
 
   context "a watchlist candidate" do
     should "return create a watchlist candidate" do
