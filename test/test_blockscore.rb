@@ -2,14 +2,76 @@ require File.join(File.dirname(__FILE__), 'helper')
 
 class TestBlockScore < Test::Unit::TestCase
   # If you'd like to run the test suite, fill in your API key,
-  # a verification ID and a question set ID below.
+  # a verification ID, a question set ID, a company ID, and a watchlist candidate ID below.
   @version = 3
   @api_key = ""
 
   @@verification_id = ""
   @@question_set_id = ""
   @@company_id = ""
+  @@watchlist_candidate_id = ""
+
   @@client = BlockScore::Client.new(@api_key, version = @version)
+
+  context "a watchlist" do
+    should "return search watchlists" do
+      response = @@client.watchlist.search(@@watchlist_candidate_id)
+      assert_equal 200, response.code
+    end
+  end
+
+  context "a watchlist candidate" do
+    should "return create a watchlist candidate" do
+      watchlist_params = {
+       :note => "12341234",
+       :ssn => "0001",
+       :date_of_birth => "1940-08-11",
+       :name_first => "John",
+       :name_middle => "",
+       :name_last => "Bredenkamp",
+       :address_street1 => "1 Infinite Loop",
+       :address_city => "Cupertino",
+       :address_country_code => "US"
+      }
+      response = @@client.watchlist_candidate.create(watchlist_params)
+      assert_equal 201, response.code
+    end
+
+    should "return edit a watchlist candidate" do
+      watchlist_params = {
+        :date_of_birth => "1945-05-08",
+        :name_middle => "Jones"
+      }
+      response = @@client.watchlist_candidate.edit(@@watchlist_candidate_id, watchlist_params)
+      assert_equal 200, response.code
+    end
+
+    should "return retrieve a watchlist candidate" do
+      response = @@client.watchlist_candidate.retrieve(@@watchlist_candidate_id)
+      assert_equal 200, response.code
+    end
+
+    should "return a list of wachlist candidates" do
+      response = @@client.watchlist_candidate.all
+      assert_equal 200, response.code
+    end
+
+    should "return a history of a wachlist candidate" do
+      response = @@client.watchlist_candidate.history(@@watchlist_candidate_id)
+      assert_equal 200, response.code
+    end
+
+    should "return the hits of a wachlist candidate" do
+      response = @@client.watchlist_candidate.hits(@@watchlist_candidate_id)
+      assert_equal 200, response.code
+    end
+
+    should "return delete a watchlist candidate" do 
+      response = @@client.watchlist_candidate.delete(@@watchlist_candidate_id)
+      assert_equal 200, response.code
+    end
+
+  end
 
   context "a company" do
     should "return a list of companies" do
