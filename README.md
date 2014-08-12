@@ -1,6 +1,6 @@
 # blockscore-ruby
 
-This is the official library for Ruby clients of the BlockScore API. [Click here to read the full documentation](https://manage.blockscore.com/docs).
+This is the official library for Ruby clients of the BlockScore API. [Click here to read the full documentation including code examples](http://docs.blockscore.com/v3.0/ruby/).
 
 ## Install
 
