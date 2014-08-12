@@ -13,7 +13,7 @@ gem install blockscore
 If you are using Rails, add the following to your `Gemfile`:
 
 ```ruby
-gem 'blockscore', '~> 2.1.1'
+gem 'blockscore', '~> 3.0.0'
 ```
 
 ## Getting Started
@@ -21,7 +21,7 @@ gem 'blockscore', '~> 2.1.1'
 To get started, you can initialize the library with one line:
 
 ```ruby
-client = BlockScore::Client.new('your-api-key', version = 2)
+client = BlockScore::Client.new('your-api-key', version = 3)
 ```
 
 To see the list of calls you can make, please visit out [full Ruby API reference](http://docs.blockscore.com/ruby).
