@@ -53,3 +53,5 @@ pkg
 *.DS_Store
 
 blockscore-*.gem
+
+Gemfile.lock
