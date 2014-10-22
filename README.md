@@ -13,7 +13,7 @@ gem install blockscore
 If you are using Rails, add the following to your `Gemfile`:
 
 ```ruby
-gem 'blockscore', '~> 3.0.0'
+gem 'blockscore', '~> 3.0.1'
 ```
 
 ## Getting Started
