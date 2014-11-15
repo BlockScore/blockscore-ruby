@@ -17,33 +17,33 @@ module BlockScore
     #
     # answers - 
     def score(id, answers)
-    	body = {}
+      body = {}
       body[:answers] = answers
 
-			response = @client.post "/question_sets/#{id.to_s}/score", body
-		end
+      response = @client.post "/question_sets/#{id.to_s}/score", body
+    end
 
-		# 
-		# /questions/:id GET
-		#
-		# question_set_id -
-		# people_id -
-		def retrieve(id)
-			body = Hash.new
+    # 
+    # /questions/:id GET
+    #
+    # question_set_id -
+    # people_id -
+    def retrieve(id)
+      body = Hash.new
 
-			response = @client.get "/question_sets/#{id.to_s}", body
-		end
+      response = @client.get "/question_sets/#{id.to_s}", body
+    end
 
-		# 
-		# '/questions' GET
-		#
-		def all(count = nil, offset = nil, options = {})
-			body = (options.include? :body) ? options[:body] : {}
+    # 
+    # '/questions' GET
+    #
+    def all(count = nil, offset = nil, options = {})
+      body = (options.include? :body) ? options[:body] : {}
 
-			body[:count] = count
-			body[:offset] = offset
+      body[:count] = count
+      body[:offset] = offset
 
-			@client.get '/question_sets', body
-		end
-	end
+      @client.get '/question_sets', body
+    end
+  end
 end
