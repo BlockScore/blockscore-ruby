@@ -1,4 +1,5 @@
 require 'simplecov'
+require 'minitest/autorun'
 
 module SimpleCov::Configuration
   def clean_filters
