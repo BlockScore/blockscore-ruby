@@ -2,15 +2,15 @@ module BlockScore
   class Client
     include HTTParty
 
-    attr_reader :verification, :question_set, :company, :watchlist_candidate, :watchlist
+    attr_reader :people, :question_set, :company, :candidate, :watchlist
 
     def initialize(api_key, version, options = {})
       @api_key = api_key
       @auth = { :username => @api_key, :password => "" }
-      @verification = BlockScore::Verification.new(self)
+      @people = BlockScore::People.new(self)
       @question_set = BlockScore::QuestionSet.new(self)
       @company = BlockScore::Company.new(self)
-      @watchlist_candidate = BlockScore::WatchlistCandidate.new(self)
+      @candidate = BlockScore::Candidate.new(self)
       @watchlist = BlockScore::Watchlist.new(self)
       @error_handler = BlockScore::ErrorHandler.new
 

@@ -5,11 +5,11 @@ module BlockScore
       @client = client
     end
 
-    def create(verification_id, options = {})
+    def create(people_id, options = {})
       body = (options.include? :body) ? options[:body] : {}
-      body[:verification_id] = verification_id
+      body[:verification_id] = people_id
 
-      response = @client.post '/questions', body
+      response = @client.post '/question_sets', body
     end
 
     # 
@@ -17,33 +17,33 @@ module BlockScore
     #
     # answers - 
     def score(id, answers)
-    	body = {}
+      body = {}
       body[:answers] = answers
 
-			response = @client.post "/questions/#{id.to_s}/score", body
-		end
+      response = @client.post "/question_sets/#{id.to_s}/score", body
+    end
 
-		# 
-		# /questions/:id GET
-		#
-		# question_set_id -
-		# verification_id -
-		def retrieve(id)
-			body = Hash.new
+    # 
+    # /questions/:id GET
+    #
+    # question_set_id -
+    # people_id -
+    def retrieve(id)
+      body = Hash.new
 
-			response = @client.get "/questions/#{id.to_s}", body
-		end
+      response = @client.get "/question_sets/#{id.to_s}", body
+    end
 
-		# 
-		# '/questions' GET
-		#
-		def all(count = nil, offset = nil, options = {})
-			body = (options.include? :body) ? options[:body] : {}
+    # 
+    # '/questions' GET
+    #
+    def all(count = nil, offset = nil, options = {})
+      body = (options.include? :body) ? options[:body] : {}
 
-			body[:count] = count
-			body[:offset] = offset
+      body[:count] = count
+      body[:offset] = offset
 
-			@client.get '/questions', body
-		end
-	end
+      @client.get '/question_sets', body
+    end
+  end
 end
