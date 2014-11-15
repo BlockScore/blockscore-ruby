@@ -3,19 +3,19 @@ require File.join(File.dirname(__FILE__), 'helper')
 class TestBlockScore < Test::Unit::TestCase
   # If you'd like to run the test suite, fill in your API key,
   # a verification ID, a question set ID, a company ID, and a watchlist candidate ID below.
-  @version = 3
+  @version = 4
   @api_key = ""
 
-  @@verification_id = ""
+  @@person_id = ""
   @@question_set_id = ""
   @@company_id = ""
-  @@watchlist_candidate_id = ""
+  @@candidate_id = ""
 
   @@client = BlockScore::Client.new(@api_key, version = @version)
 
   context "a watchlist" do
     should "return search watchlists" do
-      response = @@client.watchlist.search(@@watchlist_candidate_id)
+      response = @@client.watchlist.search(@@candidate_id)
       assert_equal 200, response.code
     end
   end
@@ -33,7 +33,7 @@ class TestBlockScore < Test::Unit::TestCase
        :address_city => "Cupertino",
        :address_country_code => "US"
       }
-      response = @@client.watchlist_candidate.create(watchlist_params)
+      response = @@client.candidate.create(watchlist_params)
       assert_equal 201, response.code
     end
 
@@ -42,32 +42,32 @@ class TestBlockScore < Test::Unit::TestCase
         :date_of_birth => "1945-05-08",
         :name_middle => "Jones"
       }
-      response = @@client.watchlist_candidate.edit(@@watchlist_candidate_id, watchlist_params)
+      response = @@client.candidate.edit(@@candidate_id, watchlist_params)
       assert_equal 200, response.code
     end
 
     should "return retrieve a watchlist candidate" do
-      response = @@client.watchlist_candidate.retrieve(@@watchlist_candidate_id)
+      response = @@client.candidate.retrieve(@@candidate_id)
       assert_equal 200, response.code
     end
 
     should "return a list of wachlist candidates" do
-      response = @@client.watchlist_candidate.all
+      response = @@client.candidate.all
       assert_equal 200, response.code
     end
 
     should "return a history of a wachlist candidate" do
-      response = @@client.watchlist_candidate.history(@@watchlist_candidate_id)
+      response = @@client.candidate.history(@@candidate_id)
       assert_equal 200, response.code
     end
 
     should "return the hits of a wachlist candidate" do
-      response = @@client.watchlist_candidate.hits(@@watchlist_candidate_id)
+      response = @@client.candidate.hits(@@candidate_id)
       assert_equal 200, response.code
     end
 
     should "return delete a watchlist candidate" do 
-      response = @@client.watchlist_candidate.delete(@@watchlist_candidate_id)
+      response = @@client.candidate.delete(@@candidate_id)
       assert_equal 200, response.code
     end
 
@@ -98,24 +98,24 @@ class TestBlockScore < Test::Unit::TestCase
       company_params = {
         :entity_name => "BlockScore",
         :tax_id => "123410000",
-        :incorp_date => "1980-08-25",
+        :incorporation_day => 25,
+        :incorporation_month => 8,
+        :incorporation_year => 1980,
         :incorp_state => "DE",
-        :incorp_country_code => "US",
-        :incorp_type => "corporation",
+        :incorporation_country_code => "US",
+        :incorporation_type => "corporation",
         :dbas => "BitRemit",
         :registration_number => "123123123",
         :email => "test@example.com",
         :url => "https://blockscore.com",
         :phone_number => "6505555555",
         :ip_address => "67.160.8.182",
-        :address => {
-          :street1 => "1 Infinite Loop",
-          :street2 => nil,
-          :city => "Cupertino",
-          :state => "CA",
-          :postal_code => "95014",
-          :country_code => "US"
-        }
+        :address_street1 => "1 Infinite Loop",
+        :address_street2 => nil,
+        :address_city => "Cupertino",
+        :address_subdivision => "CA",
+        :address_postal_code => "95014",
+        :address_country_code => "US"
       }
 
       response = @@client.company.create(company_params)
@@ -124,49 +124,46 @@ class TestBlockScore < Test::Unit::TestCase
     end
   end
 
-  context "a verification" do
-    should "return a list of verifications" do
-      response = @@client.verification.all
+  context "a person" do
+    should "return a list of people" do
+      response = @@client.people.all
       assert_equal 200, response.code
     end
 
-    should "return count = 2 verifications" do
-      response = @@client.verification.all(count = 2)
+    should "return count = 2 people" do
+      response = @@client.people.all(count = 2)
       assert_equal 200, response.code
     end
 
-    should "return count=2 offset=2 verifications" do
-      response = @@client.verification.all(count = 2, offset = 2)
+    should "return count=2 offset=2 people" do
+      response = @@client.people.all(count = 2, offset = 2)
       assert_equal 200, response.code
     end
 
-    should "return a single verification" do
-      response = @@client.verification.retrieve(@@verification_id)
+    should "return a single people" do
+      response = @@client.people.retrieve(@@person_id)
       assert_equal 200, response.code
     end
 
-    should "return create a verification" do
-      verification_params = {
-        :date_of_birth => "1975-01-01",
-        :identification => {
-          :ssn => "0000"
-        },
-        :name => {
-          :first => "John",
-          :middle => "P",
-          :last => "Doe"
-        },
-        :address => {
-          :street1 => "1 Infinite Loop",
-          :street2 => nil,
-          :city => "Cupertino",
-          :state => "CA",
-          :postal_code => "95014",
-          :country_code => "US"
-        }
+    should "return create a person" do
+      people_params = {
+        :birth_day => 1,
+        :birth_month => 1,
+        :birth_year => 1975,
+        :document_type => "ssn",
+        :document_value => "0000",
+        :name_first => "John",
+        :name_middle => "P",
+        :name_last => "Doe",
+        :address_street1 => "1 Infinite Loop",
+        :address_street2 => nil,
+        :address_city => "Cupertino",
+        :address_subdivision => "CA",
+        :address_postal_code => "95014",
+        :address_country_code => "US"
       }
 
-      response = @@client.verification.create(verification_params)
+      response = @@client.people.create(people_params)
 
       assert_equal 201, response.code
     end
@@ -174,7 +171,7 @@ class TestBlockScore < Test::Unit::TestCase
 
   context "a question set" do
     should "return create a question set" do
-      response = @@client.question_set.create(@@verification_id)
+      response = @@client.question_set.create(@@person_id)
       assert_equal 201, response.code
     end
 
