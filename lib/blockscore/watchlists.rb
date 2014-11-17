@@ -1,5 +1,5 @@
 module BlockScore
-  class Watchlist
+  class Watchlists
     def initialize(client)
       @client = client
     end

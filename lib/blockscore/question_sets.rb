@@ -1,5 +1,5 @@
 module BlockScore
-  class QuestionSet
+  class QuestionSets
 
     def initialize(client)
       @client = client

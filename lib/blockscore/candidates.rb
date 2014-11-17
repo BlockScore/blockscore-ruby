@@ -1,5 +1,5 @@
 module BlockScore
-  class Candidate
+  class Candidates
     def initialize(client)
       @client = client
     end

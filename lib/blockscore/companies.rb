@@ -1,5 +1,5 @@
 module BlockScore
-  class Company
+  class Companies
 
     def initialize(client)
       @client = client

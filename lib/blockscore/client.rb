@@ -2,16 +2,16 @@ module BlockScore
   class Client
     include HTTParty
 
-    attr_reader :people, :question_set, :company, :candidate, :watchlist
+    attr_reader :people, :question_sets, :companies, :candidates, :watchlists
 
     def initialize(api_key, options = {})
       @api_key = api_key
       @auth = { :username => @api_key, :password => "" }
       @people = BlockScore::People.new(self)
-      @question_set = BlockScore::QuestionSet.new(self)
-      @company = BlockScore::Company.new(self)
-      @candidate = BlockScore::Candidate.new(self)
-      @watchlist = BlockScore::Watchlist.new(self)
+      @question_set = BlockScore::QuestionSets.new(self)
+      @companies = BlockScore::Companies.new(self)
+      @candidate = BlockScore::Candidates.new(self)
+      @watchlist = BlockScore::Watchlists.new(self)
       @error_handler = BlockScore::ErrorHandler.new
 
       options[:base_uri] ||= "https://api.blockscore.com"
