@@ -1,5 +1,6 @@
 module BlockScore
   class People
+    PATH = '/people'
 
     def initialize(client)
       @client = client
@@ -9,7 +10,7 @@ module BlockScore
     # /people POST
     #
     def create(options = {})
-      response = @client.post '/people', options
+      response = @client.post PATH, options
     end
 
     # 
@@ -18,7 +19,7 @@ module BlockScore
     # id - ID of the person to retrieve.
     def retrieve(id, options = {})
       body = (options.include? :query) ? options[:body] : {}
-      response = @client.get "/people/#{id.to_s}", body
+      response = @client.get "#{PATH}}/#{id.to_s}", body
     end
 
     # 
@@ -30,7 +31,7 @@ module BlockScore
       body[:count] = count
       body[:offset] = offset
 
-      @client.get '/people', body
+      @client.get PATH, body
     end
   end
 end

@@ -1,5 +1,6 @@
 module BlockScore
   class Companies
+    PATH = '/companies'
 
     def initialize(client)
       @client = client
@@ -9,7 +10,7 @@ module BlockScore
     # /companies POST
     #
     def create(options = {})
-      response = @client.post '/companies', options
+      response = @client.post PATH, options
     end
 
     # 
@@ -17,7 +18,7 @@ module BlockScore
     #
     def retrieve(id, options = {})
       body = (options.include? :query) ? options[:body] : {}
-      response = @client.get "/companies/#{id.to_s}", body
+      response = @client.get "#{PATH}/#{id.to_s}", body
     end
 
     # 
@@ -29,7 +30,7 @@ module BlockScore
       body[:count] = count
       body[:offset] = offset
 
-      @client.get '/companies', body
+      @client.get PATH, body
     end
   end
 end
