@@ -4,7 +4,7 @@ module BlockScore
 
     attr_reader :people, :question_set, :company, :candidate, :watchlist
 
-    def initialize(api_key, version, options = {})
+    def initialize(api_key, options = {})
       @api_key = api_key
       @auth = { :username => @api_key, :password => "" }
       @people = BlockScore::People.new(self)
@@ -15,7 +15,7 @@ module BlockScore
       @error_handler = BlockScore::ErrorHandler.new
 
       options[:base_uri] ||= "https://api.blockscore.com"
-      options[:headers] = { 'Accept' => 'application/vnd.blockscore+json;version=' + version.to_s }
+      options[:headers] = { 'Accept' => 'application/vnd.blockscore+json;version=4' }
       
       options.each do |k,v|
         self.class.send k, v
