@@ -19,7 +19,7 @@ module BlockScore
     # id - ID of the person to retrieve.
     def retrieve(id, options = {})
       body = (options.include? :query) ? options[:body] : {}
-      response = @client.get "#{PATH}}/#{id.to_s}", body
+      response = @client.get "#{PATH}/#{id.to_s}", body
     end
 
     # 

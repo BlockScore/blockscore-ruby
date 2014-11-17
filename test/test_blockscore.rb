@@ -139,7 +139,7 @@ class TestBlockScore < Test::Unit::TestCase
       assert_equal 200, response.code
     end
 
-    should "return a single people" do
+    should "return a single person" do
       response = @@client.people.retrieve(@@person_id)
       assert_equal 200, response.code
     end
