@@ -1,15 +1,18 @@
 module BlockScore
-  class Watchlist
+  class Watchlists
+    PATH = '/watchlists'
+
     def initialize(client)
       @client = client
     end
+    
     # POST https://api.blockscore.com/watchlists
-    def search(watchlist_candidate_id, match_type = nil)
+    def search(candidate_id, match_type = nil)
       body = {}
-      body[:watchlist_candidate_id] = watchlist_candidate_id
+      body[:candidate_id] = candidate_id
       body[:match_type] = match_type
 
-      @client.post '/watchlists', body
+      @client.post PATH, body
     end
   end
 end

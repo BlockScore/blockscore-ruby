@@ -1,6 +1,6 @@
 # blockscore-ruby
 
-This is the official library for Ruby clients of the BlockScore API. [Click here to read the full documentation including code examples](http://docs.blockscore.com/v3.0/ruby/).
+This is the official library for Ruby clients of the BlockScore API. [Click here to read the full documentation including code examples](http://docs.blockscore.com/v4.0/ruby/).
 
 ## Install
 
@@ -13,7 +13,7 @@ gem install blockscore
 If you are using Rails, add the following to your `Gemfile`:
 
 ```ruby
-gem 'blockscore', '~> 3.0.1'
+gem 'blockscore', '~> 4.0.0'
 ```
 
 ## Getting Started
@@ -21,10 +21,10 @@ gem 'blockscore', '~> 3.0.1'
 To get started, you can initialize the library with one line:
 
 ```ruby
-client = BlockScore::Client.new('your-api-key', version = 3)
+client = BlockScore::Client.new('your-api-key')
 ```
 
-To see the list of calls you can make, please visit out [full Ruby API reference](http://docs.blockscore.com/ruby).
+To see the list of calls you can make, please visit out [full Ruby API reference](http://docs.blockscore.com/4.0/ruby).
 
 ## Exceptions and Errors
 

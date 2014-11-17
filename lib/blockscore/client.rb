@@ -2,20 +2,23 @@ module BlockScore
   class Client
     include HTTParty
 
-    attr_reader :verification, :question_set, :company, :watchlist_candidate, :watchlist
+    attr_reader :people, :question_sets, :companies, :candidates, :watchlists
 
-    def initialize(api_key, version, options = {})
+    def initialize(api_key, options = {})
       @api_key = api_key
       @auth = { :username => @api_key, :password => "" }
-      @verification = BlockScore::Verification.new(self)
-      @question_set = BlockScore::QuestionSet.new(self)
-      @company = BlockScore::Company.new(self)
-      @watchlist_candidate = BlockScore::WatchlistCandidate.new(self)
-      @watchlist = BlockScore::Watchlist.new(self)
+      @people = BlockScore::People.new(self)
+      @question_sets = BlockScore::QuestionSets.new(self)
+      @companies = BlockScore::Companies.new(self)
+      @candidates = BlockScore::Candidates.new(self)
+      @watchlists = BlockScore::Watchlists.new(self)
       @error_handler = BlockScore::ErrorHandler.new
 
       options[:base_uri] ||= "https://api.blockscore.com"
-      options[:headers] = { 'Accept' => 'application/vnd.blockscore+json;version=' + version.to_s }
+      options[:headers] = { 
+        'Accept' => 'application/vnd.blockscore+json;version=4',
+        'User-Agent' => 'blockscore-ruby/4.0.0 (https://github.com/BlockScore/blockscore-ruby)'
+      }
       
       options.each do |k,v|
         self.class.send k, v
