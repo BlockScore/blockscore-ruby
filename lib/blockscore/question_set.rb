@@ -7,13 +7,13 @@ module BlockScore
 
     def create(people_id, options = {})
       body = (options.include? :body) ? options[:body] : {}
-      body[:verification_id] = people_id
+      body[:person_id] = people_id
 
       response = @client.post '/question_sets', body
     end
 
     # 
-    # '/questions/:id/score' POST
+    # '/question_sets/:id/score' POST
     #
     # answers - 
     def score(id, answers)
@@ -24,7 +24,7 @@ module BlockScore
     end
 
     # 
-    # /questions/:id GET
+    # /question_sets/:id GET
     #
     # question_set_id -
     # people_id -
@@ -35,7 +35,7 @@ module BlockScore
     end
 
     # 
-    # '/questions' GET
+    # '/question_sets' GET
     #
     def all(count = nil, offset = nil, options = {})
       body = (options.include? :body) ? options[:body] : {}

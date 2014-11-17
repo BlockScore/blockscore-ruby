@@ -39,7 +39,7 @@ module BlockScore
       response = @client.get "/candidates/#{candidate_id}/history"
     end
 
-    # GET https://api.blockscore.com/watchlist_candidates/:id/hits
+    # GET https://api.blockscore.com/candidates/:id/hits
     def hits(candidate_id)
       response = @client.get "/candidates/#{candidate_id}/hits"
     end

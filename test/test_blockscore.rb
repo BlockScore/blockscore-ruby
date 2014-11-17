@@ -2,8 +2,7 @@ require File.join(File.dirname(__FILE__), 'helper')
 
 class TestBlockScore < Test::Unit::TestCase
   # If you'd like to run the test suite, fill in your API key,
-  # a verification ID, a question set ID, a company ID, and a watchlist candidate ID below.
-  @version = 4
+  # a person ID, a question set ID, a company ID, and a candidate ID below.
   @api_key = ""
 
   @@person_id = ""
@@ -11,7 +10,7 @@ class TestBlockScore < Test::Unit::TestCase
   @@company_id = ""
   @@candidate_id = ""
 
-  @@client = BlockScore::Client.new(@api_key, version = @version)
+  @@client = BlockScore::Client.new(@api_key)
 
   context "a watchlist" do
     should "return search watchlists" do
@@ -20,8 +19,8 @@ class TestBlockScore < Test::Unit::TestCase
     end
   end
 
-  context "a watchlist candidate" do
-    should "return create a watchlist candidate" do
+  context "a candidate" do
+    should "return create a candidate" do
       watchlist_params = {
        :note => "12341234",
        :ssn => "0001",
@@ -37,7 +36,7 @@ class TestBlockScore < Test::Unit::TestCase
       assert_equal 201, response.code
     end
 
-    should "return edit a watchlist candidate" do
+    should "return edit a candidate" do
       watchlist_params = {
         :date_of_birth => "1945-05-08",
         :name_middle => "Jones"
@@ -46,27 +45,27 @@ class TestBlockScore < Test::Unit::TestCase
       assert_equal 200, response.code
     end
 
-    should "return retrieve a watchlist candidate" do
+    should "return retrieve a candidate" do
       response = @@client.candidate.retrieve(@@candidate_id)
       assert_equal 200, response.code
     end
 
-    should "return a list of wachlist candidates" do
+    should "return a list of candidates" do
       response = @@client.candidate.all
       assert_equal 200, response.code
     end
 
-    should "return a history of a wachlist candidate" do
+    should "return a history of a candidate" do
       response = @@client.candidate.history(@@candidate_id)
       assert_equal 200, response.code
     end
 
-    should "return the hits of a wachlist candidate" do
+    should "return the hits of a candidate" do
       response = @@client.candidate.hits(@@candidate_id)
       assert_equal 200, response.code
     end
 
-    should "return delete a watchlist candidate" do 
+    should "return delete a candidate" do 
       response = @@client.candidate.delete(@@candidate_id)
       assert_equal 200, response.code
     end
@@ -101,7 +100,7 @@ class TestBlockScore < Test::Unit::TestCase
         :incorporation_day => 25,
         :incorporation_month => 8,
         :incorporation_year => 1980,
-        :incorp_state => "DE",
+        :incorporation_state => "DE",
         :incorporation_country_code => "US",
         :incorporation_type => "corporation",
         :dbas => "BitRemit",
