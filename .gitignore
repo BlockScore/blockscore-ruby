@@ -49,6 +49,7 @@ pkg
 #*.rbc
 
 *.sublime-workspace
+*.sublime-project
 
 *.DS_Store
 
