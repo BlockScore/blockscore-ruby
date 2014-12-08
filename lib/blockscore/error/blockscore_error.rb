@@ -6,10 +6,11 @@ module BlockScore
     attr_reader :http_status
     attr_reader :json_body
 
-    def initialize(message=nil, json_body=nil, http_status="400",
+    def initialize(message=nil, json_body={}, http_status="400",
                     error_type="invalid_request_error")
       super(message)
 
+      json_body["error"] ||= {}
       message_desc = "#{json_body["error"]["param"]} #{json_body["error"]["code"]}"
 
       @error_type = error_type 
