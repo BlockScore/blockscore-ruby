@@ -24,7 +24,7 @@ To get started, you can initialize the library with one line:
 client = BlockScore::Client.new('your-api-key')
 ```
 
-To see the list of calls you can make, please visit out [full Ruby API reference](http://docs.blockscore.com/4.0/ruby).
+To see the list of calls you can make, please visit out [full Ruby API reference](http://docs.blockscore.com/v4.0/ruby).
 
 ## Exceptions and Errors
 
