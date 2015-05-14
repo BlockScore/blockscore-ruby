@@ -62,6 +62,8 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<simplecov>, [">= 0"])
       s.add_development_dependency(%q<minitest>, ["~> 4.0"])
       s.add_development_dependency(%q<shoulda-context>, ["~> 1.2"])
+      s.add_development_dependency(%q<test-unit>, ["3.0"])
+      s.add_development_dependency(%q<test-unit-activesupport>, ["1.0"])
     else
       s.add_dependency(%q<httparty>, ["~> 0.11"])
       s.add_dependency(%q<shoulda>, ["~> 3.5.0"])
