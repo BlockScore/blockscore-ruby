@@ -6,7 +6,7 @@ require 'blockscore/connection'
 
 module BlockScore
   class Base
-    include BlockScore::Connection
+    extend BlockScore::Connection
     
     mattr_accessor :api_key, :resource, :version
     version = 4
@@ -22,7 +22,7 @@ module BlockScore
     end
 
     def self.create(params = {})
-      response = BlockScore::Connection.post(endpoint, params)
+      response = post(endpoint, params)
 
       #begin
       #  result = @error_handler.check_error(response)

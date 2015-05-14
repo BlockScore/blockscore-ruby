@@ -13,33 +13,37 @@ module BlockScore
       :delete => Net::HTTP::Delete
     }
     
-    mattr_accessor :api_key, :http, :uri
-
-    def self.included(mod)
-      mod.uri ||= URI(ENDPOINT)
-      mod.http ||= Net::HTTP.new(uri.host, uri.port)
-      mod.http.use_ssl = true
+    mattr_accessor :api_key
+    
+    mattr_accessor :uri do
+      URI(ENDPOINT)
     end
+    
+    mattr_accessor :http do
+      Net::HTTP.new(uri.host, uri.port)
+    end
+    
+    # http.use_ssl = true
 
-    def self.get(path, params)
+    def get(path, params)
       request :get, path, params
     end
 
-    def self.post(path, params)
+    def post(path, params)
       request :post, path, params
     end
 
-    def self.put(path, params)
+    def put(path, params)
       request :put, path, params
     end
 
-    def self.delete(path, params)
+    def delete(path, params)
       request :delete, path, params
     end
 
     private
 
-    def self.request(method, path, params)
+    def request(method, path, params)
       case method
       when :get
         full_path = encode_path_params(path, params)
@@ -59,7 +63,7 @@ module BlockScore
       http.request(request)
     end
 
-    def self.encode_path_params(path, params)
+    def encode_path_params(path, params)
       encoded = URI.encode_www_form(params)
       [path, encoded].join("?")
     end
