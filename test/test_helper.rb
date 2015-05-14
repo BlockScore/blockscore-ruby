@@ -44,13 +44,9 @@ end
 
 class TestClient
   @@api_key = 'sk_test_a1ed66cc16a7cbc9f262f51869da31b3'
-  @@client ||= BlockScore::Client.new(@@api_key)
+  BlockScore.api_key(@@api_key)
   
-  class << self
-    def client
-      @@client
-    end
-    
+  class << self    
     def create_candidate
       watchlist_params = {
        :note => "12341234",
@@ -63,7 +59,7 @@ class TestClient
        :address_city => "Cupertino",
        :address_country_code => "US"
       }
-      @@client.candidates.create(watchlist_params)
+      BlockScore::Candidate.create(watchlist_params)
     end
 
     def create_company
@@ -90,7 +86,7 @@ class TestClient
         :address_country_code => "US"
       }
 
-      @@client.companies.create(company_params)
+      BlockScore::Company.create(company_params)
     end
     
     def create_person
@@ -111,12 +107,12 @@ class TestClient
         :address_country_code => "US"
       }
 
-      @@client.people.create(people_params)
+      BlockScore::Person.create(people_params)
     end
 
     def create_question_set
       person = create_person
-      @@client.question_sets.create(person["id"])
+      person.question_set.create
     end
   end
 end
