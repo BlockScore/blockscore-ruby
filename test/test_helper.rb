@@ -8,9 +8,8 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'blockscore'
 
 module ResourceTest
-  mattr_accessor :resource
-
-  def self.extended(base)
+  def self.included(base)
+    base.mattr_accessor :resource
     base.resource = base.to_s[/^(\w+)ResourceTest/, 1].underscore
   end
 
