@@ -1,6 +1,7 @@
 require 'net/http'
 require 'uri'
 require 'active_support/core_ext/module/attribute_accessors'
+require 'active_support/core_ext/class'
 require 'active_support/core_ext/string/inflections'
 require 'blockscore/connection'
 
@@ -8,42 +9,38 @@ module BlockScore
   class Base
     extend BlockScore::Connection
     
-    mattr_accessor :api_key, :resource, :version
-    version = 4
+    class_attribute :api_key, :resource, :version
+    # version = 4
 
     def self.inherited(base)       
       # i.e. for BlockScore::Verification, we want 'verification'
       base.resource = base.to_s.split('::').last.underscore
     end
 
+    # @options - Hash of attributes for the object.
+    def initialize(options = {})
+      options['class'] = resource
+      @attrs = options
+    end
+
     def self.auth(api_key)
       api_key = api_key
       BlockScore::Connection.api_key = api_key
+      BlockScore::Connection.uri = URI('https://api.blockscore.com')
+      BlockScore::Connection.http = Net::HTTP.new(uri.host, uri.port)
+      BlockScore::Connection.http.use_ssl = true
     end
 
     def self.create(params = {})
       response = post(endpoint, params)
-
-      #begin
-      #  result = @error_handler.check_error(response)
-      #rescue BlockScore::BlockScoreError => e
-      #  raise
-      #end
     end
 
     def self.retrieve(id)
-      options = { :basic_auth => { :username => api_key, :password => "" } }
-
-      response = get("#{endpoint}/#{id}", {})
-
-      begin
-        result = @error_handler.check_error(response)
-      rescue BlockScore::BlockScoreError => e
-        raise
-      end
+      get("#{endpoint}/#{id}", {})
     end
 
     def self.all(options = {})
+      get(endpoint, options)
     end
 
     def self.api_url
@@ -52,6 +49,19 @@ module BlockScore
 
     def self.endpoint
       "#{api_url}#{resource.pluralize}/"
+    end
+
+    # To expose the @attrs as top-level methods.
+    def method_missing(method, *args, &block)
+      if respond_to_missing? method
+        @attrs[method.to_s]
+      else
+        super
+      end
+    end
+
+    def respond_to_missing?(symbol, include_private = false)
+      @attrs && @attrs.has_key?(symbol.to_s) || super
     end
   end
 end

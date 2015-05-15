@@ -1,11 +1,18 @@
+require 'json'
 require 'simplecov'
 require 'test/unit'
 require 'active_support'
 require 'active_support/core_ext'
+require 'pry'
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'blockscore'
+
+# Convert a resource into the corresponding BlockScore class.
+def resource_to_class(resource)
+  Kernel.const_get "BlockScore::#{resource.camelcase}"
+end
 
 module ResourceTest
   def self.included(base)
@@ -15,30 +22,30 @@ module ResourceTest
 
   def test_create_resource
     response = TestClient.send(:"create_#{resource}")
-    assert_equal 201, response.code
+    assert_equal response.class, resource_to_class(resource)
   end
 
   def test_retrieve_resource
-    id = TestClient.send(:"create_#{resource}")[:id]
-    response = TestClient.client.send(resource.pluralize).retrieve(id)
-    assert_equal 200, response.code
+    r = TestClient.send(:"create_#{resource}")
+    response = Kernel.const_get("BlockScore::#{resource.camelcase}").send(:retrieve, r.id)
+    assert_equal resource, response.object
   end
 
   def test_list_resource
-    response = TestClient.client.send(resource.pluralize).all(count=25)
-    assert_equal 200, response.code
+    response = Kernel.const_get("BlockScore::#{resource.camelcase}").send(:all)
+    assert_equal Array, response.class
   end
 
   def test_list_resource_with_count
     msg = "List #{resource} with count = 2 failed"
-    response = TestClient.client.send(resource.pluralize).all(count = 2)
-    assert_equal 200, response.code, msg
+    response = Kernel.const_get("BlockScore::#{resource.camelcase}").send(:all, {:count => 2})
+    assert_equal Array, response.class, msg
   end
 
   def test_list_resource_with_count_and_offset
     msg = "List #{resource} with count = 2 and offset = 2 failed"
-    response = TestClient.client.send(resource.pluralize).all(count = 2, offset = 2)
-    assert_equal 200, response.code, msg
+    response = Kernel.const_get("BlockScore::#{resource.camelcase}").send(:all, {:count => 2, :offset => 2})
+    assert_equal Array, response.class, msg
   end
 end
 

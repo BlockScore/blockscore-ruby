@@ -15,13 +15,13 @@ module BlockScore
     
     mattr_accessor :api_key
     
-    mattr_accessor :uri do
-      URI(ENDPOINT)
-    end
+    mattr_accessor :uri #do
+      #URI(ENDPOINT)
+    #end
     
-    mattr_accessor :http do
-      Net::HTTP.new(uri.host, uri.port)
-    end
+    mattr_accessor :http #do
+      #Net::HTTP.new(uri.host, uri.port)
+    #end
     
     # http.use_ssl = true
 
@@ -54,13 +54,29 @@ module BlockScore
       end
 
       # get api_key
-      request.basic_auth(api_key, "")
+      request.basic_auth(@@api_key, "")
 
       # set headers
       request['Accept'] = "application/vnd.blockscore+json;version=4"
       request['User-Agent'] = 'blockscore-ruby/4.1.0 (https://github.com/BlockScore/blockscore-ruby)'
 
-      http.request(request)
+      response = http.request(request)
+      options = JSON.parse(response.body)
+      if options['object'] == 'list'
+        objects = []
+        options['data'].each do |item|
+          objects << create_object(resource, item)
+         end
+        objects
+      elsif options.class == Array
+        puts options.class
+      else
+        create_object(resource, options)
+      end
+    end
+
+    def create_object(resource, options = {})
+      Kernel.const_get("BlockScore::#{resource.camelcase}").new(options)
     end
 
     def encode_path_params(path, params)

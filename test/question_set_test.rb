@@ -5,7 +5,7 @@ class QuestionSetResourceTest < ActiveSupport::TestCase
   include ResourceTest
 
   def test_score
-    id = TestClient.create_question_set["id"]
+    question_set = TestClient.create_question_set
     @answers = [
       {
         :question_id => 1,
@@ -29,7 +29,7 @@ class QuestionSetResourceTest < ActiveSupport::TestCase
       }
     ]
 
-    response = TestClient.client.question_sets.score(id, @answers)
-    assert_equal 201, response.code
+    response = question_set.score(@answers)
+    assert_equal resource_to_class(resource), response.class
   end
 end
