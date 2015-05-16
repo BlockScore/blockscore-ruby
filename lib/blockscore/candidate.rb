@@ -5,11 +5,11 @@ module BlockScore
     end
     
     def history
-      self.class.get "#{self.class.endpoint}/#{id}", {}
+      self.class.get "#{self.class.endpoint}/#{id}/history", {}
     end
     
     def hits
-      self.class.get "#{self.class.endpoint}/#{id}", {}
+      self.class.get "#{self.class.endpoint}/#{id}/hits", {}
     end
   end
 end

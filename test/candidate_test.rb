@@ -6,7 +6,7 @@ class CandidateResourceTest < ActiveSupport::TestCase
 
   def test_history
     candidate = TestClient.create_candidate
-    response = candidate.send(:delete)
+    response = candidate.send(:history)
     assert_equal Array, response.class
   end
 

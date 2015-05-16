@@ -62,14 +62,16 @@ module BlockScore
 
       response = http.request(request)
       options = JSON.parse(response.body)
-      if options['object'] == 'list'
+      if options.class == Array
+        # Hits doesnt use the data style
+        objects = []
+        options.each { |i| objects << create_object(resource, i) }
+      elsif options['object'] == 'list'
         objects = []
         options['data'].each do |item|
           objects << create_object(resource, item)
          end
         objects
-      elsif options.class == Array
-        puts options.class
       else
         create_object(resource, options)
       end
