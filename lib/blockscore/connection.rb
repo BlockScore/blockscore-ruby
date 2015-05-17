@@ -61,6 +61,8 @@ module BlockScore
       request['User-Agent'] = 'blockscore-ruby/4.1.0 (https://github.com/BlockScore/blockscore-ruby)'
 
       response = http.request(request)
+
+      # TODO: Break this out into its own function.
       options = JSON.parse(response.body)
       if options.class == Array
         # Hits doesnt use the data style

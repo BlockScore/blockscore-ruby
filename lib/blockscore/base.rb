@@ -30,19 +30,7 @@ module BlockScore
       BlockScore::Connection.http = Net::HTTP.new(uri.host, uri.port)
       BlockScore::Connection.http.use_ssl = true
     end
-
-    def self.create(params = {})
-      response = post(endpoint, params)
-    end
-
-    def self.retrieve(id)
-      get("#{endpoint}/#{id}", {})
-    end
-
-    def self.all(options = {})
-      get(endpoint, options)
-    end
-
+    
     def self.api_url
       'https://api.blockscore.com/'
     end
