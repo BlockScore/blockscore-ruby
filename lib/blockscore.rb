@@ -1,5 +1,3 @@
-require "httparty"
-
 require 'blockscore/base'
 require 'blockscore/candidate'
 require 'blockscore/company'
