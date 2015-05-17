@@ -30,6 +30,9 @@ module BlockScore
     end
 
     def self.endpoint
+      if self == BlockScore::Base
+        raise NotImplementedError.new('Base is an abstract class. You should perform actions on its subclasses (Candidate, Company, Person, etc.)')
+      end
       "#{api_url}#{resource.pluralize}/"
     end
 
