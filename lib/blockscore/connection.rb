@@ -14,17 +14,9 @@ module BlockScore
     }
     
     mattr_accessor :api_key
+    mattr_accessor :uri    
+    mattr_accessor :http
     
-    mattr_accessor :uri #do
-      #URI(ENDPOINT)
-    #end
-    
-    mattr_accessor :http #do
-      #Net::HTTP.new(uri.host, uri.port)
-    #end
-    
-    # http.use_ssl = true
-
     def get(path, params)
       request :get, path, params
     end

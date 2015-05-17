@@ -7,14 +7,11 @@ module BlockScore
     extend BlockScore::Connection
     
     class_attribute :api_key, :resource, :version
-    # version = 4
 
     def self.inherited(base)       
-      # i.e. for BlockScore::Verification, we want 'verification'
       base.resource = base.to_s.split('::').last.underscore
     end
 
-    # @options - Hash of attributes for the object.
     def initialize(options = {})
       options['class'] = resource
       @attrs = options
@@ -36,7 +33,6 @@ module BlockScore
       "#{api_url}#{resource.pluralize}/"
     end
 
-    # To expose the @attrs as top-level methods.
     def method_missing(method, *args, &block)
       if respond_to_missing? method
         @attrs[method.to_s]
