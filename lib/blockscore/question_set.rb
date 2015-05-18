@@ -11,7 +11,7 @@ module BlockScore
 
     
     def score(answers)
-      self.class.post "#{self.class.endpoint}#{id}/score", answers
+      self.class.post "#{self.class.endpoint}#{id}/score", :answers => answers
     end
 
     def create
