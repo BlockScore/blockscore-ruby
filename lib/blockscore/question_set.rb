@@ -15,7 +15,7 @@ module BlockScore
     end
 
     def create
-      self.class.create(:person_id => instance_variable_get(:@attrs)[:person_id])
+      self.class.create(:person_id => person_id)
     end
   end
 end
