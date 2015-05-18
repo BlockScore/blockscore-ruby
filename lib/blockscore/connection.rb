@@ -22,6 +22,10 @@ module BlockScore
       request :post, path, params
     end
 
+    def patch(path, params)
+      request :patch, path, params
+    end
+
     def put(path, params)
       request :put, path, params
     end
@@ -47,8 +51,6 @@ module BlockScore
           create_object(resource, json_obj)
         end
       else
-        puts "RESPONSE CODE: #{response.code}"
-        puts "RESPONSE BODY: #{response.body}"
         handle_api_error(response.code, response.body)
       end
     end
