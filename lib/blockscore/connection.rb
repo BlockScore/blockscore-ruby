@@ -71,8 +71,7 @@ module BlockScore
     end
 
     def build_response_from_arr(arr_obj)
-      objects = []
-      arr_obj.map { |obj| objects << create_object(resource, obj) }
+      arr_obj.map { |obj| create_object(resource, obj) }
     end
 
     def create_object(resource, options = {})
