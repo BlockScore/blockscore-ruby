@@ -1,19 +1,19 @@
 require 'json'
-require 'uri'
 require 'active_support/core_ext/module/attribute_accessors'
 require 'httparty'
 require 'blockscore/error'
-require 'blockscore/utils'
+require 'blockscore/errors/invalid_request_error'
+
+HEADERS = {
+  'Accept' => 'application/vnd.blockscore+json;version=4',
+  'User-Agent' => 'blockscore-ruby/4.1.0 (https://github.com/BlockScore/blockscore-ruby)',
+  'Content-Type' => 'application/json'
+}
 
 module BlockScore
   module Connection
-    include HTTParty
-    base_uri 'https://api.blockscore.com'
-    
     mattr_accessor :api_key
-    mattr_accessor :uri    
-    mattr_accessor :http
-    
+
     def get(path, params)
       request :get, path, params
     end
@@ -29,68 +29,54 @@ module BlockScore
     def delete(path, params)
       request :delete, path, params
     end
-
+    
     private
 
-    # Wrap HTTParty requests
     def request(method, path, params)
-      if method == :get
-        path = encode_path_params(path, params)
-        payload = nil
-      else
-        payload = JSON.generate(params)
-      end
-
-      # set headers
-      headers = {
-        'Accept' => 'application/vnd.blockscore+json;version=4',
-        'User-Agent' => 'blockscore-ruby/4.1.0 (https://github.com/BlockScore/blockscore-ruby)'
-      }
-
-      response = execute_request(method, path, @@api_key, headers, payload)
+      response = execute_request(method, path, params)
 
       case response.code
       when 200, 201
-        # All BlockScore API successes return 200 or 201.
         json_obj = parse_json(response)
 
         if json_obj.class == Array
-          # candidates#hits the only endpoint not using data format
-          objects = []
-          json_obj.each { |obj| objects << create_object(resource, obj) }
+          build_response_from_arr json_obj
         elsif json_obj[:object] == 'list'
-          objects = []
-          json_obj[:data].each do |obj|
-            
-            objects << create_object(resource, obj)
-          end
-          
-          objects
+          build_response_from_arr json_obj[:data]
         else
           create_object(resource, json_obj)
         end
       else
+        puts "RESPONSE CODE: #{response.code}"
+        puts "RESPONSE BODY: #{response.body}"
         handle_api_error(response.code, response.body)
       end
     end
 
-    def execute_request(method, path, api_key, headers, payload)
-      auth = { :username => api_key, :password => '' }
-      options = { :body => payload, :headers => headers, :basic_auth => auth }
-      
+    def execute_request(method, path, params)
+      auth = { :username => @@api_key, :password => '' }
+      headers = HEADERS
+
+      options = { :basic_auth => auth, :headers => headers, :body => params.to_json }
+
+      HTTParty.send(method, path, options) 
     end
     
-    def create_object(resource, options = {})
-      Kernel.const_get("BlockScore::#{resource.camelcase}").new(options)
-    end
-    
-    # Expects Net::HTTP response object
     def parse_json(response)
       begin
         response = JSON.parse(response.body, :symbolize_names => true)
-      rescue JSON::ParseError
+      rescue JSON::ParserError
         raise general_api_error(response.code.to_i, response.body)
       end
+    end
+
+    def build_response_from_arr(arr_obj)
+      objects = []
+      arr_obj.each { |obj| objects << create_object(resource, obj) }
+    end
+
+    def create_object(resource, options = {})
+      Kernel.const_get("BlockScore::#{resource.camelcase}").new(options)
     end
 
     def general_api_error(rcode, rbody)
@@ -103,7 +89,7 @@ module BlockScore
         error_obj = JSON.parse(rbody, :symbolize_names => true)
         error = error_obj[:error] or raise BlockScore::BlockScoreError.new
 
-      rescue JSON::ParseError, BlockScore::BlockScoreError
+      rescue JSON::ParserError, BlockScore::BlockScoreError
         raise general_api_error(rcode, rbody)
       end
 

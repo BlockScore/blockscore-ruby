@@ -20,9 +20,6 @@ module BlockScore
     def self.auth(api_key)
       api_key = api_key
       BlockScore::Connection.api_key = api_key
-      BlockScore::Connection.uri = URI('https://api.blockscore.com')
-      BlockScore::Connection.http = Net::HTTP.new(uri.host, uri.port)
-      BlockScore::Connection.http.use_ssl = true
     end
     
     def self.api_url
@@ -34,7 +31,7 @@ module BlockScore
         raise NotImplementedError.new('Base is an abstract class. You should perform actions on its subclasses (Candidate, Company, Person, etc.)')
       end
       
-      "#{resource.pluralize}/"
+      "#{api_url}#{resource.pluralize}/"
     end
 
     def method_missing(method, *args, &block)
