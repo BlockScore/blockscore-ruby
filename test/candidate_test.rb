@@ -18,8 +18,8 @@ class CandidateResourceTest < ActiveSupport::TestCase
 
   def test_update
     candidate = TestClient.create_candidate
-    response = candidate.update(:ssn => '1234')
-    assert_equal BlockScore::Candidate, response.class
+    success = candidate.update(:ssn => '1234')
+    assert_equal true, success
     assert_equal candidate.ssn , '1234'
   end
   

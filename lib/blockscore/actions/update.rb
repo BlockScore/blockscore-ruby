@@ -4,8 +4,6 @@ module BlockScore
       def update(params)
         self.class.patch "#{self.class.endpoint}#{id}", params
         refresh
-        
-        self
       end
     end
   end
