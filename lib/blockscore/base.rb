@@ -17,6 +17,17 @@ module BlockScore
       @attrs = options
     end
 
+    def refresh
+      r = self.class.retrieve(id)
+      if r != BlockScoreError
+        instance_variable_set(:@attrs, r.instance_variable_get(:@attrs))
+
+        true
+      else
+        false
+      end
+    end
+
     def self.auth(api_key)
       api_key = api_key
       BlockScore::Connection.api_key = api_key
