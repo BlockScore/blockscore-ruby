@@ -6,19 +6,26 @@ class CandidateResourceTest < ActiveSupport::TestCase
 
   def test_history
     candidate = TestClient.create_candidate
-    response = candidate.send(:history)
+    response = candidate.history
     assert_equal Array, response.class
   end
 
   def test_hits
     candidate = TestClient.create_candidate
-    response = candidate.send(:hits)
+    response = candidate.hits
     assert_equal Array, response.class
   end
 
+  def test_update
+    candidate = TestClient.create_candidate
+    response = candidate.update(:ssn => '1234')
+    assert_equal BlockScore::Candidate, response.class
+    assert_equal candidate.ssn , '1234'
+  end
+  
   def test_delete
     candidate = TestClient.create_candidate
-    response = candidate.send(:delete)
+    response = candidate.delete
     assert_equal BlockScore::Candidate, response.class
   end
 end

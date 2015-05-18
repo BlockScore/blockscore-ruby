@@ -1,11 +1,13 @@
 require 'blockscore/actions/create'
 require 'blockscore/actions/retrieve'
+require 'blockscore/actions/update'
 require 'blockscore/actions/all'
 
 module BlockScore
   class Candidate < BlockScore::Base
     include BlockScore::Actions::Create
     include BlockScore::Actions::Retrieve
+    include BlockScore::Actions::Update
     include BlockScore::Actions::All
     
     def delete
