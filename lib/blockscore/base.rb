@@ -13,7 +13,7 @@ module BlockScore
     end
 
     def initialize(options = {})
-      options['class'] = resource
+      options[:class] = resource
       @attrs = options
     end
 
@@ -33,19 +33,20 @@ module BlockScore
       if self == BlockScore::Base
         raise NotImplementedError.new('Base is an abstract class. You should perform actions on its subclasses (Candidate, Company, Person, etc.)')
       end
-      "#{api_url}#{resource.pluralize}/"
+      
+      "#{resource.pluralize}/"
     end
 
     def method_missing(method, *args, &block)
       if respond_to_missing? method
-        @attrs[method.to_s]
+        @attrs[method]
       else
         super
       end
     end
 
     def respond_to_missing?(symbol, include_private = false)
-      @attrs && @attrs.has_key?(symbol.to_s) || super
+      @attrs && @attrs.has_key?(symbol) || super
     end
   end
 end

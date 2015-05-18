@@ -9,15 +9,15 @@ module BlockScore
     include BlockScore::Actions::All
     
     def delete
-      self.class.delete "#{self.class.endpoint}/#{id}", {}
+      self.class.delete "#{self.class.endpoint}#{id}", {}
     end
     
     def history
-      self.class.get "#{self.class.endpoint}/#{id}/history", {}
+      self.class.get "#{self.class.endpoint}#{id}/history", {}
     end
     
     def hits
-      self.class.get "#{self.class.endpoint}/#{id}/hits", {}
+      self.class.get "#{self.class.endpoint}#{id}/hits", {}
     end
   end
 end

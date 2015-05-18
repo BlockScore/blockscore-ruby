@@ -11,7 +11,8 @@ module BlockScore
 
     
     def score(answers)
-      self.class.post "#{self.class.endpoint}/#{id}/score", {}
+      binding.pry
+      self.class.post "#{self.class.endpoint}#{id}/score", answers
     end
 
     def create

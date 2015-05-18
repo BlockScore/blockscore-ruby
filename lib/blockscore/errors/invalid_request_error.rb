@@ -1,5 +1,7 @@
+require 'blockscore/errors/blockscore_error'
+
 module BlockScore
-  module InvalidRequestError
+  class InvalidRequestError < BlockScoreError
     attr_accessor :param
 
     def initialize(message, param, http_status=nil, http_body=nil, json_body=nil)
