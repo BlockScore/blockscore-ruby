@@ -3,7 +3,6 @@ require 'simplecov'
 require 'test/unit'
 require 'active_support'
 require 'active_support/core_ext'
-require 'pry'
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
