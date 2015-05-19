@@ -17,8 +17,4 @@ group :development, :test do
   gem 'test-unit-activesupport', '~> 1.0'
   gem 'shoulda', '~> 3.5.0'
   gem 'shoulda-context', '~> 1.2'
-
-  # For debugging.
-  gem 'pry', '~> 0.10.1'
-  gem 'pry-byebug', '~> 3.1.0'
 end
