@@ -13,7 +13,7 @@ gem install blockscore
 If you are using Rails, add the following to your `Gemfile`:
 
 ```ruby
-gem 'blockscore', '~> 4.0.0'
+gem 'blockscore', '~> 4.1.0'
 ```
 
 ## Getting Started
@@ -21,7 +21,7 @@ gem 'blockscore', '~> 4.0.0'
 To get started, you can initialize the library with one line:
 
 ```ruby
-client = BlockScore::Client.new('your-api-key')
+client = BlockScore.api_key('your-api-key')
 ```
 
 To see the list of calls you can make, please visit out [full Ruby API reference](http://docs.blockscore.com/v4.0/ruby).
@@ -30,18 +30,18 @@ To see the list of calls you can make, please visit out [full Ruby API reference
 
 ### Error Description
 
-* The generic error class is BlockscoreError. All other types of errors are derived from BlockscoreError.
+* The generic error class is BlockScoreError. All other types of errors are derived from BlockScoreError.
 * Errors contain information such as the HTTP response code, a short message describing the error, the type of error, and if applicable, the parameter and error code at issue.
 * Also available in the error object is the full JSON text representation of the data.
 
 ### Error Types
 
-* BlockscoreError (Generic error, base class)
+* BlockScoreError (Generic error, base class)
 * AuthenticationError (401 : Invalid API Key)
-* ValidationError (400 : Input could not be validated)
-* ParameterError (400 : Missing parameter)
-* NotFoundError (404 : Attempting to reference nonexistent endpoint)
-* InternalServerError (500 : Error on the Blockscore API)
+* InvalidRequestError (400 : Input could not be validated)
+* InvalidRequestError (404 : Attempting to reference nonexistent endpoint)
+* InvalidRequestError (400 : Missing parameter)
+* APIError (500 : Error on the Blockscore API)
 
 ## Contributing to BlockScore
  
