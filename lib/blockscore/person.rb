@@ -11,7 +11,7 @@ module BlockScore
     
     def initialize(options = {})
       super
-      @question_set = BlockScore::QuestionSet.new(:person_id => id)
+      @question_set = BlockScore::QuestionSet.new(:person_id => id, :person => self)
     end
 
     def question_set

@@ -2,8 +2,40 @@ require 'test_helper'
 require 'test/unit/active_support'
 
 class QuestionSetResourceTest < ActiveSupport::TestCase
-  include ResourceTest
+  # QuestionSetResourceTest cannot include ResourceTest because
+  # QuestionSets are only accessible through their Person.
 
+  def test_create_question_set
+    person = TestClient.create_person
+    response = person.question_set.create
+    assert_equal response.class, BlockScore::QuestionSet
+  end
+
+  def test_retrieve_question_set
+    person = TestClient.create_person
+    qs = person.question_set.create
+    response = person.question_set.retrieve(qs.id)
+    assert_equal response.class, BlockScore::QuestionSet
+  end
+
+  def test_list_question_set
+    person = TestClient.create_person
+    response = person.question_set.all # list ALL question_sets
+    assert_equal response.class, Array
+  end
+
+  def test_list_question_set_with_count
+    person = TestClient.create_person
+    response = person.question_set.all(:count => 2)
+    assert_equal response.class, Array
+  end
+
+  def test_list_question_set_with_count_and_offset
+    person = TestClient.create_person
+    response = person.question_set.all(:count => 2, :offset => 2)
+    assert_equal response.class, Array
+  end
+  
   def test_score
     question_set = TestClient.create_question_set
     @answers = [
@@ -30,6 +62,6 @@ class QuestionSetResourceTest < ActiveSupport::TestCase
     ]
 
     response = question_set.score(@answers)
-    assert_equal resource_to_class(resource), response.class
+    assert_equal response.class, BlockScore::QuestionSet
   end
 end
