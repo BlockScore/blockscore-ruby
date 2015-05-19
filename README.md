@@ -1,4 +1,4 @@
-# blockscore-ruby
+# blockscore-ruby [![Code Climate](https://codeclimate.com/github/BlockScore/blockscore-ruby/badges/gpa.svg)](https://codeclimate.com/github/BlockScore/blockscore-ruby) [![Test Coverage](https://codeclimate.com/github/BlockScore/blockscore-ruby/badges/coverage.svg)](https://codeclimate.com/github/BlockScore/blockscore-ruby/coverage)
 
 This is the official library for Ruby clients of the BlockScore API. [Click here to read the full documentation including code examples](http://docs.blockscore.com/v4.0/ruby/).
 
