@@ -18,9 +18,9 @@ class CandidateResourceTest < ActiveSupport::TestCase
 
   def test_update
     candidate = TestClient.create_candidate
-    success = candidate.update(:ssn => '1234')
-    assert_equal true, success
-    assert_equal candidate.ssn , '1234'
+    candidate.name_first = 'Chris'
+    assert_equal true, candidate.save
+    assert_equal candidate.name_first, 'Chris'
   end
   
   def test_delete
