@@ -1,9 +1,15 @@
-machine:
-  ruby:
-    version:
-      - "1.9.2"
-      - "1.9.3"
-      - "2.0.0"
-      - "2.1"
-      - "2.2"
-      - "jruby-19mode"
+dependencies:
+  override:
+    - "rvm exec 1.9.2-p330 bundle install"
+    - "rvm exec 1.9.3-p551 bundle install"
+    - "rvm exec 2.0.0-p598 bundle install"
+    - "rvm exec 2.1.5 bundle install"
+    - "rvm exec 2.2.0 bundle install"
+
+test:
+  override:
+    - "rvm exec 1.9.2-p330 bundle exec rake"
+    - "rvm exec 1.9.3-p551 bundle exec rake"
+    - "rvm exec 2.0.0-p598 bundle exec rake"
+    - "rvm exec 2.1.5 bundle exec rake"
+    - "rvm exec 2.2.0 bundle exec rake"
