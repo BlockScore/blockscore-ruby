@@ -6,45 +6,19 @@
 
 Gem::Specification.new do |s|
   s.name = "blockscore"
-  s.version = "4.0.0"
+  s.version = "4.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
   s.authors = ["Alain Meier"]
-  s.date = "2014-11-17"
+  s.date = "2015-05-16"
   s.description = "A ruby client library for the BlockScore API."
   s.email = "alain@blockscore.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.md"
   ]
-  s.files = [
-    ".document",
-    "Gemfile",
-    "LICENSE.txt",
-    "README.md",
-    "Rakefile",
-    "VERSION",
-    "blockscore-ruby.sublime-project",
-    "blockscore.gemspec",
-    "lib/blockscore.rb",
-    "lib/blockscore/candidates.rb",
-    "lib/blockscore/client.rb",
-    "lib/blockscore/companies.rb",
-    "lib/blockscore/error/authorization_error.rb",
-    "lib/blockscore/error/blockscore_error.rb",
-    "lib/blockscore/error/error_handler.rb",
-    "lib/blockscore/error/internal_server_error.rb",
-    "lib/blockscore/error/not_found_error.rb",
-    "lib/blockscore/error/parameter_error.rb",
-    "lib/blockscore/error/validation_error.rb",
-    "lib/blockscore/errors.rb",
-    "lib/blockscore/people.rb",
-    "lib/blockscore/question_sets.rb",
-    "lib/blockscore/watchlists.rb",
-    "test/helper.rb",
-    "test/test_blockscore.rb"
-  ]
+  s.files = `git ls-files`.split("\n")
   s.homepage = "http://github.com/blockscore/blockscore-ruby"
   s.licenses = ["MIT"]
   s.rubygems_version = "2.2.2"

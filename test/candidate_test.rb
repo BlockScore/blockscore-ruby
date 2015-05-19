@@ -4,21 +4,28 @@ require 'test/unit/active_support'
 class CandidateResourceTest < ActiveSupport::TestCase
   include ResourceTest
 
-  def member_test(member)
-    id = TestClient.create_candidate["id"]
-    response = TestClient.client.candidates.send(member, id)
-    assert_equal 200, response.code
-  end
-
   def test_history
-    member_test(:history)
+    candidate = TestClient.create_candidate
+    response = candidate.history
+    assert_equal Array, response.class
   end
 
   def test_hits
-    member_test(:hits)
+    candidate = TestClient.create_candidate
+    response = candidate.hits
+    assert_equal Array, response.class
   end
 
+  def test_update
+    candidate = TestClient.create_candidate
+    candidate.name_first = 'Chris'
+    assert_equal true, candidate.save
+    assert_equal candidate.name_first, 'Chris'
+  end
+  
   def test_delete
-    member_test(:delete)
+    candidate = TestClient.create_candidate
+    response = candidate.delete
+    assert_equal BlockScore::Candidate, response.class
   end
 end

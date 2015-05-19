@@ -1,8 +1,8 @@
-require "httparty"
-
-Dir[File.dirname(__FILE__) + '/blockscore/*.rb'].each do |file|
-  require file
-end
+require 'blockscore/base'
+require 'blockscore/candidate'
+require 'blockscore/company'
+require 'blockscore/person'
+require 'blockscore/error'
 
 module BlockScore  
   def self.api_key(api_key)
