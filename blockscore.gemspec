@@ -10,7 +10,10 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
-  s.authors = ["Alain Meier"]
+  s.authors = [
+    "Alain Meier", "John Backus", "Connor Jacobsen", "Henk Tillman",
+    "Ben Schwartz", "Dave Marshall", "Karol Sarnacki", "Hamish Eisler"
+  ]
   s.date = "2015-05-16"
   s.description = "A ruby client library for the BlockScore API."
   s.email = "alain@blockscore.com"
@@ -38,6 +41,9 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<shoulda-context>, ["~> 1.2"])
       s.add_development_dependency(%q<test-unit>, ["3.0"])
       s.add_development_dependency(%q<test-unit-activesupport>, ["1.0"])
+      s.add_development_dependency(%q<webmock>, ["1.21"])
+      s.add_development_dependency(%q<faker>, ["1.4.3"])
+      s.add_development_dependency(%q<factory_girl>, ["4.1.0"])
     else
       s.add_dependency(%q<httparty>, ["~> 0.11"])
       s.add_dependency(%q<shoulda>, ["~> 3.5.0"])

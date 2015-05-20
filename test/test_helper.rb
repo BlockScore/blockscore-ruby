@@ -1,12 +1,79 @@
-require 'json'
+require 'active_support/core_ext/string/inflections'
+require 'factory_girl'
+require 'faker'
 require 'simplecov'
 require 'test/unit'
-require 'active_support'
-require 'active_support/core_ext'
+require 'webmock/test_unit'
+
+require File.join(File.dirname(__FILE__), 'factories')
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'blockscore'
+
+URL_REGEXP = %r([\w\d]*:@api\.blockscore\.com(:443)?/(?<resource>\w+)/(?<id>[\w\d]*)?/?(?<action>hits|history|score)?)
+
+WebMock.disable_net_connect!(:allow => 'codeclimate.com')
+
+HEADERS = {
+  'Accept' => 'application/vnd.blockscore+json;version=4',
+  'User-Agent' => 'blockscore-ruby/4.1.0 (https://github.com/BlockScore/blockscore-ruby)',
+  'Content-Type' => 'application/json'
+}
+
+def index_response(resource, count)
+  {
+    :total_count => count,
+    :has_more => false,
+    :object => 'list',
+    :data => FactoryGirl.build_list(resource.to_sym, count)
+  }.to_json
+end
+
+def resource_from_uri(uri)
+  uri.to_s.split('/').last.singularize.to_sym
+end
+
+# configure test-unit for FactoryGirl
+class Test::Unit::TestCase
+  include FactoryGirl::Syntax::Methods
+
+  setup do
+
+    stub_request(:any, /.*api\.blockscore\.com\/.*/).
+      with(headers: HEADERS).
+      to_return do |request|
+        match = URL_REGEXP.match request.uri.to_s
+        factory_name = resource_from_uri(match[:resource])
+
+        # id and action might be "" (empty string)
+
+        id = (match[:id].nil? || match[:id].empty?) ? nil : match[:id]
+        action = (match[:action].nil? || match[:action].empty?) ? nil : match[:action]
+
+        factory = FactoryGirl.factories[factory_name]
+        if factory.nil?
+          raise ArgumentError, "could not find factory #{factory_name.inspect}."
+        end
+
+        status = 200 # will only change on CREATEs
+        if id == nil && request.method == :get
+          # index
+          body = index_response(factory_name, 5)
+        elsif action == 'history'
+          body = FactoryGirl.build_list(factory_name, 5).to_json
+        elsif action == 'hits'
+          body = index_response(factory_name, 5)
+        else
+          status = 201 if request.method == :post && action.nil?
+          body = FactoryGirl.json(factory_name)
+        end
+
+        { :status => status, :body => body, :headers => {} }
+      end
+
+  end
+end
 
 # Convert a resource into the corresponding BlockScore class.
 def resource_to_class(resource)
@@ -26,24 +93,28 @@ module ResourceTest
 
   def test_retrieve_resource
     r = TestClient.send(:"create_#{resource}")
-    response = Kernel.const_get("BlockScore::#{resource.camelcase}").send(:retrieve, r.id)
+    response = Kernel.const_get("BlockScore::#{resource.camelcase}").
+      send(:retrieve, r.id)
     assert_equal resource, response.object
   end
 
   def test_list_resource
-    response = Kernel.const_get("BlockScore::#{resource.camelcase}").send(:all)
+    response = Kernel.const_get("BlockScore::#{resource.camelcase}").
+      send(:all)
     assert_equal Array, response.class
   end
 
   def test_list_resource_with_count
     msg = "List #{resource} with count = 2 failed"
-    response = Kernel.const_get("BlockScore::#{resource.camelcase}").send(:all, {:count => 2})
+    response = Kernel.const_get("BlockScore::#{resource.camelcase}").
+      send(:all, {:count => 2})
     assert_equal Array, response.class, msg
   end
 
   def test_list_resource_with_count_and_offset
     msg = "List #{resource} with count = 2 and offset = 2 failed"
-    response = Kernel.const_get("BlockScore::#{resource.camelcase}").send(:all, {:count => 2, :offset => 2})
+    response = Kernel.const_get("BlockScore::#{resource.camelcase}").
+      send(:all, {:count => 2, :offset => 2})
     assert_equal Array, response.class, msg
   end
 end
@@ -51,8 +122,8 @@ end
 class TestClient
   @@api_key = 'sk_test_a1ed66cc16a7cbc9f262f51869da31b3'
   BlockScore.api_key(@@api_key)
-  
-  class << self    
+
+  class << self
     def create_candidate
       watchlist_params = {
        :note => "12341234",
@@ -94,7 +165,7 @@ class TestClient
 
       BlockScore::Company.create(company_params)
     end
-    
+
     def create_person
       people_params = {
         :birth_day => 1,
@@ -122,4 +193,3 @@ class TestClient
     end
   end
 end
-

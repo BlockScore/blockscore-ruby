@@ -18,3 +18,9 @@ group :development, :test do
   gem 'shoulda', '~> 3.5.0'
   gem 'shoulda-context', '~> 1.2'
 end
+
+group :test do
+  gem 'webmock', '~> 1.21'
+  gem 'factory_girl', '~> 4.1.0'
+  gem 'faker', '~> 1.4.3'
+end
