@@ -14,6 +14,15 @@
 module BlockScore
   module Actions
     module Update
+      # Attributes which will not change once the object is created.
+      PERSISTENT_ATTRIBUTES = [
+        :id,
+        :object,
+        :created_at,
+        :updated_at,
+        :livemode
+      ]
+
       # Public: Saves the changes to the object via an Update call to
       # BlockScore API.
       #
@@ -25,11 +34,10 @@ module BlockScore
         false
       end
 
-      # Filters out the non-updateable params
+      # Filters out the non-updateable params.
       def filter_params
         # Cannot %i syntax, not introduced until Ruby 2.0.0
-        persistent = [:id, :object, :created_at, :updated_at, :livemode, :class]
-        @attrs.reject { |k, _| persistent.include?(k) }
+        @attrs.reject { |k, _| PERSISTENT_ATTRIBUTES.include?(k) }
       end
 
       private
