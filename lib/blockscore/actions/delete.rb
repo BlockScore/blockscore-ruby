@@ -13,7 +13,7 @@ module BlockScore
         self.class.delete "#{self.class.endpoint}#{id}", {}
         @attrs[:deleted] = true
         true
-      rescue
+      rescue BlockScore::BlockScoreError
         false
       end
     end
