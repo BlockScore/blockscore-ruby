@@ -11,7 +11,7 @@ module BlockScore
       # Filters out the non-updateable params
       def filter_params
         persistent = [:id, :object, :created_at, :updated_at, :livemode, :class]
-        @attrs.reject { |k,v| persistent.include?(k) }
+        @attrs.reject { |k, _| persistent.include?(k) }
       end
 
       def method_missing(method, *args, &block)
