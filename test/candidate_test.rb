@@ -22,10 +22,10 @@ class CandidateResourceTest < ActiveSupport::TestCase
     assert_equal true, candidate.save
     assert_equal candidate.name_first, 'Chris'
   end
-  
+
   def test_delete
     candidate = TestClient.create_candidate
-    response = candidate.delete
-    assert_equal BlockScore::Candidate, response.class
+    candidate.delete
+    assert_equal candidate.deleted, true
   end
 end

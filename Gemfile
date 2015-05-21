@@ -17,7 +17,6 @@ group :development, :test do
   gem 'test-unit-activesupport', '~> 1.0'
   gem 'shoulda', '~> 3.5.0'
   gem 'shoulda-context', '~> 1.2'
-  gem 'pry'
 end
 
 group :test do

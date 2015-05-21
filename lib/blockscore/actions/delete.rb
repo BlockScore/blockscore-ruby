@@ -1,6 +1,6 @@
 # Provides a :delete instance method to including classes.
 #
-# Returns the updated object with deleted == true. 
+# Returns the updated object with deleted == true.
 #
 # Examples
 #
@@ -11,6 +11,10 @@ module BlockScore
     module Delete
       def delete
         self.class.delete "#{self.class.endpoint}#{id}", {}
+        @attrs[:deleted] = true
+        true
+      rescue
+        false
       end
     end
   end
