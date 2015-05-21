@@ -1,5 +1,6 @@
 require 'json'
 require 'active_support/core_ext/module/attribute_accessors'
+require 'active_support/core_ext/string/inflections'
 require 'httparty'
 require 'blockscore/error'
 require 'blockscore/errors/invalid_request_error'
@@ -33,7 +34,7 @@ module BlockScore
     def delete(path, params)
       request :delete, path, params
     end
-    
+
     private
 
     def request(method, path, params)
@@ -61,9 +62,9 @@ module BlockScore
 
       options = { :basic_auth => auth, :headers => headers, :body => params.to_json }
 
-      HTTParty.send(method, path, options) 
+      HTTParty.send(method, path, options)
     end
-    
+
     def parse_json(response)
       begin
         response = JSON.parse(response.body, :symbolize_names => true)
@@ -77,7 +78,7 @@ module BlockScore
     end
 
     def create_object(resource, options = {})
-      Kernel.const_get("BlockScore::#{resource.camelcase}").new(options)
+      "BlockScore::#{resource.camelcase}".constantize.new(options)
     end
 
     def general_api_error(rcode, rbody)

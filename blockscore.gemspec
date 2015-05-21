@@ -44,6 +44,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<webmock>, ["1.21"])
       s.add_development_dependency(%q<faker>, ["1.4.3"])
       s.add_development_dependency(%q<factory_girl>, ["4.1.0"])
+      s.add_development_dependency(%q<activesupport>, ["4.0.13"])
     else
       s.add_dependency(%q<httparty>, ["~> 0.11"])
       s.add_dependency(%q<shoulda>, ["~> 3.5.0"])
@@ -65,4 +66,3 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<shoulda-context>, ["~> 1.2"])
   end
 end
-

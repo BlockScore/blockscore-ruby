@@ -4,6 +4,7 @@ require 'faker'
 require 'simplecov'
 require 'test/unit'
 require 'webmock/test_unit'
+require 'pry'
 
 require File.join(File.dirname(__FILE__), 'factories')
 
@@ -77,7 +78,7 @@ end
 
 # Convert a resource into the corresponding BlockScore class.
 def resource_to_class(resource)
-  Kernel.const_get "BlockScore::#{resource.camelcase.to_sym}"
+  "BlockScore::#{resource.camelcase}".constantize
 end
 
 module ResourceTest
@@ -93,27 +94,24 @@ module ResourceTest
 
   def test_retrieve_resource
     r = TestClient.send(:"create_#{resource}")
-    response = Kernel.const_get("BlockScore::#{resource.camelcase}").
-      send(:retrieve, r.id)
+    response = resource_to_class(resource).send(:retrieve, r.id)
     assert_equal resource, response.object
   end
 
   def test_list_resource
-    response = Kernel.const_get("BlockScore::#{resource.camelcase}").
-      send(:all)
+    response = resource_to_class(resource).send(:all)
     assert_equal Array, response.class
   end
 
   def test_list_resource_with_count
     msg = "List #{resource} with count = 2 failed"
-    response = Kernel.const_get("BlockScore::#{resource.camelcase}").
-      send(:all, {:count => 2})
+    response = resource_to_class(resource).send(:all, {:count => 2})
     assert_equal Array, response.class, msg
   end
 
   def test_list_resource_with_count_and_offset
     msg = "List #{resource} with count = 2 and offset = 2 failed"
-    response = Kernel.const_get("BlockScore::#{resource.camelcase}").
+    response = resource_to_class(resource).
       send(:all, {:count => 2, :offset => 2})
     assert_equal Array, response.class, msg
   end
