@@ -13,11 +13,17 @@ module BlockScore
     include BlockScore::Actions::All
 
     def history
-      self.class.get "#{self.class.endpoint}#{id}/history", {}
+      resource_member('history')
     end
 
     def hits
-      self.class.get "#{self.class.endpoint}#{id}/hits", {}
+      resource_member('hits')
+    end
+
+    private
+
+    def resource_member(member)
+      self.class.get "#{self.class.endpoint}#{id}/#{member}", {}
     end
   end
 end
