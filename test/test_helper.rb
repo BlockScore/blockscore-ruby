@@ -4,7 +4,6 @@ require 'faker'
 require 'simplecov'
 require 'test/unit'
 require 'webmock/test_unit'
-require 'pry'
 
 require File.join(File.dirname(__FILE__), 'factories')
 
