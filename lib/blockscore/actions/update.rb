@@ -1,18 +1,16 @@
 module BlockScore
   module Actions
-    module Update     
+    module Update
       def save
-        begin
-          self.class.patch "#{self.class.endpoint}#{id}", filter_params
-          true
-        rescue
-          false
-        end
+        self.class.patch "#{self.class.endpoint}#{id}", filter_params
+        true
+      rescue
+        false
       end
 
       # Filters out the non-updateable params
       def filter_params
-        persistent = %i(id object created_at updated_at livemode class)
+        persistent = [:id, :object, :created_at, :updated_at, :livemode, :class]
         @attrs.reject { |k,v| persistent.include?(k) }
       end
 
