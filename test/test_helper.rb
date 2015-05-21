@@ -48,7 +48,6 @@ class Test::Unit::TestCase
         factory_name = resource_from_uri(match[:resource])
 
         # id and action might be "" (empty string)
-
         id = (match[:id].nil? || match[:id].empty?) ? nil : match[:id]
         action = (match[:action].nil? || match[:action].empty?) ? nil : match[:action]
 

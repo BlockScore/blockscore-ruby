@@ -1,6 +1,23 @@
+# Public: Contains the :save instance method, which updates the object with
+# the BlockScore API to persist the changes.
+#
+# Examples
+#
+#  class Foo
+#    include BlockScore::Actions::Update
+#  end
+#
+#  foo = Foo.new
+#  foo.name_first = 'John'
+#  foo.save
+#  # => true
 module BlockScore
   module Actions
     module Update
+      # Public: Saves the changes to the object via an Update call to
+      # BlockScore API.
+      #
+      # Returns true if the update is successful, false otherwise.
       def save
         self.class.patch "#{self.class.endpoint}#{id}", filter_params
         true
@@ -10,9 +27,12 @@ module BlockScore
 
       # Filters out the non-updateable params
       def filter_params
+        # Cannot %i syntax, not introduced until Ruby 2.0.0
         persistent = [:id, :object, :created_at, :updated_at, :livemode, :class]
         @attrs.reject { |k, _| persistent.include?(k) }
       end
+
+      private
 
       def method_missing(method, *args, &block)
         if respond_to_missing? method
