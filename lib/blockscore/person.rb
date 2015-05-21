@@ -8,14 +8,12 @@ module BlockScore
     include BlockScore::Actions::Create
     include BlockScore::Actions::Retrieve
     include BlockScore::Actions::All
-    
+
+    attr_reader :question_set
+
     def initialize(options = {})
       super
       @question_set = BlockScore::QuestionSet.new(:person_id => id, :person => self)
-    end
-
-    def question_set
-      @question_set
     end
   end
 end
