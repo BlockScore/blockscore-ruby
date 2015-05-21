@@ -28,10 +28,15 @@ module BlockScore
       #
       # Returns true if the update is successful, false otherwise.
       def save
-        self.class.patch "#{self.class.endpoint}#{id}", filter_params
-        true
+        save!
       rescue
         false
+      end
+
+      def save!
+        self.class.patch "#{self.class.endpoint}#{id}", filter_params
+
+        true
       end
 
       # Filters out the non-updateable params.
