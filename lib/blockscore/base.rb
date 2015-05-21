@@ -13,7 +13,6 @@ module BlockScore
     end
 
     def initialize(options = {})
-      options[:class] = resource
       @attrs = options
     end
 
@@ -22,13 +21,13 @@ module BlockScore
       instance_variable_set(:@attrs, r.instance_variable_get(:@attrs))
 
       true
-    rescue
+    rescue BlockScore::BlockScoreError
       false
     end
 
-    def self.auth(api_key)
-      api_key = api_key
-      BlockScore::Connection.api_key = api_key
+    def self.auth(key)
+      api_key = key
+      BlockScore::Connection.api_key = key
     end
 
     def self.api_url
@@ -37,8 +36,8 @@ module BlockScore
 
     def self.endpoint
       if self == BlockScore::Base
-        fail NotImplementedError.new('Base is an abstract class. You should ' +
-          'perform actions on its subclasses (Candidate, Person, etc).')
+        fail NotImplementedError.new('Base is an abstract class, not an ' +
+                                     'API resource')
       end
 
       "#{api_url}#{resource.pluralize}/"
