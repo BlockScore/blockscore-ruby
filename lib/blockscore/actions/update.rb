@@ -49,7 +49,7 @@ module BlockScore
 
       def respond_to_missing?(symbol, include_private = false)
         setter = symbol.to_s[0..-2].to_sym
-        @attrs && (@attrs.has_key?(symbol) || @attrs.has_key?(setter)) || super
+        @attrs && (@attrs.key?(symbol) || @attrs.key?(setter)) || super
       end
     end
   end
