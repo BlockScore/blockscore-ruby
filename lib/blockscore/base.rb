@@ -55,7 +55,7 @@ module BlockScore
     end
 
     def respond_to_missing?(symbol, include_private = false)
-      @attrs && @attrs.has_key?(symbol) || super
+      @attrs && @attrs.key?(symbol) || super
     end
   end
 end
