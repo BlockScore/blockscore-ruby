@@ -18,14 +18,12 @@ module BlockScore
     end
 
     def refresh
-      r = self.class.retrieve(id)
-      if r != BlockScoreError
-        instance_variable_set(:@attrs, r.instance_variable_get(:@attrs))
+      self.class.retrieve(id)
+      instance_variable_set(:@attrs, r.instance_variable_get(:@attrs))
 
-        true
-      else
-        false
-      end
+      true
+    rescue
+      false
     end
 
     def self.auth(api_key)
