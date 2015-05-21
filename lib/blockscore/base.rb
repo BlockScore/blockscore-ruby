@@ -5,10 +5,10 @@ require 'blockscore/connection'
 module BlockScore
   class Base
     extend BlockScore::Connection
-    
+
     class_attribute :api_key, :resource, :version
 
-    def self.inherited(base)       
+    def self.inherited(base)
       base.resource = base.to_s.split('::').last.underscore
     end
 
@@ -32,16 +32,17 @@ module BlockScore
       api_key = api_key
       BlockScore::Connection.api_key = api_key
     end
-    
+
     def self.api_url
       'https://api.blockscore.com/'
     end
 
     def self.endpoint
       if self == BlockScore::Base
-        raise NotImplementedError.new('Base is an abstract class. You should perform actions on its subclasses (Candidate, Company, Person, etc.)')
+        fail NotImplementedError.new('Base is an abstract class. You should ' +
+          'perform actions on its subclasses (Candidate, Person, etc).')
       end
-      
+
       "#{api_url}#{resource.pluralize}/"
     end
 
