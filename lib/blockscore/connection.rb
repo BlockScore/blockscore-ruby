@@ -5,12 +5,6 @@ require 'httparty'
 require 'blockscore/error'
 require 'blockscore/errors/invalid_request_error'
 
-HEADERS = {
-  'Accept' => 'application/vnd.blockscore+json;version=4',
-  'User-Agent' => 'blockscore-ruby/4.1.0 (https://github.com/BlockScore/blockscore-ruby)',
-  'Content-Type' => 'application/json'
-}
-
 module BlockScore
   module Connection
     mattr_accessor :api_key
@@ -37,6 +31,14 @@ module BlockScore
 
     private
 
+    def headers
+      @@headers ||= {
+        'Accept' => 'application/vnd.blockscore+json;version=4',
+        'User-Agent' => 'blockscore-ruby/4.1.0 (https://github.com/BlockScore/blockscore-ruby)',
+        'Content-Type' => 'application/json'
+      }
+    end
+
     def request(method, path, params)
       response = execute_request(method, path, params)
 
@@ -58,7 +60,6 @@ module BlockScore
 
     def execute_request(method, path, params)
       auth = { :username => @@api_key, :password => '' }
-      headers = HEADERS
 
       options = { :basic_auth => auth, :headers => headers, :body => params.to_json }
 
