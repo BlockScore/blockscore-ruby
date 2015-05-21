@@ -19,7 +19,7 @@ FactoryGirl.register_strategy(:json, JsonStrategy)
 MATCH_OPTIONS = %w(no_match match mismatch)
 
 def random_match_result
-  MATCH_OPTIONS[rand(1..3) - 1]
+  MATCH_OPTIONS[rand(0..2)]
 end
 
 FactoryGirl.define do

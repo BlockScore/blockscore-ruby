@@ -116,76 +116,31 @@ module ResourceTest
 end
 
 class TestClient
-  @@api_key = 'sk_test_a1ed66cc16a7cbc9f262f51869da31b3'
-  BlockScore.api_key(@@api_key)
+  BlockScore.api_key('sk_test_a1ed66cc16a7cbc9f262f51869da31b3')
 
   class << self
     def create_candidate
-      watchlist_params = {
-       :note => "12341234",
-       :ssn => "0001",
-       :date_of_birth => "1940-08-11",
-       :name_first => "John",
-       :name_middle => "",
-       :name_last => "Bredenkamp",
-       :address_street1 => "1 Infinite Loop",
-       :address_city => "Cupertino",
-       :address_country_code => "US"
-      }
-      BlockScore::Candidate.create(watchlist_params)
+      create_resource(:candidate)
     end
 
     def create_company
-      company_params = {
-        :entity_name => "BlockScore",
-        :tax_id => "123410000",
-        :incorporation_day => 25,
-        :incorporation_month => 8,
-        :incorporation_year => 1980,
-        :incorporation_state => "DE",
-        :incorporation_country_code => "US",
-        :incorporation_type => "corporation",
-        :dbas => "BitRemit",
-        :registration_number => "123123123",
-        :email => "test@example.com",
-        :url => "https://blockscore.com",
-        :phone_number => "6505555555",
-        :ip_address => "67.160.8.182",
-        :address_street1 => "1 Infinite Loop",
-        :address_street2 => nil,
-        :address_city => "Cupertino",
-        :address_subdivision => "CA",
-        :address_postal_code => "95014",
-        :address_country_code => "US"
-      }
-
-      BlockScore::Company.create(company_params)
+      create_resource(:company)
     end
 
     def create_person
-      people_params = {
-        :birth_day => 1,
-        :birth_month => 1,
-        :birth_year => 1975,
-        :document_type => "ssn",
-        :document_value => "0000",
-        :name_first => "John",
-        :name_middle => "P",
-        :name_last => "Doe",
-        :address_street1 => "1 Infinite Loop",
-        :address_street2 => nil,
-        :address_city => "Cupertino",
-        :address_subdivision => "CA",
-        :address_postal_code => "95014",
-        :address_country_code => "US"
-      }
-
-      BlockScore::Person.create(people_params)
+      create_resource(:person)
     end
 
     def create_question_set
       person = create_person
-      person.question_set.create
+      create_resource(:question_set)
+    end
+
+    private
+
+    def create_resource(resource)
+      params = FactoryGirl.create(resource)
+      "BlockScore::#{resource.to_s.camelize}".constantize.new(params)
     end
   end
 end
