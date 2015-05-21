@@ -8,8 +8,8 @@ module BlockScore
     include BlockScore::Actions::Retrieve
     include BlockScore::Actions::All
 
-    def create(params)
-      self.class.create(params)
+    def create
+      self.class.create(:person_id => person_id)
     end
 
     def retrieve(id)
@@ -19,13 +19,9 @@ module BlockScore
     def all(options = {})
       self.class.all(options)
     end
-    
+
     def score(answers)
       self.class.post "#{self.class.endpoint}#{id}/score", :answers => answers
-    end
-
-    def create
-      self.class.create(:person_id => person_id)
     end
   end
 end
