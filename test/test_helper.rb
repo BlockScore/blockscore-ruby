@@ -77,7 +77,7 @@ end
 
 # Convert a resource into the corresponding BlockScore class.
 def resource_to_class(resource)
-  Kernel.const_get "BlockScore::#{resource.camelcase}"
+  Kernel.const_get "BlockScore::#{resource.camelcase.to_sym}"
 end
 
 module ResourceTest
