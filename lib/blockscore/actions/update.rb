@@ -42,7 +42,7 @@ module BlockScore
       # Filters out the non-updateable params.
       def filter_params
         # Cannot %i syntax, not introduced until Ruby 2.0.0
-        @attrs.reject { |k, _| PERSISTENT_ATTRIBUTES.include?(k) }
+        attributes.reject { |k, _| PERSISTENT_ATTRIBUTES.include?(k) }
       end
 
       private
@@ -51,9 +51,9 @@ module BlockScore
         if respond_to_missing? method
           is_setter = method.to_s[-1] == '='
           if is_setter
-            @attrs[method.to_s.chomp('=').to_sym] = args[0]
+            @attributes[method.to_s.chomp('=').to_sym] = args[0]
           else
-            @attrs[method]
+            attributes[method]
           end
         else
           super
@@ -62,7 +62,7 @@ module BlockScore
 
       def respond_to_missing?(symbol, include_private = false)
         setter = symbol.to_s[0..-2].to_sym
-        @attrs && (@attrs.key?(symbol) || @attrs.key?(setter)) || super
+        attributes && (attributes.key?(symbol) || attributes.key?(setter)) || super
       end
     end
   end

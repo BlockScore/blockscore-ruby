@@ -11,7 +11,7 @@ module BlockScore
     module Delete
       def delete
         self.class.delete "#{self.class.endpoint}#{id}", {}
-        @attrs[:deleted] = true
+        @attributes[:deleted] = true
         true
       rescue BlockScore::BlockScoreError
         false

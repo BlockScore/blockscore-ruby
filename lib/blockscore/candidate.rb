@@ -13,11 +13,11 @@ module BlockScore
     include BlockScore::Actions::All
 
     def history
-      resource_member('history')
+      resource_member 'history'
     end
 
     def hits
-      resource_member('hits')
+      resource_member 'hits'
     end
 
     private
