@@ -6,12 +6,11 @@ require 'minitest/autorun'
 require 'webmock/minitest'
 
 require File.expand_path(File.join(File.dirname(__FILE__), '../test/factories'))
+require File.expand_path(File.join(File.dirname(__FILE__), '../test/support/response'))
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'blockscore'
-
-URL_REGEXP = %r([\w\d]*:@api\.blockscore\.com(:443)?/(?<resource>\w+)/(?<id>[\w\d]*)?/?(?<action>hits|history|score)?)
 
 WebMock.disable_net_connect!(:allow => 'codeclimate.com')
 
@@ -20,19 +19,6 @@ HEADERS = {
   'User-Agent' => 'blockscore-ruby/4.1.0 (https://github.com/BlockScore/blockscore-ruby)',
   'Content-Type' => 'application/json'
 }
-
-def index_response(resource, count)
-  {
-    :total_count => count,
-    :has_more => false,
-    :object => 'list',
-    :data => FactoryGirl.build_list(resource.to_sym, count)
-  }.to_json
-end
-
-def resource_from_uri(uri)
-  uri.to_s.split('/').last.singularize.to_sym
-end
 
 # configure test-unit for FactoryGirl
 class Minitest::Test
@@ -43,32 +29,16 @@ class Minitest::Test
     stub_request(:any, /.*api\.blockscore\.com\/.*/).
       with(headers: HEADERS).
       to_return do |request|
-        match = URL_REGEXP.match request.uri.to_s
-        factory_name = resource_from_uri(match[:resource])
+        check_uri_for_api_key(request.uri)
 
-        # id and action might be "" (empty string)
-        id = (match[:id].nil? || match[:id].empty?) ? nil : match[:id]
-        action = (match[:action].nil? || match[:action].empty?) ? nil : match[:action]
+        resource, id, action = request.uri.path.split('/').tap(&:shift)
+        factory_name = resource_from_uri(resource)
 
-        factory = FactoryGirl.factories[factory_name]
-        if factory.nil?
+        if FactoryGirl.factories[factory_name].nil?
           raise ArgumentError, "could not find factory #{factory_name.inspect}."
         end
 
-        status = 200 # will only change on CREATEs
-        if id == nil && request.method == :get
-          # index
-          body = index_response(factory_name, 5)
-        elsif action == 'history'
-          body = FactoryGirl.build_list(factory_name, 5).to_json
-        elsif action == 'hits'
-          body = index_response(factory_name, 5)
-        else
-          status = 201 if request.method == :post && action.nil?
-          body = FactoryGirl.json(factory_name)
-        end
-
-        { :status => status, :body => body, :headers => {} }
+        handle_test_response request, id, action, factory_name
       end
   end
 end
