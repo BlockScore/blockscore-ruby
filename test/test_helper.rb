@@ -137,9 +137,15 @@ class TestClient
 
     private
 
+    # Previously this just loaded a BlockScore resource with the
+    # hash returned from FactoryGirl, but in order to effectively test
+    # the request logic, we need to call the class :create method so
+    # the test suite runs all of the necessary code. Continuing to use
+    # FactoryGirl in the previous manner circumvents most of the actual
+    # gem functionality.
     def create_resource(resource)
       params = FactoryGirl.create(resource)
-      "BlockScore::#{resource.to_s.camelize}".constantize.new(params)
+      "BlockScore::#{resource.to_s.camelize}".constantize.create(params)
     end
   end
 end
