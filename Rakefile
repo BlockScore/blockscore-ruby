@@ -11,20 +11,6 @@ rescue Bundler::BundlerError => e
 end
 require 'rake'
 
-require 'jeweler'
-Jeweler::Tasks.new do |gem|
-  # gem is a Gem::Specification... see http://guides.rubygems.org/specification-reference/ for more options
-  gem.name = "blockscore"
-  gem.homepage = "http://github.com/blockscore/blockscore-ruby"
-  gem.license = "MIT"
-  gem.summary = %Q{A ruby client library for the BlockScore API.}
-  gem.description = %Q{A ruby client library for the BlockScore API.}
-  gem.email = "alain@blockscore.com"
-  gem.authors = ["Alain Meier"]
-  # dependencies defined in Gemfile
-end
-Jeweler::RubygemsDotOrgTasks.new
-
 require 'rake/testtask'
 Rake::TestTask.new(:test) do |test|
   test.libs << 'lib' << 'test'
