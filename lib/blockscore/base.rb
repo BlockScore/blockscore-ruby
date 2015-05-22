@@ -41,7 +41,7 @@ module BlockScore
         fail NotImplementedError, 'Base is an abstract class, not an API resource'
       end
 
-      "#{api_url}#{resource.pluralize}/"
+      "#{api_url}#{resource.pluralize}"
     end
 
     def method_missing(method, *args, &block)

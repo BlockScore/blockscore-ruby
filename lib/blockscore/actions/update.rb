@@ -34,7 +34,7 @@ module BlockScore
       end
 
       def save!
-        self.class.patch "#{self.class.endpoint}#{id}", filter_params
+        self.class.patch "#{self.class.endpoint}/#{id}", filter_params
 
         true
       end

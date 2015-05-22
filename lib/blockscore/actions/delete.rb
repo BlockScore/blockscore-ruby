@@ -10,7 +10,7 @@ module BlockScore
     # => #<BlockScore::Candidate:0x007fe39c424410>
     module Delete
       def delete
-        self.class.delete "#{self.class.endpoint}#{id}", {}
+        self.class.delete "#{self.class.endpoint}/#{id}", {}
         @attributes[:deleted] = true
         true
       rescue BlockScore::BlockScoreError

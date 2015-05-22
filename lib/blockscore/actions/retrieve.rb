@@ -12,7 +12,7 @@ module BlockScore
     module Retrieve
       module ClassMethods
         def retrieve(id)
-          get "#{endpoint}#{id}", {}
+          get "#{endpoint}/#{id}", {}
         end
       end
 

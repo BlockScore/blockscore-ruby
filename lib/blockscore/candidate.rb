@@ -23,7 +23,7 @@ module BlockScore
     private
 
     def resource_member(member)
-      self.class.get "#{self.class.endpoint}#{id}/#{member}", {}
+      self.class.get "#{self.class.endpoint}/#{id}/#{member}", {}
     end
   end
 end

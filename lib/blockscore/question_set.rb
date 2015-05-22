@@ -18,7 +18,7 @@ module BlockScore
     end
 
     def score(answers)
-      self.class.post "#{self.class.endpoint}#{id}/score", :answers => answers
+      self.class.post "#{self.class.endpoint}/#{id}/score", :answers => answers
     end
   end
 end
