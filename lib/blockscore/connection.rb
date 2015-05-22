@@ -2,6 +2,7 @@ require 'json'
 require 'active_support/core_ext/module/attribute_accessors'
 require 'active_support/core_ext/string/inflections'
 require 'httparty'
+require 'blockscore/version'
 require 'blockscore/responder'
 require 'blockscore/errors/api_error'
 require 'blockscore/errors/authentication_error'
@@ -37,7 +38,7 @@ module BlockScore
 
     def headers
       @@headers ||= {
-        'Accept' => 'application/vnd.blockscore+json;version=4',
+        'Accept' => "application/vnd.blockscore+json;version=#{BlockScore::VERSION.to_i}",
         'User-Agent' => 'blockscore-ruby/4.1.0 (https://github.com/BlockScore/blockscore-ruby)',
         'Content-Type' => 'application/json'
       }
@@ -45,8 +46,9 @@ module BlockScore
 
     def request(method, path, params)
       if @@api_key.nil?
-        fail BlockScore::AuthenticationError, { :message =>
-                                                "No API key was provided." }
+        fail BlockScore::AuthenticationError, {
+          :message => "No API key was provided."
+        }
       end
 
       response = execute_request(method, path, params)
