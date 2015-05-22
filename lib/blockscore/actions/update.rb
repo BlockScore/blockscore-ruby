@@ -1,18 +1,18 @@
-# Public: Contains the :save instance method, which updates the object with
-# the BlockScore API to persist the changes.
-#
-# Examples
-#
-#  class Foo
-#    include BlockScore::Actions::Update
-#  end
-#
-#  foo = Foo.new
-#  foo.name_first = 'John'
-#  foo.save
-#  # => true
 module BlockScore
   module Actions
+    # Public: Contains the :save instance method, which updates the
+    # object with the BlockScore API to persist the changes.
+    #
+    # Examples
+    #
+    #  class Foo
+    #    include BlockScore::Actions::Update
+    #  end
+    #
+    #  foo = Foo.new
+    #  foo.name_first = 'John'
+    #  foo.save
+    #  # => true
     module Update
       # Attributes which will not change once the object is created.
       PERSISTENT_ATTRIBUTES = [
