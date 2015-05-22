@@ -1,4 +1,7 @@
-require 'blockscore/error'
+require 'blockscore/errors/api_error'
+require 'blockscore/errors/authentication_error'
+require 'blockscore/errors/blockscore_error'
+require 'blockscore/errors/invalid_request_error'
 
 module BlockScore
   module Responder
@@ -43,19 +46,38 @@ module BlockScore
         error = error_obj[:error] or raise BlockScore::BlockScoreError.new
 
       rescue JSON::ParserError, BlockScore::BlockScoreError
-        raise APIError "Invalid response object from API: #{rbody.inspect} " +
-                      "(HTTP response code was #{rcode})", rcode, rbody
+        raise BlockScore::APIError, {
+          :message => "Invalid response object: #{rbody.inspect} (HTTP #{rcode})",
+          :http_code => rcode,
+          :http_body => rbody
+        }
       end
 
       case rcode
       when 400, 404
-        raise InvalidRequestError error[:message], error[:param],
-                                              rcode, rbody, error_obj
+        # NEED MORE TESTS FOR THE ERRORS
+        raise BlockScore::InvalidRequestError, {
+          :message => error[:message],
+          :param => error[:param],
+          :http_code => rcode,
+          :http_body => rbody,
+          :json_body => error_obj
+        }
       when 401
-        raise AuthenticationError error[:message], rcode, rbody,
-                                              error_obj
+        # Usually due to an invalid API key.
+        raise BlockScore::AuthenticationError, {
+          :message => error[:message],
+          :http_code => rcode,
+          :http_body => rbody,
+          :json_body => error_obj
+        }
       else
-        raise APIError error[:message], rcode, rbody, error_obj
+        raise BlockScore::APIError, {
+          :message => error[:message],
+          :http_code => rcode,
+          :http_body => rbody,
+          :json_body => error_obj
+        }
       end
     end
   end

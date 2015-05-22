@@ -3,6 +3,10 @@ require 'active_support/core_ext/module/attribute_accessors'
 require 'active_support/core_ext/string/inflections'
 require 'httparty'
 require 'blockscore/responder'
+require 'blockscore/errors/api_error'
+require 'blockscore/errors/authentication_error'
+require 'blockscore/errors/blockscore_error'
+require 'blockscore/errors/invalid_request_error'
 
 module BlockScore
   module Connection
@@ -40,6 +44,11 @@ module BlockScore
     end
 
     def request(method, path, params)
+      if @@api_key.nil?
+        fail BlockScore::AuthenticationError, { :message =>
+                                                "No API key was provided." }
+      end
+
       response = execute_request(method, path, params)
 
       handle_response(response)
