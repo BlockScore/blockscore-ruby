@@ -4,35 +4,52 @@ class QuestionSetResourceTest < Minitest::Test
   # QuestionSetResourceTest cannot include ResourceTest because
   # QuestionSets are only accessible through their Person.
 
+  def create_person
+    TestClient.create_person
+  end
+
+  def create_question_set
+    create_person.question_set.create
+  end
+
+  def list_question_sets(options = {})
+    person = create_person
+
+    # Create some QuestionSets before trying to list them all.
+    5.times do
+      person.question_set.create
+    end
+
+    person.question_set.all(options)
+  end
+
   def test_create_question_set
-    person = TestClient.create_person
-    response = person.question_set.create
+    response = create_question_set
     assert_equal response.class, BlockScore::QuestionSet
   end
 
   def test_retrieve_question_set
-    person = TestClient.create_person
+    person = create_person
     qs = person.question_set.create
     response = person.question_set.retrieve(qs.id)
     assert_equal response.class, BlockScore::QuestionSet
   end
 
   def test_list_question_set
-    person = TestClient.create_person
-    response = person.question_set.all # list ALL question_sets
+    response = list_question_sets
     assert_equal response.class, Array
   end
 
   def test_list_question_set_with_count
-    person = TestClient.create_person
-    response = person.question_set.all(:count => 2)
+    response = list_question_sets(:count => 2)
     assert_equal response.class, Array
+    assert_equal response.size, 2
   end
 
   def test_list_question_set_with_count_and_offset
-    person = TestClient.create_person
-    response = person.question_set.all(:count => 2, :offset => 2)
+    response = list_question_sets(:count => 2, :offset => 2)
     assert_equal response.class, Array
+    assert_equal response.size, 2
   end
 
   def test_score

@@ -1,3 +1,5 @@
+require File.expand_path(File.join(File.dirname(__FILE__), '../support/query'))
+
 def index_response(resource, count)
   {
     :total_count => count,
@@ -35,7 +37,8 @@ end
 
 def response_body(request, id, action, factory_name)
   if id.nil? && request.method == :get || action == 'hits'
-    index_response(factory_name, 5)
+    options = parse_query request.uri.query
+    index_response factory_name, options.fetch(:count, 5).to_i
   elsif action == 'history'
     FactoryGirl.build_list(factory_name, 5).to_json
   else

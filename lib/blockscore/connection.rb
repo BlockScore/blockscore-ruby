@@ -59,9 +59,21 @@ module BlockScore
     def execute_request(method, path, params)
       auth = { :username => @@api_key, :password => '' }
 
-      options = { :basic_auth => auth, :headers => headers, :body => params.to_json }
+      if method == :get
+        path = encode_path_params(path, params)
+        params = nil
+      else
+        params = params.to_json
+      end
+
+      options = { :basic_auth => auth, :headers => headers, :body => params }
 
       HTTParty.send(method, path, options)
+    end
+
+    def encode_path_params(path, params)
+      encoded = URI.encode_www_form(params)
+      [path, encoded].join("?")
     end
   end
 end
