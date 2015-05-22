@@ -1,7 +1,6 @@
-require 'test_helper'
-require 'test/unit/active_support'
+require File.expand_path(File.join(__FILE__, '../test_helper'))
 
-class QuestionSetResourceTest < ActiveSupport::TestCase
+class QuestionSetResourceTest < Minitest::Test
   # QuestionSetResourceTest cannot include ResourceTest because
   # QuestionSets are only accessible through their Person.
 

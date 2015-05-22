@@ -2,10 +2,10 @@ require 'active_support/core_ext/string/inflections'
 require 'factory_girl'
 require 'faker'
 require 'simplecov'
-require 'test/unit'
-require 'webmock/test_unit'
+require 'minitest/autorun'
+require 'webmock/minitest'
 
-require File.join(File.dirname(__FILE__), 'factories')
+require File.expand_path(File.join(File.dirname(__FILE__), '../test/factories'))
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
@@ -35,11 +35,11 @@ def resource_from_uri(uri)
 end
 
 # configure test-unit for FactoryGirl
-class Test::Unit::TestCase
+class Minitest::Test
+  include WebMock::API
   include FactoryGirl::Syntax::Methods
 
-  setup do
-
+  def setup
     stub_request(:any, /.*api\.blockscore\.com\/.*/).
       with(headers: HEADERS).
       to_return do |request|
@@ -70,7 +70,6 @@ class Test::Unit::TestCase
 
         { :status => status, :body => body, :headers => {} }
       end
-
   end
 end
 

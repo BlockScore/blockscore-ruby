@@ -1,6 +1,5 @@
-require 'test_helper'
-require 'test/unit/active_support'
+require File.expand_path(File.join(__FILE__, '../test_helper'))
 
-class CompanyResourceTest < ActiveSupport::TestCase
+class CompanyResourceTest < Minitest::Test
   include ResourceTest
 end

@@ -1,7 +1,6 @@
-require 'test_helper'
-require 'test/unit/active_support'
+require File.expand_path(File.join(__FILE__, '../test_helper'))
 
-class CandidateResourceTest < ActiveSupport::TestCase
+class CandidateResourceTest < Minitest::Test
   include ResourceTest
 
   def test_history
