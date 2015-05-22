@@ -1,5 +1,4 @@
 require File.expand_path(File.join(__FILE__, '../test_helper'))
-require 'pry'
 
 class RequestTest < Minitest::Test
   def without_authentication

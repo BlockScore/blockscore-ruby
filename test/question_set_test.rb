@@ -34,7 +34,7 @@ class QuestionSetResourceTest < Minitest::Test
     response = person.question_set.all(:count => 2, :offset => 2)
     assert_equal response.class, Array
   end
-  
+
   def test_score
     question_set = TestClient.create_question_set
     @answers = [
