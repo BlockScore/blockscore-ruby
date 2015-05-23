@@ -56,7 +56,7 @@ module BlockScore
       case rcode
       when 400, 404
         # NEED MORE TESTS FOR THE ERRORS
-        raise BlockScore::InvalidRequestError, {
+        fail BlockScore::InvalidRequestError, {
           :message => error[:message],
           :param => error[:param],
           :http_code => rcode,
@@ -65,14 +65,14 @@ module BlockScore
         }
       when 401
         # Usually due to an invalid API key.
-        raise BlockScore::AuthenticationError, {
+        fail BlockScore::AuthenticationError, {
           :message => error[:message],
           :http_code => rcode,
           :http_body => rbody,
           :json_body => error_obj
         }
       else
-        raise BlockScore::APIError, {
+        fail BlockScore::APIError, {
           :message => error[:message],
           :http_code => rcode,
           :http_body => rbody,
