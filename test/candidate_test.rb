@@ -4,13 +4,9 @@ class CandidateResourceTest < Minitest::Test
   include ResourceTest
 
   def member_test(member, response_type)
-    candidate = TestClient.create_candidate
+    candidate = create_candidate
     response = candidate.send(member)
     assert_equal response_type, response.class
-  end
-
-  def create_candidate
-    TestClient.create_candidate
   end
 
   def test_history

@@ -10,6 +10,7 @@ require File.expand_path(File.join(File.dirname(__FILE__), '../test/support/resp
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
+
 require 'blockscore'
 
 WebMock.disable_net_connect!(:allow => 'codeclimate.com')
@@ -20,12 +21,49 @@ HEADERS = {
   'Content-Type' => 'application/json'
 }
 
+def without_authentication
+  BlockScore.api_key(nil) # clear API key
+end
+
+def with_authentication
+  BlockScore.api_key('sk_test_a1ed66cc16a7cbc9f262f51869da31b3')
+end
+
+def create_candidate
+  create_resource(:candidate)
+end
+
+def create_company
+  create_resource(:company)
+end
+
+def create_person
+  create_resource(:person)
+end
+
+def create_question_set
+  person = create_person
+  create_resource(:question_set)
+end
+
+def create_resource(resource)
+  params = FactoryGirl.create(resource)
+  resource_to_class(resource).create(params)
+end
+
+# Convert a resource into the corresponding BlockScore class.
+def resource_to_class(resource)
+  "BlockScore::#{resource.to_s.camelcase}".constantize
+end
+
 # configure test-unit for FactoryGirl
 class Minitest::Test
   include WebMock::API
   include FactoryGirl::Syntax::Methods
 
   def setup
+    with_authentication
+
     stub_request(:any, /.*api\.blockscore\.com\/.*/).
       with(headers: HEADERS).
       to_return do |request|
@@ -43,11 +81,6 @@ class Minitest::Test
   end
 end
 
-# Convert a resource into the corresponding BlockScore class.
-def resource_to_class(resource)
-  "BlockScore::#{resource.camelcase}".constantize
-end
-
 module ResourceTest
   def self.included(base)
     base.mattr_accessor :resource
@@ -55,12 +88,12 @@ module ResourceTest
   end
 
   def test_create_resource
-    response = TestClient.send(:"create_#{resource}")
+    response = create_resource(resource)
     assert_equal response.class, resource_to_class(resource)
   end
 
   def test_retrieve_resource
-    r = TestClient.send(:"create_#{resource}")
+    r = create_resource(resource)
     response = resource_to_class(resource).send(:retrieve, r.id)
     assert_equal resource, response.object
   end
@@ -81,41 +114,5 @@ module ResourceTest
     response = resource_to_class(resource).
       send(:all, {:count => 2, :offset => 2})
     assert_equal Array, response.class, msg
-  end
-end
-
-class TestClient
-  BlockScore.api_key('sk_test_a1ed66cc16a7cbc9f262f51869da31b3')
-
-  class << self
-    def create_candidate
-      create_resource(:candidate)
-    end
-
-    def create_company
-      create_resource(:company)
-    end
-
-    def create_person
-      create_resource(:person)
-    end
-
-    def create_question_set
-      person = create_person
-      create_resource(:question_set)
-    end
-
-    private
-
-    # Previously this just loaded a BlockScore resource with the
-    # hash returned from FactoryGirl, but in order to effectively test
-    # the request logic, we need to call the class :create method so
-    # the test suite runs all of the necessary code. Continuing to use
-    # FactoryGirl in the previous manner circumvents most of the actual
-    # gem functionality.
-    def create_resource(resource)
-      params = FactoryGirl.create(resource)
-      "BlockScore::#{resource.to_s.camelize}".constantize.create(params)
-    end
   end
 end

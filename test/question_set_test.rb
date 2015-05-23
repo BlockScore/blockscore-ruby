@@ -3,11 +3,6 @@ require File.expand_path(File.join(__FILE__, '../test_helper'))
 class QuestionSetResourceTest < Minitest::Test
   # QuestionSetResourceTest cannot include ResourceTest because
   # QuestionSets are only accessible through their Person.
-
-  def create_person
-    TestClient.create_person
-  end
-
   def create_question_set
     create_person.question_set.create
   end
@@ -53,7 +48,7 @@ class QuestionSetResourceTest < Minitest::Test
   end
 
   def test_score
-    question_set = TestClient.create_question_set
+    question_set = create_question_set
     @answers = [
       {
         :question_id => 1,
