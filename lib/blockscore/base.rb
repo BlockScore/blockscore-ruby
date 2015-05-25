@@ -44,9 +44,28 @@ module BlockScore
       "#{api_url}#{resource.pluralize}"
     end
 
+    protected
+
+    def add_accessor(symbol, *args)
+      singleton_class.instance_eval do
+        define_method(symbol) { attributes[symbol] }
+      end
+    end
+
+    def add_setter(symbol, *args)
+      singleton_class.instance_eval do
+        define_method(symbol) do |value|
+          attributes[symbol.to_s.chop.to_sym] = value
+        end
+      end
+    end
+
+    private
+
     def method_missing(method, *args, &block)
       if respond_to_missing? method
-        attributes[method]
+        add_accessor(method, args)
+        send(method, *args)
       else
         super
       end

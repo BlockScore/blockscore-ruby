@@ -49,12 +49,12 @@ module BlockScore
 
       def method_missing(method, *args, &block)
         if respond_to_missing? method
-          is_setter = method.to_s.end_with?('=')
-          if is_setter
-            @attributes[method.to_s.chomp('=').to_sym] = args[0]
+          if method.to_s.end_with? '='
+            add_setter(method, *args)
           else
-            attributes[method]
+            add_accessor(method, *args)
           end
+          send(method, *args)
         else
           super
         end
