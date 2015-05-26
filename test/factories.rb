@@ -18,17 +18,33 @@ FactoryGirl.register_strategy(:json, JsonStrategy)
 
 MATCH_OPTIONS = %w(no_match match mismatch)
 
+# Just a subset of the possible options.
+WATCHLISTS = %w(US_SDN US_DPL UK_HMC CA_OSI US_PLC AU_CON IZ_PEP)
+
+MATCHING = %w(name date_of_birth ssn passport address county city state)
+
 def random_match_result
   MATCH_OPTIONS[rand(0..2)]
+end
+
+def full_address
+  street = Faker::Address.street_address
+  city = Faker::Address.city
+  country = Faker::Address.country
+
+  "#{street} #{city} #{country}"
 end
 
 FactoryGirl.define do
   # Each response has this metadata so we define it as a trait
   trait :metadata do
     id { Faker::Base.regexify(/[0-9a-f]{24}/) }
+    note ''
+  end
+
+  trait :timestamps do
     created_at { Faker::Time.backward(rand(2..5)).to_i }
     updated_at { created_at + (60 * 60 * 3) } # created_at + 3 hours
-    note ''
   end
 
   # We don't have create methods since we are creating hashes so we split out
@@ -104,6 +120,7 @@ FactoryGirl.define do
   factory :candidate, :class => Hash, :traits => [:resource] do
     object { 'candidate' }
     metadata
+    timestamps
     testmode
     ssn { Faker::Base.regexify(/\d{4}/) }
     passport { nil }
@@ -116,6 +133,7 @@ FactoryGirl.define do
   factory :company, :class => Hash, :traits => [:resource] do
     object { 'company' }
     metadata
+    timestamps
     status
     testmode
     entity_name { Faker::Company.name }
@@ -139,6 +157,7 @@ FactoryGirl.define do
   factory :person, :class => Hash, :traits => [:resource] do
     object { 'person' }
     metadata
+    timestamps
     status
     livemode
     phone_number
@@ -154,6 +173,7 @@ FactoryGirl.define do
   factory :question_set, :class => Hash, :traits => [:resource] do
     object { 'question_set' }
     metadata
+    timestamps
     testmode
     person_id { Faker::Base.regexify(/\d{24}/) }
     score { rand * 100 }
@@ -170,5 +190,56 @@ FactoryGirl.define do
   factory :answer, :class => Hash, :traits => [:resource] do
     sequence(:id)
     answer { Faker::Lorem.word }
+  end
+
+  factory :match_results, :class => Hash, :traits => [:resource] do
+    livemode
+    searched_lists { WATCHLISTS.sample(2) }
+    count { rand(1..5) }
+    matches { build_list(:match, count) }
+  end
+
+  factory :match, :class => Hash, :traits => [:resource] do
+    metadata
+    watchlist_name { WATCHLISTS.sample }
+    entry_type { 'individual' }
+    matching_info { MATCHING.sample(rand(2..4)) }
+    confidence { rand }
+    url { nil }
+    title { nil }
+    name_full { Faker::Name.name }
+    alternate_names { Faker::Name.name + '; ' + Faker::Name.name }
+    date_of_birth { Faker::Base.regexify(/19\d{2}-01-01/) }
+    passport { nil }
+    ssn { Faker::Base.regexify(/\d{4}/) }
+    address
+    address_raw { full_address }
+    names { build_list(:match_name, rand(1..5)) }
+    births { build_list(:match_birth, rand(1..5)) }
+    documents { build_list(:match_document, rand(1..5)) }
+    addresses { build_list(:match_address, rand(1..5)) }
+  end
+
+  factory :match_address, :class => Hash, :traits => [:resource] do
+    address
+    address_full { full_address }
+  end
+
+  factory :match_birth, :class => Hash, :traits => [:resource] do
+    birthday
+    birth_day_end { nil }
+    birth_month_end { nil }
+    birth_year_end { nil }
+  end
+
+  factory :match_document, :class => Hash, :traits => [:resource] do
+    document
+    document_country_code { Faker::Address.country_code }
+  end
+
+  factory :match_name, :class => Hash, :traits => [:resource] do
+    name_primary { false }
+    name_full { Faker::Name.name }
+    name_strength { %w(low medium high).sample }
   end
 end
