@@ -1,4 +1,3 @@
-require 'active_support/core_ext/string/inflections'
 require 'factory_girl'
 require 'faker'
 require 'simplecov'
@@ -54,7 +53,7 @@ end
 
 # Convert a resource into the corresponding BlockScore class.
 def resource_to_class(resource)
-  "BlockScore::#{resource.to_s.camelcase}".constantize
+  BlockScore::Util.to_constant("BlockScore::#{BlockScore::Util.to_camelcase(resource.to_s)}")
 end
 
 # configure test-unit for FactoryGirl

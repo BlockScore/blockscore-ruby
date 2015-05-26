@@ -15,7 +15,7 @@ module BlockScore
     end
 
     def self.create_object(resource, options = {})
-      "BlockScore::#{resource.camelcase}".constantize.new(options)
+      Util.to_constant("BlockScore::#{Util.to_camelcase(resource)}").new(options)
     end
 
     def self.create_watchlist_hit(params)

@@ -1,6 +1,5 @@
 require 'json'
 require 'active_support/core_ext/module/attribute_accessors'
-require 'active_support/core_ext/string/inflections'
 require 'httparty'
 require 'blockscore/version'
 require 'blockscore/responder'

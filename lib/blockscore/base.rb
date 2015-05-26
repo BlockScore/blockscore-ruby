@@ -1,6 +1,6 @@
 require 'active_support/core_ext/class'
-require 'active_support/core_ext/string/inflections'
 require 'blockscore/connection'
+require 'blockscore/util'
 
 module BlockScore
   class Base
@@ -11,7 +11,7 @@ module BlockScore
     attr_reader :attributes
 
     def self.inherited(base)
-      base.resource = base.to_s.split('::').last.underscore
+      base.resource = Util.to_underscore(base.to_s.split('::').last)
     end
 
     def initialize(options = {})
@@ -41,7 +41,7 @@ module BlockScore
         fail NotImplementedError, 'Base is an abstract class, not an API resource'
       end
 
-      "#{api_url}#{resource.pluralize}"
+      "#{api_url}#{Util.to_plural(resource)}"
     end
 
     protected
