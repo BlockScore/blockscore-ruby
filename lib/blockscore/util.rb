@@ -34,5 +34,26 @@ module BlockScore
         fail APIError, obj
       end
     end
+
+    def self.to_plural(str)
+    end
+
+    def self.to_constant(str)
+      # candidate / candidates
+      # person / people
+      # company / companies
+      # question_set / question_sets
+    end
+
+    def self.to_camelcase(str)
+    end
+
+    def self.to_underscore(str)
+      str.gsub(/::/, '/').
+      gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').
+      gsub(/([a-z\d])([A-Z])/,'\1_\2').
+      tr("-", "_").
+      downcase
+    end
   end
 end
