@@ -52,6 +52,7 @@ def create_resource(resource)
   params = FactoryGirl.create(resource)
   r = resource_to_class(resource).create(params)
 
+  # make sure resulting object responds to the desired keys
   params.each do |k, _|
     assert_respond_to r, k
   end
