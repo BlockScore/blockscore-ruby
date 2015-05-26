@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
 
   spec.summary     = 'A ruby client library for the BlockScore API.'
   spec.description = 'A ruby client library for the BlockScore API.'
-  spec.homepage    = 'https://docs.blockscore.com'
+  spec.homepage    = 'http://docs.blockscore.com'
   spec.license     = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
