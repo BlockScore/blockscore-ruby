@@ -20,6 +20,11 @@ module BlockScore
       resource_member 'hits'
     end
 
+    def search(options = {})
+      options[:candidate_id] = id
+      self.class.post "#{self.class.api_url}watchlists", options
+    end
+
     private
 
     def resource_member(member)

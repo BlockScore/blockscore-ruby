@@ -29,4 +29,11 @@ class CandidateResourceTest < Minitest::Test
     candidate.delete
     assert_equal candidate.deleted, true
   end
+
+  def test_search
+    candidate = create_candidate
+    hits = candidate.search
+    assert_equal hits.class, Array
+    assert_equal hits.first.class, BlockScore::WatchlistHit
+  end
 end

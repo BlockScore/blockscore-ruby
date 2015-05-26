@@ -192,7 +192,7 @@ FactoryGirl.define do
     answer { Faker::Lorem.word }
   end
 
-  factory :match_results, :class => Hash, :traits => [:resource] do
+  factory :watchlist, :class => Hash, :traits => [:resource] do
     livemode
     searched_lists { WATCHLISTS.sample(2) }
     count { rand(1..5) }
@@ -200,7 +200,8 @@ FactoryGirl.define do
   end
 
   factory :match, :class => Hash, :traits => [:resource] do
-    metadata
+    id { Faker::Base.regexify(/[0-9a-f]{24}/) }
+    notes ''
     watchlist_name { WATCHLISTS.sample }
     entry_type { 'individual' }
     matching_info { MATCHING.sample(rand(2..4)) }
