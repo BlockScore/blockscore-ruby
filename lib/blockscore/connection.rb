@@ -47,7 +47,7 @@ module BlockScore
     def request(method, path, params)
       if @@api_key.nil?
         fail BlockScore::AuthenticationError, {
-          :message => "No API key was provided."
+          :error => { :message => "No API key was provided." }
         }
       end
 

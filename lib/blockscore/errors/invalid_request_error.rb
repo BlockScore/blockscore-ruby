@@ -10,8 +10,8 @@ module BlockScore
     #
     # message - The String error message to report.
     # http_status - The Fixnum HTTP status code (usually 4xx or 5xx).
+    # error_type - The type of error that occurred.
     # http_body - The body of the HTTP request.
-    # json_body - The JSON body of the HTTP request.
     # param - The parameter which was invalid.
     #
     # Examples
@@ -21,9 +21,9 @@ module BlockScore
     # rescue BlockScore::InvalidRequestError => e
     #   puts "ERROR: #{e.message} with code #{e.http_status}"
     # end
-    def initialize(options = {})
+    def initialize(response)
       super
-      @param = options.fetch :param, nil
+      @param = response[:error][:param]
     end
   end
 end
