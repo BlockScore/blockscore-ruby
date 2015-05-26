@@ -22,10 +22,10 @@ module BlockScore
       BlockScore::WatchlistHit.new(params)
     end
 
-    def self.handle_api_error(rbody)
-      obj = Util.parse_json(rbody)
+    def self.handle_api_error(response)
+      obj = Util.parse_json(response.body)
 
-      case obj[:code].to_i
+      case response.code
       when 400, 404
         fail InvalidRequestError, obj
       when 401

@@ -26,7 +26,7 @@ module BlockScore
           Util.create_object resource, json_obj
         end
       else
-        Util.handle_api_error response.body
+        Util.handle_api_error response
       end
     end
 
