@@ -21,6 +21,8 @@ HEADERS = {
   'Content-Type' => 'application/json'
 }
 
+METAKEYS = [ :id, :created_at, :updated_at ]
+
 def without_authentication
   BlockScore.api_key = nil # clear API key
 end
@@ -48,7 +50,13 @@ end
 
 def create_resource(resource)
   params = FactoryGirl.create(resource)
-  resource_to_class(resource).create(params)
+  r = resource_to_class(resource).create(params)
+
+  params.each do |k, _|
+    assert_respond_to r, k
+  end
+
+  r
 end
 
 # Convert a resource into the corresponding BlockScore class.
