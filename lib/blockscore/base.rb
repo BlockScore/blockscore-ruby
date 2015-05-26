@@ -19,7 +19,7 @@ module BlockScore
     end
 
     def refresh
-      self.class.retrieve(id)
+      r = self.class.retrieve(id)
       @attributes = r.attributes
 
       true
