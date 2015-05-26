@@ -1,5 +1,4 @@
 require 'json'
-require 'active_support/core_ext/module/attribute_accessors'
 require 'httparty'
 require 'blockscore/version'
 require 'blockscore/responder'
@@ -11,7 +10,10 @@ require 'blockscore/errors/invalid_request_error'
 module BlockScore
   module Connection
     include BlockScore::Responder
-    mattr_accessor :api_key
+
+    def self.api_key=(key)
+      @@api_key = key
+    end
 
     def get(path, params)
       request :get, path, params

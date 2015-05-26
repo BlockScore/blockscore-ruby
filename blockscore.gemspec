@@ -30,7 +30,6 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version  = '>= 1.9.3'
 
   spec.add_dependency(%q<httparty>, ["~> 0.11"])
-  spec.add_dependency(%q<activesupport>, ["~> 4.0.13"])
   spec.add_development_dependency(%q<shoulda>, ["~> 3.5.0"])
   spec.add_development_dependency(%q<rdoc>, ["~> 3.12"])
   spec.add_development_dependency(%q<bundler>, ["~> 1.0"])

@@ -1,9 +1,8 @@
 require 'blockscore/util'
 
 module ResourceTest
-  def self.included(base)
-    base.mattr_accessor :resource
-    base.resource = BlockScore::Util.to_underscore(base.to_s[/^(\w+)ResourceTest/, 1])
+  def resource
+    @resource ||= BlockScore::Util.to_underscore(self.to_s[/^(\w+)ResourceTest/, 1])
   end
 
   def test_create_resource

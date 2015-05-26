@@ -13,8 +13,6 @@ end
 group :development, :test do
   gem 'test-unit', '~> 3.0'
   gem 'test-unit-activesupport', '~> 1.0'
-  # gem 'shoulda', '~> 3.5.0'
-  # gem 'shoulda-context', '~> 1.2'
   gem 'activesupport', '4.1.0.rc1'
   gem 'mutant', github: 'kbrock/mutant', branch: 'minitest'
   gem 'mutant-minitest', github: 'kbrock/mutant', branch: 'minitest'

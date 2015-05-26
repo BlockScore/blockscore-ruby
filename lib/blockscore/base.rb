@@ -1,4 +1,3 @@
-require 'active_support/core_ext/class'
 require 'blockscore/connection'
 require 'blockscore/util'
 
@@ -6,13 +5,7 @@ module BlockScore
   class Base
     extend BlockScore::Connection
 
-    class_attribute :api_key, :resource, :version
-
     attr_reader :attributes
-
-    def self.inherited(base)
-      base.resource = Util.to_underscore(base.to_s.split('::').last)
-    end
 
     def initialize(options = {})
       @attributes = options
@@ -27,8 +20,12 @@ module BlockScore
       false
     end
 
+    def self.resource
+      @resource ||= Util.to_underscore(self.to_s.split('::').last)
+    end
+
     def self.auth(api_key)
-      self.api_key = api_key
+      @@api_key = api_key
       BlockScore::Connection.api_key = api_key
     end
 
