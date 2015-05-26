@@ -2,7 +2,7 @@ require 'blockscore/util'
 
 module ResourceTest
   def resource
-    @resource ||= BlockScore::Util.to_underscore(self.to_s[/^(\w+)ResourceTest/, 1])
+    @resource ||= BlockScore::Util.to_underscore(to_s[/^(\w+)ResourceTest/, 1])
   end
 
   def test_create_resource

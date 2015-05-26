@@ -21,7 +21,7 @@ module BlockScore
     end
 
     def self.resource
-      @resource ||= Util.to_underscore(self.to_s.split('::').last)
+      @resource ||= Util.to_underscore(to_s.split('::').last)
     end
 
     def self.auth(api_key)
