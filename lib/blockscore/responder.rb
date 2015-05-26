@@ -9,14 +9,19 @@ module BlockScore
     def handle_response(response)
       case response.code
       when 200, 201
-        json_obj = Util.parse_json(response)
+        json_obj = Util.parse_json(response.body)
 
         if json_obj.respond_to?(:key?) && json_obj.key?(:matches)
           json_obj[:matches].map { |obj| Util.create_watchlist_hit obj }
         elsif json_obj.class == Array
           build_response_from_arr json_obj
         elsif json_obj[:object] == 'list'
-          build_response_from_arr json_obj[:data]
+          first = json_obj[:data].first
+          if first.class == Hash && first.key?(:matching_info)
+            json_obj[:data].map { |obj| Util.create_watchlist_hit(obj) }
+          else
+            build_response_from_arr json_obj[:data]
+          end
         else
           Util.create_object resource, json_obj
         end
