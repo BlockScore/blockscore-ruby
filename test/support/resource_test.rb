@@ -25,6 +25,7 @@ module ResourceTest
     msg = "List #{resource} with count = 2 failed"
     response = resource_to_class(resource).send(:all, {:count => 2})
     assert_equal Array, response.class, msg
+    assert_equal 2, response.count
   end
 
   def test_list_resource_with_count_and_offset
@@ -32,5 +33,6 @@ module ResourceTest
     response = resource_to_class(resource).
       send(:all, {:count => 2, :offset => 2})
     assert_equal Array, response.class, msg
+    assert_equal 2, response.count
   end
 end
