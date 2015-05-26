@@ -21,7 +21,7 @@ HEADERS = {
   'Content-Type' => 'application/json'
 }
 
-METAKEYS = [ :id, :created_at, :updated_at ]
+METAKEYS = [:id, :created_at, :updated_at]
 
 def without_authentication
   BlockScore.api_key = nil # clear API key
@@ -53,9 +53,7 @@ def create_resource(resource)
   r = resource_to_class(resource).create(params)
 
   # make sure resulting object responds to the desired keys
-  params.each do |k, _|
-    assert_respond_to r, k
-  end
+  params.each { |k, _| assert_respond_to r, k }
 
   r
 end
