@@ -22,11 +22,11 @@ HEADERS = {
 }
 
 def without_authentication
-  BlockScore.api_key(nil) # clear API key
+  BlockScore.api_key = nil # clear API key
 end
 
 def with_authentication
-  BlockScore.api_key('sk_test_a1ed66cc16a7cbc9f262f51869da31b3')
+  BlockScore.api_key = 'sk_test_a1ed66cc16a7cbc9f262f51869da31b3'
 end
 
 def create_candidate
