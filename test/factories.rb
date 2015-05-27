@@ -118,7 +118,7 @@ FactoryGirl.define do
 
   # Candidate factory
   factory :candidate_params, :class => Hash, :traits => [:resource] do
-    ssn { Faker::Base.regexify(/\d{4}/) }
+    ssn { '0000' }
     name
     address
   end
