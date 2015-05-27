@@ -21,9 +21,17 @@ module BlockScore
     # rescue BlockScore::InvalidRequestError => e
     #   puts "ERROR: #{e.message} with code #{e.http_status}"
     # end
-    def initialize(response)
+    def initialize(response, rcode = nil)
       super
       @param = response[:error][:param]
+    end
+
+    def to_s
+      status_string = @http_status.nil? ? "" : "(Status: #{@http_status})"
+      type_string = @error_type.nil? ? "" : "(Type: #{@error_type})"
+      param_string = @param.nil? ? "" : "(Param: #{@param})"
+
+      "#{type_string} #{param_string} #{message} #{status_string}"
     end
   end
 end
