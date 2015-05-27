@@ -21,8 +21,6 @@ class QuestionSetResourceTest < Minitest::Test
   def test_create_question_set
     response = create_question_set
     assert_equal response.class, BlockScore::QuestionSet
-  rescue BlockScore::BlockScoreError => e
-    puts "#{e.inspect}"
   end
 
   def test_retrieve_question_set
@@ -30,31 +28,23 @@ class QuestionSetResourceTest < Minitest::Test
     qs = person.question_set.create
     response = person.question_set.retrieve(qs.id)
     assert_equal response.class, BlockScore::QuestionSet
-  rescue BlockScore::BlockScoreError => e
-    puts "#{e.inspect}"
   end
 
   def test_list_question_set
     response = list_question_sets
     assert_equal response.class, Array
-  rescue BlockScore::BlockScoreError => e
-    puts "#{e.inspect}"
   end
 
   def test_list_question_set_with_count
     response = list_question_sets(:count => 2)
     assert_equal response.class, Array
     assert_equal response.size, 2
-  rescue BlockScore::BlockScoreError => e
-    puts "#{e.inspect}"
   end
 
   def test_list_question_set_with_count_and_offset
     response = list_question_sets(:count => 2, :offset => 2)
     assert_equal response.class, Array
     assert_equal response.size, 2
-  rescue BlockScore::BlockScoreError => e
-    puts "#{e.inspect}"
   end
 
   def test_score
