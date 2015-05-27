@@ -8,12 +8,16 @@ module ResourceTest
   def test_create_resource
     response = create_resource(resource)
     assert_equal response.class, resource_to_class(resource)
+  rescue BlockScore::BlockScoreError => e
+    puts "#{e.inspect}"
   end
 
   def test_retrieve_resource
     r = create_resource(resource)
     response = resource_to_class(resource).send(:retrieve, r.id)
     assert_equal resource, response.object
+  rescue BlockScore::BlockScoreError => e
+    puts "#{e.inspect}"
   end
 
   def test_list_resource

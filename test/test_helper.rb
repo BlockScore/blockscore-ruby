@@ -49,7 +49,7 @@ def create_question_set
 end
 
 def create_resource(resource)
-  params = FactoryGirl.create(resource)
+  params = FactoryGirl.create((resource.to_s + '_params').to_sym)
   r = resource_to_class(resource).create(params)
 
   # make sure resulting object responds to the desired keys
