@@ -243,4 +243,18 @@ FactoryGirl.define do
     name_full { Faker::Name.name }
     name_strength { %w(low medium high).sample }
   end
+
+  # We can do this because the error type is determined by the
+  # HTTP response code.
+  factory :blockscore_error, :class => Hash, :traits => [:resource] do
+    error { create(:error_contents) }
+  end
+
+  # Easily create the desired nesting for error objects.
+  factory :error_contents, :class => Hash, :traits => [:resource] do
+    message { 'An error occurred.' }
+    type { 'invalid_request_error' }
+    code { '0' }
+    param { 'name_first' }
+  end
 end

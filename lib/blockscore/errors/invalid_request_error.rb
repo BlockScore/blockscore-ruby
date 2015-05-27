@@ -6,13 +6,8 @@ module BlockScore
 
     # Public: Creates a new instance of BlockScore::InvalidRequestError.
     #
-    # Optional parameters:
-    #
-    # message - The String error message to report.
-    # http_status - The Fixnum HTTP status code (usually 4xx or 5xx).
-    # error_type - The type of error that occurred.
-    # http_body - The body of the HTTP request.
-    # param - The parameter which was invalid.
+    # rbody - The HTTP response body from HTTParty.
+    # rcode - The HTTP response code from HTTParty.
     #
     # Examples
     #
@@ -21,9 +16,9 @@ module BlockScore
     # rescue BlockScore::InvalidRequestError => e
     #   puts "ERROR: #{e.message} with code #{e.http_status}"
     # end
-    def initialize(response, rcode = nil)
+    def initialize(rbody, rcode = nil)
       super
-      @param = response[:error][:param]
+      @param = rbody[:error][:param]
     end
 
     def to_s

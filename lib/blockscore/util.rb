@@ -27,11 +27,11 @@ module BlockScore
 
       case response.code
       when 400, 404
-        fail InvalidRequestError, obj
+        fail InvalidRequestError.new(obj, response.code)
       when 401
-        fail AuthenticationError, obj
+        fail AuthenticationError.new(obj, response.code)
       else
-        fail APIError, obj
+        fail APIError.new(obj, response.code)
       end
     end
 

@@ -1,5 +1,7 @@
 require File.expand_path(File.join(File.dirname(__FILE__), '../support/query'))
 
+ERROR_IDS = %w(400 401 404 500)
+
 def index_response(resource, count)
   {
     :total_count => count,
@@ -20,11 +22,19 @@ def check_uri_for_api_key(uri)
   end
 end
 
-def handle_test_response(request, id, action, factory_name)
-  status = response_status request, action
-  body = response_body request, id, action, factory_name
+def error_id?(id)
+  ERROR_IDS.include? id
+end
 
-  build_test_response status, body
+def handle_test_response(request, id, action, factory_name)
+  if error_id? id
+    handle_error_response id
+  else
+    status = response_status request, action
+    body = response_body request, id, action, factory_name
+
+    build_test_response status, body
+  end
 end
 
 def response_status(request, action)
@@ -48,4 +58,9 @@ end
 
 def build_test_response(status, body)
   { :status => status, :body => body, :headers => {} }
+end
+
+
+def handle_error_response(id)
+  build_test_response(id.to_i, FactoryGirl.json(:blockscore_error))
 end
