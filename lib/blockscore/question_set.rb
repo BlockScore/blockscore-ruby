@@ -17,8 +17,12 @@ module BlockScore
       self.class.create(:person_id => person_id)
     end
 
-    def score(answers)
-      self.class.post "#{self.class.endpoint}/#{id}/score", :answers => answers
+    def score(answers = nil)
+      if answers.nil? && attributes
+        attributes[:score]
+      else
+        self.class.post "#{self.class.endpoint}/#{id}/score", :answers => answers
+      end
     end
   end
 end
