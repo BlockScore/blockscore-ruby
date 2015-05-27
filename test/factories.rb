@@ -61,7 +61,7 @@ FactoryGirl.define do
       Faker::Address.secondary_address if rand(1..2) == 1
     end
     address_city { Faker::Address.city }
-    address_state { Faker::Address.state_abbr }
+    address_subdivision { Faker::Address.state_abbr }
     address_postal_code { Faker::Address.postcode }
     address_country_code { Faker::Address.country_code }
   end
@@ -117,6 +117,12 @@ FactoryGirl.define do
   end
 
   # Candidate factory
+  factory :candidate_params, :class => Hash, :traits => [:resource] do
+    ssn { Faker::Base.regexify(/\d{4}/) }
+    name
+    address
+  end
+
   factory :candidate, :class => Hash, :traits => [:resource] do
     object { 'candidate' }
     metadata
@@ -124,12 +130,20 @@ FactoryGirl.define do
     testmode
     ssn { Faker::Base.regexify(/\d{4}/) }
     passport { nil }
-    data_of_birth { "19#{rand(40..99)}-#{rand(1..12)}-#{rand(1..28)}" }
+    date_of_birth { "19#{rand(40..99)}-#{rand(1..12)}-#{rand(1..28)}" }
     name
     address
   end
 
   # Company Factory
+  factory :company_params, :class => Hash, :traits => [:resource] do
+    entity_name { Faker::Company.name }
+    tax_id { Faker::Base.regexify(/\d{9}/) }
+    incorporation_country_code { Faker::Address.country_code }
+    incorporation_type { 'corporation' }
+    address
+  end
+
   factory :company, :class => Hash, :traits => [:resource] do
     object { 'company' }
     metadata
@@ -151,7 +165,16 @@ FactoryGirl.define do
     phone_number
     ip_address { Faker::Internet.ip_v4_address }
     address
-    detail { build(:company_details) }
+    details { build(:company_details) }
+  end
+
+  factory :person_params, :class => Hash, :traits => [:resource] do
+    name
+    document
+    address
+    birthday
+    phone_number
+    ip_address { Faker::Internet.ip_v4_address }
   end
 
   factory :person, :class => Hash, :traits => [:resource] do
@@ -160,14 +183,22 @@ FactoryGirl.define do
     timestamps
     status
     livemode
+    name
     phone_number
     ip_address { Faker::Internet.ip_v4_address }
+    birthday
     address
     document
     details { build(:person_details) }
     question_set_ids do
       rand(0..5).times.collect { Faker::Base.regexify(/\d{24}/) }
     end
+  end
+
+  # QuestionSet Factory
+
+  factory :question_set_params, :class => Hash, :traits => [:resource] do
+    person_id { Faker::Base.regexify(/\d{24}/) }
   end
 
   factory :question_set, :class => Hash, :traits => [:resource] do
@@ -213,7 +244,14 @@ FactoryGirl.define do
     date_of_birth { Faker::Base.regexify(/19\d{2}-01-01/) }
     passport { nil }
     ssn { Faker::Base.regexify(/\d{4}/) }
-    address
+    address_street1 { Faker::Address.street_address }
+    address_street2 do
+      Faker::Address.secondary_address if rand(1..2) == 1
+    end
+    address_city { Faker::Address.city }
+    address_state { Faker::Address.state_abbr }
+    address_postal_code { Faker::Address.postcode }
+    address_country_code { Faker::Address.country_code }
     address_raw { full_address }
     names { build_list(:match_name, rand(1..5)) }
     births { build_list(:match_birth, rand(1..5)) }
@@ -222,7 +260,14 @@ FactoryGirl.define do
   end
 
   factory :match_address, :class => Hash, :traits => [:resource] do
-    address
+    address_street1 { Faker::Address.street_address }
+    address_street2 do
+      Faker::Address.secondary_address if rand(1..2) == 1
+    end
+    address_city { Faker::Address.city }
+    address_state { Faker::Address.state_abbr }
+    address_postal_code { Faker::Address.postcode }
+    address_country_code { Faker::Address.country_code }
     address_full { full_address }
   end
 
