@@ -1,10 +1,12 @@
 module BlockScore
   module Util
-    def self.parse_json!(json_obj)
+    extend self
+
+    def parse_json!(json_obj)
       JSON.parse(json_obj, :symbolize_names => true)
     end
 
-    def self.parse_json(json_obj)
+    def parse_json(json_obj)
       parse_json! json_obj
     rescue JSON::ParserError
       fail BlockScore::Error, {
@@ -14,16 +16,16 @@ module BlockScore
       }
     end
 
-    def self.create_object(resource, options = {})
-      Util.to_constant("BlockScore::#{Util.to_camelcase(resource)}").new(options)
+    def create_object(resource, options = {})
+      to_constant("BlockScore::#{to_camelcase(resource)}").new(options)
     end
 
-    def self.create_watchlist_hit(params)
+    def create_watchlist_hit(params)
       BlockScore::WatchlistHit.new(params)
     end
 
-    def self.handle_api_error(response)
-      obj = Util.parse_json(response.body)
+    def handle_api_error(response)
+      obj = parse_json(response.body)
 
       case response.code
       when 400, 404
@@ -35,7 +37,7 @@ module BlockScore
       end
     end
 
-    def self.to_plural(str)
+    def to_plural(str)
       if str.end_with? 'y'
         str[0..-2] + 'ies'
       elsif str.end_with? 'h'
@@ -47,7 +49,7 @@ module BlockScore
       end
     end
 
-    def self.to_constant(camel_cased_word)
+    def to_constant(camel_cased_word)
       names = camel_cased_word.split('::')
 
       # Trigger a built-in NameError exception including the ill-formed constant in the message.
@@ -78,11 +80,11 @@ module BlockScore
       end
     end
 
-    def self.to_camelcase(str)
+    def to_camelcase(str)
       str.split('_').map { |i| i.capitalize }.join('')
     end
 
-    def self.to_underscore(str)
+    def to_underscore(str)
       str.gsub(/::/, '/').
       gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').
       gsub(/([a-z\d])([A-Z])/,'\1_\2').

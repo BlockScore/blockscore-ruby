@@ -47,34 +47,34 @@ person = BlockScore::Person.create(
 
 # Check the validation status of the Person
 person.status
-# => true
+# => 'valid'
 
 # Or view some of the other attributes
 person.details[:ofac]
-# => "no_match"
+# => 'no_match'
 
 person.address_city
-# => "Cupertino"
+# => 'Cupertino'
 
 person.id
-# => "544744f43266330002010000"
+# => '544744f43266330002010000'
 
 # ...
 ```
 
-To see the list of calls you can make, please visit out [full Ruby API reference](http://docs.blockscore.com/v4.0/ruby).
+To see the list of calls you can make, please visit our [full Ruby API reference](http://docs.blockscore.com/v4.0/ruby).
 
 ## Exceptions and Errors
 
 ### Error Description
 
-* The generic error class is BlockScoreError. All other types of errors are derived from BlockScoreError.
+* The generic error class is BlockScore::Error. All other types of errors are derived from BlockScore::Error.
 * Errors contain information such as the HTTP response code, a short message describing the error, the type of error, and if applicable, the parameter and error code at issue.
 * Also available in the error object is the full JSON text representation of the data.
 
 ### Error Types
 
-* BlockScoreError (Generic error, base class)
+* Error (Generic error, base class)
 * InvalidRequestError (400 : Input could not be validated)
 * InvalidRequestError (400 : Missing parameter)
 * AuthenticationError (401 : Invalid API Key)
