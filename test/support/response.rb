@@ -1,4 +1,4 @@
-require File.expand_path(File.join(File.dirname(__FILE__), '../support/query'))
+require 'cgi'
 
 ERROR_IDS = %w(400 401 404 500)
 
@@ -48,11 +48,19 @@ end
 def response_body(request, id, action, factory_name)
   if id.nil? && request.method == :get || action == 'hits'
     options = parse_query request.uri.query
-    index_response factory_name, options.fetch(:count, 5).to_i
+    index_response factory_name, options.fetch('count', [5]).first.to_i
   elsif action == 'history'
     FactoryGirl.build_list(factory_name, 5).to_json
   else
     FactoryGirl.json(factory_name)
+  end
+end
+
+def parse_query(query)
+  if query.nil?
+    {}
+  else
+    CGI::parse query
   end
 end
 

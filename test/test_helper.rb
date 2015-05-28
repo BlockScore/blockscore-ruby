@@ -50,12 +50,12 @@ end
 
 def create_resource(resource)
   params = FactoryGirl.create((resource.to_s + '_params').to_sym)
-  r = resource_to_class(resource).create(params)
+  response = resource_to_class(resource).create(params)
 
   # make sure resulting object responds to the desired keys
-  params.each { |k, _| assert_respond_to r, k }
+  params.each { |key, _| assert_respond_to response, key }
 
-  r
+  response
 end
 
 # Convert a resource into the corresponding BlockScore class.
@@ -74,12 +74,13 @@ class Minitest::Test
     stub_request(:any, /.*api\.blockscore\.com\/.*/).
       with(headers: HEADERS).
       to_return do |request|
-        check_uri_for_api_key(request.uri)
+        uri = request.uri
+        check_uri_for_api_key(uri)
 
-        resource, id, action = request.uri.path.split('/').tap(&:shift)
+        resource, id, action = uri.path.split('/').tap(&:shift)
         factory_name = resource_from_uri(resource)
 
-        if FactoryGirl.factories[factory_name].nil?
+        unless FactoryGirl.factories[factory_name]
           raise ArgumentError, "could not find factory #{factory_name.inspect}."
         end
 
