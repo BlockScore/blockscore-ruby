@@ -13,7 +13,7 @@ module BlockScore
     Base.auth api_key
   end
 
-  def self.version(v)
-    Base.version = v
+  def self.version=(version)
+    Base.version = version
   end
 end
