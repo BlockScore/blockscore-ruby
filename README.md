@@ -1,4 +1,4 @@
-# blockscore-ruby 
+# blockscore-ruby
 [![Circle CI](https://circleci.com/gh/BlockScore/blockscore-ruby/tree/master.svg?style=shield)](https://circleci.com/gh/BlockScore/blockscore-ruby/tree/4.1.0) [![Code Climate](https://codeclimate.com/github/BlockScore/blockscore-ruby/badges/gpa.svg)](https://codeclimate.com/github/BlockScore/blockscore-ruby) [![Test Coverage](https://codeclimate.com/github/BlockScore/blockscore-ruby/badges/coverage.svg)](https://codeclimate.com/github/BlockScore/blockscore-ruby/coverage) [![Dependency Status](https://gemnasium.com/BlockScore/blockscore-ruby.svg)](https://gemnasium.com/BlockScore/blockscore-ruby)
 
 This is the official library for Ruby clients of the BlockScore API. [Click here to read the full documentation including code examples](http://docs.blockscore.com/v4.0/ruby/).
@@ -22,7 +22,7 @@ gem 'blockscore', '~> 4.1.0'
 To get started, you can initialize the library with one line:
 
 ```ruby
-BlockScore.api_key('your-api-key')
+BlockScore.api_key = 'your-api-key'
 ```
 
 Create a Person:
@@ -94,7 +94,7 @@ $ rake test
 ```
 
 ## Contributing to BlockScore
- 
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
 * Fork the project.
@@ -107,4 +107,3 @@ $ rake test
 
 Copyright (c) 2014 BlockScore. See LICENSE.txt for
 further details.
-
