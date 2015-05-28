@@ -49,6 +49,7 @@ module BlockScore
       end
     end
 
+    # Taken from activesupport: http://git.io/vkWtR
     def to_constant(camel_cased_word)
       names = camel_cased_word.split('::')
 
@@ -84,6 +85,7 @@ module BlockScore
       str.split('_').map { |i| i.capitalize }.join('')
     end
 
+    # Taken from Rulers: http://git.io/vkWqf
     def to_underscore(str)
       str.gsub(/::/, '/').
       gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').
