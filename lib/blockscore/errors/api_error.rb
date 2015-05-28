@@ -1,6 +1,6 @@
-require 'blockscore/errors/blockscore_error'
+require 'blockscore/errors/error'
 
 module BlockScore
-  class APIError < BlockScoreError
+  class APIError < Error
   end
 end

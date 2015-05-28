@@ -1,16 +1,16 @@
 module BlockScore
-  class BlockScoreError < StandardError
+  class Error < StandardError
     attr_reader :message
     attr_reader :http_status
     attr_reader :error_type
     attr_reader :http_body
 
-    # Public: Creates a new instance of BlockScore::InvalidRequestError.
+    # Public: Creates a new instance of BlockScore::Error.
     #
     # rbody - The HTTP response body from HTTParty.
     # rcode - The HTTP response code from HTTParty.
     #
-    # While BlockScoreError can be instantiated, the more meaningful
+    # While BlockScore::Error can be instantiated, the more meaningful
     # error classes are its subclasses:
     # InvalidRequestError - Indicates a malformed request (HTTP 400 or 404)
     # APIError - Indicates an error on the server side (HTTP 5xx)

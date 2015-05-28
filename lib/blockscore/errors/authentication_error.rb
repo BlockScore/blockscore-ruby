@@ -1,6 +1,6 @@
-require 'blockscore/errors/blockscore_error'
+require 'blockscore/errors/error'
 
 module BlockScore
-  class AuthenticationError < BlockScoreError
+  class AuthenticationError < Error
   end
 end

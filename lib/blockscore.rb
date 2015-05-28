@@ -5,7 +5,7 @@ require 'blockscore/person'
 require 'blockscore/watchlist_hit'
 require 'blockscore/errors/api_error'
 require 'blockscore/errors/authentication_error'
-require 'blockscore/errors/blockscore_error'
+require 'blockscore/errors/error'
 require 'blockscore/errors/invalid_request_error'
 
 module BlockScore

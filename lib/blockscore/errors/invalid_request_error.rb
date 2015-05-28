@@ -1,7 +1,7 @@
-require 'blockscore/errors/blockscore_error'
+require 'blockscore/errors/error'
 
 module BlockScore
-  class InvalidRequestError < BlockScoreError
+  class InvalidRequestError < Error
     attr_accessor :param
 
     # Public: Creates a new instance of BlockScore::InvalidRequestError.
