@@ -24,6 +24,10 @@ module BlockScore
       BlockScore::WatchlistHit.new(params)
     end
 
+    def create_watchlist_hit_array(params_array)
+      params_array.map { |p| create_watchlist_hit(p) }
+    end
+
     def handle_api_error(response)
       obj = parse_json(response.body)
 

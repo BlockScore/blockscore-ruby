@@ -12,14 +12,14 @@ module BlockScore
         json_obj = Util.parse_json(response.body)
 
         if json_obj.respond_to?(:key?) && json_obj.key?(:matches)
-          json_obj[:matches].map { |obj| Util.create_watchlist_hit obj }
+          Util.create_watchlist_hit_array json_obj[:matches]
         elsif json_obj.class == Array
           build_response_from_arr json_obj
         elsif json_obj[:object] == 'list'
           data = json_obj[:data]
-          
+
           if data.first.class == Hash && data.first.key?(:matching_info)
-            data.map { |obj| Util.create_watchlist_hit(obj) }
+            Util.create_watchlist_hit_array data
           else
             build_response_from_arr data
           end
