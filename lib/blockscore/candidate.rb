@@ -6,11 +6,15 @@ require 'blockscore/actions/all'
 
 module BlockScore
   class Candidate < BlockScore::Base
+    extend Forwardable
+
     include BlockScore::Actions::Create
     include BlockScore::Actions::Retrieve
     include BlockScore::Actions::Update
     include BlockScore::Actions::Delete
     include BlockScore::Actions::All
+
+    def_delegators 'self.class', :api_url, :endpoint, :get, :post
 
     def history
       resource_member 'history'
@@ -22,13 +26,13 @@ module BlockScore
 
     def search(options = {})
       options[:candidate_id] = id
-      self.class.post "#{self.class.api_url}watchlists", options
+      post "#{api_url}watchlists", options
     end
 
     private
 
     def resource_member(member)
-      self.class.get "#{self.class.endpoint}/#{id}/#{member}", {}
+      get "#{endpoint}/#{id}/#{member}", {}
     end
   end
 end
