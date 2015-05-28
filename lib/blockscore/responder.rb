@@ -16,11 +16,12 @@ module BlockScore
         elsif json_obj.class == Array
           build_response_from_arr json_obj
         elsif json_obj[:object] == 'list'
-          first = json_obj[:data].first
-          if first.class == Hash && first.key?(:matching_info)
-            json_obj[:data].map { |obj| Util.create_watchlist_hit(obj) }
+          data = json_obj[:data]
+          
+          if data.first.class == Hash && data.first.key?(:matching_info)
+            data.map { |obj| Util.create_watchlist_hit(obj) }
           else
-            build_response_from_arr json_obj[:data]
+            build_response_from_arr data
           end
         else
           Util.create_object resource, json_obj

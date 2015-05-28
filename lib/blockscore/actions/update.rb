@@ -1,3 +1,5 @@
+require 'forwardable'
+
 module BlockScore
   module Actions
     # Public: Contains the :save instance method, which updates the
@@ -14,6 +16,8 @@ module BlockScore
     #  foo.save
     #  # => true
     module Update
+      extend Forwardable
+      
       # Attributes which will not change once the object is created.
       PERSISTENT_ATTRIBUTES = [
         :id,
@@ -22,6 +26,8 @@ module BlockScore
         :updated_at,
         :livemode
       ]
+
+      def_delegators 'self.class', :endpoint, :patch
 
       # Public: Saves the changes to the object via an Update call to
       # BlockScore API.
@@ -34,7 +40,7 @@ module BlockScore
       end
 
       def save!
-        self.class.patch "#{self.class.endpoint}/#{id}", filter_params
+        patch "#{endpoint}/#{id}", filter_params
 
         true
       end
@@ -42,7 +48,7 @@ module BlockScore
       # Filters out the non-updateable params.
       def filter_params
         # Cannot %i syntax, not introduced until Ruby 2.0.0
-        attributes.reject { |k, _| PERSISTENT_ATTRIBUTES.include?(k) }
+        attributes.reject { |key, _| PERSISTENT_ATTRIBUTES.include?(key) }
       end
 
       private
