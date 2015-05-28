@@ -11,7 +11,7 @@ module BlockScore
     include BlockScore::Actions::Retrieve
     include BlockScore::Actions::All
 
-    def_delegators 'self.class', :retrieve, :all
+    def_delegators 'self.class', :retrieve, :all, :post, :endpoint
 
     def create
       self.class.create(:person_id => person_id)
@@ -21,7 +21,7 @@ module BlockScore
       if answers.nil? && attributes
         attributes[:score]
       else
-        self.class.post "#{self.class.endpoint}/#{id}/score", :answers => answers
+        post "#{endpoint}/#{id}/score", :answers => answers
       end
     end
   end
