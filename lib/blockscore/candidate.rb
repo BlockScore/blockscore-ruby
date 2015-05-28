@@ -3,6 +3,7 @@ require 'blockscore/actions/retrieve'
 require 'blockscore/actions/update'
 require 'blockscore/actions/delete'
 require 'blockscore/actions/all'
+require 'forwardable'
 
 module BlockScore
   class Candidate < BlockScore::Base
