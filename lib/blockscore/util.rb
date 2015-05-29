@@ -24,19 +24,6 @@ module BlockScore
       arr.map { |obj| create_object(resource, obj) }
     end
 
-    def handle_api_error(response)
-      obj = parse_json(response.body)
-
-      case response.code
-      when 400, 404
-        fail InvalidRequestError.new(obj, response.code)
-      when 401
-        fail AuthenticationError.new(obj, response.code)
-      else
-        fail APIError.new(obj, response.code)
-      end
-    end
-
     def to_plural(str)
       if str.end_with? 'y'
         str[0..-2] + 'ies'
