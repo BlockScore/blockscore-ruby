@@ -19,19 +19,33 @@ module BlockScore
 
     private
 
-    def build_response_from_arr(arr_obj)
-      arr_obj.map { |obj| Util.create_object(resource, obj) }
+    def dispatch_success(json)
+      resource, data = parse(json)
+      create_reponse_object resource, data
     end
 
-    def dispatch_success(json)
+    # Parses the data block out of the json object.
+    def parse(json)
       if watchlist_search?(json)
-        Util.create_watchlist_hit_array json[:matches]
-      elsif resource_array?(json)
-        build_response_from_arr json
+        ['watchlist_hit', json[:matches]]
       elsif resource_index?(json)
         index_response(json)
-      else # single object
-        Util.create_object resource, json
+      else
+        [resource, json]
+      end
+    end
+
+    def create_reponse_object(resource, data)
+      method = builder(data)
+
+      Util.send(method, resource, data)
+    end
+
+    def builder(data)
+      if data.class == Array
+        :create_array
+      else
+        :create_object
       end
     end
 
@@ -49,9 +63,9 @@ module BlockScore
       data = json[:data]
 
       if data.first.class == Hash && data.first.key?(:matching_info)
-        Util.create_watchlist_hit_array data
+        ['watchlist_hit', data]
       else
-        build_response_from_arr data
+        [resource, data]
       end
     end
 

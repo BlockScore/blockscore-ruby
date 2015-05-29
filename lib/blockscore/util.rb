@@ -20,12 +20,8 @@ module BlockScore
       to_constant("BlockScore::#{to_camelcase(resource)}").new(options)
     end
 
-    def create_watchlist_hit(params)
-      BlockScore::WatchlistHit.new(params)
-    end
-
-    def create_watchlist_hit_array(params_array)
-      params_array.map { |p| create_watchlist_hit(p) }
+    def create_array(resource, arr)
+      arr.map { |obj| create_object(resource, obj) }
     end
 
     def handle_api_error(response)
