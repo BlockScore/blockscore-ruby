@@ -57,10 +57,10 @@ def response_body(request, id, action, factory_name)
 end
 
 def parse_query(query)
-  if query.nil?
-    {}
-  else
+  if query
     CGI::parse query
+  else
+    {}
   end
 end
 
