@@ -45,16 +45,16 @@ module BlockScore
 
     # hash style list format
     def resource_index?
-      json.class == Hash && json[:object] == 'list'
+      json.is_a?(Hash) && json[:object] == 'list'
     end
 
     # array formatted response
     def resource_array?
-      data.class == Array
+      data.is_a? Array
     end
 
     def watchlist_hits?
-      data.first.class == Hash && data.first.key?(:matching_info)
+      data.first.is_a?(Hash) && data.first.key?(:matching_info)
     end
   end
 end
