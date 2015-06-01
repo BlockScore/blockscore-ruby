@@ -7,7 +7,9 @@ require 'blockscore/errors/invalid_request_error'
 
 module BlockScore
   module Responder
-    def handle_response(response)
+    extend self
+
+    def handle_response(resource, response)
       case response.code
       when 200, 201
         BlockScore::Dispatcher.new(resource, response).call

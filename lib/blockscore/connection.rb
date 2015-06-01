@@ -9,8 +9,6 @@ require 'blockscore/errors/invalid_request_error'
 
 module BlockScore
   module Connection
-    include BlockScore::Responder
-
     def self.api_key=(key)
       @@api_key = key
     end
@@ -54,7 +52,7 @@ module BlockScore
 
       response = execute_request(method, path, params)
 
-      handle_response(response)
+      BlockScore::Responder.handle_response(resource, response)
     end
 
     def execute_request(method, path, params)
