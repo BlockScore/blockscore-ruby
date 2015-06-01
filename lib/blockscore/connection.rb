@@ -1,7 +1,7 @@
 require 'json'
 require 'httparty'
 require 'blockscore/version'
-require 'blockscore/responder'
+require 'blockscore/response'
 require 'blockscore/errors/api_error'
 require 'blockscore/errors/authentication_error'
 require 'blockscore/errors/error'
@@ -52,7 +52,7 @@ module BlockScore
 
       response = execute_request(method, path, params)
 
-      BlockScore::Responder.handle_response(resource, response)
+      BlockScore::Response.handle_response(resource, response)
     end
 
     def execute_request(method, path, params)

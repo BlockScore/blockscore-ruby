@@ -1,4 +1,4 @@
-require 'blockscore/dispatcher'
+require 'blockscore/dispatch'
 require 'blockscore/util'
 require 'blockscore/errors/api_error'
 require 'blockscore/errors/authentication_error'
@@ -6,13 +6,13 @@ require 'blockscore/errors/error'
 require 'blockscore/errors/invalid_request_error'
 
 module BlockScore
-  module Responder
+  module Response
     extend self
 
     def handle_response(resource, response)
       case response.code
       when 200, 201
-        BlockScore::Dispatcher.new(resource, response).call
+        BlockScore::Dispatch.new(resource, response).call
       else
         api_error response
       end

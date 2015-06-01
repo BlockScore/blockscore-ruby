@@ -1,10 +1,9 @@
 require 'blockscore/util'
 
 module BlockScore
-  class Dispatcher
+  class Dispatch
     def initialize(resource, response)
       @resource = resource
-      @response = response
       @json = Util.parse_json(response.body)
     end
 
