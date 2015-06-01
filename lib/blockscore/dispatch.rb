@@ -1,10 +1,15 @@
+require 'blockscore/fingerprint'
 require 'blockscore/util'
+require 'forwardable'
 
 module BlockScore
   class Dispatch
+    extend Forwardable
+
+    def_delegators :@fingerprint, :builder, :data, :resource
+
     def initialize(resource, response)
-      @resource = resource
-      @json = Util.parse_json(response.body)
+      @fingerprint = BlockScore::Fingerprint.new(resource, response.body)
     end
 
     def call
@@ -13,47 +18,13 @@ module BlockScore
 
     private
 
-    attr_reader :json
-
-    def data
-      if watchlist_search?
-        json[:matches]
-      elsif resource_index?
-        json[:data]
-      else
-        json
-      end
-    end
-
-    def resource
-      if watchlist_search? || watchlist_hits?
-        'watchlist_hit'
-      else
-        @resource
-      end
-    end
-
     def builder
       resource_array? ? :create_array : :create_object
-    end
-
-    # candidates#search endpoint
-    def watchlist_search?
-      json.respond_to?(:key?) && json.key?(:matches)
-    end
-
-    # hash style list format
-    def resource_index?
-      json.is_a?(Hash) && json[:object] == 'list'
     end
 
     # array formatted response
     def resource_array?
       data.is_a? Array
-    end
-
-    def watchlist_hits?
-      data.first.is_a?(Hash) && data.first.key?(:matching_info)
     end
   end
 end
