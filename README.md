@@ -1,5 +1,4 @@
-# blockscore-ruby
-[![Circle CI](https://circleci.com/gh/BlockScore/blockscore-ruby/tree/master.svg?style=shield)](https://circleci.com/gh/BlockScore/blockscore-ruby/tree/4.1.0) [![Code Climate](https://codeclimate.com/github/BlockScore/blockscore-ruby/badges/gpa.svg)](https://codeclimate.com/github/BlockScore/blockscore-ruby) [![Test Coverage](https://codeclimate.com/github/BlockScore/blockscore-ruby/badges/coverage.svg)](https://codeclimate.com/github/BlockScore/blockscore-ruby/coverage) [![Dependency Status](https://gemnasium.com/BlockScore/blockscore-ruby.svg)](https://gemnasium.com/BlockScore/blockscore-ruby)
+# blockscore-ruby [![Circle CI](https://circleci.com/gh/BlockScore/blockscore-ruby/tree/master.svg?style=shield)](https://circleci.com/gh/BlockScore/blockscore-ruby/tree/4.1.0) [![Test Coverage](https://codeclimate.com/github/BlockScore/blockscore-ruby/badges/coverage.svg)](https://codeclimate.com/github/BlockScore/blockscore-ruby/coverage) [![Dependency Status](https://gemnasium.com/BlockScore/blockscore-ruby.svg)](https://gemnasium.com/BlockScore/blockscore-ruby)
 
 This is the official library for Ruby clients of the BlockScore API. [Click here to read the full documentation including code examples](http://docs.blockscore.com/v4.0/ruby/).
 
@@ -25,7 +24,7 @@ To get started, you can initialize the library with one line:
 BlockScore.api_key = 'your-api-key'
 ```
 
-Create a Person:
+To verify a person:
 
 ```ruby
 person = BlockScore::Person.create(
@@ -50,8 +49,8 @@ person.status
 # => 'valid'
 
 # Or view some of the other attributes
-person.details[:ofac]
-# => 'no_match'
+person.details.address
+# => 'mismatch'
 
 person.address_city
 # => 'Cupertino'
@@ -64,46 +63,10 @@ person.id
 
 To see the list of calls you can make, please visit our [full Ruby API reference](http://docs.blockscore.com/v4.0/ruby).
 
-## Exceptions and Errors
+## Testing
 
-### Error Description
-
-* The generic error class is BlockScore::Error. All other types of errors are derived from BlockScore::Error.
-* Errors contain information such as the HTTP response code, a short message describing the error, the type of error, and if applicable, the parameter and error code at issue.
-* Also available in the error object is the full JSON text representation of the data.
-
-### Error Types
-
-* Error (Generic error, base class)
-* InvalidRequestError (400 : Input could not be validated)
-* InvalidRequestError (400 : Missing parameter)
-* AuthenticationError (401 : Invalid API Key)
-* InvalidRequestError (404 : Attempting to reference nonexistent endpoint)
-* APIError (500 : Error on the Blockscore API)
-
-## Running the test suite
-
-The test suite uses a public BlockScore API key that was created specifically to ease the testing and contribution processes. With that being said:
-
-*DO NOT REPLACE THE PROVIDED TEST PARAMETERS WITH ANY SENSITIVE INFORMATION AS ANYTHING SENT TO THE API USING THE PROVIDED TEST KEY WILL BE __PUBLIC__ AND AVAILABLE TO BOTS AND HUMANS ALIKE.*
-
-In order to run the test suite:
+The test suite uses a public BlockScore API key that was created specifically to ease the testing and contribution processes. **Please do not enter personal details for tests.** In order to run the test suite:
 
 ```shell
 $ rake test
 ```
-
-## Contributing to BlockScore
-
-* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
-* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
-* Fork the project.
-* Start a feature/bugfix branch.
-* Commit and push until you are happy with your contribution.
-* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
-* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
-
-## Copyright
-
-Copyright (c) 2014 BlockScore. See LICENSE.txt for
-further details.
