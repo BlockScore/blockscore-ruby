@@ -14,7 +14,7 @@ module BlockScore
     def_delegators 'self.class', :retrieve, :all, :post, :endpoint
 
     def create
-      self.class.create(:person_id => person_id)
+      self.class.create(:person_id => person.id)
     end
 
     def score(answers = nil)
