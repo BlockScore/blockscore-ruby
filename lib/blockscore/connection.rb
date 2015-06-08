@@ -9,10 +9,6 @@ require 'blockscore/errors/invalid_request_error'
 
 module BlockScore
   module Connection
-    def self.api_key=(key)
-      @@api_key = key
-    end
-
     def get(path, params)
       request :get, path, params
     end
@@ -44,7 +40,7 @@ module BlockScore
     end
 
     def request(method, path, params)
-      unless @@api_key
+      unless BlockScore.api_key
         fail BlockScore::AuthenticationError, {
           :error => { :message => "No API key was provided." }
         }
@@ -56,7 +52,7 @@ module BlockScore
     end
 
     def execute_request(method, path, params)
-      auth = { :username => @@api_key, :password => '' }
+      auth = { :username => BlockScore.api_key, :password => '' }
 
       if method == :get
         path = encode_path_params(path, params)

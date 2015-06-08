@@ -10,6 +10,10 @@ require 'blockscore/errors/invalid_request_error'
 
 module BlockScore
   def self.api_key=(api_key)
-    Base.auth api_key
+    @api_key = api_key
+  end
+
+  def self.api_key
+    @api_key
   end
 end

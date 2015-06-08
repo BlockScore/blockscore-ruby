@@ -11,6 +11,10 @@ module BlockScore
       @attributes = options
     end
 
+    def inspect
+      "#<#{self.class}:0x#{self.object_id.to_s(16)} JSON: " + JSON.pretty_generate(attributes)
+    end
+
     def refresh
       r = self.class.retrieve(id)
       @attributes = r.attributes
@@ -22,11 +26,6 @@ module BlockScore
 
     def self.resource
       @resource ||= Util.to_underscore(to_s.split('::').last)
-    end
-
-    def self.auth(api_key)
-      @@api_key = api_key
-      BlockScore::Connection.api_key = api_key
     end
 
     def self.api_url
