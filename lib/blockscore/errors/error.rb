@@ -23,8 +23,8 @@ module BlockScore
     end
 
     def to_s
-      status_string = @http_status.nil? ? "" : "(Status: #{@http_status})"
-      type_string = @error_type.nil? ? "" : "(Type: #{@error_type})"
+      status_string = @http_status ? "(Status: #{@http_status})" : ""
+      type_string = @error_type ? "(Type: #{@error_type})" : ""
 
       "#{type_string} #{message} #{status_string}"
     end
