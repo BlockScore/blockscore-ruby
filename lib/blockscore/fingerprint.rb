@@ -1,5 +1,3 @@
-require 'blockscore/util'
-
 module BlockScore
   class Fingerprint
     def initialize(resource, body)

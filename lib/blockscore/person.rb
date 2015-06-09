@@ -1,8 +1,3 @@
-require 'blockscore/actions/create'
-require 'blockscore/actions/retrieve'
-require 'blockscore/actions/all'
-require 'blockscore/question_set'
-
 module BlockScore
   class Person < Base
     include BlockScore::Actions::Create
@@ -13,7 +8,7 @@ module BlockScore
 
     def initialize(options = {})
       super
-      @question_set = BlockScore::QuestionSet.new :person => self
+      @question_set = QuestionSet.new :person => self
     end
   end
 end

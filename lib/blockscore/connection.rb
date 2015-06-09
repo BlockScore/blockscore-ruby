@@ -1,12 +1,3 @@
-require 'json'
-require 'httparty'
-require 'blockscore/version'
-require 'blockscore/response'
-require 'blockscore/errors/api_error'
-require 'blockscore/errors/authentication_error'
-require 'blockscore/errors/error'
-require 'blockscore/errors/invalid_request_error'
-
 module BlockScore
   module Connection
     def get(path, params)
@@ -41,14 +32,18 @@ module BlockScore
 
     def request(method, path, params)
       unless BlockScore.api_key
-        fail BlockScore::AuthenticationError, {
+        fail AuthenticationError, {
           :error => { :message => 'No API key was provided.' }
         }
       end
 
-      response = execute_request(method, path, params)
+      begin
+        response = execute_request(method, path, params)
+      rescue SocketError, Errno::ECONNREFUSED => e
+        fail APIConnectionError, { :error => { :message => e.message } }
+      end
 
-      BlockScore::Response.handle_response(resource, response)
+      Response.handle_response(resource, response)
     end
 
     def execute_request(method, path, params)

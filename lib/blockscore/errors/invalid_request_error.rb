@@ -1,5 +1,3 @@
-require 'blockscore/errors/error'
-
 module BlockScore
   class InvalidRequestError < Error
     attr_accessor :param

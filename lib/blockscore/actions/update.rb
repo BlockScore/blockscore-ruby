@@ -1,5 +1,3 @@
-require 'forwardable'
-
 module BlockScore
   module Actions
     # Public: Contains the :save instance method, which updates the

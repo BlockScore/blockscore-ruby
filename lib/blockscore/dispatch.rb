@@ -1,7 +1,3 @@
-require 'blockscore/fingerprint'
-require 'blockscore/util'
-require 'forwardable'
-
 module BlockScore
   class Dispatch
     extend Forwardable
@@ -9,7 +5,7 @@ module BlockScore
     def_delegators :@fingerprint, :builder, :data, :resource
 
     def initialize(resource, response)
-      @fingerprint = BlockScore::Fingerprint.new(resource, response.body)
+      @fingerprint = Fingerprint.new(resource, response.body)
     end
 
     def call

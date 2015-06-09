@@ -1,8 +1,3 @@
-require 'blockscore/actions/create'
-require 'blockscore/actions/retrieve'
-require 'blockscore/actions/all'
-require 'forwardable'
-
 module BlockScore
   class QuestionSet < Base
     extend Forwardable

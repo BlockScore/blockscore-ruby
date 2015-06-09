@@ -1,10 +1,8 @@
-require 'ostruct'
 require 'blockscore/connection'
-require 'blockscore/util'
 
 module BlockScore
   class Base
-    extend BlockScore::Connection
+    extend Connection
 
     attr_reader :attributes
 
@@ -21,7 +19,7 @@ module BlockScore
       @attributes = r.attributes
 
       true
-    rescue BlockScore::BlockScoreError
+    rescue Error
       false
     end
 
@@ -46,7 +44,7 @@ module BlockScore
     end
 
     def self.endpoint
-      if self == BlockScore::Base
+      if self == Base
         fail NotImplementedError, 'Base is an abstract class, not an API resource'
       end
 

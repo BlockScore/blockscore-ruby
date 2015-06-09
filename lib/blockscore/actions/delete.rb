@@ -17,13 +17,13 @@ module BlockScore
 
       def delete
         delete!
-      rescue BlockScore::Error
+      rescue Error
         false
       end
 
       def delete!
         self.class.delete "#{endpoint}/#{id}", {}
-        @attributes[:deleted] = true
+        attributes[:deleted] = true
         true
       end
     end
