@@ -30,9 +30,10 @@ module BlockScore
     end
 
     def save!
-      self.class.post self.class.endpoint, attributes
+      response = self.class.post self.class.endpoint, attributes
+      @attributes[:id] = response.id
 
-      true
+      refresh
     end
 
     def self.resource
