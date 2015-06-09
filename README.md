@@ -28,20 +28,20 @@ To verify a person:
 
 ```ruby
 person = BlockScore::Person.create(
-  birth_day: "23",
-  birth_month: "8",
-  birth_year: "1980",
-  document_type: "ssn",
-  document_value: "0000",
-  name_first: "John",
-  name_middle: "Pearce",
-  name_last: "Doe",
-  address_street1: "1 Infinite Loop",
-  address_street2: "Apt 6",
-  address_city: "Cupertino",
-  address_state: "CA",
-  address_postal_code: "95014",
-  address_country_code: "US"
+  birth_day: '23',
+  birth_month: '8',
+  birth_year: '1980',
+  document_type: 'ssn',
+  document_value: '0000',
+  name_first: 'John',
+  name_middle: 'Pearce',
+  name_last: 'Doe',
+  address_street1: '1 Infinite Loop',
+  address_street2: 'Apt 6',
+  address_city: 'Cupertino',
+  address_state: 'CA',
+  address_postal_code: '95014',
+  address_country_code: 'US'
 )
 
 # Check the validation status of the Person
