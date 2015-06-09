@@ -2,7 +2,7 @@ module BlockScore
   class Fingerprint
     def initialize(resource, body)
       @resource = resource
-      @body = Util.parse_json body
+      @body = Util.parse_json(body)
     end
 
     def data

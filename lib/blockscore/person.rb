@@ -8,7 +8,7 @@ module BlockScore
 
     def initialize(options = {})
       super
-      @question_set = QuestionSet.new :person => self
+      @question_set = QuestionSet.new(:person => self)
     end
   end
 end
