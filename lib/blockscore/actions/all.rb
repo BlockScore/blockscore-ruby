@@ -15,7 +15,7 @@ module BlockScore
     module All
       module ClassMethods
         def all(options = {})
-          get endpoint, options
+          get(endpoint, options)
         end
       end
 

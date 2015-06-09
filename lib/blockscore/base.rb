@@ -30,7 +30,7 @@ module BlockScore
     end
 
     def save!
-      response = self.class.post self.class.endpoint, attributes
+      response = self.class.post(self.class.endpoint, attributes)
       @attributes[:id] = response.id
 
       refresh
@@ -77,8 +77,8 @@ module BlockScore
     private
 
     def method_missing(method, *args, &block)
-      if respond_to_missing? method
-        if setter? method
+      if respond_to_missing?(method)
+        if setter?(method)
           add_setter(method, args)
         else
           add_accessor(method, args)
@@ -94,7 +94,7 @@ module BlockScore
     end
 
     def setter?(symbol)
-      symbol.to_s.end_with? '='
+      symbol.to_s.end_with?('=')
     end
   end
 end

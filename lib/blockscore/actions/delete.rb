@@ -22,7 +22,7 @@ module BlockScore
       end
 
       def delete!
-        self.class.delete "#{endpoint}/#{id}", {}
+        self.class.delete("#{endpoint}/#{id}", {})
         attributes[:deleted] = true
         true
       end

@@ -29,7 +29,7 @@ module BlockScore
 
       def save!
         if respond_to? :id
-          patch "#{endpoint}/#{id}", filter_params
+          patch("#{endpoint}/#{id}", filter_params)
           true
         else
           super
@@ -45,8 +45,8 @@ module BlockScore
       private
 
       def method_missing(method, *args, &block)
-        if respond_to_missing? method
-          if method.to_s.end_with? '='
+        if respond_to_missing?(method)
+          if method.to_s.end_with?('=')
             add_setter(method, *args)
           else
             add_accessor(method, *args)

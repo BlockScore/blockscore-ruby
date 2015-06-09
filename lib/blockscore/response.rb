@@ -7,7 +7,7 @@ module BlockScore
       when 200, 201
         Dispatch.new(resource, response).call
       else
-        api_error response
+        api_error(response)
       end
     end
 

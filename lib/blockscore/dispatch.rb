@@ -20,7 +20,7 @@ module BlockScore
 
     # array formatted response
     def resource_array?
-      data.is_a? Array
+      data.is_a?(Array)
     end
   end
 end

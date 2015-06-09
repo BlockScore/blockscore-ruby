@@ -5,19 +5,19 @@ module BlockScore
     end
 
     def post(path, params)
-      request :post, path, params
+      request(:post, path, params)
     end
 
     def patch(path, params)
-      request :patch, path, params
+      request(:patch, path, params)
     end
 
     def put(path, params)
-      request :put, path, params
+      request(:put, path, params)
     end
 
     def delete(path, params)
-      request :delete, path, params
+      request(:delete, path, params)
     end
 
     private
