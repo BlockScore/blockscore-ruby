@@ -25,7 +25,7 @@ module BlockScore
     def headers
       @headers ||= {
         'Accept' => "application/vnd.blockscore+json;version=#{BlockScore::VERSION.to_i}",
-        'User-Agent' => 'blockscore-ruby/4.1.0 (https://github.com/BlockScore/blockscore-ruby)',
+        'User-Agent' => "blockscore-ruby/#{BlockScore::VERSION} (https://github.com/BlockScore/blockscore-ruby)",
         'Content-Type' => 'application/json'
       }
     end
