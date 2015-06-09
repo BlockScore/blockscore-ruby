@@ -55,13 +55,13 @@ module BlockScore
 
     def add_accessor(symbol, *args)
       singleton_class.instance_eval do
-        define_method(symbol) {
+        define_method(symbol) do
           if attributes[symbol].is_a? Hash
             OpenStruct.new attributes[symbol]
           else
             attributes[symbol]
           end
-        }
+        end
       end
     end
 
