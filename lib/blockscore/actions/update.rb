@@ -17,7 +17,7 @@ module BlockScore
     #  # => true
     module Update
       extend Forwardable
-      
+
       # Attributes which will not change once the object is created.
       PERSISTENT_ATTRIBUTES = [
         :id,
@@ -29,20 +29,13 @@ module BlockScore
 
       def_delegators 'self.class', :endpoint, :patch
 
-      # Public: Saves the changes to the object via an Update call to
-      # BlockScore API.
-      #
-      # Returns true if the update is successful, false otherwise.
-      def save
-        save!
-      rescue
-        false
-      end
-
       def save!
-        patch "#{endpoint}/#{id}", filter_params
-
-        true
+        if respond_to? :id
+          patch "#{endpoint}/#{id}", filter_params
+          true
+        else
+          super
+        end
       end
 
       # Filters out the non-updateable params.

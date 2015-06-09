@@ -35,4 +35,15 @@ module ResourceTest
     assert_equal Array, response.class, msg
     assert_equal 2, response.count
   end
+
+  def test_init_and_save
+    params = FactoryGirl.create((resource.to_s + '_params').to_sym)
+    obj = resource_to_class(resource).new
+
+    params.each do |key, value|
+      obj.public_send "#{key.to_s}=".to_sym, value
+    end
+
+    assert obj.save
+  end
 end

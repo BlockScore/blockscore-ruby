@@ -1,3 +1,4 @@
+require 'ostruct'
 require 'blockscore/connection'
 require 'blockscore/util'
 
@@ -12,7 +13,7 @@ module BlockScore
     end
 
     def inspect
-      "#<#{self.class}:0x#{self.object_id.to_s(16)} JSON: " + JSON.pretty_generate(attributes)
+      "#<#{self.class}:0x#{object_id.to_s(16)} JSON: " + JSON.pretty_generate(attributes)
     end
 
     def refresh
@@ -22,6 +23,18 @@ module BlockScore
       true
     rescue BlockScore::BlockScoreError
       false
+    end
+
+    def save
+      save!
+    rescue
+      false
+    end
+
+    def save!
+      self.class.post self.class.endpoint, attributes
+
+      true
     end
 
     def self.resource
@@ -44,7 +57,13 @@ module BlockScore
 
     def add_accessor(symbol, *args)
       singleton_class.instance_eval do
-        define_method(symbol) { attributes[symbol] }
+        define_method(symbol) {
+          if attributes[symbol].is_a? Hash
+            OpenStruct.new attributes[symbol]
+          else
+            attributes[symbol]
+          end
+        }
       end
     end
 
@@ -60,7 +79,11 @@ module BlockScore
 
     def method_missing(method, *args, &block)
       if respond_to_missing? method
-        add_accessor(method, args)
+        if is_setter? method
+          add_setter(method, args)
+        else
+          add_accessor(method, args)
+        end
         send(method, *args)
       else
         super
@@ -68,7 +91,11 @@ module BlockScore
     end
 
     def respond_to_missing?(symbol, include_private = false)
-      attributes && attributes.key?(symbol) || super
+      is_setter?(symbol) || attributes && attributes.key?(symbol) || super
+    end
+
+    def is_setter?(symbol)
+      symbol.to_s.end_with? '='
     end
   end
 end
