@@ -66,7 +66,7 @@ module BlockScore
       end
     end
 
-    def add_setter(symbol, *args)
+    def add_setter(symbol, *_args)
       singleton_class.instance_eval do
         define_method(symbol) do |value|
           attributes[symbol.to_s.chop.to_sym] = value
