@@ -1,6 +1,6 @@
 # blockscore-ruby [![Circle CI](https://circleci.com/gh/BlockScore/blockscore-ruby/tree/master.svg?style=shield)](https://circleci.com/gh/BlockScore/blockscore-ruby/tree/4.1.0) [![Test Coverage](https://codeclimate.com/github/BlockScore/blockscore-ruby/badges/coverage.svg)](https://codeclimate.com/github/BlockScore/blockscore-ruby/coverage) [![Dependency Status](https://gemnasium.com/BlockScore/blockscore-ruby.svg)](https://gemnasium.com/BlockScore/blockscore-ruby)
 
-This is the official library for Ruby clients of the BlockScore API. [Click here to read the full documentation including code examples](http://docs.blockscore.com/v4.0/ruby/).
+This is the official library for Ruby clients of the BlockScore API. [Click here to read the full documentation including code examples](http://docs.blockscore.com/ruby/).
 
 ## Install
 
@@ -51,17 +51,9 @@ person.status
 # Or view some of the other attributes
 person.details.address
 # => 'mismatch'
-
-person.address_city
-# => 'Cupertino'
-
-person.id
-# => '544744f43266330002010000'
-
-# ...
 ```
 
-To see the list of calls you can make, please visit our [full Ruby API reference](http://docs.blockscore.com/v4.0/ruby).
+To see the list of calls you can make, please visit our [full Ruby API reference](http://docs.blockscore.com/ruby/).
 
 ## Testing
 
