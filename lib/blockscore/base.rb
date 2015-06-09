@@ -77,7 +77,7 @@ module BlockScore
 
     def method_missing(method, *args, &block)
       if respond_to_missing? method
-        if is_setter? method
+        if setter? method
           add_setter(method, args)
         else
           add_accessor(method, args)
@@ -89,10 +89,10 @@ module BlockScore
     end
 
     def respond_to_missing?(symbol, include_private = false)
-      is_setter?(symbol) || attributes && attributes.key?(symbol) || super
+      setter?(symbol) || attributes && attributes.key?(symbol) || super
     end
 
-    def is_setter?(symbol)
+    def setter?(symbol)
       symbol.to_s.end_with? '='
     end
   end
