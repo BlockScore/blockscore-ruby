@@ -1,11 +1,10 @@
 module BlockScore
-  class InvalidRequestError < Error
+  class InvalidRequestError < APIError
     attr_accessor :param
 
     # Public: Creates a new instance of BlockScore::InvalidRequestError.
     #
-    # rbody - The HTTP response body from HTTParty.
-    # rcode - The HTTP response code from HTTParty.
+    # responses - The HTTP response body from HTTParty.
     #
     # Examples
     #
@@ -14,7 +13,7 @@ module BlockScore
     # rescue BlockScore::InvalidRequestError => e
     #   puts "ERROR: #{e.message} with code #{e.http_status}"
     # end
-    def initialize(rbody, rcode = nil)
+    def initialize(response)
       super
       @param = rbody[:error][:param]
     end
@@ -22,9 +21,9 @@ module BlockScore
     def to_s
       status_string = @http_status ? "(Status: #{@http_status})" : ""
       type_string = @error_type ? "(Type: #{@error_type})" : ""
-      param_string = @param ? "(Param: #{@param})" : ""
+      param_string = @param ? "(#{@param})" : ""
 
-      "#{type_string} #{param_string} #{message} #{status_string}"
+      "#{type_string} #{@message} #{param_string} #{status_string}"
     end
   end
 end

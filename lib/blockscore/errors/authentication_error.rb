@@ -1,4 +1,4 @@
 module BlockScore
-  class AuthenticationError < Error
+  class AuthenticationError < APIError
   end
 end
