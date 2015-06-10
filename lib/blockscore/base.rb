@@ -57,11 +57,7 @@ module BlockScore
     def add_accessor(symbol, *args)
       singleton_class.instance_eval do
         define_method(symbol) do
-          if attributes[symbol].is_a? Hash
-            OpenStruct.new attributes[symbol]
-          else
-            attributes[symbol]
-          end
+          wrap_attribute(attributes[symbol])
         end
       end
     end
@@ -95,6 +91,27 @@ module BlockScore
 
     def setter?(symbol)
       symbol.to_s.end_with?('=')
+    end
+
+    def wrap_attribute(attribute)
+      case attribute
+      when Array
+        wrap_array(attribute)
+      when Hash
+        wrap_hash(attribute)
+      else
+        attribute
+      end
+    end
+
+    def wrap_array(arr)
+      arr.map { |item| wrap_attribute(item) }
+    end
+
+    def wrap_hash(hsh)
+      hsh.each { |key, value| hsh[key] = wrap_attribute(value) }
+
+      OpenStruct.new(hsh)
     end
   end
 end

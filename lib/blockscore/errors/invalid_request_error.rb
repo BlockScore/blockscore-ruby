@@ -15,7 +15,7 @@ module BlockScore
     # end
     def initialize(response)
       super
-      @param = rbody[:error][:param]
+      @param = @http_body[:error][:param]
     end
 
     def to_s

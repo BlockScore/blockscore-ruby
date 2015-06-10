@@ -14,15 +14,15 @@ module BlockScore
     private
 
     def api_error(response)
-      obj = Util.parse_json(response.body)
-
       case response.code
-      when 400, 404
-        fail InvalidRequestError.new(obj, response.code)
+      when 400
+        fail InvalidRequestError.new(response)
       when 401
-        fail AuthenticationError.new(obj, response.code)
+        fail AuthenticationError.new(response)
+      when 404
+        fail NotFoundError.new(response)
       else
-        fail APIError.new(obj, response.code)
+        fail APIError.new(response)
       end
     end
   end

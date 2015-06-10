@@ -15,10 +15,12 @@ module BlockScore
     # APIError - Indicates an error on the server side (HTTP 5xx)
     # AuthenticationError - Indicates an authentication error (HTTP 401)
     def initialize(response)
-      @message = response.body[:error][:message]
+      body = JSON.parse(response.body, :symbolize_names => true)
+
+      @message = body[:error][:message]
       @http_status = response.code
-      @error_type = response.body[:error][:type]
-      @http_body = response.body
+      @error_type = body[:error][:type]
+      @http_body = body
     end
 
     def to_s

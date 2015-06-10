@@ -4,7 +4,7 @@ class QuestionSetResourceTest < Minitest::Test
   # QuestionSetResourceTest cannot include ResourceTest because
   # QuestionSets are only accessible through their Person.
   def create_question_set
-    create_person.question_set.create
+    create_person.question_sets.create
   end
 
   def list_question_sets(options = {})
@@ -12,10 +12,10 @@ class QuestionSetResourceTest < Minitest::Test
 
     # Create some QuestionSets before trying to list them all.
     5.times do
-      person.question_set.create
+      person.question_sets.create
     end
 
-    person.question_set.all(options)
+    person.question_sets.all(options)
   end
 
   def test_create_question_set
@@ -25,8 +25,8 @@ class QuestionSetResourceTest < Minitest::Test
 
   def test_retrieve_question_set
     person = create_person
-    qs = person.question_set.create
-    response = person.question_set.retrieve(qs.id)
+    qs = person.question_sets.create
+    response = person.question_sets.retrieve(qs.id)
     assert_equal response.class, BlockScore::QuestionSet
   end
 

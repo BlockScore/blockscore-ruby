@@ -5,7 +5,7 @@ class RequestTest < Minitest::Test
   def test_unauthentication_request
     without_authentication
 
-    assert_raises BlockScore::AuthenticationError do
+    assert_raises BlockScore::NoAPIKeyError do
       create_person
     end
 
@@ -16,7 +16,7 @@ class RequestTest < Minitest::Test
   def test_not_found_error
     with_authentication
 
-    assert_raises BlockScore::InvalidRequestError do
+    assert_raises BlockScore::NotFoundError do
       BlockScore::Person.retrieve('404')
     end
   end
@@ -40,4 +40,10 @@ class RequestTest < Minitest::Test
       BlockScore::Person.retrieve('401')
     end
   end
+
+  # def test_socket_error
+  #   raised = assert_raises(BlockScore::APIConnectionError) do
+  #
+  #   end
+  # end
 end

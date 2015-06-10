@@ -31,16 +31,12 @@ module BlockScore
     end
 
     def request(method, path, params)
-      unless BlockScore.api_key
-        fail AuthenticationError, {
-          :error => { :message => 'No API key was provided.' }
-        }
-      end
+      fail NoAPIKeyError, 'No API key was provided.' unless BlockScore.api_key
 
       begin
         response = execute_request(method, path, params)
       rescue SocketError, Errno::ECONNREFUSED => e
-        fail APIConnectionError, { :error => { :message => e.message } }
+        fail APIConnectionError, e.message
       end
 
       Response.handle_response(resource, response)
