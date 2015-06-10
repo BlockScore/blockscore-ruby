@@ -41,9 +41,21 @@ class RequestTest < Minitest::Test
     end
   end
 
-  # def test_socket_error
-  #   raised = assert_raises(BlockScore::APIConnectionError) do
-  #
-  #   end
-  # end
+  def test_socket_error
+    stub_request(:get, /.*api\.blockscore\.com\/people\/socket_error/).
+      to_raise(SocketError)
+
+    assert_raises(BlockScore::APIConnectionError) do
+      BlockScore::Person.retrieve('socket_error')
+    end
+  end
+
+  def test_connection_refused
+    stub_request(:get, /.*api\.blockscore\.com\/people\/connection_refused/).
+      to_raise(Errno::ECONNREFUSED)
+
+    assert_raises(BlockScore::APIConnectionError) do
+      BlockScore::Person.retrieve('connection_refused')
+    end
+  end
 end
