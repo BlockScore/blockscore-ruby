@@ -41,26 +41,6 @@ module BlockScore
         # Cannot %i syntax, not introduced until Ruby 2.0.0
         attributes.reject { |key, _| PERSISTENT_ATTRIBUTES.include?(key) }
       end
-
-      private
-
-      def method_missing(method, *args, &block)
-        if respond_to_missing?(method)
-          if method.to_s.end_with?('=')
-            add_setter(method, *args)
-          else
-            add_accessor(method, *args)
-          end
-          send(method, *args)
-        else
-          super
-        end
-      end
-
-      def respond_to_missing?(symbol, include_private = false)
-        setter = symbol.to_s[0..-2].to_sym
-        attributes && (attributes.key?(symbol) || attributes.key?(setter)) || super
-      end
     end
   end
 end
