@@ -70,5 +70,19 @@ end
 
 
 def handle_error_response(id)
-  build_test_response(id.to_i, FactoryGirl.json(:blockscore_error))
+  factory = error_factory_name(id)
+  build_test_response(id.to_i, FactoryGirl.json(:blockscore_error, error_type: factory))
+end
+
+def error_factory_name(id)
+  case id.to_i
+  when 400
+    'invalid_request_error'
+  when 401
+    'authentication_error'
+  when 404
+    'not_found_error'
+  else
+    'api_error'
+  end
 end

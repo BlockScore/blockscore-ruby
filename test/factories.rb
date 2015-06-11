@@ -190,7 +190,7 @@ FactoryGirl.define do
     address
     document
     details { build(:person_details) }
-    question_set_ids do
+    question_sets do
       rand(0..5).times.collect { Faker::Base.regexify(/\d{24}/) }
     end
   end
@@ -292,14 +292,38 @@ FactoryGirl.define do
   # We can do this because the error type is determined by the
   # HTTP response code.
   factory :blockscore_error, :class => Hash, :traits => [:resource] do
-    error { create(:error_contents) }
+    ignore do
+      error_type 'api_error'
+    end
+
+    error { create(error_type.to_s) }
   end
 
-  # Easily create the desired nesting for error objects.
-  factory :error_contents, :class => Hash, :traits => [:resource] do
+  factory :api_error, :class => Hash, :traits => [:resource] do
     message { 'An error occurred.' }
+    type { 'api_error' }
+    code { '0' }
+    param { nil }
+  end
+
+  factory :authentication_error, :class => Hash, :traits => [:resource] do
+    message { 'The provided API key is invalid.' }
+    type { 'authentication_error' }
+    code { '0' }
+    param { nil }
+  end
+
+  factory :invalid_request_error, :class => Hash, :traits => [:resource] do
+    message { 'One of more parameters is invalid.' }
     type { 'invalid_request_error' }
     code { '0' }
     param { 'name_first' }
+  end
+
+  factory :not_found_error, :class => Hash, :traits => [:resource] do
+    message { 'Person with ID ab973197319713ba could not be found' }
+    type { 'not_found_error' }
+    code { '0' }
+    param { nil }
   end
 end
