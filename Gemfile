@@ -17,6 +17,7 @@ group :development, :test do
   gem 'mutant', github: 'kbrock/mutant', branch: 'minitest'
   gem 'mutant-minitest', github: 'kbrock/mutant', branch: 'minitest'
   gem 'minitest', '~> 5.3'
+  gem 'minitest-rg', github: 'blowmage/minitest-rg', branch: 'master'
 end
 
 group :test do
