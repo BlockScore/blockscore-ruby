@@ -25,6 +25,7 @@ require 'blockscore/person'
 require 'blockscore/question_set'
 require 'blockscore/watchlist_hit'
 
+require 'blockscore/collection'
 require 'blockscore/connection'
 require 'blockscore/dispatch'
 require 'blockscore/fingerprint'

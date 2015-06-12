@@ -14,4 +14,10 @@ class PersonResourceTest < Minitest::Test
     assert_respond_to details, :ofac
     assert_respond_to details, :pep
   end
+
+  def test_question_set_access
+    person = create_person
+
+    assert_equal BlockScore::Collection, person.question_sets.class
+  end
 end
