@@ -30,4 +30,19 @@ class UtilTest < Minitest::Test
     assert_equal BlockScore::Util.to_camelcase('foo'), 'Foo'
     assert_equal BlockScore::Util.to_camelcase(''), ''
   end
+
+  def test_parse_json
+    obj = { :foo => 'bar', :baz => 'bat' }
+    assert_equal obj, BlockScore::Util.parse_json(obj.to_json)
+  end
+
+  def test_parse_json_error
+    obj = { :foo => 'bar', :baz => 'bat' }
+    raised = assert_raises BlockScore::Error do
+      BlockScore::Util.parse_json(obj.to_json + '{}')
+    end
+
+    msg = 'An error has occurred. If this problem persists, please message support@blockscore.com.'
+    assert_equal msg, raised.message
+  end
 end

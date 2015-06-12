@@ -9,11 +9,7 @@ module BlockScore
     def parse_json(json_obj)
       parse_json! json_obj
     rescue JSON::ParserError
-      fail Error, {
-        :error => { :message =>
-          "An error has occurred. If this problem persists, please message support@blockscore.com."
-        }
-      }
+      fail Error, "An error has occurred. If this problem persists, please message support@blockscore.com."
     end
 
     def create_object(resource, options = {})
