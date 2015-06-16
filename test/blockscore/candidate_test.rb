@@ -1,4 +1,4 @@
-require File.expand_path(File.join(__FILE__, '../test_helper'))
+require File.expand_path(File.join(__FILE__, '../../test_helper'))
 
 class CandidateResourceTest < Minitest::Test
   include ResourceTest
@@ -6,6 +6,8 @@ class CandidateResourceTest < Minitest::Test
   def member_test(member, response_type)
     candidate = create_candidate
     response = candidate.send(member)
+
+    assert_requested(@api_stub, times: 2)
     assert_equal response_type, response.class
   end
 
@@ -20,20 +22,25 @@ class CandidateResourceTest < Minitest::Test
   def test_update
     candidate = create_candidate
     candidate.name_first = 'Chris'
+
     assert_equal true, candidate.save
+    assert_requested(@api_stub, times: 2)
     assert_equal candidate.name_first, 'Chris'
   end
 
   def test_delete
     candidate = create_candidate
     candidate.delete
+
+    assert_requested(@api_stub, times: 2) # 1 for create, 1 for delete
     assert_equal candidate.deleted, true
   end
 
   def test_search
     candidate = create_candidate
     hits = candidate.search
-    assert_equal hits.class, Array
-    assert_equal hits.first.class, BlockScore::WatchlistHit
+    
+    assert hits.kind_of?(Array)
+    hits.each { |hit| assert hit.kind_of?(BlockScore::WatchlistHit) }
   end
 end

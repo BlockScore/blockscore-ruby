@@ -5,6 +5,7 @@ require 'factory_girl'
 require 'faker'
 require 'minitest/autorun'
 require 'minitest/rg'
+require 'shoulda/context'
 require 'webmock/minitest'
 
 require File.expand_path(File.join(File.dirname(__FILE__), '../test/factories'))
@@ -16,7 +17,7 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 require 'blockscore'
 
-WebMock.disable_net_connect!(:allow => 'codeclimate.com')
+WebMock.disable_net_connect!(allow: 'codeclimate.com')
 
 HEADERS = {
   'Accept' => 'application/vnd.blockscore+json;version=4',
@@ -68,13 +69,13 @@ end
 
 # configure test-unit for FactoryGirl
 class Minitest::Test
-  include WebMock::API
+  #include WebMock::API
   include FactoryGirl::Syntax::Methods
 
   def setup
     with_authentication
 
-    stub_request(:any, /.*api\.blockscore\.com\/.*/).
+    @api_stub = stub_request(:any, /.*api\.blockscore\.com\/.*/).
       with(headers: HEADERS).
       to_return do |request|
         uri = request.uri

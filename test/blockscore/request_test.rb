@@ -1,8 +1,8 @@
-require File.expand_path(File.join(__FILE__, '../test_helper'))
+require File.expand_path(File.join(__FILE__, '../../test_helper'))
 
 class RequestTest < Minitest::Test
   # Unauthenticated requests should return an AuthenticationError.
-  def test_unauthenticated_request
+  should 'using a nil API key should raise an exception' do
     without_authentication
 
     raised = assert_raises BlockScore::NoAPIKeyError do
@@ -15,7 +15,7 @@ class RequestTest < Minitest::Test
     with_authentication
   end
 
-  def test_not_found_error
+  should 'requesting a resource that does not exist should raise a NotFoundError' do
     with_authentication
 
     raised = assert_raises BlockScore::NotFoundError do
@@ -29,7 +29,7 @@ class RequestTest < Minitest::Test
     assert_equal msg, raised.message
   end
 
-  def test_invalid_request_error
+  should 'making a request without a required param should raise an InvalidRequestError' do
     raised = assert_raises BlockScore::InvalidRequestError do
       BlockScore::Person.retrieve('400')
     end
@@ -41,7 +41,7 @@ class RequestTest < Minitest::Test
     assert_equal msg, raised.message
   end
 
-  def test_api_error
+  should 'a server error should raise an APIError' do
     with_authentication
 
     raised = assert_raises BlockScore::APIError do
@@ -55,7 +55,7 @@ class RequestTest < Minitest::Test
     assert_equal msg, raised.message
   end
 
-  def test_authentication_error
+  should 'making a request with an invalid API key should raise an AuthenticationError' do
     raised = assert_raises BlockScore::AuthenticationError do
       BlockScore::Person.retrieve('401')
     end
@@ -67,7 +67,7 @@ class RequestTest < Minitest::Test
     assert_equal msg, raised.message
   end
 
-  def test_socket_error
+  should 'a socket error should raise an APIConnectionError' do
     stub_request(:get, /.*api\.blockscore\.com\/people\/socket_error/).
       to_raise(SocketError)
 
@@ -78,7 +78,7 @@ class RequestTest < Minitest::Test
     assert_equal 'Exception from WebMock', raised.message
   end
 
-  def test_connection_refused
+  should 'connection_refused should raise an APIConnectionError' do
     stub_request(:get, /.*api\.blockscore\.com\/people\/connection_refused/).
       to_raise(Errno::ECONNREFUSED)
 
@@ -87,5 +87,21 @@ class RequestTest < Minitest::Test
     end
 
     assert_equal 'Connection refused - Exception from WebMock', raised.message
+  end
+
+  should 'creating a new instance of an API resource should not fetch over the network' do
+    BlockScore::Person.new
+    assert_not_requested(@api_stub)
+  end
+
+  should 'creating a new resource from a hash should not cause a network request' do
+    BlockScore::Person.new(create(:person))
+    assert_not_requested(@api_stub)
+  end
+
+  should 'setting an attribute should not cause a network request' do
+    candidate = BlockScore::Candidate.new
+    candidate.name_first = 'John'
+    assert_not_requested(@api_stub)
   end
 end
