@@ -12,10 +12,6 @@ module BlockScore
       request(:patch, path, params)
     end
 
-    def put(path, params)
-      request(:put, path, params)
-    end
-
     def delete(path, params)
       request(:delete, path, params)
     end
