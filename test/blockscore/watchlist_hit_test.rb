@@ -1,4 +1,4 @@
-require File.expand_path(File.join(__FILE__, '../test_helper'))
+require File.expand_path(File.join(__FILE__, '../../test_helper'))
 
 ATTRIBUTES = [
   :id, :watchlist_name, :entry_type, :matching_info, :confidence, :url, :notes,
