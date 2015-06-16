@@ -11,7 +11,7 @@ AllCops:
 Style/HashSyntax:
   Description: Use hash rockets for backwards compatibility syntax { :a => 1, :b => 2 }.
   Enabled: true
-  EnforcedStyle: hash_rockets
+  EnforcedStyle: ruby19
   SupportedStyles:
   - ruby19
   - hash_rockets
