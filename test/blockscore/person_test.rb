@@ -19,8 +19,13 @@ class PersonResourceTest < Minitest::Test
       end
     end
 
-    should 'details hash should be an OpenStruct object' do
+    should 'details should be an OpenStruct object' do
       assert @person.details.kind_of?(OpenStruct)
+    end
+
+    should 'accessing the details should not make a network request' do
+      @person.details
+      assert_requested(@api_stub, times: 1) # @person creation in setup
     end
 
     should 'question_sets should be of kind BlockScore::Collection' do
