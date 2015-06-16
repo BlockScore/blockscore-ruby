@@ -2,6 +2,14 @@ module BlockScore
   module Util
     extend self
 
+    PLURAL_LOOKUP = {
+      'candidate' => 'candidates',
+      'company' => 'companies',
+      'person' => 'people',
+      'question_set' => 'question_sets',
+      'watchlist_hit' => 'watchlist_hits'
+    }
+
     def parse_json!(json_obj)
       JSON.parse(json_obj, :symbolize_names => true)
     end
@@ -21,15 +29,7 @@ module BlockScore
     end
 
     def to_plural(str)
-      if str.end_with? 'y'
-        str[0..-2] + 'ies'
-      elsif str.end_with? 'h'
-        str + 'es'
-      elsif str == 'person'
-        'people'
-      else
-        str + 's'
-      end
+      PLURAL_LOOKUP[str]
     end
 
     # Taken from activesupport: http://git.io/vkWtR

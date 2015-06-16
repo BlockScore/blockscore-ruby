@@ -9,7 +9,7 @@ module BlockScore
     def_delegators 'self.class', :retrieve, :all, :post, :endpoint
 
     def create
-      result = self.class.create(:person_id => person.id)
+      result = self.class.create(person_id: person.id)
       person.question_sets << result.id
 
       result
@@ -19,7 +19,7 @@ module BlockScore
       if answers.nil? && attributes
         attributes[:score]
       else
-        post "#{endpoint}/#{id}/score", :answers => answers
+        post "#{endpoint}/#{id}/score", answers: answers
       end
     end
   end
