@@ -7,6 +7,8 @@ require 'minitest/autorun'
 require 'minitest/rg'
 require 'shoulda/context'
 require 'webmock/minitest'
+require 'minitest/unit'
+require 'mocha/mini_test'
 
 require File.expand_path(File.join(File.dirname(__FILE__), '../test/factories'))
 require File.expand_path(File.join(File.dirname(__FILE__), '../test/support/response'))

@@ -2,78 +2,60 @@ require File.expand_path(File.join(__FILE__, '../../test_helper'))
 require File.expand_path(File.join(__FILE__, '../../support/fake_resource'))
 
 class ActionsTest < Minitest::Test
-  context 'all' do
+  context 'actions' do
     setup do
-      @index_stub = stub_request(:get, %r(.*api.blockscore.com/fake_resources)).
-                      to_return({body: {}.to_json})
-    end
-
-    should 'make a GET request to the correct endpoint' do
-      BlockScore::FakeResource.all
-      assert_requested(@index_stub, times: 1)
-    end
-
-    should 'accept an options hash' do
-      BlockScore::FakeResource.all(count: 15, offset: 3)
-      assert_requested(@index_stub, times: 1)
-    end
-  end
-
-  context 'create' do
-    setup do
-      @create_stub = stub_request(:post, %r(.*api.blockscore.com/fake_resources)).
-                      to_return({body: {}.to_json})
-    end
-
-    should 'make a POST request to the correct endpoint' do
-      BlockScore::FakeResource.create
-      assert_requested(@create_stub, times: 1)
-    end
-
-    should 'accept a params hash' do
-      BlockScore::FakeResource.create(name: 'Gerald', nickname: 'G-Eazy')
-      assert_requested(@create_stub, times: 1)
-    end
-  end
-
-  context 'delete' do
-    setup do
-      @delete_stub = stub_request(:delete, %r(.*api.blockscore.com/fake_resources/abc123)).
-                      to_return({body: {}.to_json})
+      @mock = BlockScore::FakeResource
       @resource = BlockScore::FakeResource.new(id: 'abc123')
     end
 
-    should 'make a DELETE request to the correct endpoint' do
-      @resource.delete
-      assert @resource.deleted
-      assert_requested(@delete_stub, times: 1)
-    end
-  end
+    context 'all' do
+      should 'make a GET request to the correct endpoint' do
+        @mock.expects(:request).with(:get, 'https://api.blockscore.com/fake_resources', {}).once
+        @mock.all
+      end
 
-  context 'retrieve' do
-    setup do
-      @show_stub = stub_request(:get, %r(.*api.blockscore.com/fake_resources/abc123)).
-                      to_return({body: {}.to_json})
-    end
-
-    should 'make a GET request to the correct endpoint' do
-      BlockScore::FakeResource.retrieve('abc123')
-      assert_requested(@show_stub, times: 1)
-    end
-  end
-
-  context 'update' do
-    setup do
-      @update_stub = stub_request(:patch, %r(.*api.blockscore.com/fake_resources/abc123)).
-                      to_return({body: {}.to_json})
-      @resource = BlockScore::FakeResource.new(id: 'abc123')
+      should 'accept an options hash' do
+        @mock.expects(:request).with(:get, 'https://api.blockscore.com/fake_resources', {count: 15, offset: 3}).once
+        @mock.all(count: 15, offset: 3)
+      end
     end
 
-    should 'make a PATCH request to the correct endpoint' do
-      @resource.name = 'Gerald'
-      @resource.save
-      assert_equal 'Gerald', @resource.name
-      assert_requested(@update_stub, times: 1)
+    context 'create' do
+      should 'make a POST request to the correct endpoint' do
+        @mock.expects(:request).with(:post, 'https://api.blockscore.com/fake_resources', {}).once
+        @mock.create
+      end
+
+      should 'accept a params hash' do
+        @mock.expects(:request).with(:post, 'https://api.blockscore.com/fake_resources', {name: 'Gerald', nickname: 'G-Eazy'}).once
+        @mock.create(name: 'Gerald', nickname: 'G-Eazy')
+      end
+    end
+
+    context 'delete' do
+      should 'make a DELETE request to the correct endpoint' do
+        @resource.class.expects(:delete).with('https://api.blockscore.com/fake_resources/abc123', {}).once
+        @resource.expects(:deleted).returns(true).once
+        @resource.delete
+        assert @resource.deleted
+      end
+    end
+
+    context 'retrieve' do
+      should 'make a GET request to the correct endpoint' do
+        @mock.expects(:request).with(:get, 'https://api.blockscore.com/fake_resources/abc123', {}).once
+        @mock.retrieve('abc123')
+      end
+    end
+
+    context 'update' do
+      should 'make a PATCH request to the correct endpoint' do
+        @resource.class.expects(:request).with(:patch, 'https://api.blockscore.com/fake_resources/abc123', {name: 'Gerald'}).once
+        @resource.name = 'Gerald'
+        @resource.save
+        @resource.expects(:name).returns('Gerald').once
+        assert_equal 'Gerald', @resource.name
+      end
     end
   end
 end
