@@ -8,6 +8,13 @@ AllCops:
   - "db/**/*"
   DisplayCopNames: true
   RunRailsCops: true
+Style/HashSyntax:
+  Description: Use hash rockets for backwards compatibility syntax { :a => 1, :b => 2 }.
+  Enabled: true
+  EnforcedStyle: ruby19
+  SupportedStyles:
+  - ruby19
+  - hash_rockets
 TrailingWhitespace:
   Enabled: false
 Style/TrailingBlankLines:
