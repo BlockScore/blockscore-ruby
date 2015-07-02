@@ -39,7 +39,7 @@ person = BlockScore::Person.create(
   address_street1: '1 Infinite Loop',
   address_street2: 'Apt 6',
   address_city: 'Cupertino',
-  address_state: 'CA',
+  address_subdivision: 'CA',
   address_postal_code: '95014',
   address_country_code: 'US'
 )
