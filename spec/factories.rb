@@ -38,6 +38,10 @@ def full_address
   "#{street} #{city} #{country}"
 end
 
+def resource_id
+  Faker::Number.hexadecimal(24)
+end
+
 FactoryGirl.define do
   # Each response has this metadata so we define it as a trait
   trait :metadata do
@@ -199,15 +203,16 @@ FactoryGirl.define do
     address
     document
     details { build(:person_details) }
+
     question_sets do
-      rand(0..5).times.collect { Faker::Base.regexify(/\d{24}/) }
+      rand(0..5).times.collect { resource_id }
     end
   end
 
   # QuestionSet Factory
 
   factory :question_set_params, class: 'BlockScore::QuestionSet' do
-    person_id { Faker::Base.regexify(/\d{24}/) }
+    person_id { resource_id }
   end
 
   factory :question_set, class: 'BlockScore::QuestionSet' do
@@ -217,7 +222,7 @@ FactoryGirl.define do
     metadata
     timestamps
     testmode
-    person_id { Faker::Base.regexify(/\d{24}/) }
+    person_id { resource_id }
     score { rand * 100 }
     expired { false }
     time_limit { rand(120..360) }
