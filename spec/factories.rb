@@ -302,8 +302,8 @@ FactoryGirl.define do
 
   # We can do this because the error type is determined by the
   # HTTP response code.
-  factory :blockscore_error, class: Hash, traits: [:resource] do
-    ignore do
+  factory :blockscore_error, :class => Hash, :traits => [:resource] do
+    transient do
       error_type 'api_error'
     end
 
