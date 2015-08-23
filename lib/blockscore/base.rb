@@ -4,14 +4,30 @@ module BlockScore
   class Base
     extend Connection
 
-    attr_reader :attributes
 
-    def initialize(options = {})
+    def initialize(options = {}, &block)
+      @loaded = !(block)
+      @proc = block
       @attributes = options
     end
 
+    # potential issues here
+    def attributes
+      return @attributes if @loaded
+      force!
+      @attributes
+    end
+
+    def force!
+      r = @proc.call()
+      @attributes = r.attributes
+      @loaded = true
+      self
+    end
+
     def inspect
-      "#<#{self.class}:0x#{object_id.to_s(16)} JSON: " + JSON.pretty_generate(attributes)
+      str_attr = "JSON:#{ JSON.pretty_generate(attributes) }"
+      "#<#{self.class}:0x#{object_id.to_s(16)} #{str_attr}>"
     end
 
     def refresh

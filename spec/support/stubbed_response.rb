@@ -94,7 +94,7 @@ module BlockScore
       private
 
       def factory_response
-        json(factory_name)
+        json(factory_name, request.body)
       end
     end
 

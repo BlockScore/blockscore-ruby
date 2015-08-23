@@ -9,10 +9,10 @@ class JsonStrategy # From http://git.io/vT8kC
 
   delegate :association, to: :@strategy
 
-  def result(evaluation)
+  def result(evaluation, attrs = {})
     compiled = @strategy.result(evaluation)
     case compiled
-    when BlockScore::Base then compiled.attributes.to_json
+    when BlockScore::Base then compiled.attributes.merge(attrs).to_json
     when Hash             then compiled.to_json
     else
       fail ArgumentError, "don't know how to handle type #{evaluation.class.inspect}"
@@ -210,6 +210,8 @@ FactoryGirl.define do
         resource_id
       end
     end
+
+    initialize_with { new(attributes)}
   end
 
   # QuestionSet Factory
