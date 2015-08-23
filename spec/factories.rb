@@ -190,6 +190,7 @@ FactoryGirl.define do
 
   factory :person, class: 'BlockScore::Person' do
     skip_create
+    transient { question_sets_count 1 }
 
     object { 'person' }
     metadata
@@ -205,7 +206,9 @@ FactoryGirl.define do
     details { build(:person_details) }
 
     question_sets do
-      rand(0..5).times.collect { resource_id }
+      question_sets_count.times.map do
+        resource_id
+      end
     end
   end
 
