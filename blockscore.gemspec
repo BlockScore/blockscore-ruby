@@ -33,5 +33,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'mocha', '~> 1.1'
   spec.add_development_dependency 'webmock', '~> 1.21'
   spec.add_development_dependency 'faker', '~> 1.4'
-  spec.add_development_dependency 'factory_girl', '~> 4.1'
+  spec.add_development_dependency 'factory_girl', '~> 4.5'
 end
