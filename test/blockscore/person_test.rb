@@ -15,13 +15,13 @@ class PersonResourceTest < Minitest::Test
   end
 
   def test_valid_predicate
-    person = BlockScore::Person.new(create(:person, status: 'valid'))
+    person = create(:person, status: 'valid')
     assert person.valid?
     refute person.invalid?
   end
 
   def test_invalid_predicate
-    person = BlockScore::Person.new(create(:person, status: 'invalid'))
+    person = create(:person, status: 'invalid')
     assert person.invalid?
     refute person.valid?
   end

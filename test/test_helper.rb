@@ -53,8 +53,7 @@ def create_question_set
 end
 
 def create_resource(resource)
-  params = FactoryGirl.create((resource.to_s + '_params').to_sym)
-  resource_to_class(resource).create(params)
+  FactoryGirl.create(:"#{resource}_params")
 end
 
 # Convert a resource into the corresponding BlockScore class.

@@ -6,17 +6,17 @@ module ResourceTest
   end
 
   def test_create_resource
-    response = create_resource(resource)
+    response = create(:"#{resource}_params")
     assert_equal response.class, resource_to_class(resource)
     assert_requested(@api_stub, times: 1)
   end
 
   def test_retrieve_resource
-    r = create_resource(resource)
+    r = build(resource)
     response = resource_to_class(resource).send(:retrieve, r.id)
 
     assert_equal resource, response.object
-    assert_requested(@api_stub, times: 2)
+    assert_requested(@api_stub, times: 1)
   end
 
   def test_list_resource
@@ -41,7 +41,7 @@ module ResourceTest
   end
 
   def test_init_and_save
-    params = FactoryGirl.create((resource.to_s + '_params').to_sym)
+    params = build(resource).attributes
     obj = resource_to_class(resource).new
 
     params.each do |key, value|
