@@ -5,44 +5,46 @@ module ResourceTest
     @resource ||= BlockScore::Util.to_underscore(to_s[/^(\w+)ResourceTest/, 1])
   end
 
+  def resource_class
+    name = "BlockScore::#{BlockScore::Util.to_camelcase(resource.to_s)}"
+    BlockScore::Util.to_constant(name)
+  end
+
   def test_create_resource
-    response = create_resource(resource)
-    assert_equal response.class, resource_to_class(resource)
+    create(:"#{resource}_params")
     assert_requested(@api_stub, times: 1)
   end
 
   def test_retrieve_resource
-    r = create_resource(resource)
-    response = resource_to_class(resource).send(:retrieve, r.id)
+    r = build(resource)
 
-    assert_equal resource, response.object
-    assert_requested(@api_stub, times: 2)
+    assert_equal resource, resource_class.retrieve(r.id).object
+    assert_requested(@api_stub, times: 1)
   end
 
   def test_list_resource
-    resource_to_class(resource).send(:all)
+    resource_class.all
 
     assert_requested(@api_stub, times: 1)
   end
 
   def test_list_resource_with_count
-    response = resource_to_class(resource).send(:all, {count: 2})
+    response = resource_class.all(count: 2)
 
     assert_equal 2, response.count
     assert_requested(@api_stub, times: 1)
   end
 
   def test_list_resource_with_count_and_offset
-    response = resource_to_class(resource).
-      send(:all, {count: 2, offset: 2})
+    response = resource_class.all(count: 2, offset: 2)
 
     assert_equal 2, response.count
     assert_requested(@api_stub, times: 1)
   end
 
   def test_init_and_save
-    params = FactoryGirl.create((resource.to_s + '_params').to_sym)
-    obj = resource_to_class(resource).new
+    params = build(resource).attributes
+    obj = resource_class.new
 
     params.each do |key, value|
       obj.public_send "#{key.to_s}=".to_sym, value

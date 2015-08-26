@@ -7,7 +7,7 @@ def index_response(resource, count)
     :total_count => count,
     :has_more => false,
     :object => 'list',
-    :data => FactoryGirl.build_list(resource.to_sym, count)
+    :data => build_list(resource.to_sym, count)
   }.to_json
 end
 
@@ -50,9 +50,9 @@ def response_body(request, id, action, factory_name)
     options = parse_query request.uri.query
     index_response factory_name, options.fetch('count', [5]).first.to_i
   elsif action == 'history'
-    FactoryGirl.build_list(factory_name, 5).to_json
+    build_list(factory_name, 5).to_json
   else
-    FactoryGirl.json(factory_name)
+    json(factory_name)
   end
 end
 
@@ -71,7 +71,7 @@ end
 
 def handle_error_response(id)
   factory = error_factory_name(id)
-  build_test_response(id.to_i, FactoryGirl.json(:blockscore_error, error_type: factory))
+  build_test_response(id.to_i, json(:blockscore_error, error_type: factory))
 end
 
 def error_factory_name(id)

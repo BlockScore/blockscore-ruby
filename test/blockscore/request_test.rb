@@ -6,7 +6,7 @@ class RequestTest < Minitest::Test
     without_authentication
 
     raised = assert_raises BlockScore::NoAPIKeyError do
-      create_person
+      create(:person_params).save
     end
 
     assert_equal 'No API key was provided.', raised.message
@@ -95,7 +95,7 @@ class RequestTest < Minitest::Test
   end
 
   def test_instantiation_with_hash_does_not_request
-    BlockScore::Person.new(create(:person))
+    create(:person)
     assert_not_requested(@api_stub)
   end
 
