@@ -95,7 +95,7 @@ class RequestTest < Minitest::Test
   end
 
   def test_instantiation_with_hash_does_not_request
-    BlockScore::Person.new(create(:person))
+    create(:person)
     assert_not_requested(@api_stub)
   end
 

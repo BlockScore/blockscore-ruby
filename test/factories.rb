@@ -4,13 +4,19 @@ require 'faker'
 
 class JsonStrategy # From http://git.io/vT8kC
   def initialize
-    @strategy = FactoryGirl.strategy_by_name(:create).new
+    @strategy = FactoryGirl.strategy_by_name(:build).new
   end
 
   delegate :association, to: :@strategy
 
   def result(evaluation)
-    @strategy.result(evaluation).to_json
+    compiled = @strategy.result(evaluation)
+    case compiled
+    when BlockScore::Base then compiled.attributes.to_json
+    when Hash             then compiled.to_json
+    else
+      fail ArgumentError, "don't know how to handle type #{evaluation.class.inspect}"
+    end
   end
 end
 
@@ -117,13 +123,15 @@ FactoryGirl.define do
   end
 
   # Candidate factory
-  factory :candidate_params, :class => Hash, :traits => [:resource] do
+  factory :candidate_params, :class => 'BlockScore::Candidate' do
     ssn { '0000' }
     name
     address
   end
 
-  factory :candidate, :class => Hash, :traits => [:resource] do
+  factory :candidate, :class => 'BlockScore::Candidate' do
+    skip_create
+
     object { 'candidate' }
     metadata
     timestamps
@@ -136,7 +144,7 @@ FactoryGirl.define do
   end
 
   # Company Factory
-  factory :company_params, :class => Hash, :traits => [:resource] do
+  factory :company_params, :class => 'BlockScore::Company' do
     entity_name { Faker::Company.name }
     tax_id { Faker::Base.regexify(/\d{9}/) }
     incorporation_country_code { Faker::Address.country_code }
@@ -144,7 +152,9 @@ FactoryGirl.define do
     address
   end
 
-  factory :company, :class => Hash, :traits => [:resource] do
+  factory :company, :class => 'BlockScore::Company' do
+    skip_create
+
     object { 'company' }
     metadata
     timestamps
@@ -168,7 +178,7 @@ FactoryGirl.define do
     details { build(:company_details) }
   end
 
-  factory :person_params, :class => Hash, :traits => [:resource] do
+  factory :person_params, :class => 'BlockScore::Person' do
     name
     document
     address
@@ -177,7 +187,9 @@ FactoryGirl.define do
     ip_address { Faker::Internet.ip_v4_address }
   end
 
-  factory :person, :class => Hash, :traits => [:resource] do
+  factory :person, :class => 'BlockScore::Person' do
+    skip_create
+
     object { 'person' }
     metadata
     timestamps
@@ -197,11 +209,13 @@ FactoryGirl.define do
 
   # QuestionSet Factory
 
-  factory :question_set_params, :class => Hash, :traits => [:resource] do
+  factory :question_set_params, :class => 'BlockScore::QuestionSet' do
     person_id { Faker::Base.regexify(/\d{24}/) }
   end
 
-  factory :question_set, :class => Hash, :traits => [:resource] do
+  factory :question_set, :class => 'BlockScore::QuestionSet' do
+    skip_create
+
     object { 'question_set' }
     metadata
     timestamps
