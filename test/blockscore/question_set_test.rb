@@ -7,8 +7,8 @@ class QuestionSetResourceTest < Minitest::Test
   end
 
   def test_create
-    count = @person.question_sets.count
-    question_set = @person.question_sets.create
+    @person.question_sets.count
+    @person.question_sets.create
 
     assert_requested(@api_stub, times: 2)
   end
@@ -23,12 +23,12 @@ class QuestionSetResourceTest < Minitest::Test
 
   def test_retrieve
     qs = @person.question_sets.create
-    response = @person.question_sets.retrieve(qs.id)
+    @person.question_sets.retrieve(qs.id)
     assert_requested(@api_stub, times: 3)
   end
 
   def test_all
-    response = @person.question_sets.all
+    @person.question_sets.all
 
     assert_requested(@api_stub, times: 2)
   end
@@ -48,7 +48,7 @@ class QuestionSetResourceTest < Minitest::Test
   end
 
   def test_score_request
-    @answers = [
+    answers = [
       { question_id: 1, answer_id: 1 },
       { question_id: 2, answer_id: 1 },
       { question_id: 3, answer_id: 1 },
@@ -57,7 +57,7 @@ class QuestionSetResourceTest < Minitest::Test
     ]
 
     qs = @person.question_sets.create
-    response = qs.score(@answers)
+    qs.score(answers)
     assert_requested(@api_stub, times: 3)
   end
 
