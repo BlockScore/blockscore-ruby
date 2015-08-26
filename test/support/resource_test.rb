@@ -5,6 +5,11 @@ module ResourceTest
     @resource ||= BlockScore::Util.to_underscore(to_s[/^(\w+)ResourceTest/, 1])
   end
 
+  # Convert a resource into the corresponding BlockScore class.
+  def resource_to_class(resource)
+    BlockScore::Util.to_constant("BlockScore::#{BlockScore::Util.to_camelcase(resource.to_s)}")
+  end
+
   def resource_class
     resource_to_class(resource)
   end

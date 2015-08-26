@@ -31,11 +31,6 @@ def with_authentication
   BlockScore.api_key = 'sk_test_a1ed66cc16a7cbc9f262f51869da31b3'
 end
 
-# Convert a resource into the corresponding BlockScore class.
-def resource_to_class(resource)
-  BlockScore::Util.to_constant("BlockScore::#{BlockScore::Util.to_camelcase(resource.to_s)}")
-end
-
 # configure test-unit for FactoryGirl
 class Minitest::Test
   #include WebMock::API
