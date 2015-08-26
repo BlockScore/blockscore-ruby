@@ -1,12 +1,8 @@
 require 'simplecov'
 SimpleCov.start
 
-require 'factory_girl'
-require 'faker'
 require 'minitest/autorun'
-require 'minitest/rg'
 require 'webmock/minitest'
-require 'minitest/unit'
 require 'mocha/mini_test'
 
 require File.expand_path(File.join(File.dirname(__FILE__), '../test/factories'))
