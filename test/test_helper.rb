@@ -11,7 +11,6 @@ require 'mocha/mini_test'
 
 require File.expand_path(File.join(File.dirname(__FILE__), '../test/factories'))
 require File.expand_path(File.join(File.dirname(__FILE__), '../test/support/response'))
-require File.expand_path(File.join(File.dirname(__FILE__), '../test/support/resource_test'))
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
