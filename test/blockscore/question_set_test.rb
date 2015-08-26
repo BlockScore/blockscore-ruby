@@ -3,7 +3,7 @@ require File.expand_path(File.join(__FILE__, '../../test_helper'))
 class QuestionSetResourceTest < Minitest::Test
   def setup
     super()
-    @person = create_person
+    @person = create(:person_params)
   end
 
   def test_create

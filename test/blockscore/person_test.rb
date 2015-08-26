@@ -5,13 +5,13 @@ class PersonResourceTest < Minitest::Test
   include ResourceTest
 
   def test_details_does_not_request
-    create_person.details
-    assert_requested(@api_stub, times: 1) # @person creation in setup
+    create(:person).details
+    assert_requested(@api_stub, times: 0)
   end
 
   def test_collections_do_not_request
-    create_person.question_sets
-    assert_requested(@api_stub, times: 1) # once when Person was created.
+    create(:person).question_sets
+    assert_requested(@api_stub, times: 0)
   end
 
   def test_valid_predicate

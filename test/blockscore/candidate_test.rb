@@ -5,7 +5,7 @@ class CandidateResourceTest < Minitest::Test
   include ResourceTest
 
   def test_update
-    candidate = create_candidate
+    candidate = create(:candidate_params)
     candidate.name_first = 'Chris'
 
     assert_equal true, candidate.save
@@ -14,7 +14,7 @@ class CandidateResourceTest < Minitest::Test
   end
 
   def test_delete
-    candidate = create_candidate
+    candidate = create(:candidate_params)
     candidate.delete
 
     assert_requested(@api_stub, times: 2) # 1 for create, 1 for delete
