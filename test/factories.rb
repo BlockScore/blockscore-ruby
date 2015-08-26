@@ -24,11 +24,6 @@ FactoryGirl.register_strategy(:json, JsonStrategy)
 
 MATCH_OPTIONS = %w(no_match match mismatch)
 
-# Just a subset of the possible options.
-WATCHLISTS = %w(US_SDN US_DPL UK_HMC CA_OSI US_PLC AU_CON IZ_PEP)
-
-MATCHING = %w(name date_of_birth ssn passport address county city state)
-
 def random_match_result
   MATCH_OPTIONS[rand(0..2)]
 end
