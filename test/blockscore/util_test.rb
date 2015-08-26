@@ -1,20 +1,6 @@
 require File.expand_path(File.join(__FILE__, '../../test_helper'))
 
 class UtilTest < Minitest::Test
-  def test_underscore
-    assert_equal 'super_bowl', BlockScore::Util.to_underscore('SuperBowl')
-    assert_equal 'world', BlockScore::Util.to_underscore('World')
-    assert_equal 'foo_bar', BlockScore::Util.to_underscore('foo_bar')
-    assert_equal '', BlockScore::Util.to_underscore('')
-    assert_equal 'foo_bar_baz', BlockScore::Util.to_underscore('FooBarBaz')
-  end
-
-  def test_constant
-    assert_equal BlockScore::Person, BlockScore::Util.to_constant('BlockScore::Person')
-    assert_equal BlockScore::Company, BlockScore::Util.to_constant('BlockScore::Company')
-    assert_equal BlockScore::QuestionSet, BlockScore::Util.to_constant('BlockScore::QuestionSet')
-  end
-
   def test_plural
     assert_equal 'candidates', BlockScore::Util.to_plural('candidate')
     assert_equal 'question_sets', BlockScore::Util.to_plural('question_set')
