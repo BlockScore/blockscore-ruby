@@ -36,5 +36,17 @@ class PersonResourceTest < Minitest::Test
       @person.question_sets
       assert_requested(@api_stub, times: 1) # once when Person was created.
     end
+
+    should 'be valid when status is `valid`' do
+      person = BlockScore::Person.new(create(:person, status: 'valid'))
+      assert person.valid?
+      refute person.invalid?
+    end
+
+    should 'be invalid when status is `invalid`' do
+      person = BlockScore::Person.new(create(:person, status: 'invalid'))
+      assert person.invalid?
+      refute person.valid?
+    end
   end
 end
