@@ -54,12 +54,7 @@ end
 
 def create_resource(resource)
   params = FactoryGirl.create((resource.to_s + '_params').to_sym)
-  response = resource_to_class(resource).create(params)
-
-  # make sure resulting object responds to the desired keys
-  params.each { |key, _| assert_respond_to response, key }
-
-  response
+  resource_to_class(resource).create(params)
 end
 
 # Convert a resource into the corresponding BlockScore class.
