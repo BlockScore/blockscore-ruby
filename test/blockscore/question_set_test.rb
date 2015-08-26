@@ -10,7 +10,6 @@ class QuestionSetResourceTest < Minitest::Test
     count = @person.question_sets.count
     question_set = @person.question_sets.create
 
-    assert question_set.kind_of?(BlockScore::QuestionSet)
     assert_requested(@api_stub, times: 2)
   end
 
@@ -25,33 +24,26 @@ class QuestionSetResourceTest < Minitest::Test
   def test_retrieve
     qs = @person.question_sets.create
     response = @person.question_sets.retrieve(qs.id)
-    assert response.kind_of?(BlockScore::QuestionSet)
     assert_requested(@api_stub, times: 3)
   end
 
   def test_all
     response = @person.question_sets.all
 
-    assert response.kind_of?(Array)
-    response.each { |qs| assert qs.kind_of?(BlockScore::QuestionSet) }
     assert_requested(@api_stub, times: 2)
   end
 
   def test_all_count
     response = @person.question_sets.all(count: 2)
 
-    assert response.kind_of?(Array)
     assert_equal 2, response.count
-    response.each { |qs| assert qs.kind_of?(BlockScore::QuestionSet) }
     assert_requested(@api_stub, times: 2)
   end
 
   def test_all_offset
     response = @person.question_sets.all(count: 2, offset: 2)
 
-    assert response.kind_of?(Array)
     assert_equal 2, response.count
-    response.each { |qs| assert qs.kind_of?(BlockScore::QuestionSet) }
     assert_requested(@api_stub, times: 2)
   end
 
@@ -66,14 +58,7 @@ class QuestionSetResourceTest < Minitest::Test
 
     qs = @person.question_sets.create
     response = qs.score(@answers)
-    assert response.kind_of?(BlockScore::QuestionSet)
     assert_requested(@api_stub, times: 3)
-  end
-
-  def test_score_attribute
-    qs = @person.question_sets.create
-    score = qs.score
-    assert score.kind_of?(Float)
   end
 
   def test_score_does_not_request

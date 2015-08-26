@@ -20,19 +20,15 @@ module ResourceTest
   end
 
   def test_list_resource
-    response = resource_to_class(resource).send(:all)
+    resource_to_class(resource).send(:all)
 
-    assert response.kind_of?(Array)
-    response.each { |item| assert item.kind_of?(resource_to_class(resource)) }
     assert_requested(@api_stub, times: 1)
   end
 
   def test_list_resource_with_count
     response = resource_to_class(resource).send(:all, {count: 2})
 
-    assert response.kind_of?(Array)
     assert_equal 2, response.count
-    response.each { |item| assert item.kind_of?(resource_to_class(resource)) }
     assert_requested(@api_stub, times: 1)
   end
 
@@ -40,9 +36,7 @@ module ResourceTest
     response = resource_to_class(resource).
       send(:all, {count: 2, offset: 2})
 
-    assert response.kind_of?(Array)
     assert_equal 2, response.count
-    response.each { |item| assert item.kind_of?(resource_to_class(resource)) }
     assert_requested(@api_stub, times: 1)
   end
 
