@@ -7,46 +7,40 @@ class PersonResourceTest < Minitest::Test
     :address, :address_risk, :identification, :date_of_birth, :ofac, :pep
   ]
 
-  context 'person specific tests' do
-    setup do
-      @person = create_person
+  def test_details_keys
+    details = create_person.details
+    DETAIL_KEYS.each do |key|
+      assert_respond_to details, key
     end
+  end
 
-    should 'details hash should contain all of the correct keys' do
-      details = @person.details
-      DETAIL_KEYS.each do |key|
-        assert_respond_to details, key
-      end
-    end
+  def test_open_struct_details
+    assert create_person.details.kind_of?(OpenStruct)
+  end
 
-    should 'details should be an OpenStruct object' do
-      assert @person.details.kind_of?(OpenStruct)
-    end
+  def test_details_does_not_request
+    create_person.details
+    assert_requested(@api_stub, times: 1) # @person creation in setup
+  end
 
-    should 'accessing the details should not make a network request' do
-      @person.details
-      assert_requested(@api_stub, times: 1) # @person creation in setup
-    end
+  def test_question_sets_are_collections
+    assert create_person.question_sets.kind_of?(BlockScore::Collection)
+  end
 
-    should 'question_sets should be of kind BlockScore::Collection' do
-      assert @person.question_sets.kind_of?(BlockScore::Collection)
-    end
+  def test_collections_do_not_request
+    create_person.question_sets
+    assert_requested(@api_stub, times: 1) # once when Person was created.
+  end
 
-    should 'accessing the question_sets collection should not cause an extra network request' do
-      @person.question_sets
-      assert_requested(@api_stub, times: 1) # once when Person was created.
-    end
+  def test_valid_predicate
+    person = BlockScore::Person.new(create(:person, status: 'valid'))
+    assert person.valid?
+    refute person.invalid?
+  end
 
-    should 'be valid when status is `valid`' do
-      person = BlockScore::Person.new(create(:person, status: 'valid'))
-      assert person.valid?
-      refute person.invalid?
-    end
-
-    should 'be invalid when status is `invalid`' do
-      person = BlockScore::Person.new(create(:person, status: 'invalid'))
-      assert person.invalid?
-      refute person.valid?
-    end
+  def test_invalid_predicate
+    person = BlockScore::Person.new(create(:person, status: 'invalid'))
+    assert person.invalid?
+    refute person.valid?
   end
 end
