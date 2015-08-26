@@ -3,17 +3,6 @@ require File.expand_path(File.join(__FILE__, '../../test_helper'))
 class PersonResourceTest < Minitest::Test
   include ResourceTest
 
-  DETAIL_KEYS = [
-    :address, :address_risk, :identification, :date_of_birth, :ofac, :pep
-  ]
-
-  def test_details_keys
-    details = create_person.details
-    DETAIL_KEYS.each do |key|
-      assert_respond_to details, key
-    end
-  end
-
   def test_open_struct_details
     assert create_person.details.kind_of?(OpenStruct)
   end
