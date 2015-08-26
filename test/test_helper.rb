@@ -21,8 +21,6 @@ HEADERS = {
   'Content-Type' => 'application/json'
 }
 
-METAKEYS = [:id, :created_at, :updated_at]
-
 def without_authentication
   BlockScore.api_key = nil # clear API key
 end
