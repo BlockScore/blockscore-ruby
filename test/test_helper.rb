@@ -35,27 +35,6 @@ def with_authentication
   BlockScore.api_key = 'sk_test_a1ed66cc16a7cbc9f262f51869da31b3'
 end
 
-def create_candidate
-  create_resource(:candidate)
-end
-
-def create_company
-  create_resource(:company)
-end
-
-def create_person
-  create_resource(:person)
-end
-
-def create_question_set
-  person = create_person
-  create_resource(:question_set)
-end
-
-def create_resource(resource)
-  FactoryGirl.create(:"#{resource}_params")
-end
-
 # Convert a resource into the corresponding BlockScore class.
 def resource_to_class(resource)
   BlockScore::Util.to_constant("BlockScore::#{BlockScore::Util.to_camelcase(resource.to_s)}")
