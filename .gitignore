@@ -56,3 +56,5 @@ pkg
 blockscore-*.gem
 
 Gemfile.lock
+
+spec/.rspec-state
