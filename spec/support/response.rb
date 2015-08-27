@@ -3,15 +3,31 @@ def error_response?(stub)
 end
 
 def create_response?(stub)
-  stub.http_method == :post && stub.action.nil?
+  stub.http_method == :post && !stub.has?(:action)
+end
+
+def delete_response?(stub)
+  stub.http_method.equal?(:delete) && !stub.has?(:action)
 end
 
 def list_response?(stub)
-  stub.id.equal?(:no_id) && stub.http_method == :get || stub.action == 'hits'
+  !stub.has?(:id) && stub.http_method == :get || stub.action == 'hits'
 end
 
 def history_response?(stub)
   stub.action == 'history'
+end
+
+def score_response?(stub)
+  stub.action.eql?('score')
+end
+
+def update_response?(stub)
+  stub.http_method.equal?(:patch)
+end
+
+def retrieve_response?(stub)
+  stub.id && stub.http_method == :get
 end
 
 def handle_test_response(stub)
@@ -38,8 +54,18 @@ def response_body(stub)
     BlockScore::StubbedResponse::List.new(stub.factory_name, stub.query_params).response.fetch(:body)
   elsif history_response?(stub)
     BlockScore::StubbedResponse::History.new(stub.factory_name).response.fetch(:body)
-  else
+  elsif create_response?(stub)
     BlockScore::StubbedResponse::Retrieve.new(stub.factory_name).response.fetch(:body)
+  elsif retrieve_response?(stub)
+    BlockScore::StubbedResponse::Retrieve.new(stub.factory_name).response.fetch(:body)
+  elsif delete_response?(stub)
+    BlockScore::StubbedResponse::Retrieve.new(stub.factory_name).response.fetch(:body)
+  elsif score_response?(stub)
+    BlockScore::StubbedResponse::Retrieve.new(stub.factory_name).response.fetch(:body)
+  elsif update_response?(stub)
+    BlockScore::StubbedResponse::Retrieve.new(stub.factory_name).response.fetch(:body)
+  else
+    fail ArgumentError, "I don't know how to route this type of resource: #{stub.inspect}"
   end
 end
 

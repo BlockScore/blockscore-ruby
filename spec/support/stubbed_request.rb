@@ -13,12 +13,16 @@ module BlockScore
       path.fetch(1)
     end
 
+    def has?(attribute)
+      !public_send(attribute).equal?(:none)
+    end
+
     def id
-      path.fetch(2, :no_id)
+      path.fetch(2, :none)
     end
 
     def action
-      path.fetch(3, :no_action)
+      path.fetch(3, :none)
     end
 
     def path
