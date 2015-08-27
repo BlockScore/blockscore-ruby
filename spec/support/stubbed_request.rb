@@ -25,7 +25,19 @@ module BlockScore
       uri.path.split('/')
     end
 
+    def query_params
+      CGI.parse(query)
+    end
+
+    def http_method
+      request.method
+    end
+
     private
+
+    def query
+      uri.query || ''
+    end
 
     attr_reader :request, :uri
   end

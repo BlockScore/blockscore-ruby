@@ -33,8 +33,9 @@ RSpec.configure do |config|
 
   config.before(:each) do
     @api_stub = stub_request(:any, BlockScore::Spec::STUB_PATTERN).with(headers: BlockScore::Spec::HEADERS).to_return do |request|
-      stubbed_request = BlockScore::StubbedRequest.new(request)
-      handle_test_response request, stubbed_request.id, stubbed_request.action, stubbed_request.factory_name
+      stub = BlockScore::StubbedRequest.new(request)
+      handle_test_response(stub)
+
     end
   end
 
