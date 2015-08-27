@@ -26,16 +26,14 @@ BlockScore::Spec.setup
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
 RSpec.configure do |config|
   config.include(FactoryGirl::Syntax::Methods)
   config.include(WebMock::API)
 
   config.before(:each) do
     @api_stub = stub_request(:any, BlockScore::Spec::STUB_PATTERN).with(headers: BlockScore::Spec::HEADERS).to_return do |request|
-      uri = request.uri
-      check_uri_for_api_key(uri)
-
-      resource, id, action = uri.path.split('/').tap(&:shift)
+      resource, id, action = request.uri.path.split('/').tap(&:shift)
       factory_name = resource_from_uri(resource)
 
       unless FactoryGirl.factories[factory_name]
