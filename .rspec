@@ -2,4 +2,5 @@
 --color
 -Ilib
 -r blockscore
+-r spec
 -r spec_helper
