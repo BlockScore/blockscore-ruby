@@ -54,24 +54,22 @@ RSpec.configure do |config|
   config.include(WebMock::API)
 
   config.before(:each) do
-    with_authentication
+    @api_stub = stub_request(:any, /.*api\.blockscore\.com\/.*/).with(headers: HEADERS).to_return do |request|
+      uri = request.uri
+      check_uri_for_api_key(uri)
 
-    @api_stub = stub_request(:any, /.*api\.blockscore\.com\/.*/).
-      with(headers: HEADERS).
-      to_return do |request|
-        uri = request.uri
-        check_uri_for_api_key(uri)
+      resource, id, action = uri.path.split('/').tap(&:shift)
+      factory_name = resource_from_uri(resource)
 
-        resource, id, action = uri.path.split('/').tap(&:shift)
-        factory_name = resource_from_uri(resource)
-
-        unless FactoryGirl.factories[factory_name]
-          raise ArgumentError, "could not find factory #{factory_name.inspect}."
-        end
-
-        handle_test_response request, id, action, factory_name
+      unless FactoryGirl.factories[factory_name]
+        raise ArgumentError, "could not find factory #{factory_name.inspect}."
       end
+
+      handle_test_response request, id, action, factory_name
+    end
   end
+
+  config.before(:each) { with_authentication }
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.

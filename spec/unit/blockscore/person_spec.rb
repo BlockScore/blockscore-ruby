@@ -3,20 +3,6 @@ module BlockScore
     let(:api_stub) { @api_stub }
     let(:action) { -> { create(:person).details } }
 
-    describe '#details' do
-      it 'does not make a request' do
-        create(:person).details
-        assert_requested(@api_stub, times: 0)
-      end
-    end
-
-    describe '#question_sets' do
-      it 'does not make a request' do
-        create(:person).question_sets
-        assert_requested(@api_stub, times: 0)
-      end
-    end
-
     it '#valid?' do
       person = create(:person, status: 'valid')
       expect(person.valid?).to eq(true)

@@ -57,12 +57,6 @@ module BlockScore
         qs.score(answers)
         assert_requested(api_stub, times: 3)
       end
-
-      it 'accessor does not request' do
-        qs = person.question_sets.create
-        qs.score
-        assert_requested(api_stub, times: 2)
-      end
     end
   end
 end
