@@ -31,7 +31,7 @@ RSpec.configure do |config|
   config.include(WebMock::API)
 
   config.before(:each) do
-    @api_stub = stub_request(:any, /.*api\.blockscore\.com\/.*/).with(headers: BlockScore::Spec::HEADERS).to_return do |request|
+    @api_stub = stub_request(:any, BlockScore::Spec::STUB_PATTERN).with(headers: BlockScore::Spec::HEADERS).to_return do |request|
       uri = request.uri
       check_uri_for_api_key(uri)
 

@@ -9,6 +9,7 @@ module BlockScore
     }.freeze
     API_KEY = 'sk_test_a1ed66cc16a7cbc9f262f51869da31b3'.freeze
     WEBMOCK_WHITELIST = { allow: 'codeclimate.com' }.freeze
+    STUB_PATTERN = /.*api\.blockscore\.com\/.*/
 
     module_function
 
