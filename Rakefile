@@ -10,6 +10,9 @@ rescue Bundler::BundlerError => e
   exit e.status_code
 end
 require 'rake'
+require 'devtools'
+
+Devtools.init_rake_tasks
 
 require 'rake/testtask'
 Rake::TestTask.new(:test) do |test|
