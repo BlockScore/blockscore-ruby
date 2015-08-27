@@ -46,7 +46,7 @@ def response_status(request, action)
 end
 
 def response_body(request, id, action, factory_name)
-  if id.nil? && request.method == :get || action == 'hits'
+  if id.equal?(:no_id) && request.method == :get || action == 'hits'
     options = parse_query request.uri.query
     index_response factory_name, options.fetch('count', [5]).first.to_i
   elsif action == 'history'

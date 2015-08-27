@@ -33,14 +33,8 @@ RSpec.configure do |config|
 
   config.before(:each) do
     @api_stub = stub_request(:any, BlockScore::Spec::STUB_PATTERN).with(headers: BlockScore::Spec::HEADERS).to_return do |request|
-      resource, id, action = request.uri.path.split('/').tap(&:shift)
-      factory_name = resource_from_uri(resource)
-
-      unless FactoryGirl.factories[factory_name]
-        raise ArgumentError, "could not find factory #{factory_name.inspect}."
-      end
-
-      handle_test_response request, id, action, factory_name
+      stubbed_request = BlockScore::StubbedRequest.new(request)
+      handle_test_response request, stubbed_request.id, stubbed_request.action, stubbed_request.factory_name
     end
   end
 
