@@ -1,7 +1,3 @@
-require File.expand_path(File.join('spec/blockscore/actions_test.rb', '../../spec_helper'))
-require File.expand_path(File.join('spec/blockscore/actions_test.rb', '../../support/fake_resource'))
-require File.expand_path(File.join('spec/blockscore/actions_test.rb', '../../support/resource_behavior'))
-
 module BlockScore
   RSpec.describe Base do
     before do

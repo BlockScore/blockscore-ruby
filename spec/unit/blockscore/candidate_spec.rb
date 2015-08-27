@@ -1,6 +1,3 @@
-require File.expand_path(File.join('spec/blockscore/candidate_spec.rb', '../../spec_helper'))
-require File.expand_path(File.join(File.dirname('spec/blockscore/candidate_spec.rb'), '../../spec/support/resource_behavior'))
-
 module BlockScore
   RSpec.describe Candidate do
     it_behaves_like 'a resource'

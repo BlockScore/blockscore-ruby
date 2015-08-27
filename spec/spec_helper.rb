@@ -6,6 +6,10 @@ require 'webmock'
 require 'webmock/rspec'
 require 'rspec'
 
+SPEC_DIR = File.expand_path('..', __FILE__).freeze
+
+Dir[SPEC_DIR + '/support/**/*.rb'].each { |path| require(path) }
+
 WebMock.disable_net_connect!(allow: 'codeclimate.com')
 
 HEADERS = {
@@ -15,7 +19,6 @@ HEADERS = {
 }
 
 require File.expand_path(File.join(File.dirname(__FILE__), '../spec/factories'))
-require File.expand_path(File.join(File.dirname(__FILE__), '../spec/support/response'))
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))

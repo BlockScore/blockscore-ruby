@@ -1,7 +1,4 @@
-require File.expand_path(File.join(File.dirname('spec/blockscore/candidate_spec.rb'), '../../spec/support/error_behavior'))
-
 module BlockScore
-
   RSpec.describe APIConnectionError do
     let(:stubbed_route_pattern) { %r(.*api\.blockscore\.com/people/connection_refused) }
     let(:stubbed_error) { Errno::ECONNREFUSED }

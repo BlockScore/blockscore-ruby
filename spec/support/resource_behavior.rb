@@ -1,5 +1,3 @@
-require 'blockscore/util'
-
 RSpec.shared_context 'a resource' do
   let(:resource) do
     BlockScore::Util.to_underscore(described_class.to_s[/BlockScore::(\w+)/, 1])
