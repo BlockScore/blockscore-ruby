@@ -1,6 +1,5 @@
 module BlockScore
   RSpec.describe Person do
-    it_behaves_like 'a resource'
 
     describe '#details' do
       it 'does not make a request' do

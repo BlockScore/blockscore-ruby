@@ -1,6 +1,5 @@
 module BlockScore
   RSpec.describe Candidate do
-    it_behaves_like 'a resource'
 
     it 'updates' do
       candidate = create(:candidate_params)
