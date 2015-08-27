@@ -1,5 +1,29 @@
 module BlockScore
   class StubbedResponse
+    class History
+      include FactoryGirl::Syntax::Methods
+
+      def initialize(factory_name)
+        @factory_name = factory_name
+      end
+
+      def response
+        {
+          :status => 200,
+          :body => factory_response,
+          :headers => {}
+        }
+      end
+
+      private
+
+      attr_reader :factory_name
+
+      def factory_response
+        build_list(factory_name, count).to_json
+      end
+    end
+
     class List
       include FactoryGirl::Syntax::Methods
 

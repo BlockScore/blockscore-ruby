@@ -32,7 +32,7 @@ def response_body(id, action, factory_name, options, http_method)
   if id.equal?(:no_id) && http_method == :get || action == 'hits'
     BlockScore::StubbedResponse::List.new(factory_name, options).response.fetch(:body)
   elsif action == 'history'
-    build_list(factory_name, 5).to_json
+    BlockScore::StubbedResponse::History.new(factory_name).response.fetch(:body)
   else
     BlockScore::StubbedResponse::Retrieve.new(factory_name).response.fetch(:body)
   end
