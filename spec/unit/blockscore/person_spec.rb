@@ -1,5 +1,7 @@
 module BlockScore
   RSpec.describe Person do
+    let(:api_stub) { @api_stub }
+    let(:action) { -> { create(:person).details } }
 
     describe '#details' do
       it 'does not make a request' do
