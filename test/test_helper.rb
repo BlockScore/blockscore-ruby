@@ -17,7 +17,7 @@ WebMock.disable_net_connect!(allow: 'codeclimate.com')
 
 HEADERS = {
   'Accept' => 'application/vnd.blockscore+json;version=4',
-  'User-Agent' => 'blockscore-ruby/4.1.0 (https://github.com/BlockScore/blockscore-ruby)',
+  'User-Agent' => 'blockscore-ruby/4.1.1 (https://github.com/BlockScore/blockscore-ruby)',
   'Content-Type' => 'application/json'
 }
 
