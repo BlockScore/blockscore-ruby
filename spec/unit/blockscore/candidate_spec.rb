@@ -5,7 +5,7 @@ module BlockScore
   RSpec.describe Candidate do
     it_behaves_like 'a resource'
 
-    it 'test_update' do
+    it 'updates' do
       candidate = create(:candidate_params)
       candidate.name_first = 'Chris'
       expect(candidate.save).to eq(true)
@@ -13,7 +13,7 @@ module BlockScore
       expect('Chris').to eq(candidate.name_first)
     end
 
-    it 'test_delete' do
+    it 'deletes' do
       candidate = create(:candidate_params)
       candidate.delete
       assert_requested(@api_stub, times: 2)
