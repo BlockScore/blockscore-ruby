@@ -38,16 +38,4 @@ RSpec.shared_context 'a resource' do
       assert_requested(@api_stub, times: 1)
     end
   end
-
-  it 'init_and_save' do
-    params = build(resource).attributes
-    obj = described_class.new
-
-    params.each do |key, value|
-      obj.public_send "#{key.to_s}=".to_sym, value
-    end
-
-    expect(obj.save).to be(true)
-    assert_requested(@api_stub, times: 1)
-  end
 end
