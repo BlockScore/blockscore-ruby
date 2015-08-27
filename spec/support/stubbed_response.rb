@@ -1,5 +1,29 @@
 module BlockScore
   class StubbedResponse
+    class Retrieve
+      include FactoryGirl::Syntax::Methods
+
+      def initialize(factory_name)
+        @factory_name = factory_name
+      end
+
+      def response
+        {
+          status: 200,
+          body: factory_response,
+          headers: {}
+        }
+      end
+
+      private
+
+      attr_reader :factory_name
+
+      def factory_response
+        json(factory_name)
+      end
+    end
+
     class Error
       include FactoryGirl::Syntax::Methods
 

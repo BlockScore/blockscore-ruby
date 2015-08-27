@@ -34,7 +34,7 @@ def response_body(id, action, factory_name, options, http_method)
   elsif action == 'history'
     build_list(factory_name, 5).to_json
   else
-    json(factory_name)
+    BlockScore::StubbedResponse::Retrieve.new(factory_name).response.fetch(:body)
   end
 end
 
