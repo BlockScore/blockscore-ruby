@@ -20,7 +20,7 @@ HEADERS = {
 
 TEST_API_KEY = 'sk_test_a1ed66cc16a7cbc9f262f51869da31b3'.freeze
 
-require File.expand_path(File.join(File.dirname(__FILE__), '../spec/factories'))
+FactoryGirl.reload
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
