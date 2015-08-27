@@ -1,14 +1,3 @@
-require 'cgi'
-
-def index_response(resource, count)
-  {
-    :total_count => count,
-    :has_more => false,
-    :object => 'list',
-    :data => build_list(resource.to_sym, count)
-  }.to_json
-end
-
 def handle_test_response(stub)
   if BlockScore::StubbedResponse::Error::MAP.key?(stub.id)
     BlockScore::StubbedResponse::Error.new(stub.id).response
