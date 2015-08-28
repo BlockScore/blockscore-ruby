@@ -3,9 +3,10 @@ module BlockScore
   module Spec
     SPEC = File.expand_path('..', __FILE__).freeze
 
+    IDENTIFIER = "blockscore-ruby/#{BlockScore::VERSION}".freeze
     HEADERS = {
       'Accept' => 'application/vnd.blockscore+json;version=4',
-      'User-Agent' => 'blockscore-ruby/4.1.1 (https://github.com/BlockScore/blockscore-ruby)',
+      'User-Agent' => %(#{IDENTIFIER} (https://github.com/BlockScore/blockscore-ruby)),
       'Content-Type' => 'application/json'
     }.freeze
 
