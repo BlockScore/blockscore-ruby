@@ -1,5 +1,3 @@
-require 'blockscore/base'
-
 module BlockScore
   class FakeResource < BlockScore::Base
     include BlockScore::Actions::All
