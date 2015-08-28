@@ -17,11 +17,24 @@ module BlockScore
 
     module_function
 
+    # Handle a webmock request
+    #
+    # @param request
+    # @return [undefined]
+    #
+    # @api public
     def webmock_handler(request)
       request = BlockScore::StubbedRequest.new(request)
       BlockScore::StubbedResponse::Router.call(request).response
     end
 
+    # Setup specs
+    #
+    # load in support directory helpers, init webmock, and init factory girl
+    #
+    # @return [undefined]
+    #
+    # @api public
     def setup
       load_support
       setup_webmock
