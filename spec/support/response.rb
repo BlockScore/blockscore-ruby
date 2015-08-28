@@ -1,3 +1,4 @@
+
 def error_response?(stub)
   BlockScore::StubbedResponse::Error::MAP.key?(stub.id)
 end
@@ -11,7 +12,11 @@ def delete_response?(stub)
 end
 
 def list_response?(stub)
-  !stub.has?(:id) && stub.http_method == :get || stub.action == 'hits'
+  !stub.has?(:id) && stub.http_method == :get
+end
+
+def hits_response?(stub)
+  stub.action == 'hits'
 end
 
 def history_response?(stub)
@@ -32,7 +37,7 @@ end
 
 def handle_test_response(stub)
   if error_response?(stub)
-    BlockScore::StubbedResponse::Error.new(stub.id).response
+    BlockScore::StubbedResponse::Router.call(stub).response
   else
     status = response_status(stub)
     body = response_body(stub)
@@ -52,6 +57,8 @@ end
 def response_body(stub)
   if list_response?(stub)
     BlockScore::StubbedResponse::List.new(stub.factory_name, stub.query_params).response.fetch(:body)
+  elsif hits_response?(stub)
+      BlockScore::StubbedResponse::List.new(stub.factory_name, stub.query_params).response.fetch(:body)
   elsif history_response?(stub)
     BlockScore::StubbedResponse::History.new(stub.factory_name).response.fetch(:body)
   elsif create_response?(stub)

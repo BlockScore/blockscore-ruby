@@ -88,8 +88,8 @@ module BlockScore
         '500' => :api_error
       }
 
-      def initialize(status)
-        @status = status
+      def initialize(request)
+        @status = request.id
       end
 
       def response
@@ -111,6 +111,47 @@ module BlockScore
       def error_type
         MAP.fetch(status)
       end
+    end
+
+    class Router
+      # When we do not match a route
+      NoMatchError = Class.new(StandardError)
+      REGISTRY = {} # Hash<Proc, Class>
+
+      # Route a stubbed request
+      #
+      # @param stub [StubbedRequest]
+      # @raise [NoMatchError] if we don't know how to route the request
+      # @return response wrapper
+      #
+      # @api public
+      def self.call(stub)
+        route = match_route(stub) { fail NoMatchError, "Could not route #{stub.inspect}" }
+        route.new(stub)
+      end
+
+      def self.match_route(stub, &no_match)
+        _, matched = REGISTRY.detect(no_match) { |test, _| test.call(stub) }
+        matched
+      end
+
+      # Define a route
+      #
+      # @param klass [Class] class to route to
+      # @yield [StubbedRequest] stubbed request
+      #
+      # @return [undefined]
+      #
+      # @api private
+      def self.route(klass, &block)
+        fail ArgumentError, 'block required' unless block_given?
+        fail ArgumentError, 'block should take one argument' unless block.arity.equal?(1)
+
+        REGISTRY[block] = klass
+      end
+      private_class_method :route
+
+      route(StubbedResponse::Error) { |stub| StubbedResponse::Error::MAP.key?(stub.id) }
     end
   end
 end
