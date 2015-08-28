@@ -99,7 +99,7 @@ FactoryGirl.define do
   trait(:phone_number) { phone_number Faker::PhoneNumber.phone_number }
 
   # Company Details factory.
-  factory :company_details, :class => Hash, :traits => [:resource] do
+  factory :company_details, class: Hash, traits: [:resource] do
     ofac { random_match_result }
     state { random_match_result }
     tax_id { random_match_result }
@@ -108,7 +108,7 @@ FactoryGirl.define do
     country_code { random_match_result }
   end
 
-  factory :person_details, :class => Hash, :traits => [:resource] do
+  factory :person_details, class: Hash, traits: [:resource] do
     address { random_match_result }
     address_risk { random_match_result }
     identification { random_match_result }
@@ -118,13 +118,13 @@ FactoryGirl.define do
   end
 
   # Candidate factory
-  factory :candidate_params, :class => 'BlockScore::Candidate' do
+  factory :candidate_params, class: 'BlockScore::Candidate' do
     ssn { '0000' }
     name
     address
   end
 
-  factory :candidate, :class => 'BlockScore::Candidate' do
+  factory :candidate, class: 'BlockScore::Candidate' do
     skip_create
 
     object { 'candidate' }
@@ -139,7 +139,7 @@ FactoryGirl.define do
   end
 
   # Company Factory
-  factory :company_params, :class => 'BlockScore::Company' do
+  factory :company_params, class: 'BlockScore::Company' do
     entity_name { Faker::Company.name }
     tax_id { Faker::Base.regexify(/\d{9}/) }
     incorporation_country_code { Faker::Address.country_code }
@@ -147,7 +147,7 @@ FactoryGirl.define do
     address
   end
 
-  factory :company, :class => 'BlockScore::Company' do
+  factory :company, class: 'BlockScore::Company' do
     skip_create
 
     object { 'company' }
@@ -173,7 +173,7 @@ FactoryGirl.define do
     details { build(:company_details) }
   end
 
-  factory :person_params, :class => 'BlockScore::Person' do
+  factory :person_params, class: 'BlockScore::Person' do
     name
     document
     address
@@ -182,7 +182,7 @@ FactoryGirl.define do
     ip_address { Faker::Internet.ip_v4_address }
   end
 
-  factory :person, :class => 'BlockScore::Person' do
+  factory :person, class: 'BlockScore::Person' do
     skip_create
 
     object { 'person' }
@@ -204,11 +204,11 @@ FactoryGirl.define do
 
   # QuestionSet Factory
 
-  factory :question_set_params, :class => 'BlockScore::QuestionSet' do
+  factory :question_set_params, class: 'BlockScore::QuestionSet' do
     person_id { Faker::Base.regexify(/\d{24}/) }
   end
 
-  factory :question_set, :class => 'BlockScore::QuestionSet' do
+  factory :question_set, class: 'BlockScore::QuestionSet' do
     skip_create
 
     object { 'question_set' }
@@ -222,24 +222,24 @@ FactoryGirl.define do
     questions { 5.times.collect { build(:question) } }
   end
 
-  factory :question, :class => Hash, :traits => [:resource] do
+  factory :question, class: Hash, traits: [:resource] do
     sequence(:id)
     answers { 5.times.collect { build(:answer) } }
   end
 
-  factory :answer, :class => Hash, :traits => [:resource] do
+  factory :answer, class: Hash, traits: [:resource] do
     sequence(:id)
     answer { Faker::Lorem.word }
   end
 
-  factory :watchlist, :class => Hash, :traits => [:resource] do
+  factory :watchlist, class: Hash, traits: [:resource] do
     livemode
     searched_lists { WATCHLISTS.sample(2) }
     count { rand(1..5) }
     matches { build_list(:match, count) }
   end
 
-  factory :match, :class => Hash, :traits => [:resource] do
+  factory :match, class: Hash, traits: [:resource] do
     id { Faker::Base.regexify(/[0-9a-f]{24}/) }
     notes ''
     watchlist_name { WATCHLISTS.sample }
@@ -268,7 +268,7 @@ FactoryGirl.define do
     addresses { build_list(:match_address, rand(1..5)) }
   end
 
-  factory :match_address, :class => Hash, :traits => [:resource] do
+  factory :match_address, class: Hash, traits: [:resource] do
     address_street1 { Faker::Address.street_address }
     address_street2 do
       Faker::Address.secondary_address if rand(1..2) == 1
@@ -280,19 +280,19 @@ FactoryGirl.define do
     address_full { full_address }
   end
 
-  factory :match_birth, :class => Hash, :traits => [:resource] do
+  factory :match_birth, class: Hash, traits: [:resource] do
     birthday
     birth_day_end { nil }
     birth_month_end { nil }
     birth_year_end { nil }
   end
 
-  factory :match_document, :class => Hash, :traits => [:resource] do
+  factory :match_document, class: Hash, traits: [:resource] do
     document
     document_country_code { Faker::Address.country_code }
   end
 
-  factory :match_name, :class => Hash, :traits => [:resource] do
+  factory :match_name, class: Hash, traits: [:resource] do
     name_primary { false }
     name_full { Faker::Name.name }
     name_strength { %w(low medium high).sample }
@@ -300,7 +300,7 @@ FactoryGirl.define do
 
   # We can do this because the error type is determined by the
   # HTTP response code.
-  factory :blockscore_error, :class => Hash, :traits => [:resource] do
+  factory :blockscore_error, class: Hash, traits: [:resource] do
     ignore do
       error_type 'api_error'
     end
@@ -308,28 +308,28 @@ FactoryGirl.define do
     error { create(error_type.to_s) }
   end
 
-  factory :api_error, :class => Hash, :traits => [:resource] do
+  factory :api_error, class: Hash, traits: [:resource] do
     message { 'An error occurred.' }
     type { 'api_error' }
     code { '0' }
     param { nil }
   end
 
-  factory :authentication_error, :class => Hash, :traits => [:resource] do
+  factory :authentication_error, class: Hash, traits: [:resource] do
     message { 'The provided API key is invalid.' }
     type { 'authentication_error' }
     code { '0' }
     param { nil }
   end
 
-  factory :invalid_request_error, :class => Hash, :traits => [:resource] do
+  factory :invalid_request_error, class: Hash, traits: [:resource] do
     message { 'One of more parameters is invalid.' }
     type { 'invalid_request_error' }
     code { '0' }
     param { 'name_first' }
   end
 
-  factory :not_found_error, :class => Hash, :traits => [:resource] do
+  factory :not_found_error, class: Hash, traits: [:resource] do
     message { 'Person with ID ab973197319713ba could not be found' }
     type { 'not_found_error' }
     code { '0' }

@@ -34,8 +34,8 @@ module BlockScore
 
     config.before(:each) do
       @api_stub = stub_request(:any, Spec::STUB_PATTERN)
-                    .with(headers: Spec::HEADERS)
-                    .to_return(&Spec.method(:webmock_handler))
+                  .with(headers: Spec::HEADERS)
+                  .to_return(&Spec.method(:webmock_handler))
     end
 
     config.before(:suite) { BlockScore.api_key = Spec::API_KEY }

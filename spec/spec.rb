@@ -13,7 +13,7 @@ module BlockScore
 
     WEBMOCK_WHITELIST = { allow: 'codeclimate.com' }.freeze
 
-    STUB_PATTERN = %r{https://#{API_KEY}:@api\.blockscore\.com/*}
+    STUB_PATTERN = %r(https://#{API_KEY}:@api\.blockscore\.com/*)
 
     module_function
 

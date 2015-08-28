@@ -19,9 +19,9 @@ module BlockScore
     class History < self
       def response
         {
-          :status => 200,
-          :body => factory_response,
-          :headers => {}
+          status: 200,
+          body: factory_response,
+          headers: {}
         }
       end
 
@@ -38,9 +38,9 @@ module BlockScore
 
       def response
         {
-          :status => 200,
-          :body => factory_response,
-          :headers => {}
+          status: 200,
+          body: factory_response,
+          headers: {}
         }
       end
 
@@ -48,10 +48,10 @@ module BlockScore
 
       def factory_response
         {
-          :total_count => count,
-          :has_more => false,
-          :object => 'list',
-          :data => build_list(factory_name, count)
+          total_count: count,
+          has_more: false,
+          object: 'list',
+          data: build_list(factory_name, count)
         }.to_json
       end
 
@@ -66,7 +66,6 @@ module BlockScore
 
     # Response wrapper for retrieve API calls
     class Retrieve < self
-
       def response
         {
           status: 200,
@@ -84,12 +83,11 @@ module BlockScore
 
     # Response wrapper for create API calls
     class Create < self
-
       def response
         {
-            status: 201,
-            body: factory_response,
-            headers: {}
+          status: 201,
+          body: factory_response,
+          headers: {}
         }
       end
 
