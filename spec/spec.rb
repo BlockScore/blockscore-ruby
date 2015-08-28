@@ -2,16 +2,25 @@
 module BlockScore
   module Spec
     SPEC = File.expand_path('..', __FILE__).freeze
+
     HEADERS = {
       'Accept' => 'application/vnd.blockscore+json;version=4',
       'User-Agent' => 'blockscore-ruby/4.1.1 (https://github.com/BlockScore/blockscore-ruby)',
       'Content-Type' => 'application/json'
     }.freeze
+
     API_KEY = 'sk_test_a1ed66cc16a7cbc9f262f51869da31b3'.freeze
+
     WEBMOCK_WHITELIST = { allow: 'codeclimate.com' }.freeze
+
     STUB_PATTERN = %r{https://#{API_KEY}:@api\.blockscore\.com/*}
 
     module_function
+
+    def webmock_handler(request)
+      request = BlockScore::StubbedRequest.new(request)
+      BlockScore::StubbedResponse::Router.call(request).response
+    end
 
     def setup
       load_support

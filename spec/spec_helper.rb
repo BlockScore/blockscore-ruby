@@ -32,10 +32,10 @@ RSpec.configure do |config|
   config.include(WebMock::API)
 
   config.before(:each) do
-    @api_stub = stub_request(:any, BlockScore::Spec::STUB_PATTERN).with(headers: BlockScore::Spec::HEADERS).to_return do |request|
-      request = BlockScore::StubbedRequest.new(request)
-      BlockScore::StubbedResponse::Router.call(request).response
-    end
+    @api_stub =
+      stub_request(:any, BlockScore::Spec::STUB_PATTERN)
+        .with(headers: BlockScore::Spec::HEADERS)
+        .to_return(&BlockScore::Spec.method(:webmock_handler))
   end
 
   config.before(:suite) { BlockScore.api_key = BlockScore::Spec::API_KEY }
