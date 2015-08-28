@@ -19,8 +19,7 @@ module BlockScore
     end
 
     def search(options = {})
-      options[:candidate_id] = id
-      post "#{api_url}watchlists", options
+      post "#{api_url}watchlists", options.merge(candidate_id: id)
     end
 
     private

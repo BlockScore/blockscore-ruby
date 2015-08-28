@@ -26,5 +26,21 @@ module BlockScore
 
       include_context 'api request'
     end
+
+    describe '#search' do
+      let(:constraints) { { name_first: 'John' } }
+      subject(:search) { -> { candidate.search(constraints) } }
+
+      context 'search request' do
+        let(:uri)      { "/watchlists"                                         }
+        let(:body)     { { 'candidate_id' => candidate.id }.merge(constraints) }
+        let(:expected) { { body: hash_including(body) }                        }
+        before { search.call }
+
+        include_context 'POST'
+      end
+
+      it { should_not change { constraints } }
+    end
   end
 end
