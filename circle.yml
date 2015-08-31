@@ -1,13 +1,7 @@
 dependencies:
   override:
-    - "rvm-exec 1.9.3-p551 bundle install"
-    - "rvm-exec 2.0.0-p598 bundle install"
-    - "rvm-exec 2.1.5 bundle install"
-    - "rvm-exec 2.2.0 bundle install"
-
+    - ./circleci.sh build
 test:
   override:
-    - "rvm-exec 1.9.3-p551 bundle exec rspec"
-    - "rvm-exec 2.0.0-p598 bundle exec rspec"
-    - "rvm-exec 2.1.5 bundle exec rspec"
-    - "rvm-exec 2.2.0 bundle exec rspec"
+    - ./circleci.sh spec:
+        parallel: true
