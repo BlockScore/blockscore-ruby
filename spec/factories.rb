@@ -211,7 +211,7 @@ FactoryGirl.define do
       end
     end
 
-    initialize_with { new(attributes)}
+    initialize_with { new(attributes) }
   end
 
   # QuestionSet Factory
@@ -312,7 +312,7 @@ FactoryGirl.define do
 
   # We can do this because the error type is determined by the
   # HTTP response code.
-  factory :blockscore_error, :class => Hash, :traits => [:resource] do
+  factory :blockscore_error, class: Hash, traits: [:resource] do
     transient do
       error_type 'api_error'
     end
