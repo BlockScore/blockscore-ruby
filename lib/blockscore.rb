@@ -34,11 +34,11 @@ require 'blockscore/util'
 require 'blockscore/version'
 
 module BlockScore
-  def self.api_key=(api_key)
-    @api_key = api_key
+  class << self
+    attr_writer :api_key
   end
 
-  def self.api_key
-    @api_key
+  class << self
+    attr_reader :api_key
   end
 end

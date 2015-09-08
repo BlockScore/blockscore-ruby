@@ -1,11 +1,9 @@
 module BlockScore
   class Collection < Array
-
     attr_reader :default_params
     protected :default_params
 
     attr_reader :parent, :target, :data
-
 
     def initialize(params)
       @parent = params.fetch :parent
@@ -27,12 +25,12 @@ module BlockScore
       self
     end
 
-    def new(params ={})
+    def new(params = {})
       item = target.new(params.merge(default_params))
-      _self = self
+      ctxt = self
       item.define_singleton_method(:save) do
-        _self.parent.save unless _self.parent_id
-        send :"#{_self.parent_name}_id=", _self.parent_id
+        ctxt.parent.save unless ctxt.parent_id
+        send :"#{ctxt.parent_name}_id=", ctxt.parent_id
         super()
       end
       self << item
@@ -54,7 +52,7 @@ module BlockScore
     end
 
     def create(params = {})
-      fail Error, "Create parent first" unless parent_id
+      fail Error, 'Create parent first' unless parent_id
       assoc_params = default_params.merge(params)
       item = target.create assoc_params
       @data << item.id
@@ -70,26 +68,24 @@ module BlockScore
 
     private
 
-    def has_parent_id(item)
+    def parent_id?(item)
       parent_id && item.send(:"#{parent_name}_id") == parent_id
     end
 
     def register_to_parent(item)
-      fail Error, "None belonging" unless has_parent_id(item)
+      fail Error, 'None belonging' unless parent_id?(item)
       data << item.id
       self << item
       item
     end
 
     def register_parent_data
-      @data = parent.attributes.fetch( :"#{ Util.to_plural(target_name) }", [])
+      @data = parent.attributes.fetch(:"#{ Util.to_plural(target_name) }", [])
 
       @data.each do |id|
         item = target.retrieve(id)
         self << item
       end
     end
-
-
   end
 end

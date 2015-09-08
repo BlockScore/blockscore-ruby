@@ -42,7 +42,7 @@ module BlockScore
       let(:route) { 'https://api.blockscore.com/fake_resources/abc123' }
 
       it 'uses the correct endpoint' do
-        should receive(:request).with(:get, route, {}).once {resource}
+        should receive(:request).with(:get, route, {}).once { resource }
         mock.retrieve('abc123').attributes
       end
     end

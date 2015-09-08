@@ -11,7 +11,7 @@ module BlockScore
     # => #<BlockScore::Person:0x007fe39c424410>
     module Retrieve
       module ClassMethods
-        def retrieve(id, options={})
+        def retrieve(id, options = {})
           fail ArgumentError if id.empty?
           req = ->() { get("#{endpoint}/#{id}", options) }
           new(&req)

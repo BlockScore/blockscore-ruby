@@ -4,7 +4,6 @@ module BlockScore
   class Base
     extend Connection
 
-
     def initialize(options = {}, &block)
       @loaded = !(block)
       @proc = block
@@ -19,14 +18,14 @@ module BlockScore
     end
 
     def force!
-      r = @proc.call()
+      r = @proc.call
       @attributes = r.attributes
       @loaded = true
       self
     end
 
     def inspect
-      str_attr = "JSON:#{ JSON.pretty_generate(attributes) }"
+      str_attr = "JSON:#{JSON.pretty_generate(attributes)}"
       "#<#{self.class}:0x#{object_id.to_s(16)} #{str_attr}>"
     end
 
@@ -61,16 +60,14 @@ module BlockScore
     end
 
     def self.endpoint
-      if self == Base
-        fail NotImplementedError, 'Base is an abstract class, not an API resource'
-      end
+      fail NotImplementedError, 'Base is an abstract class, not an API resource' if self == Base
 
       "#{api_url}#{Util.to_plural(resource)}"
     end
 
     protected
 
-    def add_accessor(symbol, *args)
+    def add_accessor(symbol, *_args)
       singleton_class.instance_eval do
         define_method(symbol) do
           wrap_attribute(attributes[symbol])

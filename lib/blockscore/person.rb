@@ -11,7 +11,7 @@ module BlockScore
 
     def initialize(options = {})
       super
-      @question_sets = Collection.new({parent: self, target: QuestionSet })
+      @question_sets = Collection.new(parent: self, target: QuestionSet)
     end
 
     def valid?
