@@ -1,20 +1,11 @@
 module BlockScore
   class Collection < Array
-    attr_reader :default_params
-    protected :default_params
-
     attr_reader :parent, :target, :data
 
     def initialize(params)
       @parent = params.fetch :parent
       @target = params.fetch :target
       register_parent_data
-    end
-
-    def default_params
-      {
-        :"#{parent_name}_id" => parent.id
-      }
     end
 
     def all
@@ -60,6 +51,14 @@ module BlockScore
       return self[data.index(id)] if data.include? id
       item = target.retrieve(id)
       register_to_parent(item)
+    end
+
+    protected
+
+    def default_params
+      {
+        :"#{parent_name}_id" => parent.id
+      }
     end
 
     private

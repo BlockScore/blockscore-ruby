@@ -103,7 +103,8 @@ module BlockScore
       subject { person.question_sets }
 
       it 'should delegate to QuestionSet' do
-        expect(QuestionSet).to receive(:new).with(subject.default_params).and_call_original
+        args = { person_id: person.id }
+        expect(QuestionSet).to receive(:new).with(args).and_call_original
         result = person.question_sets.new
         expect(result).to be_an_instance_of(QuestionSet)
       end
