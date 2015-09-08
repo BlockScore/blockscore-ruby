@@ -15,7 +15,7 @@ module BlockScore
       end
     end
 
-    it "#id" do
+    it '#id' do
       person = create(:person)
       expect(person.id).not_to be(nil)
     end
