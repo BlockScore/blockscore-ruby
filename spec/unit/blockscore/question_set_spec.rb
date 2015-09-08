@@ -42,11 +42,10 @@ module BlockScore
     describe '#retrieve' do
       context 'when in person#attributes' do
         let(:qs) { person.question_sets.create }
+        let(:person) { create(:person) }
         subject { person.question_sets.retrieve(qs.id) }
 
-        it 'loads from collection' do
-          expect(subject).to eql(qs)
-        end
+        it { should eql(qs) }
 
         it 'retrieves and checks included person data' do
           data = [resource_id]
@@ -61,10 +60,10 @@ module BlockScore
 
       context 'when not in person#attributes' do
         let(:qs) { QuestionSet.new(person_id: person.id, id: resource_id) }
-        let(:data) { person.question_sets.data }
+        let(:data) { person.attributes.fetch :question_sets }
         subject { person.question_sets.retrieve(qs.id) }
+
         before(:each) do
-          person.question_sets.data.clear
           allow(QuestionSet).to receive(:retrieve).with(qs.id) { qs }
         end
 
@@ -75,7 +74,6 @@ module BlockScore
 
         it 'registers new question set' do
           aggregate_failures('for person and collection') do
-            expect(qs).to receive(:id).at_least(:once).and_call_original
             expect(person.question_sets).to receive(:<<).with(qs).and_call_original
             expect(data).to receive(:<<).with(qs.id).and_call_original
           end
