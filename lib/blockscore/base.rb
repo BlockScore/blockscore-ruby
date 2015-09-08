@@ -10,7 +10,6 @@ module BlockScore
       @attributes = options
     end
 
-    # potential issues here
     def attributes
       return @attributes if @loaded
       force!
@@ -18,8 +17,8 @@ module BlockScore
     end
 
     def force!
-      r = @proc.call
-      @attributes = r.attributes
+      res = @proc.call
+      @attributes = res.attributes.merge(@attributes)
       @loaded = true
       self
     end
