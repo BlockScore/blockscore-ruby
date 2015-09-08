@@ -13,12 +13,8 @@ module BlockScore
 
     def default_params
       {
-        :"#{parent_name}_id" => parent_id
+        :"#{parent_name}_id" => parent.id
       }
-    end
-
-    def parent_id
-      parent.id if parent.respond_to?(:id)
     end
 
     def all
@@ -29,8 +25,8 @@ module BlockScore
       item = target.new(params.merge(default_params))
       ctxt = self
       item.define_singleton_method(:save) do
-        ctxt.parent.save unless ctxt.parent_id
-        send :"#{ctxt.parent_name}_id=", ctxt.parent_id
+        ctxt.parent.save unless ctxt.parent.id
+        send :"#{ctxt.parent_name}_id=", ctxt.parent.id
         super()
       end
       self << item
@@ -52,7 +48,7 @@ module BlockScore
     end
 
     def create(params = {})
-      fail Error, 'Create parent first' unless parent_id
+      fail Error, 'Create parent first' unless parent.id
       assoc_params = default_params.merge(params)
       item = target.create assoc_params
       @data << item.id
@@ -69,7 +65,7 @@ module BlockScore
     private
 
     def parent_id?(item)
-      parent_id && item.send(:"#{parent_name}_id") == parent_id
+      parent.id && item.send(:"#{parent_name}_id") == parent.id
     end
 
     def register_to_parent(item)

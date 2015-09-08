@@ -23,6 +23,10 @@ module BlockScore
       self
     end
 
+    def id
+      attributes.fetch(:id, nil)
+    end
+
     def inspect
       str_attr = "JSON:#{JSON.pretty_generate(attributes)}"
       "#<#{self.class}:0x#{object_id.to_s(16)} #{str_attr}>"
