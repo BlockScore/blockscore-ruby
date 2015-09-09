@@ -7,7 +7,7 @@ module BlockScore
       let(:person) { create(:person, question_set_count: 1) }
       subject(:question_sets) { person.question_sets }
       its(:size) { should eql(1) }
-      its(:data) { should be(person.attributes[:question_sets]) }
+      its(:ids) { should be(person.attributes[:question_sets]) }
       its(:first) { should be_an_instance_of(QuestionSet) }
 
       it 'should load attributes' do

@@ -60,15 +60,12 @@ module BlockScore
     #
     # @api public
     def new(params = {})
-      item = member_class.new(params.merge(default_params))
-      ctxt = self
-      item.define_singleton_method(:save) do
-        ctxt.parent.save unless ctxt.parent.id
-        send :"#{ctxt.parent_name}_id=", ctxt.parent.id
-        super()
+      attributes = params.merge(default_params)
+      instance   = member_class.new(attributes)
+
+      new_member(instance) do |member|
+        self << member
       end
-      self << item
-      item
     end
 
     # Relaod the contents of the collection
@@ -116,8 +113,11 @@ module BlockScore
     def create(params = {})
       fail Error, 'Create parent first' unless parent.id
       assoc_params = default_params.merge(params)
-      item = member_class.create(assoc_params)
-      register_to_parent(item)
+      instance = member_class.create(assoc_params)
+
+      new_member(instance) do |member|
+        register_to_parent(member)
+      end
     end
 
     # Retrieve a collection member by its id
@@ -133,8 +133,11 @@ module BlockScore
     # @api public
     def retrieve(id)
       return self[ids.index(id)] if ids.include?(id)
-      item = member_class.retrieve(id)
-      register_to_parent(item)
+      instance = member_class.retrieve(id)
+
+      new_member(instance) do |member|
+        register_to_parent(member)
+      end
     end
 
     protected
@@ -160,6 +163,18 @@ module BlockScore
     end
 
     private
+
+    # Initialize a new collection member
+    #
+    # @param instance [BlockScore::Base] collection member instance
+    # @yield [Member] initialized member
+    #
+    # @return [Member] new meber
+    #
+    # @api private
+    def new_member(instance, &blk)
+      Member.new(parent, instance).tap(&blk)
+    end
 
     # Check if `parent_id` is defined on `item`
     #

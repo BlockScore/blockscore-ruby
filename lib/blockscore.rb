@@ -1,3 +1,4 @@
+require 'delegate'
 require 'forwardable'
 require 'httparty'
 require 'json'
@@ -26,6 +27,7 @@ require 'blockscore/question_set'
 require 'blockscore/watchlist_hit'
 
 require 'blockscore/collection'
+require 'blockscore/collection/member'
 require 'blockscore/connection'
 require 'blockscore/dispatch'
 require 'blockscore/fingerprint'

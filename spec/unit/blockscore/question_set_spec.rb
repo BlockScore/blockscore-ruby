@@ -45,11 +45,11 @@ module BlockScore
         let(:person) { create(:person) }
         subject { person.question_sets.retrieve(qs.id) }
 
-        it { should eql(qs) }
+        it { should eq(qs) }
 
         it 'retrieves and checks included person data' do
           data = [resource_id]
-          allow(person.question_sets).to receive(:data) { data }
+          allow(person.question_sets).to receive(:ids) { data }
           aggregate_failures('retrieves from data') do
             expect(data).to receive(:include?).and_call_original
             expect(data).to receive(:[]).and_call_original
@@ -69,12 +69,12 @@ module BlockScore
 
         it 'question_sets uses QuestionSet.retrieve' do
           expect(QuestionSet).to receive(:retrieve).with(qs.id) { qs }
-          expect(subject).to be(qs)
+          expect(subject).to eq(qs)
         end
 
         it 'registers new question set' do
           aggregate_failures('for person and collection') do
-            expect(person.question_sets).to receive(:<<).with(qs).and_call_original
+            expect(person.question_sets).to receive(:<<).and_call_original
             expect(data).to receive(:<<).with(qs.id).and_call_original
           end
           person.question_sets.retrieve(qs.id)
@@ -104,7 +104,6 @@ module BlockScore
         args = { person_id: person.id }
         expect(QuestionSet).to receive(:new).with(args).and_call_original
         result = person.question_sets.new
-        expect(result).to be_an_instance_of(QuestionSet)
       end
 
       it 'should save person if not save' do
@@ -156,10 +155,6 @@ module BlockScore
         expect(person.question_sets).to include(subject)
       end
 
-      it 'should return question set' do
-        is_expected.to be_an_instance_of(QuestionSet)
-      end
-
       it 'should error if parent not created' do
         person = Person.new
         expect { person.question_sets.create }.to raise_error(Error, 'Create parent first')
@@ -167,7 +162,7 @@ module BlockScore
 
       it 'should retrieve from registered' do
         found_qs = person.question_sets.retrieve(subject.id)
-        expect(subject).to be (found_qs)
+        expect(subject).to eq(found_qs)
       end
     end
 
