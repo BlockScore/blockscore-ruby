@@ -68,6 +68,10 @@ module BlockScore
       "#{api_url}#{Util.to_plural(resource)}"
     end
 
+    def saved?
+      !!id
+    end
+
     protected
 
     def add_accessor(symbol, *_args)

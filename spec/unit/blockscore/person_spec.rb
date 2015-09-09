@@ -15,6 +15,13 @@ module BlockScore
       end
     end
 
+    it "#saved?" do
+      saved_person = create(:person)
+      new_person = Person.new
+      expect(saved_person.saved?).to be(true)
+      expect(new_person.saved?).to be(false)
+    end
+
     it '#id' do
       person = create(:person)
       expect(person.id).not_to be(nil)

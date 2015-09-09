@@ -37,10 +37,6 @@ require 'blockscore/version'
 
 module BlockScore
   class << self
-    attr_writer :api_key
-  end
-
-  class << self
-    attr_reader :api_key
+    attr_accessor :api_key
   end
 end
