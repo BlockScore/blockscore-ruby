@@ -1,7 +1,6 @@
 module BlockScore
-  # Collection is a proxy between the parent and the asssociated targets
-  # where parent is some instance of a resource and
-  # where target is the Class associated to an embedded
+  # Collection is a proxy between the parent and the asssociated members
+  # where parent is some instance of a resource
   #
   class Collection < Array
     # @!attribute [r] parent
@@ -15,18 +14,17 @@ module BlockScore
     # @api private
     attr_reader :parent
 
-    # Sets parent and target then registers embedded ids
+    # Sets parent and member_class then registers embedded ids
     #
-    # @param params [Hash] options hash
-    # @option parent [BlockScore::Base] :parent
-    # @option target [Class] :target
+    # @param [BlockScore::Base] parent
+    # @param [Class] class of collection members
     #
     # @return [undefined]
     #
     # @api private
-    def initialize(params)
-      @parent = params.fetch :parent
-      @target = params.fetch :target
+    def initialize(parent, member_class)
+      @parent       = parent
+      @member_class = member_class
       register_parent_data
     end
 
@@ -42,7 +40,7 @@ module BlockScore
       self
     end
 
-    # Initializes new {target} with `params`
+    # Initializes new {member_class} with `params`
     #
     # - Ensures a parent id is meged into `params` (see #default_params).
     # - Defines method `#save` on new collection member
@@ -58,11 +56,11 @@ module BlockScore
     #
     # @param params [Hash] initial params for member
     #
-    # @return instance of {target}
+    # @return instance of {member_class}
     #
     # @api public
     def new(params = {})
-      item = target.new(params.merge(default_params))
+      item = member_class.new(params.merge(default_params))
       ctxt = self
       item.define_singleton_method(:save) do
         ctxt.parent.save unless ctxt.parent.id
@@ -99,18 +97,6 @@ module BlockScore
       parent.class.resource
     end
 
-    # Name of target resource
-    #
-    # @example
-    #   self.target_name # => 'question_sets'
-    #
-    # @return [String]
-    #
-    # @api private
-    def target_name
-      target.resource
-    end
-
     # Initialize a collection member and save it
     #
     # @example
@@ -124,13 +110,13 @@ module BlockScore
     #
     # @param params [Hash] params
     #
-    # @return new saved instance of {target}
+    # @return new saved instance of {member_class}
     #
     # @api public
     def create(params = {})
       fail Error, 'Create parent first' unless parent.id
       assoc_params = default_params.merge(params)
-      item = target.create assoc_params
+      item = member_class.create(assoc_params)
       register_to_parent(item)
     end
 
@@ -141,30 +127,28 @@ module BlockScore
     #
     # @param id [String] resource id
     #
-    # @return instance of {target} if found
+    # @return instance of {member_class} if found
     # @raise [BlockScore::NotFoundError] otherwise
     #
     # @api public
     def retrieve(id)
-      return self[data.index(id)] if data.include? id
-      item = target.retrieve(id)
+      return self[ids.index(id)] if ids.include?(id)
+      item = member_class.retrieve(id)
       register_to_parent(item)
     end
 
     protected
 
-    # @!attribute [r] target
+    # @!attribute [r] member_class
     # class which will be used for the embedded
     # resources in the collection
-    #
-    # @todo rename to `target_class`?
     #
     # @return [Class]
     #
     # @api private
-    attr_reader :target
+    attr_reader :member_class
 
-    # Default params for making an instance of {target}
+    # Default params for making an instance of {member_class}
     #
     # @return [Hash]
     #
@@ -198,7 +182,7 @@ module BlockScore
     # @api private
     def register_to_parent(item)
       fail Error, 'None belonging' unless parent_id?(item)
-      data << item.id
+      ids << item.id
       self << item
       item
     end
@@ -209,21 +193,19 @@ module BlockScore
     #
     # @api private
     def register_parent_data
-      data.each do |id|
-        item = target.retrieve(id)
+      ids.each do |id|
+        item = member_class.retrieve(id)
         self << item
       end
     end
 
     # ids that belong to the collection
     #
-    # @todo rename to `ids`?
-    #
     # @return [Array<String>]
     #
     # @api private
-    def data
-      parent.attributes.fetch(:"#{ Util.to_plural(target_name) }", [])
+    def ids
+      parent.attributes.fetch(:"#{Util.to_plural(member_class.resource)}", [])
     end
   end
 end
