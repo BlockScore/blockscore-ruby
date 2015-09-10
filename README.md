@@ -60,5 +60,5 @@ To see the list of calls you can make, please visit our [full Ruby API reference
 The test suite uses a public BlockScore API key that was created specifically to ease the testing and contribution processes. **Please do not enter personal details for tests.** In order to run the test suite:
 
 ```shell
-$ rake test
+$ rspec spec
 ```
