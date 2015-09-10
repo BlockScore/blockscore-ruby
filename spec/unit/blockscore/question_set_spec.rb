@@ -38,6 +38,5 @@ module BlockScore
         end
       end
     end
-
   end
 end

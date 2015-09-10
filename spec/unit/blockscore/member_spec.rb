@@ -8,6 +8,53 @@ module BlockScore
       allow(member_class).to receive(:create) { create(:fake_member, parent_id: parent.id) }
     end
 
+    context 'when saving' do
+      let(:member_class) { FakeResource }
+      let(:parent) {  FakeResource.new }
+      let(:collection) { Collection.new(parent, member_class) }
+      subject { collection.new }
+
+      it 'should save parent and self if parent not persisted' do
+        aggregate_failures('when saving') do
+          expect(parent).to receive(:save).and_call_original
+          expect(subject.save).to be(true)
+        end
+
+        aggregate_failures('after saving') do
+          expect(subject.persisted?).to be(true)
+          expect(parent.persisted?).to be(true)
+          foriegn_key = :"#{parent.class.resource}_id"
+          expect(subject.send(foriegn_key)).to eq(parent.id)
+        end
+      end
+
+      it 'should not save persisted parent' do
+        parent.save
+
+        aggregate_failures('when saving') do
+          expect(parent).not_to receive(:save)
+          expect(subject.save).to be(true)
+        end
+
+        aggregate_failures('after saving') do
+          expect(subject.persisted?).to be(true)
+          expect(parent.persisted?).to be(true)
+          foriegn_key = :"#{parent.class.resource}_id"
+          expect(subject.send(foriegn_key)).to eq(parent.id)
+        end
+      end
+
+      it 'should not add to parent if existing' do
+        subject.save
+        embedded_resource = :"#{Util.to_plural(parent.class.resource)}"
+        tracked_ids = parent.send(embedded_resource)
+        size = tracked_ids.size
+        subject.save
+        expect(size).to eql(size)
+        expect(tracked_ids).to include(subject.id)
+      end
+    end
+
     context 'when created' do
       let(:created) { create(:fake_member, parent_id: parent.id) }
       subject { collection.create }

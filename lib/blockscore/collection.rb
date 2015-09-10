@@ -133,7 +133,8 @@ module BlockScore
     # @api public
     def retrieve(id)
       each do |item|
-        return item if item.id == id
+        next unless item.id == id
+        return item
       end
 
       instance = member_class.retrieve(id)

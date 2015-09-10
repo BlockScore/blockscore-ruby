@@ -24,6 +24,12 @@ module BlockScore
         allow(member_class).to receive(:create) { created }
       end
 
+      it 'should send merged default and arg params' do
+        foriegn_key = :"#{parent.class.resource}_id"
+        expect(member_class).to receive(:create).with(foriegn_key => parent.id, foo_param: 'bar_attr')
+        collection.create(foo_param: 'bar_attr')
+      end
+
       it 'should update ids in Parent#attributes' do
         expect(parent.attributes[:fake_resources]).to include(subject.id)
       end
@@ -73,12 +79,12 @@ module BlockScore
     describe '#retrieve' do
       context 'when in person#attributes' do
         let(:parent) { create(:fake_resource) }
-        let(:existing_id) { parent.attributes[:fake_resources].first }
+        let(:existing_id) { parent.attributes[:fake_resources].last }
         subject { collection.retrieve(existing_id) }
 
         it 'should retrieve correctly' do
-          first = collection.first
-          expect(subject).to eq(first)
+          last = collection.last
+          expect(subject).to eq(last)
           expect(subject.id).to eq(existing_id)
         end
 

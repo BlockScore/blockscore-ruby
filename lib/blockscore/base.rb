@@ -49,6 +49,7 @@ module BlockScore
 
     def save!
       response = self.class.post(self.class.endpoint, attributes)
+      # binding.pry
       @attributes = response.attributes
 
       true
