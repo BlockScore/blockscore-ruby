@@ -179,6 +179,29 @@ FactoryGirl.define do
     details { build(:company_details) }
   end
 
+  factory :fake_member, class: 'BlockScore::FakeResource' do
+    object { 'fake_member' }
+    transient do
+      given_id resource_id
+      parent_id resource_id
+    end
+
+    id { given_id }
+    fake_resource_id { parent_id }
+  end
+
+  factory :fake_resource, class: 'BlockScore::FakeResource' do
+    object { 'fake_resource' }
+    metadata
+    transient { members_count 2 }
+
+    fake_resources do
+      members_count.times.map do
+        resource_id
+      end
+    end
+  end
+
   factory :person_params, class: 'BlockScore::Person' do
     name
     document

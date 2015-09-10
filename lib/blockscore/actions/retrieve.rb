@@ -14,7 +14,7 @@ module BlockScore
         def retrieve(id, options = {})
           fail ArgumentError if id.empty?
           req = ->() { get("#{endpoint}/#{id}", options) }
-          new(&req)
+          new(id: id, &req)
         end
       end
 

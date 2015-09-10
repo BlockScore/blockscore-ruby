@@ -31,7 +31,9 @@ module BlockScore
       def save
         save_parent
         send(:"#{parent_name}_id=", parent.id)
-        instance.save
+        result = instance.save
+        ids.push(instance.id) unless ids.include?(instance.id)
+        result
       end
 
       private
@@ -82,6 +84,17 @@ module BlockScore
       #
       # @api private
       attr_reader :parent
+
+      private
+
+      # ids that belong to associated parent resource
+      #
+      # @return [Array<String>]
+      #
+      # @api private
+      def ids
+        parent.attributes.fetch(:"#{Util.to_plural(instance.class.resource)}", [])
+      end
     end
   end
 end

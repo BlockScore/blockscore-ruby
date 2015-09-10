@@ -15,11 +15,11 @@ module BlockScore
       end
     end
 
-    it "#saved?" do
-      saved_person = create(:person)
+    it '#persisted?' do
+      persisted_person = create(:person)
       new_person = Person.new
-      expect(saved_person.saved?).to be(true)
-      expect(new_person.saved?).to be(false)
+      expect(persisted_person.persisted?).to be(true)
+      expect(new_person.persisted?).to be(false)
     end
 
     it '#id' do

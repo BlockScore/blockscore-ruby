@@ -132,7 +132,10 @@ module BlockScore
     #
     # @api public
     def retrieve(id)
-      return self[ids.index(id)] if ids.include?(id)
+      each do |item|
+        return item if item.id == id
+      end
+
       instance = member_class.retrieve(id)
 
       new_member(instance) do |member|
@@ -158,18 +161,27 @@ module BlockScore
     # @api private
     def default_params
       {
-        :"#{parent_name}_id" => parent.id
+        foriegn_key => parent.id
       }
     end
 
     private
+
+    # Generate foriegn key name for parent resource
+    #
+    # @return [Symbol] resource name as id
+    #
+    # @api private
+    def foriegn_key
+      :"#{parent_name}_id"
+    end
 
     # Initialize a new collection member
     #
     # @param instance [BlockScore::Base] collection member instance
     # @yield [Member] initialized member
     #
-    # @return [Member] new meber
+    # @return [Member] new member
     #
     # @api private
     def new_member(instance, &blk)
@@ -184,7 +196,7 @@ module BlockScore
     #
     # @api private
     def parent_id?(item)
-      parent.id && item.send(:"#{parent_name}_id") == parent.id
+      parent.id && item.send(foriegn_key) == parent.id
     end
 
     # Register a resource in collection

@@ -24,7 +24,7 @@ module BlockScore
     end
 
     def id
-      attributes.fetch(:id, nil)
+      @attributes.fetch(:id, nil)
     end
 
     def inspect
@@ -33,8 +33,8 @@ module BlockScore
     end
 
     def refresh
-      r = self.class.retrieve(id)
-      @attributes = r.attributes
+      res = self.class.retrieve(id)
+      @attributes = res.attributes
 
       true
     rescue Error
@@ -63,13 +63,13 @@ module BlockScore
     end
 
     def self.endpoint
-      fail NotImplementedError, 'Base is an abstract class, not an API resource' if self == Base
+      fail NotImplementedError, 'Base is an abstract class, not an API resource' if equal?(Base)
 
       "#{api_url}#{Util.to_plural(resource)}"
     end
 
-    def saved?
-      !!id
+    def persisted?
+      !id.nil?
     end
 
     protected
