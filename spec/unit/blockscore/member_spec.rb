@@ -3,28 +3,35 @@ module BlockScore
     let(:parent) { create(:fake_resource) }
     let(:member_class) { FakeResource }
     let(:collection) { Collection.new(parent, member_class) }
+
     before do
       Util::PLURAL_LOOKUP['fake_resource'] = 'fake_resources'
       allow(member_class).to receive(:create) { create(:fake_member, parent_id: parent.id) }
     end
 
     context 'when saving' do
-      let(:member_class) { FakeResource }
-      let(:parent) {  FakeResource.new }
-      let(:collection) { Collection.new(parent, member_class) }
-      subject { collection.new }
+      let(:member_class) { FakeResource                         }
+      let(:parent)       { FakeResource.new                     }
+      let(:collection)   { Collection.new(parent, member_class) }
+      subject(:member)   { collection.new                       }
 
-      it 'should save parent and self if parent not persisted' do
-        aggregate_failures('when saving') do
-          expect(parent).to receive(:save).and_call_original
-          expect(subject.save).to be(true)
+      context 'when parent is not persisted' do
+        before { allow(parent).to receive(:save).and_call_original }
+
+        it { expect(member.save).to be(true) }
+
+        it do
+          member.save
+          expect(parent).to have_received(:save).once
         end
 
-        aggregate_failures('after saving') do
-          expect(subject.persisted?).to be(true)
-          expect(parent.persisted?).to be(true)
-          foriegn_key = :"#{parent.class.resource}_id"
-          expect(subject.send(foriegn_key)).to eq(parent.id)
+        context 'after saving' do
+          before { member.save }
+          let(:member_parent_id) { member.fake_resource_id }
+
+          it { is_expected.to be_persisted }
+          it { expect(parent).to be_persisted }
+          it { expect(member_parent_id).to eql(parent.id) }
         end
       end
 
@@ -33,25 +40,25 @@ module BlockScore
 
         aggregate_failures('when saving') do
           expect(parent).not_to receive(:save)
-          expect(subject.save).to be(true)
+          expect(member.save).to be(true)
         end
 
         aggregate_failures('after saving') do
-          expect(subject.persisted?).to be(true)
+          expect(member.persisted?).to be(true)
           expect(parent.persisted?).to be(true)
           foriegn_key = :"#{parent.class.resource}_id"
-          expect(subject.send(foriegn_key)).to eq(parent.id)
+          expect(member.send(foriegn_key)).to eq(parent.id)
         end
       end
 
       it 'should not add to parent if existing' do
-        subject.save
+        member.save
         embedded_resource = :"#{Util.to_plural(parent.class.resource)}"
         tracked_ids = parent.send(embedded_resource)
         size = tracked_ids.size
-        subject.save
+        member.save
         expect(size).to eql(size)
-        expect(tracked_ids).to include(subject.id)
+        expect(tracked_ids).to include(member.id)
       end
     end
 
