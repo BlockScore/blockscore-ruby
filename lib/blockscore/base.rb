@@ -4,19 +4,37 @@ module BlockScore
   class Base
     extend Connection
 
-    attr_reader :attributes
-
-    def initialize(options = {})
+    def initialize(options = {}, &block)
+      @loaded = !(block)
+      @proc = block
       @attributes = options
     end
 
+    def attributes
+      return @attributes if @loaded
+      force!
+      @attributes
+    end
+
+    def force!
+      res = @proc.call
+      @attributes = res.attributes.merge(@attributes)
+      @loaded = true
+      self
+    end
+
+    def id
+      @attributes.fetch(:id, nil)
+    end
+
     def inspect
-      "#<#{self.class}:0x#{object_id.to_s(16)} JSON: " + JSON.pretty_generate(attributes)
+      str_attr = "JSON:#{JSON.pretty_generate(attributes)}"
+      "#<#{self.class}:0x#{object_id.to_s(16)} #{str_attr}>"
     end
 
     def refresh
-      r = self.class.retrieve(id)
-      @attributes = r.attributes
+      res = self.class.retrieve(id)
+      @attributes = res.attributes
 
       true
     rescue Error
@@ -31,6 +49,7 @@ module BlockScore
 
     def save!
       response = self.class.post(self.class.endpoint, attributes)
+      # binding.pry
       @attributes = response.attributes
 
       true
@@ -45,16 +64,18 @@ module BlockScore
     end
 
     def self.endpoint
-      if self == Base
-        fail NotImplementedError, 'Base is an abstract class, not an API resource'
-      end
+      fail NotImplementedError, 'Base is an abstract class, not an API resource' if equal?(Base)
 
       "#{api_url}#{Util.to_plural(resource)}"
     end
 
+    def persisted?
+      !id.nil?
+    end
+
     protected
 
-    def add_accessor(symbol, *args)
+    def add_accessor(symbol, *_args)
       singleton_class.instance_eval do
         define_method(symbol) do
           wrap_attribute(attributes[symbol])
