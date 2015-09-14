@@ -32,7 +32,7 @@ module BlockScore
       begin
         response = execute_request(method, path, params)
       rescue SocketError, Errno::ECONNREFUSED => e
-        fail APIConnectionError, e.message
+        raise APIConnectionError, e.message
       end
 
       Response.handle_response(resource, response)
@@ -55,7 +55,7 @@ module BlockScore
 
     def encode_path_params(path, params)
       encoded = URI.encode_www_form(params)
-      [path, encoded].join("?")
+      [path, encoded].join('?')
     end
   end
 end
