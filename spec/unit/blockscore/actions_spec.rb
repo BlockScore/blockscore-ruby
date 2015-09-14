@@ -42,18 +42,8 @@ module BlockScore
       let(:route) { 'https://api.blockscore.com/fake_resources/abc123' }
 
       it 'uses the correct endpoint' do
-        should receive(:request).with(:get, route, {}).once { resource }
-        mock.retrieve('abc123').attributes
-      end
-
-      context 'when id is invalid' do
-        pending 'should raise not found if not a resource style id' do
-          expect { mock.retrieve('bad_id') }.to raise_error(NotFoundError)
-        end
-
-        it 'should raise ArgumentError if empty' do
-          expect { mock.retrieve('') }.to raise_error(ArgumentError)
-        end
+        should receive(:request).with(:get, route, {}).once
+        mock.retrieve('abc123')
       end
     end
 

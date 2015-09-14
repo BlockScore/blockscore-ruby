@@ -1,4 +1,3 @@
-require 'delegate'
 require 'forwardable'
 require 'httparty'
 require 'json'
@@ -27,7 +26,6 @@ require 'blockscore/question_set'
 require 'blockscore/watchlist_hit'
 
 require 'blockscore/collection'
-require 'blockscore/collection/member'
 require 'blockscore/connection'
 require 'blockscore/dispatch'
 require 'blockscore/fingerprint'
@@ -36,7 +34,11 @@ require 'blockscore/util'
 require 'blockscore/version'
 
 module BlockScore
-  class << self
-    attr_accessor :api_key
+  def self.api_key=(api_key)
+    @api_key = api_key
+  end
+
+  def self.api_key
+    @api_key
   end
 end

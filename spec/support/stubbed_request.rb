@@ -5,12 +5,6 @@ module BlockScore
       @uri     = request.uri
     end
 
-    def body
-      JSON.parse(request.body)
-    rescue
-      nil
-    end
-
     def factory_name
       resource.singularize
     end

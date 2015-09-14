@@ -32,7 +32,7 @@ module BlockScore
       subject(:search) { -> { candidate.search(constraints) } }
 
       context 'search request' do
-        let(:uri)      { '/watchlists'                                         }
+        let(:uri)      { "/watchlists"                                         }
         let(:body)     { { 'candidate_id' => candidate.id }.merge(constraints) }
         let(:expected) { { body: hash_including(body) }                        }
         before { search.call }

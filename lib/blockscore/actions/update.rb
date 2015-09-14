@@ -28,7 +28,7 @@ module BlockScore
       def_delegators 'self.class', :endpoint, :patch
 
       def save!
-        if persisted?
+        if respond_to? :id
           patch("#{endpoint}/#{id}", filter_params)
           true
         else

@@ -5,7 +5,6 @@ require 'factory_girl'
 require 'webmock'
 require 'webmock/rspec'
 require 'rspec'
-require 'rspec/its'
 
 BlockScore::Spec.setup
 

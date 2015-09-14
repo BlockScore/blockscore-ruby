@@ -19,9 +19,9 @@ module BlockScore
     end
 
     def to_s
-      status_string = @http_status ? "(Status: #{@http_status})" : ''
-      type_string = @error_type ? "(Type: #{@error_type})" : ''
-      param_string = @param ? "(#{@param})" : ''
+      status_string = @http_status ? "(Status: #{@http_status})" : ""
+      type_string = @error_type ? "(Type: #{@error_type})" : ""
+      param_string = @param ? "(#{@param})" : ""
 
       "#{type_string} #{@message} #{param_string} #{status_string}"
     end

@@ -9,10 +9,10 @@ class JsonStrategy # From http://git.io/vT8kC
 
   delegate :association, to: :@strategy
 
-  def result(evaluation, attrs = {})
+  def result(evaluation)
     compiled = @strategy.result(evaluation)
     case compiled
-    when BlockScore::Base then compiled.attributes.merge(attrs).to_json
+    when BlockScore::Base then compiled.attributes.to_json
     when Hash             then compiled.to_json
     else
       fail ArgumentError, "don't know how to handle type #{evaluation.class.inspect}"
@@ -36,10 +36,6 @@ def full_address
   country = Faker::Address.country
 
   "#{street} #{city} #{country}"
-end
-
-def resource_id
-  Faker::Number.hexadecimal(24)
 end
 
 FactoryGirl.define do
@@ -179,29 +175,6 @@ FactoryGirl.define do
     details { build(:company_details) }
   end
 
-  factory :fake_member, class: 'BlockScore::FakeResource' do
-    object { 'fake_member' }
-    transient do
-      given_id resource_id
-      parent_id resource_id
-    end
-
-    id { given_id }
-    fake_resource_id { parent_id }
-  end
-
-  factory :fake_resource, class: 'BlockScore::FakeResource' do
-    object { 'fake_resource' }
-    metadata
-    transient { members_count 2 }
-
-    fake_resources do
-      members_count.times.map do
-        resource_id
-      end
-    end
-  end
-
   factory :person_params, class: 'BlockScore::Person' do
     name
     document
@@ -213,7 +186,6 @@ FactoryGirl.define do
 
   factory :person, class: 'BlockScore::Person' do
     skip_create
-    transient { question_sets_count 1 }
 
     object { 'person' }
     metadata
@@ -227,20 +199,15 @@ FactoryGirl.define do
     address
     document
     details { build(:person_details) }
-
     question_sets do
-      question_sets_count.times.map do
-        resource_id
-      end
+      rand(0..5).times.collect { Faker::Base.regexify(/\d{24}/) }
     end
-
-    initialize_with { new(attributes) }
   end
 
   # QuestionSet Factory
 
   factory :question_set_params, class: 'BlockScore::QuestionSet' do
-    person_id { resource_id }
+    person_id { Faker::Base.regexify(/\d{24}/) }
   end
 
   factory :question_set, class: 'BlockScore::QuestionSet' do
@@ -250,7 +217,7 @@ FactoryGirl.define do
     metadata
     timestamps
     testmode
-    person_id { resource_id }
+    person_id { Faker::Base.regexify(/\d{24}/) }
     score { rand * 100 }
     expired { false }
     time_limit { rand(120..360) }
@@ -336,7 +303,7 @@ FactoryGirl.define do
   # We can do this because the error type is determined by the
   # HTTP response code.
   factory :blockscore_error, class: Hash, traits: [:resource] do
-    transient do
+    ignore do
       error_type 'api_error'
     end
 

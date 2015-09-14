@@ -11,13 +11,13 @@ module BlockScore
     }
 
     def parse_json!(json_obj)
-      JSON.parse(json_obj, symbolize_names: true)
+      JSON.parse(json_obj, :symbolize_names => true)
     end
 
     def parse_json(json_obj)
       parse_json! json_obj
     rescue JSON::ParserError
-      raise Error, 'An error has occurred. If this problem persists, please message support@blockscore.com.'
+      fail Error, "An error has occurred. If this problem persists, please message support@blockscore.com."
     end
 
     def create_object(resource, options = {})
@@ -65,16 +65,16 @@ module BlockScore
     end
 
     def to_camelcase(str)
-      str.split('_').map(&:capitalize).join('')
+      str.split('_').map { |i| i.capitalize }.join('')
     end
 
     # Taken from Rulers: http://git.io/vkWqf
     def to_underscore(str)
-      str.gsub(/::/, '/')
-        .gsub(/([A-Z]+)([A-Z][a-z])/, '\1_\2')
-        .gsub(/([a-z\d])([A-Z])/, '\1_\2')
-        .tr('-', '_')
-        .downcase
+      str.gsub(/::/, '/').
+      gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').
+      gsub(/([a-z\d])([A-Z])/,'\1_\2').
+      tr("-", "_").
+      downcase
     end
   end
 end
