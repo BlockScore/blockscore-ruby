@@ -15,5 +15,4 @@ module BlockScore
       include_context 'api request'
     end
   end
-
 end

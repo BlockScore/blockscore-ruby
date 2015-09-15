@@ -1,0 +1,118 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/companies
+    body:
+      encoding: UTF-8
+      string: '{"entity_name":"White and Sons","tax_id":"000000000","incorporation_country_code":"VU","incorporation_type":"partnership","address_street1":"8961
+        Barrows Drives","address_city":"O''Connellville","address_subdivision":"NV","address_postal_code":"42539","address_country_code":"FI"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"8cf8e8c0acdf1d4e691cef29b8550424"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 595029a0-40c0-4346-8a49-42c62af747a5
+      X-Runtime:
+      - '0.096464'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 17 Sep 2015 17:19:04 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"company","id":"55faf60865333100030009a1","created_at":1442510344,"updated_at":1442510344,"status":"valid","livemode":false,"entity_name":"White
+        and Sons","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"VU","incorporation_type":"partnership","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"8961
+        Barrows Drives","address_street2":null,"address_city":"O''Connellville","address_subdivision":"NV","address_postal_code":"42539","address_country_code":"FI","details":{"ofac":"no_match","tax_id":"match","entity_name":"mismatch","incorp_date":"no_match","state":"no_match","address":"no_match","country_code":"no_match"}}'
+    http_version: 
+  recorded_at: Thu, 17 Sep 2015 17:19:03 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/companies/55faf60865333100030009a1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f09fbca8b4523f807b2e5498feaab770"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - dc485858-90e0-4090-a9d3-e0d5f9e3bf22
+      X-Runtime:
+      - '0.022839'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 17 Sep 2015 17:19:05 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"company","id":"55faf60865333100030009a1","created_at":1442510344,"updated_at":1442510344,"status":"valid","livemode":false,"entity_name":"White
+        and Sons","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"VU","incorporation_type":"partnership","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"8961
+        Barrows Drives","address_street2":null,"address_city":"O''Connellville","address_subdivision":"NV","address_postal_code":"42539","address_country_code":"FI","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"mismatch","incorp_date":"no_match","country_code":"no_match"}}'
+    http_version: 
+  recorded_at: Thu, 17 Sep 2015 17:19:04 GMT
+recorded_with: VCR 2.9.3

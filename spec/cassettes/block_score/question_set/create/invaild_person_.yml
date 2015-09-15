@@ -1,0 +1,114 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Arianna","name_last":"Trantow","document_type":"ssn","document_value":"0001","birth_day":12,"birth_month":12,"birth_year":1929,"address_street1":"7637
+        Scot Creek","address_city":"Beatriceview","address_subdivision":"TX","address_postal_code":"56902","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"67478dc81411a683dcaaa5cbaaeb4fb8"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 978c5cef-59ec-4dc4-8acd-93056cd9fb92
+      X-Runtime:
+      - '0.223445'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 17 Sep 2015 17:18:48 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"55faf5f86533310003000999","created_at":1442510328,"updated_at":1442510328,"status":"invalid","livemode":false,"phone_number":null,"ip_address":"","birth_day":12,"birth_month":12,"birth_year":1929,"name_first":"Arianna","name_middle":null,"name_last":"Trantow","address_street1":"7637
+        Scot Creek","address_street2":null,"address_city":"Beatriceview","address_subdivision":"TX","address_postal_code":"56902","address_country_code":"US","document_type":"ssn","document_value":"0001","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version: 
+  recorded_at: Thu, 17 Sep 2015 17:18:48 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/question_sets
+    body:
+      encoding: UTF-8
+      string: '{"person_id":"55faf5f86533310003000999"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - e7ad2609-f51c-44b3-a258-ba783ddb1a7d
+      X-Runtime:
+      - '0.036516'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 17 Sep 2015 17:18:49 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"error":{"type":"invalid_request_error","message":"Id verification
+        can''t be invalid"}}'
+    http_version: 
+  recorded_at: Thu, 17 Sep 2015 17:18:48 GMT
+recorded_with: VCR 2.9.3

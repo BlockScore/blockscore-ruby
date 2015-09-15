@@ -1,0 +1,193 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1942-01-25","name_first":"John","name_last":"05816347d2234ef4a92465e9784c7ce1","address_street1":"2491
+        Eleonore Isle","address_city":"Kovacekhaven","address_country_code":"ER"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"2de06a5ac480793431e92e367520dae6"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a9399c47-d0cb-4f23-824d-6838f2c6bc07
+      X-Runtime:
+      - '0.040408'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 17 Sep 2015 17:20:53 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"55faf67566316500030009a6","created_at":1442510453,"updated_at":1442510453,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1942-01-25","name_first":"John","name_middle":null,"name_last":"05816347d2234ef4a92465e9784c7ce1","address_street1":"2491
+        Eleonore Isle","address_street2":null,"address_city":"Kovacekhaven","address_subdivision":null,"address_postal_code":null,"address_country_code":"ER"}'
+    http_version: 
+  recorded_at: Thu, 17 Sep 2015 17:20:52 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1927-11-08","name_first":"John","name_last":"b4cd5fb645788c3b37c11407b83d7741","address_street1":"914
+        Yost Mountain","address_city":"Yostburgh","address_country_code":"AF"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"6c9fb930d553216689d5d797bb0e96e8"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b4b5b538-1b25-4299-8f5a-1cfa6b962801
+      X-Runtime:
+      - '0.041660'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 17 Sep 2015 17:20:53 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"55faf67565333100030009a7","created_at":1442510453,"updated_at":1442510453,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1927-11-08","name_first":"John","name_middle":null,"name_last":"b4cd5fb645788c3b37c11407b83d7741","address_street1":"914
+        Yost Mountain","address_street2":null,"address_city":"Yostburgh","address_subdivision":null,"address_postal_code":null,"address_country_code":"AF"}'
+    http_version: 
+  recorded_at: Thu, 17 Sep 2015 17:20:53 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"5b78c4bf96b6e5750b4fff7ff4d52145"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 147de987-eada-4151-a50b-9ac8f5c545ce
+      X-Runtime:
+      - '0.112376'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 17 Sep 2015 17:20:54 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"total_count":4111,"has_more":true,"object":"list","data":[{"object":"candidate","id":"55faf67565333100030009a7","created_at":1442510453,"updated_at":1442510453,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1927-11-08","name_first":"John","name_middle":null,"name_last":"b4cd5fb645788c3b37c11407b83d7741","address_street1":"914
+        Yost Mountain","address_street2":null,"address_city":"Yostburgh","address_subdivision":null,"address_postal_code":null,"address_country_code":"AF"},{"object":"candidate","id":"55faf67566316500030009a6","created_at":1442510453,"updated_at":1442510453,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1942-01-25","name_first":"John","name_middle":null,"name_last":"05816347d2234ef4a92465e9784c7ce1","address_street1":"2491
+        Eleonore Isle","address_street2":null,"address_city":"Kovacekhaven","address_subdivision":null,"address_postal_code":null,"address_country_code":"ER"},{"object":"candidate","id":"55faf5e56533310003000996","created_at":1442510309,"updated_at":1442510309,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1956-08-09","name_first":"Cornelius","name_middle":null,"name_last":"Satterfield","address_street1":"9121
+        Walsh Heights","address_street2":null,"address_city":"Port Tadmouth","address_subdivision":null,"address_postal_code":null,"address_country_code":"MP"},{"object":"candidate","id":"55faf5e265396400030009a1","created_at":1442510306,"updated_at":1442510308,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1997-08-22","name_first":"version_2","name_middle":null,"name_last":"Mueller","address_street1":"44406
+        Crooks Canyon","address_street2":null,"address_city":"Odafort","address_subdivision":null,"address_postal_code":null,"address_country_code":"MC"},{"object":"candidate","id":"55faf5e16533310003000995","created_at":1442510305,"updated_at":1442510306,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1944-07-29","name_first":"Jane","name_middle":null,"name_last":"Rolfson","address_street1":"3758
+        Jarrett Oval","address_street2":null,"address_city":"Port Leastad","address_subdivision":null,"address_postal_code":null,"address_country_code":"PF"},{"object":"candidate","id":"55faf5e06631650003000992","created_at":1442510304,"updated_at":1442510304,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2008-04-19","name_first":"Arthur","name_middle":null,"name_last":"Halvorson","address_street1":"250
+        Anna Plaza","address_street2":null,"address_city":"South Aidanton","address_subdivision":null,"address_postal_code":null,"address_country_code":"LT"},{"object":"candidate","id":"55faf5df6533310003000994","created_at":1442510303,"updated_at":1442510303,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1922-05-26","name_first":"John","name_middle":null,"name_last":"b4cd5fb645788c3b37c11407b83d7741","address_street1":"838
+        Rogahn Stream","address_street2":null,"address_city":"Flavioport","address_subdivision":null,"address_postal_code":null,"address_country_code":"FJ"},{"object":"candidate","id":"55faf5de65396400030009a0","created_at":1442510302,"updated_at":1442510302,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1969-11-14","name_first":"John","name_middle":null,"name_last":"05816347d2234ef4a92465e9784c7ce1","address_street1":"19169
+        Colin Mission","address_street2":null,"address_city":"Aliyahstad","address_subdivision":null,"address_postal_code":null,"address_country_code":"IQ"},{"object":"candidate","id":"55faf5dd653964000300099f","created_at":1442510301,"updated_at":1442510301,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1981-07-20","name_first":"Archibald","name_middle":null,"name_last":"Smith","address_street1":"23301
+        Hoppe Crossing","address_street2":null,"address_city":"Angelochester","address_subdivision":null,"address_postal_code":null,"address_country_code":"JO"},{"object":"candidate","id":"55faf5db6533310003000993","created_at":1442510299,"updated_at":1442510300,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1988-04-21","name_first":"Valentin","name_middle":null,"name_last":"Haley","address_street1":"881
+        Jon Trail","address_street2":null,"address_city":"Davinhaven","address_subdivision":null,"address_postal_code":null,"address_country_code":"PH","deleted":true},{"object":"candidate","id":"55faf5d36631650003000991","created_at":1442510291,"updated_at":1442510291,"livemode":false,"note":null,"ssn":null,"passport":null,"date_of_birth":null,"name_first":"John","name_middle":null,"name_last":"Bredenkamp","address_street1":null,"address_street2":null,"address_city":null,"address_subdivision":null,"address_postal_code":null,"address_country_code":null},{"object":"candidate","id":"55faf5d26533310003000991","created_at":1442510290,"updated_at":1442510290,"livemode":false,"note":null,"ssn":null,"passport":null,"date_of_birth":null,"name_first":"John","name_middle":null,"name_last":"Bredenkamp","address_street1":null,"address_street2":null,"address_city":null,"address_subdivision":null,"address_postal_code":null,"address_country_code":null},{"object":"candidate","id":"55faf5d1653964000300099e","created_at":1442510289,"updated_at":1442510289,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2006-03-06","name_first":"Carissa","name_middle":null,"name_last":"O''Keefe","address_street1":"33102
+        Pfeffer Trace","address_street2":null,"address_city":"North Quinton","address_subdivision":null,"address_postal_code":null,"address_country_code":"LA"},{"object":"candidate","id":"55faf5d0653964000300099d","created_at":1442510288,"updated_at":1442510288,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1919-04-12","name_first":"Arnulfo","name_middle":null,"name_last":"Moen","address_street1":"35716
+        Schroeder Ports","address_street2":null,"address_city":"North Judy","address_subdivision":null,"address_postal_code":null,"address_country_code":"TN"},{"object":"candidate","id":"55fa0032663165000300043f","created_at":1442447410,"updated_at":1442447410,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1978-11-20","name_first":"Jesus","name_middle":null,"name_last":"Mohr","address_street1":"256
+        Kristy Dam","address_street2":null,"address_city":"South Augustineville","address_subdivision":null,"address_postal_code":null,"address_country_code":"MN"},{"object":"candidate","id":"55fa0030663165000300043e","created_at":1442447408,"updated_at":1442447408,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1997-12-11","name_first":"Shyanne","name_middle":null,"name_last":"Smith","address_street1":"4230
+        Orpha Locks","address_street2":null,"address_city":"North Timmothyport","address_subdivision":null,"address_postal_code":null,"address_country_code":"RO"},{"object":"candidate","id":"55f9a9bb6539640003000061","created_at":1442425275,"updated_at":1442425275,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1930-06-26","name_first":"Khalid","name_middle":null,"name_last":"Ernser","address_street1":"81188
+        Katharina Gardens","address_street2":null,"address_city":"North Telly","address_subdivision":null,"address_postal_code":null,"address_country_code":"PF"},{"object":"candidate","id":"55f9a9b9326230000300004f","created_at":1442425273,"updated_at":1442425274,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1982-03-09","name_first":"Jane","name_middle":null,"name_last":"Lebsack","address_street1":"44983
+        Green Haven","address_street2":null,"address_city":"Legrosport","address_subdivision":null,"address_postal_code":null,"address_country_code":"NL"},{"object":"candidate","id":"55f9a9b66539640003000060","created_at":1442425270,"updated_at":1442425271,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1975-10-25","name_first":"version_2","name_middle":null,"name_last":"Crist","address_street1":"468
+        Kurt Crossroad","address_street2":null,"address_city":"Aufderharburgh","address_subdivision":null,"address_postal_code":null,"address_country_code":"SJ"},{"object":"candidate","id":"55f9a9b4326230000300004e","created_at":1442425268,"updated_at":1442425269,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1922-05-11","name_first":"Saige","name_middle":null,"name_last":"Medhurst","address_street1":"212
+        Kozey Knolls","address_street2":null,"address_city":"Watersburgh","address_subdivision":null,"address_postal_code":null,"address_country_code":"HU","deleted":true},{"object":"candidate","id":"55f9a8f66533310003000065","created_at":1442425078,"updated_at":1442425078,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1981-07-27","name_first":"version_2","name_middle":null,"name_last":"Schuster","address_street1":"307
+        Marquardt Manor","address_street2":null,"address_city":"West Luz","address_subdivision":null,"address_postal_code":null,"address_country_code":"TV"},{"object":"candidate","id":"55f9a8f53262300003000043","created_at":1442425077,"updated_at":1442425077,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1981-07-27","name_first":"version_1","name_middle":null,"name_last":"Schuster","address_street1":"307
+        Marquardt Manor","address_street2":null,"address_city":"West Luz","address_subdivision":null,"address_postal_code":null,"address_country_code":"TV"},{"object":"candidate","id":"55f9a8f46533310003000064","created_at":1442425076,"updated_at":1442425076,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2011-05-15","name_first":"Jane","name_middle":null,"name_last":"Gusikowski","address_street1":"1594
+        Dortha Mills","address_street2":null,"address_city":"South Rosamondfurt","address_subdivision":null,"address_postal_code":null,"address_country_code":"BA"},{"object":"candidate","id":"55f99beb3161660003000011","created_at":1442421739,"updated_at":1442421739,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2012-01-09","name_first":"Colten","name_middle":null,"name_last":"Armstrong","address_street1":"2045
+        Spencer Prairie","address_street2":null,"address_city":"Fordmouth","address_subdivision":null,"address_postal_code":null,"address_country_code":"GL"},{"object":"candidate","id":"55f999926232360003000000","created_at":1442421138,"updated_at":1442421139,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1959-06-21","name_first":"Ressie","name_middle":null,"name_last":"Hand","address_street1":"8551
+        Harry Lights","address_street2":null,"address_city":"North Kendricktown","address_subdivision":null,"address_postal_code":null,"address_country_code":"GL","deleted":true}]}'
+    http_version: 
+  recorded_at: Thu, 17 Sep 2015 17:20:53 GMT
+recorded_with: VCR 2.9.3

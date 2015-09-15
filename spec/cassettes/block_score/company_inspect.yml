@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/companies
+    body:
+      encoding: UTF-8
+      string: '{"entity_name":"Reynolds-Halvorson","tax_id":"000000000","incorporation_country_code":"PT","incorporation_type":"partnership","address_street1":"445
+        Arlene Skyway","address_city":"North Philip","address_subdivision":"MI","address_postal_code":"33035-2320","address_country_code":"HR"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"30d63aac5419f04488fd5ebec90fecfd"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - d0d0c748-5111-447d-8776-6c8fffab060c
+      X-Runtime:
+      - '0.075037'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 17 Sep 2015 17:19:12 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"company","id":"55faf61065396400030009aa","created_at":1442510352,"updated_at":1442510352,"status":"valid","livemode":false,"entity_name":"Reynolds-Halvorson","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"PT","incorporation_type":"partnership","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"445
+        Arlene Skyway","address_street2":null,"address_city":"North Philip","address_subdivision":"MI","address_postal_code":"33035-2320","address_country_code":"HR","details":{"entity_name":"mismatch","tax_id":"match","state":"no_match","address":"no_match","country_code":"no_match","incorp_date":"no_match","ofac":"no_match"}}'
+    http_version: 
+  recorded_at: Thu, 17 Sep 2015 17:19:12 GMT
+recorded_with: VCR 2.9.3

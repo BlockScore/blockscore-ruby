@@ -1,0 +1,190 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Gaylord","name_last":"Schowalter","document_type":"ssn","document_value":"0000","birth_day":12,"birth_month":12,"birth_year":1989,"address_street1":"545
+        Marcelino Fall","address_city":"Conntown","address_subdivision":"NV","address_postal_code":"13553","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"802b59773b7de87360edf176b784d49b"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 76b9dc59-8642-47ac-b760-1f1144db9d4b
+      X-Runtime:
+      - '0.194433'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 17 Sep 2015 17:18:34 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"55faf5ea6533310003000997","created_at":1442510314,"updated_at":1442510314,"status":"valid","livemode":false,"phone_number":null,"ip_address":"","birth_day":12,"birth_month":12,"birth_year":1989,"name_first":"Gaylord","name_middle":null,"name_last":"Schowalter","address_street1":"545
+        Marcelino Fall","address_street2":null,"address_city":"Conntown","address_subdivision":"NV","address_postal_code":"13553","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version: 
+  recorded_at: Thu, 17 Sep 2015 17:18:33 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/question_sets
+    body:
+      encoding: UTF-8
+      string: '{"person_id":"55faf5ea6533310003000997"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"88c47dceff8019bca624991645c42504"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 05ba43cb-da33-49ed-a86e-f78554b3bfb7
+      X-Runtime:
+      - '0.102688'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 17 Sep 2015 17:18:35 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"question_set","id":"55faf5eb6631650003000995","created_at":1442510315,"updated_at":1442510315,"livemode":false,"person_id":"55faf5ea6533310003000997","score":null,"expired":false,"time_limit":0,"questions":[{"id":1,"question":"Which
+        one of the following area codes is associated with you?","answers":[{"id":1,"answer":"812"},{"id":2,"answer":"870"},{"id":3,"answer":"832"},{"id":4,"answer":"336"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":2,"question":"Which one of the following addresses
+        is associated with you?","answers":[{"id":1,"answer":"221 Wolf Lake"},{"id":2,"answer":"309
+        Colver Rd"},{"id":3,"answer":"467 Meridian Rd"},{"id":4,"answer":"52 Canandaigua
+        Rd"},{"id":5,"answer":"None Of The Above"}]},{"id":3,"question":"Which one
+        of the following zip codes is associated with you?","answers":[{"id":1,"answer":"49230"},{"id":2,"answer":"49728"},{"id":3,"answer":"49993"},{"id":4,"answer":"49268"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":4,"question":"Which one of the following counties is
+        associated with you?","answers":[{"id":1,"answer":"Floyd"},{"id":2,"answer":"Boone"},{"id":3,"answer":"Nantucket"},{"id":4,"answer":"Jasper"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":5,"question":"Which one of the following adult individuals
+        is most closely associated with you?","answers":[{"id":1,"answer":"Luis"},{"id":2,"answer":"Jose"},{"id":3,"answer":"Nathan"},{"id":4,"answer":"Miranda"},{"id":5,"answer":"None
+        Of The Above"}]}]}'
+    http_version: 
+  recorded_at: Thu, 17 Sep 2015 17:18:34 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/question_sets/55faf5eb6631650003000995/score
+    body:
+      encoding: UTF-8
+      string: '{"answers":[{"question_id":1,"answer_id":2},{"question_id":2,"answer_id":3},{"question_id":3,"answer_id":2},{"question_id":4,"answer_id":0},{"question_id":5,"answer_id":1}]}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"43906539178979fa59a175aceb45ba8b"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 963e0bc4-49e0-4c68-88cf-7ceffda01ecf
+      X-Runtime:
+      - '0.046199'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 17 Sep 2015 17:18:35 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"question_set","id":"55faf5eb6631650003000995","created_at":1442510315,"updated_at":1442510315,"livemode":false,"person_id":"55faf5ea6533310003000997","score":0.0,"expired":false,"time_limit":0,"questions":[{"id":1,"question":"Which
+        one of the following area codes is associated with you?","answers":[{"id":1,"answer":"812"},{"id":2,"answer":"870"},{"id":3,"answer":"832"},{"id":4,"answer":"336"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":2,"question":"Which one of the following addresses
+        is associated with you?","answers":[{"id":1,"answer":"221 Wolf Lake"},{"id":2,"answer":"309
+        Colver Rd"},{"id":3,"answer":"467 Meridian Rd"},{"id":4,"answer":"52 Canandaigua
+        Rd"},{"id":5,"answer":"None Of The Above"}]},{"id":3,"question":"Which one
+        of the following zip codes is associated with you?","answers":[{"id":1,"answer":"49230"},{"id":2,"answer":"49728"},{"id":3,"answer":"49993"},{"id":4,"answer":"49268"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":4,"question":"Which one of the following counties is
+        associated with you?","answers":[{"id":1,"answer":"Floyd"},{"id":2,"answer":"Boone"},{"id":3,"answer":"Nantucket"},{"id":4,"answer":"Jasper"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":5,"question":"Which one of the following adult individuals
+        is most closely associated with you?","answers":[{"id":1,"answer":"Luis"},{"id":2,"answer":"Jose"},{"id":3,"answer":"Nathan"},{"id":4,"answer":"Miranda"},{"id":5,"answer":"None
+        Of The Above"}]}]}'
+    http_version: 
+  recorded_at: Thu, 17 Sep 2015 17:18:35 GMT
+recorded_with: VCR 2.9.3

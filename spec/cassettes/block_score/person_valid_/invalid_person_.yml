@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Rachel","name_last":"Torphy","document_type":"ssn","document_value":"0001","birth_day":12,"birth_month":1,"birth_year":2010,"address_street1":"42988
+        Rippin Camp","address_city":"South Meagan","address_subdivision":"VT","address_postal_code":"56878-1287","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"67339afa773a6890ebc8d56e458e0cc4"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ea9aac74-73f9-44b1-8e61-9769632ab89b
+      X-Runtime:
+      - '0.179041'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 17 Sep 2015 17:18:54 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"55faf5fe326230000300095b","created_at":1442510334,"updated_at":1442510334,"status":"invalid","livemode":false,"phone_number":null,"ip_address":"","birth_day":12,"birth_month":1,"birth_year":2010,"name_first":"Rachel","name_middle":null,"name_last":"Torphy","address_street1":"42988
+        Rippin Camp","address_street2":null,"address_city":"South Meagan","address_subdivision":"VT","address_postal_code":"56878-1287","address_country_code":"US","document_type":"ssn","document_value":"0001","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version: 
+  recorded_at: Thu, 17 Sep 2015 17:18:53 GMT
+recorded_with: VCR 2.9.3

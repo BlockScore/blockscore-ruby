@@ -1,0 +1,188 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Alana","name_last":"Larkin","document_type":"ssn","document_value":"0000","birth_day":12,"birth_month":7,"birth_year":2013,"address_street1":"6737
+        Bayer Track","address_city":"Port Markside","address_subdivision":"RI","address_postal_code":"10516-5808","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"bcb553e44b31ebdd94b72feb66e6f610"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 0c161b90-31e2-4353-89a7-751b471cdb5d
+      X-Runtime:
+      - '0.169394'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 17 Sep 2015 17:18:36 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"55faf5ec6631650003000997","created_at":1442510316,"updated_at":1442510316,"status":"valid","livemode":false,"phone_number":null,"ip_address":"","birth_day":12,"birth_month":7,"birth_year":2013,"name_first":"Alana","name_middle":null,"name_last":"Larkin","address_street1":"6737
+        Bayer Track","address_street2":null,"address_city":"Port Markside","address_subdivision":"RI","address_postal_code":"10516-5808","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version: 
+  recorded_at: Thu, 17 Sep 2015 17:18:36 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/question_sets
+    body:
+      encoding: UTF-8
+      string: '{"person_id":"55faf5ec6631650003000997"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"a40307aa0f427078c634e3ba0333f458"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 233bf3d3-e7f9-45a0-b9e4-2a1981684253
+      X-Runtime:
+      - '0.093725'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 17 Sep 2015 17:18:37 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"question_set","id":"55faf5ed3262300003000957","created_at":1442510317,"updated_at":1442510317,"livemode":false,"person_id":"55faf5ec6631650003000997","score":null,"expired":false,"time_limit":0,"questions":[{"id":1,"question":"Which
+        one of the following adult individuals is most closely associated with you?","answers":[{"id":1,"answer":"Luis"},{"id":2,"answer":"Nicole"},{"id":3,"answer":"Nathan"},{"id":4,"answer":"Evan"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":2,"question":"Which one of the following zip codes
+        is associated with you?","answers":[{"id":1,"answer":"49268"},{"id":2,"answer":"49230"},{"id":3,"answer":"49728"},{"id":4,"answer":"49557"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":3,"question":"Which one of the following counties is
+        associated with you?","answers":[{"id":1,"answer":"Schoharie"},{"id":2,"answer":"Sangamon"},{"id":3,"answer":"Jasper"},{"id":4,"answer":"Floyd"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":4,"question":"Which one of the following area codes
+        is associated with you?","answers":[{"id":1,"answer":"336"},{"id":2,"answer":"812"},{"id":3,"answer":"228"},{"id":4,"answer":"605"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":5,"question":"What state was your SSN issued in?","answers":[{"id":1,"answer":"Idaho"},{"id":2,"answer":"Oklahoma"},{"id":3,"answer":"California"},{"id":4,"answer":"Delaware"},{"id":5,"answer":"None
+        Of The Above"}]}]}'
+    http_version: 
+  recorded_at: Thu, 17 Sep 2015 17:18:36 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/question_sets/55faf5ed3262300003000957/score
+    body:
+      encoding: UTF-8
+      string: '{"answers":[{"question_id":1,"answer_id":5},{"question_id":2,"answer_id":2},{"question_id":3,"answer_id":3},{"question_id":4,"answer_id":2},{"question_id":5,"answer_id":5}]}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"c85b7cd7ee8437381219478701e53119"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 73dfb109-955a-4940-9faa-449eabde7a4e
+      X-Runtime:
+      - '0.046069'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 17 Sep 2015 17:18:38 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"question_set","id":"55faf5ed3262300003000957","created_at":1442510317,"updated_at":1442510318,"livemode":false,"person_id":"55faf5ec6631650003000997","score":100.0,"expired":false,"time_limit":0,"questions":[{"id":1,"question":"Which
+        one of the following adult individuals is most closely associated with you?","answers":[{"id":1,"answer":"Luis"},{"id":2,"answer":"Nicole"},{"id":3,"answer":"Nathan"},{"id":4,"answer":"Evan"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":2,"question":"Which one of the following zip codes
+        is associated with you?","answers":[{"id":1,"answer":"49268"},{"id":2,"answer":"49230"},{"id":3,"answer":"49728"},{"id":4,"answer":"49557"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":3,"question":"Which one of the following counties is
+        associated with you?","answers":[{"id":1,"answer":"Schoharie"},{"id":2,"answer":"Sangamon"},{"id":3,"answer":"Jasper"},{"id":4,"answer":"Floyd"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":4,"question":"Which one of the following area codes
+        is associated with you?","answers":[{"id":1,"answer":"336"},{"id":2,"answer":"812"},{"id":3,"answer":"228"},{"id":4,"answer":"605"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":5,"question":"What state was your SSN issued in?","answers":[{"id":1,"answer":"Idaho"},{"id":2,"answer":"Oklahoma"},{"id":3,"answer":"California"},{"id":4,"answer":"Delaware"},{"id":5,"answer":"None
+        Of The Above"}]}]}'
+    http_version: 
+  recorded_at: Thu, 17 Sep 2015 17:18:37 GMT
+recorded_with: VCR 2.9.3

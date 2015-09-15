@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"2008-04-19","name_first":"Arthur","name_last":"Halvorson","address_street1":"250
+        Anna Plaza","address_city":"South Aidanton","address_country_code":"LT"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"4c9e7206d3dc030e9a1e7211f4cd6ca8"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 438f1a9e-0c2b-4eb8-bed8-cfca5c7aef22
+      X-Runtime:
+      - '0.039657'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 17 Sep 2015 17:18:24 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"55faf5e06631650003000992","created_at":1442510304,"updated_at":1442510304,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2008-04-19","name_first":"Arthur","name_middle":null,"name_last":"Halvorson","address_street1":"250
+        Anna Plaza","address_street2":null,"address_city":"South Aidanton","address_subdivision":null,"address_postal_code":null,"address_country_code":"LT"}'
+    http_version: 
+  recorded_at: Thu, 17 Sep 2015 17:18:24 GMT
+recorded_with: VCR 2.9.3

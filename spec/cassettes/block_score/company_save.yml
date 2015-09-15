@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/companies
+    body:
+      encoding: UTF-8
+      string: '{"entity_name":"Barton-Schinner","tax_id":"000000000","incorporation_country_code":"IT","incorporation_type":"partnership","address_street1":"37458
+        Gislason Green","address_city":"New Jeff","address_subdivision":"WY","address_postal_code":"79711-4289","address_country_code":"HN"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"faebc44fcb139083efb02e35c07e45b2"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 5953238a-cc8e-41a0-a0cf-3830bfbd159e
+      X-Runtime:
+      - '0.077590'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 17 Sep 2015 17:19:06 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"company","id":"55faf60a326230000300095f","created_at":1442510346,"updated_at":1442510346,"status":"valid","livemode":false,"entity_name":"Barton-Schinner","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"IT","incorporation_type":"partnership","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"37458
+        Gislason Green","address_street2":null,"address_city":"New Jeff","address_subdivision":"WY","address_postal_code":"79711-4289","address_country_code":"HN","details":{"entity_name":"mismatch","tax_id":"match","state":"no_match","address":"no_match","country_code":"no_match","ofac":"no_match","incorp_date":"no_match"}}'
+    http_version: 
+  recorded_at: Thu, 17 Sep 2015 17:19:05 GMT
+recorded_with: VCR 2.9.3

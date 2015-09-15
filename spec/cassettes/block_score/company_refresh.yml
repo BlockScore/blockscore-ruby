@@ -1,0 +1,116 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/companies
+    body:
+      encoding: UTF-8
+      string: '{"entity_name":"BlockScore","tax_id":"000000000","incorporation_country_code":"LT","incorporation_type":"other","address_street1":"811
+        Heidenreich Roads","address_city":"Conroyside","address_subdivision":"OR","address_postal_code":"99246","address_country_code":"CF"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b8e776a9209a1ae07c2799a7b6d1b21c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b36e3959-c35f-4397-98a6-7affa1858dbd
+      X-Runtime:
+      - '0.073460'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 17 Sep 2015 17:19:13 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"company","id":"55faf61165396400030009ab","created_at":1442510353,"updated_at":1442510353,"status":"valid","livemode":false,"entity_name":"BlockScore","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"LT","incorporation_type":"other","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"811
+        Heidenreich Roads","address_street2":null,"address_city":"Conroyside","address_subdivision":"OR","address_postal_code":"99246","address_country_code":"CF","details":{"ofac":"no_match","tax_id":"match","entity_name":"match","incorp_date":"no_match","state":"no_match","address":"no_match","country_code":"no_match"}}'
+    http_version: 
+  recorded_at: Thu, 17 Sep 2015 17:19:12 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/companies/55faf61165396400030009ab
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"4dc577ad4d54901926a06cbb0b3f0d59"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 14c13d4d-24e3-4126-a2cc-4c7b7bb90869
+      X-Runtime:
+      - '0.017059'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 17 Sep 2015 17:19:13 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"company","id":"55faf61165396400030009ab","created_at":1442510353,"updated_at":1442510353,"status":"valid","livemode":false,"entity_name":"BlockScore","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"LT","incorporation_type":"other","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"811
+        Heidenreich Roads","address_street2":null,"address_city":"Conroyside","address_subdivision":"OR","address_postal_code":"99246","address_country_code":"CF","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"match","incorp_date":"no_match","country_code":"no_match"}}'
+    http_version: 
+  recorded_at: Thu, 17 Sep 2015 17:19:13 GMT
+recorded_with: VCR 2.9.3
