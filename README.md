@@ -1,4 +1,10 @@
-# blockscore-ruby [![Circle CI](https://circleci.com/gh/BlockScore/blockscore-ruby/tree/master.svg?style=shield)](https://circleci.com/gh/BlockScore/blockscore-ruby) [![Test Coverage](https://codeclimate.com/github/BlockScore/blockscore-ruby/badges/coverage.svg)](https://codeclimate.com/github/BlockScore/blockscore-ruby/coverage) [![Dependency Status](https://gemnasium.com/BlockScore/blockscore-ruby.svg)](https://gemnasium.com/BlockScore/blockscore-ruby)
+# Blockscore-Ruby ![logo](https://d1vf4z01lc8cfc.cloudfront.net/assets/logo-footer-ee82ad3d16c743790d0bc4baa14c393a.png)
+
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/BlockScore/blockscore-ruby/blob/master/LICENSE)
+[![Circle CI](https://img.shields.io/circleci/project/BlockScore/blockscore-ruby/master.svg?style=flat-square)](https://circleci.com/gh/BlockScore/blockscore-ruby)
+[![Code Climate](https://img.shields.io/codeclimate/github/BlockScore/blockscore-ruby.svg?style=flat-square)](https://codeclimate.com/github/BlockScore/blockscore-ruby)
+[![Test Coverage](https://img.shields.io/codeclimate/coverage/github/BlockScore/blockscore-ruby.svg?style=flat-square)](https://codeclimate.com/github/BlockScore/blockscore-ruby/coverage)
+[![Dependency Status](https://img.shields.io/gemnasium/BlockScore/blockscore-ruby.svg?style=flat-square)](https://gemnasium.com/BlockScore/blockscore-ruby)
 
 This is the official library for Ruby clients of the BlockScore API. [Click here to read the full documentation including code examples](http://docs.blockscore.com/ruby/).
 
@@ -57,8 +63,8 @@ To see the list of calls you can make, please visit our [full Ruby API reference
 
 ## Testing
 
-The test suite uses a public BlockScore API key that was created specifically to ease the testing and contribution processes. **Please do not enter personal details for tests.** In order to run the test suite:
+In order to run the test suite:
 
 ```shell
-$ rspec spec
+$ rspec
 ```
