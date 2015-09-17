@@ -1,0 +1,13 @@
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  Include:
+    - '**/Gemfile'
+    - '**/Rakefile'
+  Exclude:
+    - 'db/**/*'
+    - 'spec/**/*'
+Style/Documentation:
+  Enabled: false
+Metrics/LineLength:
+  Max: 100
