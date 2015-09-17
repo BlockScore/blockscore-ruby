@@ -12,5 +12,6 @@ group :test do
   gem 'vcr'
   gem 'webmock'
   gem 'fuubar'
+  gem 'codeclimate-test-reporter'
   gem 'pry'
 end
