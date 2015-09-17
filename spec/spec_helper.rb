@@ -26,7 +26,6 @@ module BlockScore
   VCR.configure do |c|
     c.cassette_library_dir = 'spec/cassettes'
     c.hook_into :webmock
-    c.stub_with :webmock
     c.configure_rspec_metadata!
     c.ignore_hosts 'codeclimate.com'
 
