@@ -1,0 +1,126 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Izabella","name_last":"Cremin","document_type":"ssn","document_value":"0000","birth_day":12,"birth_month":8,"birth_year":1917,"address_street1":"5425
+        Raymond Alley","address_city":"Gleichnershire","address_subdivision":"IA","address_postal_code":"51768-4881","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"5b94549731cac77fb8fae247341289c4"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 58b50cb1-937b-41fd-af27-a52cc8db7cf2
+      X-Runtime:
+      - '0.177394'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 17 Sep 2015 18:32:40 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"55fb0748616566000300006d","created_at":1442514760,"updated_at":1442514760,"status":"valid","livemode":false,"phone_number":null,"ip_address":"","birth_day":12,"birth_month":8,"birth_year":1917,"name_first":"Izabella","name_middle":null,"name_last":"Cremin","address_street1":"5425
+        Raymond Alley","address_street2":null,"address_city":"Gleichnershire","address_subdivision":"IA","address_postal_code":"51768-4881","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version: 
+  recorded_at: Thu, 17 Sep 2015 18:32:41 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/question_sets
+    body:
+      encoding: UTF-8
+      string: '{"person_id":"55fb0748616566000300006d"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"7999769dd9af83bd2e82938f6ec6994f"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 883b9923-64c7-478f-a007-93a723198837
+      X-Runtime:
+      - '0.117924'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 17 Sep 2015 18:32:42 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"question_set","id":"55fb074a3935360003000094","created_at":1442514762,"updated_at":1442514762,"livemode":false,"person_id":"55fb0748616566000300006d","score":null,"expired":false,"time_limit":0,"questions":[{"id":1,"question":"Which
+        one of the following addresses is associated with you?","answers":[{"id":1,"answer":"52
+        Canandaigua Rd"},{"id":2,"answer":"863 Carelton"},{"id":3,"answer":"309 Colver
+        Rd"},{"id":4,"answer":"430 Dwight"},{"id":5,"answer":"None Of The Above"}]},{"id":2,"question":"Which
+        one of the following counties is associated with you?","answers":[{"id":1,"answer":"El
+        Paso"},{"id":2,"answer":"Floyd"},{"id":3,"answer":"Jasper"},{"id":4,"answer":"Niagara"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":3,"question":"What state was your SSN issued in?","answers":[{"id":1,"answer":"California"},{"id":2,"answer":"Idaho"},{"id":3,"answer":"Oregon"},{"id":4,"answer":"Oklahoma"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":4,"question":"Which one of the following area codes
+        is associated with you?","answers":[{"id":1,"answer":"228"},{"id":2,"answer":"812"},{"id":3,"answer":"308"},{"id":4,"answer":"605"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":5,"question":"Which one of the following adult individuals
+        is most closely associated with you?","answers":[{"id":1,"answer":"Cecilia"},{"id":2,"answer":"Miranda"},{"id":3,"answer":"Nathan"},{"id":4,"answer":"Jose"},{"id":5,"answer":"None
+        Of The Above"}]}]}'
+    http_version: 
+  recorded_at: Thu, 17 Sep 2015 18:32:42 GMT
+recorded_with: VCR 2.9.3

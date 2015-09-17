@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Delfina","name_last":"Dickens","document_type":"ssn","document_value":"0000","birth_day":12,"birth_month":1,"birth_year":1935,"address_street1":"32063
+        Juliet Course","address_city":"Port Kaylin","address_subdivision":"UT","address_postal_code":"60138","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"cb0f937a033a2bc5c268fefa0a5a2b47"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4985ab04-de75-49c9-8fb4-b66da8b5f760
+      X-Runtime:
+      - '0.179635'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 17 Sep 2015 18:32:51 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"55fb0753616566000300006f","created_at":1442514771,"updated_at":1442514771,"status":"valid","livemode":false,"phone_number":null,"ip_address":"","birth_day":12,"birth_month":1,"birth_year":1935,"name_first":"Delfina","name_middle":null,"name_last":"Dickens","address_street1":"32063
+        Juliet Course","address_street2":null,"address_city":"Port Kaylin","address_subdivision":"UT","address_postal_code":"60138","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version: 
+  recorded_at: Thu, 17 Sep 2015 18:32:52 GMT
+recorded_with: VCR 2.9.3
