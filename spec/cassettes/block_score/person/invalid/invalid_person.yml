@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Madisen","name_last":"Mayert","document_type":"ssn","document_value":"0001","birth_day":12,"birth_month":5,"birth_year":1959,"address_street1":"840
+        Bernhard Summit","address_city":"South Josue","address_subdivision":"VA","address_postal_code":"59893","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"c97bc36a67695da08598efc90bbee907"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 65bfd766-ff18-4612-92f1-2c98d8c3eda3
+      X-Runtime:
+      - '0.183397'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 18 Sep 2015 17:10:23 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"55fc457f323666000300072a","created_at":1442596223,"updated_at":1442596223,"status":"invalid","livemode":false,"phone_number":null,"ip_address":"","birth_day":12,"birth_month":5,"birth_year":1959,"name_first":"Madisen","name_middle":null,"name_last":"Mayert","address_street1":"840
+        Bernhard Summit","address_street2":null,"address_city":"South Josue","address_subdivision":"VA","address_postal_code":"59893","address_country_code":"US","document_type":"ssn","document_value":"0001","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version: 
+  recorded_at: Fri, 18 Sep 2015 17:10:23 GMT
+recorded_with: VCR 2.9.3

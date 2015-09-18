@@ -1,61 +1,25 @@
 module BlockScore
   RSpec.describe Company do
     describe '.new' do
-      subject(:company) do
-        BlockScore::Company.new(
-          entity_name: Faker::Company.name,
-          tax_id: '000000000',
-          incorporation_country_code: Faker::Address.country_code,
-          incorporation_type: 'corporation',
-          address_street1: Faker::Address.street_address,
-          address_city: Faker::Address.city,
-          address_subdivision: Faker::Address.state_abbr,
-          address_postal_code: Faker::Address.postcode,
-          address_country_code: Faker::Address.country_code
-        )
-      end
+      subject(:company) { BlockScore::Company.new(attributes_for(:company)) }
 
       it { is_expected.not_to be_persisted }
-      it { expect(company.class).to be BlockScore::Company }
+      its(:class) { should be BlockScore::Company }
     end
 
     describe '.create' do
       context 'vaild company' do
-        subject(:company) do
-          BlockScore::Company.create(
-            entity_name: Faker::Company.name,
-            tax_id: '000000000',
-            incorporation_country_code: Faker::Address.country_code,
-            incorporation_type: 'corporation',
-            address_street1: Faker::Address.street_address,
-            address_city: Faker::Address.city,
-            address_subdivision: Faker::Address.state_abbr,
-            address_postal_code: Faker::Address.postcode,
-            address_country_code: Faker::Address.country_code
-          )
-        end
+        subject(:company) { BlockScore::Company.create(attributes_for(:company)) }
 
         it { is_expected.to be_persisted }
-        it { expect(company.class).to be BlockScore::Company }
+        its(:class) { should be BlockScore::Company }
       end
 
       context 'invalid company' do
-        subject(:company) do
-          BlockScore::Company.create(
-            entity_name: Faker::Company.name,
-            tax_id: '000000001',
-            incorporation_country_code: Faker::Address.country_code,
-            incorporation_type: 'corporation',
-            address_street1: Faker::Address.street_address,
-            address_city: Faker::Address.city,
-            address_subdivision: Faker::Address.state_abbr,
-            address_postal_code: Faker::Address.postcode,
-            address_country_code: Faker::Address.country_code
-          )
-        end
+        subject(:company) { BlockScore::Company.create(attributes_for(:invalid_company)) }
 
         it { is_expected.to be_persisted }
-        it { expect(company.class).to be BlockScore::Company }
+        its(:class) { should be BlockScore::Company }
       end
     end
 
@@ -65,8 +29,8 @@ module BlockScore
         subject(:company) { BlockScore::Company.find(company_id) }
 
         it { is_expected.to be_persisted }
-        it { expect(company.entity_name).not_to be_empty }
-        it { expect(company.class).to be BlockScore::Company }
+        its(:entity_name) { is_expected.not_to be_empty }
+        its(:class) { should be BlockScore::Company }
       end
 
       context 'invalid company id' do
@@ -81,8 +45,8 @@ module BlockScore
       subject(:company) { BlockScore::Company.retrieve(company_id) }
 
       it { is_expected.to be_persisted }
-      it { expect(company.entity_name).not_to be_empty }
-      it { expect(company.class).to be BlockScore::Company }
+      its(:entity_name) { is_expected.not_to be_empty }
+      its(:class) { should be BlockScore::Company }
     end
 
     describe '.all' do
@@ -107,12 +71,14 @@ module BlockScore
         company.refresh
       end
 
-      it { expect(company.entity_name).to eq 'BlockScore' }
+      its(:entity_name) { is_expected.to eq 'BlockScore' }
     end
 
     describe '#inspect' do
       subject(:company_inspection) { create(:company).inspect }
-      it { expect(company_inspection.class).to be String }
+
+      its(:class) { should be(String) }
+      it { is_expected.to match(/^#<BlockScore::Company:0x/) }
     end
 
     describe '#update' do
@@ -130,7 +96,7 @@ module BlockScore
       before { company.save }
 
       it { is_expected.to be_persisted }
-      it { expect(company.class).to be BlockScore::Company }
+      its(:class) { should be BlockScore::Company }
     end
   end
 end

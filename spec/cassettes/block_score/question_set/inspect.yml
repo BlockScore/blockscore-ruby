@@ -1,0 +1,126 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Viviane","name_last":"Bailey","document_type":"ssn","document_value":"0000","birth_day":12,"birth_month":12,"birth_year":1972,"address_street1":"2462
+        Witting Prairie","address_city":"Erdmanborough","address_subdivision":"NH","address_postal_code":"75284","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"de338ee5a79dd62ca5f44ded5a42c334"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 714959f8-dccf-4f78-a1df-6dcd534f7d50
+      X-Runtime:
+      - '0.163994'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 18 Sep 2015 17:11:41 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"55fc45cd3236660003000741","created_at":1442596301,"updated_at":1442596301,"status":"valid","livemode":false,"phone_number":null,"ip_address":"","birth_day":12,"birth_month":12,"birth_year":1972,"name_first":"Viviane","name_middle":null,"name_last":"Bailey","address_street1":"2462
+        Witting Prairie","address_street2":null,"address_city":"Erdmanborough","address_subdivision":"NH","address_postal_code":"75284","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version: 
+  recorded_at: Fri, 18 Sep 2015 17:11:41 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/question_sets
+    body:
+      encoding: UTF-8
+      string: '{"person_id":"55fc45cd3236660003000741"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"2cbc6beba9c41b7de7e8b9005b0c2d68"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 6feaf965-e1c0-4157-b892-cf0fecd5ca0c
+      X-Runtime:
+      - '0.102383'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 18 Sep 2015 17:11:43 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"question_set","id":"55fc45cf3939360003000722","created_at":1442596303,"updated_at":1442596303,"livemode":false,"person_id":"55fc45cd3236660003000741","score":null,"expired":false,"time_limit":0,"questions":[{"id":1,"question":"Which
+        one of the following zip codes is associated with you?","answers":[{"id":1,"answer":"49511"},{"id":2,"answer":"49728"},{"id":3,"answer":"49230"},{"id":4,"answer":"49209"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":2,"question":"Which one of the following adult individuals
+        is most closely associated with you?","answers":[{"id":1,"answer":"Cecilia"},{"id":2,"answer":"Nicole"},{"id":3,"answer":"Jason"},{"id":4,"answer":"Miranda"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":3,"question":"Which one of the following area codes
+        is associated with you?","answers":[{"id":1,"answer":"904"},{"id":2,"answer":"812"},{"id":3,"answer":"605"},{"id":4,"answer":"870"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":4,"question":"Which one of the following addresses
+        is associated with you?","answers":[{"id":1,"answer":"123 Main St"},{"id":2,"answer":"309
+        Colver Rd"},{"id":3,"answer":"467 Meridian Rd"},{"id":4,"answer":"221 Wolf
+        Lake"},{"id":5,"answer":"None Of The Above"}]},{"id":5,"question":"What state
+        was your SSN issued in?","answers":[{"id":1,"answer":"Utah"},{"id":2,"answer":"Oklahoma"},{"id":3,"answer":"California"},{"id":4,"answer":"Delaware"},{"id":5,"answer":"None
+        Of The Above"}]}]}'
+    http_version: 
+  recorded_at: Fri, 18 Sep 2015 17:11:43 GMT
+recorded_with: VCR 2.9.3

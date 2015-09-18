@@ -13,5 +13,5 @@ group :test do
   gem 'webmock'
   gem 'fuubar'
   gem 'codeclimate-test-reporter'
-  gem 'pry'
+  gem 'rubocop-rspec'
 end

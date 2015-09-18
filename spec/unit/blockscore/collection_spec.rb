@@ -3,20 +3,20 @@ module BlockScore
     let(:person) { create(:person) }
     subject(:question_sets) { person.question_sets }
 
-    it { expect(question_sets.empty?).to be true }
-    it { expect(question_sets.class).to be BlockScore::Collection }
+    it { is_expected.to be_empty }
+    its(:class) { should be BlockScore::Collection }
 
     describe '.all' do
-      it { expect(question_sets.all.empty?).to be true }
+      it { is_expected.to be_empty }
       it { expect(question_sets.all.class).to be BlockScore::Collection }
     end
 
     describe '.new' do
       before { question_sets.new }
 
-      it { expect(question_sets.empty?).to be false }
-      it { expect(question_sets.count).to be 1 }
-      it { expect(question_sets.class).to be BlockScore::Collection }
+      it { is_expected.not_to be_empty }
+      its(:count) { should be 1 }
+      its(:class) { should be BlockScore::Collection }
     end
 
     describe '.refresh' do
@@ -26,16 +26,16 @@ module BlockScore
         question_sets.refresh
       end
 
-      it { expect(question_sets.empty?).to be true }
-      it { expect(question_sets.class).to be BlockScore::Collection }
+      it { is_expected.to be_empty }
+      its(:class) { should be BlockScore::Collection }
     end
 
     describe '.create' do
       before { question_sets.create }
 
-      it { expect(question_sets.empty?).to be false }
-      it { expect(question_sets.count).to be 1 }
-      it { expect(question_sets.class).to be BlockScore::Collection }
+      it { is_expected.not_to be_empty }
+      its(:count) { should be 1 }
+      its(:class) { should be BlockScore::Collection }
     end
 
     describe '.retrieve' do

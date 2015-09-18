@@ -1,70 +1,25 @@
 module BlockScore
   RSpec.describe Person do
     describe '.new' do
-      subject(:person) do
-        BlockScore::Person.new(
-          name_first: Faker::Name.first_name,
-          name_last: Faker::Name.last_name,
-          document_type: 'ssn',
-          document_value: '0000',
-          birth_day: 12,
-          birth_month: Faker::Date.backward(365 * 100).month,
-          birth_year: Faker::Date.backward(365 * 100).year,
-          address_street1: Faker::Address.street_address,
-          address_city: Faker::Address.city,
-          address_subdivision: Faker::Address.state_abbr,
-          address_postal_code: Faker::Address.postcode,
-          address_country_code: 'US'
-        )
-      end
+      subject(:person) { BlockScore::Person.new(attributes_for(:person)) }
 
       it { is_expected.not_to be_persisted }
-      it { expect(person.class).to be BlockScore::Person }
+      its(:class) { should be BlockScore::Person }
     end
 
     describe '.create' do
       context 'vaild person' do
-        subject(:person) do
-          BlockScore::Person.create(
-            name_first: Faker::Name.first_name,
-            name_last: Faker::Name.last_name,
-            document_type: 'ssn',
-            document_value: '0000',
-            birth_day: 12,
-            birth_month: Faker::Date.backward(365 * 100).month,
-            birth_year: Faker::Date.backward(365 * 100).year,
-            address_street1: Faker::Address.street_address,
-            address_city: Faker::Address.city,
-            address_subdivision: Faker::Address.state_abbr,
-            address_postal_code: Faker::Address.postcode,
-            address_country_code: 'US'
-          )
-        end
+        subject(:person) { BlockScore::Person.create(attributes_for(:person)) }
 
         it { is_expected.to be_persisted }
-        it { expect(person.class).to be BlockScore::Person }
+        its(:class) { should be BlockScore::Person }
       end
 
       context 'invaild person' do
-        subject(:person) do
-          BlockScore::Person.create(
-            name_first: Faker::Name.first_name,
-            name_last: Faker::Name.last_name,
-            document_type: 'ssn',
-            document_value: '0001',
-            birth_day: 12,
-            birth_month: Faker::Date.backward(365 * 100).month,
-            birth_year: Faker::Date.backward(365 * 100).year,
-            address_street1: Faker::Address.street_address,
-            address_city: Faker::Address.city,
-            address_subdivision: Faker::Address.state_abbr,
-            address_postal_code: Faker::Address.postcode,
-            address_country_code: 'US'
-          )
-        end
+        subject(:person) { BlockScore::Person.create(attributes_for(:invalid_person)) }
 
         it { is_expected.to be_persisted }
-        it { expect(person.class).to be BlockScore::Person }
+        its(:class) { should be BlockScore::Person }
       end
     end
 
@@ -74,7 +29,7 @@ module BlockScore
         subject(:person) { BlockScore::Person.find(person_id) }
 
         it { is_expected.to be_persisted }
-        it { expect(person.name_first).not_to be_empty }
+        its(:name_first) { is_expected.not_to be_empty }
       end
 
       context 'invalid person id' do
@@ -89,8 +44,8 @@ module BlockScore
       subject(:person) { BlockScore::Person.retrieve(person_id) }
 
       it { is_expected.to be_persisted }
-      it { expect(person.name_first).not_to be_empty }
-      it { expect(person.class).to be BlockScore::Person }
+      its(:name_first) { is_expected.not_to be_empty }
+      its(:class) { should be BlockScore::Person }
     end
 
     describe '.all' do
@@ -113,16 +68,16 @@ module BlockScore
         subject(:person) { create(:valid_person) }
 
         it { is_expected.to be_persisted }
-        it { expect(person.valid?).to be true }
-        it { expect(person.class).to be BlockScore::Person }
+        it { is_expected.to be_valid }
+        its(:class) { should be BlockScore::Person }
       end
 
       context 'invalid person' do
         subject(:person) { create(:invalid_person) }
 
         it { is_expected.to be_persisted }
-        it { expect(person.valid?).to be false }
-        it { expect(person.class).to be BlockScore::Person }
+        it { is_expected.not_to be_valid }
+        its(:class) { should be BlockScore::Person }
       end
     end
 
@@ -131,16 +86,16 @@ module BlockScore
         subject(:person) { create(:valid_person) }
 
         it { is_expected.to be_persisted }
-        it { expect(person.invalid?).to be false }
-        it { expect(person.class).to be BlockScore::Person }
+        it { is_expected.not_to be_invalid }
+        its(:class) { should be BlockScore::Person }
       end
 
       context 'invalid person' do
         subject(:person) { create(:invalid_person) }
 
         it { is_expected.to be_persisted }
-        it { expect(person.invalid?).to be true }
-        it { expect(person.class).to be BlockScore::Person }
+        it { is_expected.to be_invalid }
+        its(:class) { should be BlockScore::Person }
       end
     end
 
@@ -156,7 +111,9 @@ module BlockScore
 
     describe '#inspect' do
       subject(:person_inspection) { create(:person).inspect }
-      it { expect(person_inspection.class).to be String }
+
+      its(:class) { should be(String) }
+      it { is_expected.to match(/^#<BlockScore::Person:0x/) }
     end
 
     describe '#update' do
@@ -174,7 +131,7 @@ module BlockScore
       before { person.save }
 
       it { is_expected.to be_persisted }
-      it { expect(person.class).to be BlockScore::Person }
+      its(:class) { should be BlockScore::Person }
     end
   end
 end

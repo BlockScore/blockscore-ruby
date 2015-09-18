@@ -1,0 +1,116 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"2000-04-26","name_first":"Carlie","name_last":"Smith","address_street1":"58901
+        Doug Row","address_city":"North Silasshire","address_country_code":"NP"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"9b4409bc14122754bafafb9688f47fc4"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 1e1a0497-6399-429b-a9ad-7a10744c7faa
+      X-Runtime:
+      - '0.040024'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 18 Sep 2015 17:10:58 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"55fc45a23238330003000717","created_at":1442596258,"updated_at":1442596258,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2000-04-26","name_first":"Carlie","name_middle":null,"name_last":"Smith","address_street1":"58901
+        Doug Row","address_street2":null,"address_city":"North Silasshire","address_subdivision":null,"address_postal_code":null,"address_country_code":"NP"}'
+    http_version: 
+  recorded_at: Fri, 18 Sep 2015 17:10:58 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/55fc45a23238330003000717
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"9b4409bc14122754bafafb9688f47fc4"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 9d2d22a3-db67-43bd-8c74-c44a1a474bdf
+      X-Runtime:
+      - '0.009142'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 18 Sep 2015 17:10:58 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"55fc45a23238330003000717","created_at":1442596258,"updated_at":1442596258,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2000-04-26","name_first":"Carlie","name_middle":null,"name_last":"Smith","address_street1":"58901
+        Doug Row","address_street2":null,"address_city":"North Silasshire","address_subdivision":null,"address_postal_code":null,"address_country_code":"NP"}'
+    http_version: 
+  recorded_at: Fri, 18 Sep 2015 17:10:58 GMT
+recorded_with: VCR 2.9.3

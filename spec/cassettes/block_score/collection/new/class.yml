@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Horace","name_last":"Eichmann","document_type":"ssn","document_value":"0000","birth_day":12,"birth_month":10,"birth_year":1952,"address_street1":"871
+        Fidel Pass","address_city":"Isidroburgh","address_subdivision":"OK","address_postal_code":"48008-0580","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"d3932c222a2577cf5c5bc32ff7a45bba"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 6e968cb5-ce9e-4281-9558-b4cc85d3d04a
+      X-Runtime:
+      - '0.184148'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 18 Sep 2015 17:11:22 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"55fc45ba3939360003000720","created_at":1442596282,"updated_at":1442596282,"status":"valid","livemode":false,"phone_number":null,"ip_address":"","birth_day":12,"birth_month":10,"birth_year":1952,"name_first":"Horace","name_middle":null,"name_last":"Eichmann","address_street1":"871
+        Fidel Pass","address_street2":null,"address_city":"Isidroburgh","address_subdivision":"OK","address_postal_code":"48008-0580","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version: 
+  recorded_at: Fri, 18 Sep 2015 17:11:22 GMT
+recorded_with: VCR 2.9.3

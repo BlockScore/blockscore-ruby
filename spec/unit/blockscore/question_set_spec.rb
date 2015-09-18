@@ -1,12 +1,10 @@
 module BlockScore
   RSpec.describe QuestionSet do
     describe '.new' do
-      subject(:person) do
-        BlockScore::QuestionSet.new
-      end
+      subject(:question_set) { BlockScore::QuestionSet.new }
 
       it { is_expected.not_to be_persisted }
-      it { expect(person.class).to be BlockScore::QuestionSet }
+      its(:class) { should be BlockScore::QuestionSet }
     end
 
     describe '.create' do
@@ -15,11 +13,11 @@ module BlockScore
         subject(:question_set) { BlockScore::QuestionSet.create(person_id: person_id) }
 
         it { is_expected.to be_persisted }
-        it { expect(question_set.class).to be BlockScore::QuestionSet }
+        its(:class) { should be BlockScore::QuestionSet }
       end
 
       context 'invaild person' do
-        let (:person_id) { create(:invalid_person).id }
+        let(:person_id) { create(:invalid_person).id }
 
         it { expect { BlockScore::QuestionSet.create(person_id: person_id) }.to raise_error BlockScore::InvalidRequestError }
       end
@@ -31,7 +29,7 @@ module BlockScore
         subject(:question_set) { BlockScore::QuestionSet.find(question_set_id) }
 
         it { is_expected.to be_persisted }
-        it { expect(question_set.questions).not_to be_empty }
+        its(:questions) { is_expected.not_to be_empty }
       end
 
       context 'invalid person id' do
@@ -46,49 +44,25 @@ module BlockScore
       subject(:question_set) { BlockScore::QuestionSet.retrieve(question_set_id) }
 
       it { is_expected.to be_persisted }
-      it { expect(question_set.questions).not_to be_empty }
-      it { expect(question_set.class).to be BlockScore::QuestionSet }
+      its(:questions) { is_expected.not_to be_empty }
+      its(:class) { should be BlockScore::QuestionSet }
     end
 
     describe '#score' do
+      subject(:question_set) { create(:question_set) }
+
       context 'correct answers' do
-        subject(:question_set) { create(:question_set) }
-        before do
-          answers = []
+        let(:answers) { QuestionSetHelper.correct_answers(question_set.questions) }
+        before { question_set.score(answers) }
 
-          question_set.questions.each do |question|
-            question.answers.each do |answer|
-              if ['309 Colver Rd', '812', 'Jasper', '49230', 'None Of The Above'].include? answer.answer
-                answers << { question_id: question.id, answer_id: answer.id }
-                break
-              end
-            end
-          end
-
-          question_set.score(answers)
-        end
-
-        it { expect(question_set.score).to eq 100.0 }
+        its(:score) { should eq 100.0 }
       end
 
       context 'incorrect answers' do
-        subject(:question_set) { create(:question_set) }
-        before do
-          answers = []
+        let(:answers) { QuestionSetHelper.incorrect_answers(question_set.questions) }
+        before { question_set.score(answers) }
 
-          question_set.questions.each do |question|
-            question.answers.each do |answer|
-              if ['309 Colver Rd', '812', 'Jasper', '49230', 'None Of The Above'].include? answer.answer
-                answers << { question_id: question.id, answer_id: (answer.id + 1) % 5 }
-                break
-              end
-            end
-          end
-
-          question_set.score(answers)
-        end
-
-        it { expect(question_set.score).to eq 0.0 }
+        its(:score) { should eq 0.0 }
       end
     end
 
@@ -99,12 +73,14 @@ module BlockScore
         question_set.refresh
       end
 
-      it { expect(question_set.questions).not_to be_empty }
+      its(:questions) { is_expected.not_to be_empty }
     end
 
     describe '#inspect' do
       subject(:question_set_inspection) { create(:question_set).inspect }
-      it { expect(question_set_inspection.class).to be String }
+
+      its(:class) { should be(String) }
+      it { is_expected.to match(/^#<BlockScore::QuestionSet:0x/) }
     end
 
     describe '#update' do
@@ -122,7 +98,7 @@ module BlockScore
       before { question_set.save }
 
       it { is_expected.to be_persisted }
-      it { expect(question_set.class).to be BlockScore::QuestionSet }
+      its(:class) { should be BlockScore::QuestionSet }
     end
   end
 end

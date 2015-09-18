@@ -3,37 +3,17 @@ require 'faker'
 module BlockScore
   RSpec.describe Candidate do
     describe '.new' do
-      subject(:candidate) do
-        BlockScore::Candidate.new(
-          ssn: '0000',
-          date_of_birth: Faker::Date.backward(365 * 100).to_s,
-          name_first: Faker::Name.first_name,
-          name_last: Faker::Name.last_name,
-          address_street1: Faker::Address.street_address,
-          address_city: Faker::Address.city,
-          address_country_code: Faker::Address.country_code
-        )
-      end
+      subject(:candidate) { BlockScore::Candidate.new(attributes_for(:candidate)) }
 
       it { is_expected.not_to be_persisted }
-      it { expect(candidate.class).to be BlockScore::Candidate }
+      its(:class) { should be BlockScore::Candidate }
     end
 
     describe '.create' do
-      subject(:candidate) do
-        BlockScore::Candidate.create(
-          ssn: '0000',
-          date_of_birth: Faker::Date.backward(365 * 100).to_s,
-          name_first: Faker::Name.first_name,
-          name_last: Faker::Name.last_name,
-          address_street1: Faker::Address.street_address,
-          address_city: Faker::Address.city,
-          address_country_code: Faker::Address.country_code
-        )
-      end
+      subject(:candidate) { BlockScore::Candidate.create(attributes_for(:candidate)) }
 
       it { is_expected.to be_persisted }
-      it { expect(candidate.class).to be BlockScore::Candidate }
+      its(:class) { should be BlockScore::Candidate }
     end
 
     pending '.find' do
@@ -42,7 +22,7 @@ module BlockScore
         subject(:candidate) { BlockScore::Candidate.find(candidate_id) }
 
         it { is_expected.to be_persisted }
-        it { expect(candidate.name_first).not_to be_empty }
+        its(:name_first) { is_expected.not_to be be_empty }
       end
 
       context 'invalid candidate id' do
@@ -57,8 +37,8 @@ module BlockScore
       subject(:candidate) { BlockScore::Candidate.retrieve(candidate_id) }
 
       it { is_expected.to be_persisted }
-      it { expect(candidate.name_first).not_to be_empty }
-      it { expect(candidate.class).to be BlockScore::Candidate }
+      its(:name_first) { is_expected.not_to be be_empty }
+      its(:class) { should be BlockScore::Candidate }
     end
 
     # NB: At the time of writing, the testing API does not reset. Making this
@@ -87,7 +67,7 @@ module BlockScore
         before { candidate.save }
 
         it { is_expected.to be_persisted }
-        it { expect(candidate.name_first).not_to be_empty }
+        its(:name_first) { is_expected.not_to be be_empty }
       end
 
       context 'when updating an existing candidate' do
@@ -98,7 +78,7 @@ module BlockScore
         end
 
         it { is_expected.to be_persisted }
-        it { expect(candidate.name_first).to eq 'Jane' }
+        its(:name_first) { is_expected.to eq 'Jane' }
       end
 
       pending 'after deleting a candidate' do
@@ -118,12 +98,14 @@ module BlockScore
         candidate.refresh
       end
 
-      it { expect(candidate.name_last).to eq 'Smith' }
+      its(:name_last) { is_expected.to eq 'Smith' }
     end
 
     describe '#inspect' do
       subject(:candidate_inspection) { create(:candidate).inspect }
-      it { expect(candidate_inspection.class).to be String }
+
+      its(:class) { should be String }
+      it { is_expected.to match(/^#<BlockScore::Candidate:0x/) }
     end
 
     pending '#update' do
@@ -133,15 +115,13 @@ module BlockScore
       end
 
       it { is_expected.to be_persisted }
-      it { expect(candidate.name_first).to eq 'Jane' }
+      its(:name_first) { is_expected.to eq 'Jane' }
     end
 
     describe '#delete' do
       subject(:candidate) { create(:candidate) }
       let(:candidate_id)  { candidate.id }
-      before do
-        candidate.delete
-      end
+      before { candidate.delete }
 
       it { is_expected.not_to be_persisted }
       it { expect { BlockScore::Candidate.retrieve(candidate_id).force! }.to raise_error BlockScore::NotFoundError }
@@ -157,7 +137,7 @@ module BlockScore
         candidate.save
       end
 
-      it { expect(candidate.history).not_to be_empty }
+      its(:history) { is_expected.not_to be_empty }
       it { expect(candidate.history[0].class).to be BlockScore::Candidate }
       it { expect(candidate.history[0].name_first).to eq 'version_2' }
       it { expect(candidate.history[1].name_first).to eq 'version_1' }
@@ -178,14 +158,14 @@ module BlockScore
         # ==================================================
       end
 
-      it { expect(candidate.hits).not_to be_empty }
+      its(:hits) { is_expected.not_to be_empty }
       it { expect(candidate.hits.first.class).to be BlockScore::WatchlistHit }
     end
 
     describe '#search' do
       subject(:candidate_search) { create(:watched_candidate).search }
 
-      it { expect(candidate_search).not_to be_empty }
+      it { is_expected.not_to be_empty }
       it { expect(candidate_search.first.class).to be BlockScore::WatchlistHit }
     end
   end

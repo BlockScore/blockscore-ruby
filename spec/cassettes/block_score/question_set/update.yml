@@ -1,0 +1,126 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Mitchel","name_last":"Stoltenberg","document_type":"ssn","document_value":"0000","birth_day":12,"birth_month":12,"birth_year":1954,"address_street1":"311
+        Adalberto Trail","address_city":"Lilytown","address_subdivision":"GA","address_postal_code":"21735","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"2745391a690d2e3425fd64a8d58c11c3"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 9fdd64b6-23f5-49b7-830d-78ba0de36e09
+      X-Runtime:
+      - '0.171364'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 18 Sep 2015 17:11:46 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"55fc45d13939360003000723","created_at":1442596305,"updated_at":1442596305,"status":"valid","livemode":false,"phone_number":null,"ip_address":"","birth_day":12,"birth_month":12,"birth_year":1954,"name_first":"Mitchel","name_middle":null,"name_last":"Stoltenberg","address_street1":"311
+        Adalberto Trail","address_street2":null,"address_city":"Lilytown","address_subdivision":"GA","address_postal_code":"21735","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version: 
+  recorded_at: Fri, 18 Sep 2015 17:11:46 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/question_sets
+    body:
+      encoding: UTF-8
+      string: '{"person_id":"55fc45d13939360003000723"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"5e8ae8fea133ed837baff5b42ad00a5c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 53ede129-4715-40a9-afc4-b31e5c917567
+      X-Runtime:
+      - '0.090062'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 18 Sep 2015 17:11:46 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"question_set","id":"55fc45d23939360003000724","created_at":1442596306,"updated_at":1442596306,"livemode":false,"person_id":"55fc45d13939360003000723","score":null,"expired":false,"time_limit":0,"questions":[{"id":1,"question":"Which
+        one of the following area codes is associated with you?","answers":[{"id":1,"answer":"336"},{"id":2,"answer":"904"},{"id":3,"answer":"812"},{"id":4,"answer":"605"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":2,"question":"Which one of the following adult individuals
+        is most closely associated with you?","answers":[{"id":1,"answer":"Luis"},{"id":2,"answer":"Nathan"},{"id":3,"answer":"Miranda"},{"id":4,"answer":"Evan"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":3,"question":"Which one of the following zip codes
+        is associated with you?","answers":[{"id":1,"answer":"49230"},{"id":2,"answer":"49532"},{"id":3,"answer":"49511"},{"id":4,"answer":"49184"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":4,"question":"What state was your SSN issued in?","answers":[{"id":1,"answer":"Kentucky"},{"id":2,"answer":"Oregon"},{"id":3,"answer":"New
+        Hampshire"},{"id":4,"answer":"Maine"},{"id":5,"answer":"None Of The Above"}]},{"id":5,"question":"Which
+        one of the following addresses is associated with you?","answers":[{"id":1,"answer":"902
+        Grass Lake Rd"},{"id":2,"answer":"467 Meridian Rd"},{"id":3,"answer":"309
+        Colver Rd"},{"id":4,"answer":"31 Cottage Ct"},{"id":5,"answer":"None Of The
+        Above"}]}]}'
+    http_version: 
+  recorded_at: Fri, 18 Sep 2015 17:11:46 GMT
+recorded_with: VCR 2.9.3
