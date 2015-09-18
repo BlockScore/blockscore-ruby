@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Elody","name_last":"Klocko","document_type":"ssn","document_value":"0001","birth_day":12,"birth_month":12,"birth_year":2002,"address_street1":"516
+        Adela Village","address_city":"Reingerfurt","address_subdivision":"OH","address_postal_code":"10386","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"d82c7c8261e2ca57e862becd128c4705"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 87ca3a2e-4a11-4160-894d-ac36a0ded40a
+      X-Runtime:
+      - '0.168422'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 18 Sep 2015 17:10:15 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"55fc45773236660003000729","created_at":1442596215,"updated_at":1442596215,"status":"invalid","livemode":false,"phone_number":null,"ip_address":"","birth_day":12,"birth_month":12,"birth_year":2002,"name_first":"Elody","name_middle":null,"name_last":"Klocko","address_street1":"516
+        Adela Village","address_street2":null,"address_city":"Reingerfurt","address_subdivision":"OH","address_postal_code":"10386","address_country_code":"US","document_type":"ssn","document_value":"0001","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version: 
+  recorded_at: Fri, 18 Sep 2015 17:10:15 GMT
+recorded_with: VCR 2.9.3

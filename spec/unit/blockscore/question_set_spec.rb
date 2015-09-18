@@ -1,42 +1,104 @@
 module BlockScore
   RSpec.describe QuestionSet do
-    let(:person) { create(:person_params) }
+    describe '.new' do
+      subject(:question_set) { BlockScore::QuestionSet.new }
 
-    describe 'api requests' do
-      let(:api_stub) { @api_stub }
+      it { is_expected.not_to be_persisted }
+      its(:class) { should be BlockScore::QuestionSet }
+    end
 
-      context 'when creating' do
-        it 'create' do
-          person.question_sets.count
-          person.question_sets.create
-          assert_requested(api_stub, times: 2)
-        end
+    describe '.create' do
+      context 'vaild person' do
+        let(:person_id) { create(:valid_person).id }
+        subject(:question_set) { BlockScore::QuestionSet.create(person_id: person_id) }
 
-        it 'create question_set count' do
-          count = person.question_sets.count
-          person.question_sets.create
-          expect(count + 1).to be_truthy
-          assert_requested(api_stub, times: 2)
-        end
+        it { is_expected.to be_persisted }
+        its(:class) { should be BlockScore::QuestionSet }
       end
 
-      context 'when scoring' do
-        let(:answers) do
-          [
-            { question_id: 1, answer_id: 1 },
-            { question_id: 2, answer_id: 1 },
-            { question_id: 3, answer_id: 1 },
-            { question_id: 4, answer_id: 1 },
-            { question_id: 5, answer_id: 1 }
-          ]
-        end
+      context 'invaild person' do
+        let(:person_id) { create(:invalid_person).id }
 
-        it 'score call does request' do
-          qs = person.question_sets.create
-          qs.score(answers)
-          assert_requested(api_stub, times: 3)
-        end
+        it { expect { BlockScore::QuestionSet.create(person_id: person_id) }.to raise_error BlockScore::InvalidRequestError }
       end
+    end
+
+    pending '.find' do
+      context 'valid question set id' do
+        let(:question_set_id)  { create(:question_set).id }
+        subject(:question_set) { BlockScore::QuestionSet.find(question_set_id) }
+
+        it { is_expected.to be_persisted }
+        its(:questions) { is_expected.not_to be_empty }
+      end
+
+      context 'invalid person id' do
+        let(:question_set_id) { 'f3a243ddc8075a6acd603b7758d05b3c' }
+
+        it { expect { BlockScore::QuestionSet.find(question_set_id) }.to raise_error BlockScore::RecordNotFound }
+      end
+    end
+
+    describe '.retrieve' do
+      let(:question_set_id)  { create(:question_set).id }
+      subject(:question_set) { BlockScore::QuestionSet.retrieve(question_set_id) }
+
+      it { is_expected.to be_persisted }
+      its(:questions) { is_expected.not_to be_empty }
+      its(:class) { should be BlockScore::QuestionSet }
+    end
+
+    describe '#score' do
+      subject(:question_set) { create(:question_set) }
+
+      context 'correct answers' do
+        let(:answers) { QuestionSetHelper.correct_answers(question_set.questions) }
+        before { question_set.score(answers) }
+
+        its(:score) { should eq 100.0 }
+      end
+
+      context 'incorrect answers' do
+        let(:answers) { QuestionSetHelper.incorrect_answers(question_set.questions) }
+        before { question_set.score(answers) }
+
+        its(:score) { should eq 0.0 }
+      end
+    end
+
+    describe '#refresh' do
+      subject(:question_set) { create(:question_set) }
+      before do
+        question_set.questions = nil
+        question_set.refresh
+      end
+
+      its(:questions) { is_expected.not_to be_empty }
+    end
+
+    describe '#inspect' do
+      subject(:question_set_inspection) { create(:question_set).inspect }
+
+      its(:class) { should be(String) }
+      it { is_expected.to match(/^#<BlockScore::QuestionSet:0x/) }
+    end
+
+    describe '#update' do
+      subject(:question_set) { create(:question_set) }
+      it { expect { question_set.delete }.to raise_error NoMethodError }
+    end
+
+    describe '#delete' do
+      subject(:question_set) { create(:question_set) }
+      it { expect { question_set.delete }.to raise_error NoMethodError }
+    end
+
+    describe '#save' do
+      subject(:question_set) { build(:question_set) }
+      before { question_set.save }
+
+      it { is_expected.to be_persisted }
+      its(:class) { should be BlockScore::QuestionSet }
     end
   end
 end

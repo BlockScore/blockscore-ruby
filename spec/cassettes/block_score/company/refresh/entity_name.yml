@@ -1,0 +1,116 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/companies
+    body:
+      encoding: UTF-8
+      string: '{"entity_name":"BlockScore","tax_id":"000000000","incorporation_country_code":"BQ","incorporation_type":"other","address_street1":"3568
+        O''Conner Pines","address_city":"Prestonland","address_subdivision":"OK","address_postal_code":"85284-5703","address_country_code":"SX"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"2f582030a5540addce86564a25813118"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 6d5a395d-5786-4afc-855b-e4a0a2ba7d48
+      X-Runtime:
+      - '0.071609'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 18 Sep 2015 17:10:26 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"company","id":"55fc45823939360003000712","created_at":1442596226,"updated_at":1442596226,"status":"valid","livemode":false,"entity_name":"BlockScore","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"BQ","incorporation_type":"other","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"3568
+        O''Conner Pines","address_street2":null,"address_city":"Prestonland","address_subdivision":"OK","address_postal_code":"85284-5703","address_country_code":"SX","details":{"ofac":"no_match","tax_id":"match","entity_name":"match","incorp_date":"no_match","state":"no_match","address":"no_match","country_code":"no_match"}}'
+    http_version: 
+  recorded_at: Fri, 18 Sep 2015 17:10:27 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/companies/55fc45823939360003000712
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"de7bed36f1f66908b5e8c9c59dfd22cb"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 1811e7ec-9428-4b30-8c84-584dc739aa61
+      X-Runtime:
+      - '0.013613'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 18 Sep 2015 17:10:27 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"company","id":"55fc45823939360003000712","created_at":1442596226,"updated_at":1442596226,"status":"valid","livemode":false,"entity_name":"BlockScore","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"BQ","incorporation_type":"other","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"3568
+        O''Conner Pines","address_street2":null,"address_city":"Prestonland","address_subdivision":"OK","address_postal_code":"85284-5703","address_country_code":"SX","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"match","incorp_date":"no_match","country_code":"no_match"}}'
+    http_version: 
+  recorded_at: Fri, 18 Sep 2015 17:10:27 GMT
+recorded_with: VCR 2.9.3

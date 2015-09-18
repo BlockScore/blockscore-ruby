@@ -1,0 +1,192 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Urban","name_last":"DuBuque","document_type":"ssn","document_value":"0000","birth_day":12,"birth_month":5,"birth_year":1941,"address_street1":"617
+        Fahey Manors","address_city":"South Williamburgh","address_subdivision":"ND","address_postal_code":"34709","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"94a3b8dfecc03c3b5c2cba53c0439798"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - f5e6841a-e615-4f5d-b8f8-e95d29172d0e
+      X-Runtime:
+      - '0.166670'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 18 Sep 2015 17:11:35 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"55fc45c63961380003000742","created_at":1442596294,"updated_at":1442596294,"status":"valid","livemode":false,"phone_number":null,"ip_address":"","birth_day":12,"birth_month":5,"birth_year":1941,"name_first":"Urban","name_middle":null,"name_last":"DuBuque","address_street1":"617
+        Fahey Manors","address_street2":null,"address_city":"South Williamburgh","address_subdivision":"ND","address_postal_code":"34709","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version: 
+  recorded_at: Fri, 18 Sep 2015 17:11:35 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/question_sets
+    body:
+      encoding: UTF-8
+      string: '{"person_id":"55fc45c63961380003000742"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"018205d3527511d1167605fb6d1424d5"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7af598c0-e2fb-4470-8454-cafbdab3d492
+      X-Runtime:
+      - '0.106489'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 18 Sep 2015 17:11:35 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"question_set","id":"55fc45c73961380003000743","created_at":1442596295,"updated_at":1442596295,"livemode":false,"person_id":"55fc45c63961380003000742","score":null,"expired":false,"time_limit":0,"questions":[{"id":1,"question":"Which
+        one of the following addresses is associated with you?","answers":[{"id":1,"answer":"123
+        Main St"},{"id":2,"answer":"31 Cottage Ct"},{"id":3,"answer":"309 Colver Rd"},{"id":4,"answer":"902
+        Grass Lake Rd"},{"id":5,"answer":"None Of The Above"}]},{"id":2,"question":"Which
+        one of the following area codes is associated with you?","answers":[{"id":1,"answer":"308"},{"id":2,"answer":"904"},{"id":3,"answer":"812"},{"id":4,"answer":"605"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":3,"question":"Which one of the following adult individuals
+        is most closely associated with you?","answers":[{"id":1,"answer":"Miranda"},{"id":2,"answer":"Evan"},{"id":3,"answer":"Nathan"},{"id":4,"answer":"Cecilia"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":4,"question":"Which one of the following zip codes
+        is associated with you?","answers":[{"id":1,"answer":"49557"},{"id":2,"answer":"49728"},{"id":3,"answer":"49230"},{"id":4,"answer":"49993"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":5,"question":"Which one of the following counties is
+        associated with you?","answers":[{"id":1,"answer":"Jasper"},{"id":2,"answer":"Sangamon"},{"id":3,"answer":"El
+        Paso"},{"id":4,"answer":"Niagara"},{"id":5,"answer":"None Of The Above"}]}]}'
+    http_version: 
+  recorded_at: Fri, 18 Sep 2015 17:11:35 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/question_sets/55fc45c73961380003000743
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"018205d3527511d1167605fb6d1424d5"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 7343dcfa-c585-4879-8bb6-e4b37d9c518c
+      X-Runtime:
+      - '0.025760'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 18 Sep 2015 17:11:36 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"question_set","id":"55fc45c73961380003000743","created_at":1442596295,"updated_at":1442596295,"livemode":false,"person_id":"55fc45c63961380003000742","score":null,"expired":false,"time_limit":0,"questions":[{"id":1,"question":"Which
+        one of the following addresses is associated with you?","answers":[{"id":1,"answer":"123
+        Main St"},{"id":2,"answer":"31 Cottage Ct"},{"id":3,"answer":"309 Colver Rd"},{"id":4,"answer":"902
+        Grass Lake Rd"},{"id":5,"answer":"None Of The Above"}]},{"id":2,"question":"Which
+        one of the following area codes is associated with you?","answers":[{"id":1,"answer":"308"},{"id":2,"answer":"904"},{"id":3,"answer":"812"},{"id":4,"answer":"605"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":3,"question":"Which one of the following adult individuals
+        is most closely associated with you?","answers":[{"id":1,"answer":"Miranda"},{"id":2,"answer":"Evan"},{"id":3,"answer":"Nathan"},{"id":4,"answer":"Cecilia"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":4,"question":"Which one of the following zip codes
+        is associated with you?","answers":[{"id":1,"answer":"49557"},{"id":2,"answer":"49728"},{"id":3,"answer":"49230"},{"id":4,"answer":"49993"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":5,"question":"Which one of the following counties is
+        associated with you?","answers":[{"id":1,"answer":"Jasper"},{"id":2,"answer":"Sangamon"},{"id":3,"answer":"El
+        Paso"},{"id":4,"answer":"Niagara"},{"id":5,"answer":"None Of The Above"}]}]}'
+    http_version: 
+  recorded_at: Fri, 18 Sep 2015 17:11:36 GMT
+recorded_with: VCR 2.9.3

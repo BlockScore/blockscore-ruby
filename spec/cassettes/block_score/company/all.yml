@@ -1,0 +1,210 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/companies
+    body:
+      encoding: UTF-8
+      string: '{"entity_name":"4580ab610751f6f37078329357ff98db","tax_id":"000000000","incorporation_country_code":"BT","incorporation_type":"corporation","address_street1":"499
+        Abraham Row","address_city":"Port Joelle","address_subdivision":"ID","address_postal_code":"19301","address_country_code":"SR"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"2e076b03dbdfd9b391a5390f4cab11ce"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - f48ca1ce-7c90-4b1e-8b7d-4a3da5d25f18
+      X-Runtime:
+      - '0.095164'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 18 Sep 2015 17:10:33 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"company","id":"55fc45893238330003000712","created_at":1442596233,"updated_at":1442596233,"status":"valid","livemode":false,"entity_name":"4580ab610751f6f37078329357ff98db","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"BT","incorporation_type":"corporation","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"499
+        Abraham Row","address_street2":null,"address_city":"Port Joelle","address_subdivision":"ID","address_postal_code":"19301","address_country_code":"SR","details":{"entity_name":"mismatch","tax_id":"match","state":"no_match","address":"no_match","country_code":"no_match","incorp_date":"no_match","ofac":"no_match"}}'
+    http_version: 
+  recorded_at: Fri, 18 Sep 2015 17:10:34 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/companies
+    body:
+      encoding: UTF-8
+      string: '{"entity_name":"0f222bcb487f9de689c5c60b854973bc","tax_id":"000000000","incorporation_country_code":"YE","incorporation_type":"partnership","address_street1":"452
+        Connelly Mount","address_city":"Lake Tiffanyburgh","address_subdivision":"FL","address_postal_code":"96590","address_country_code":"TV"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"670fa3ec5de51cfbcac466a69502876e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e2c68390-6267-4908-aaa3-b8bf22cb8528
+      X-Runtime:
+      - '0.066586'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 18 Sep 2015 17:10:34 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"company","id":"55fc458a3961380003000732","created_at":1442596234,"updated_at":1442596234,"status":"valid","livemode":false,"entity_name":"0f222bcb487f9de689c5c60b854973bc","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"YE","incorporation_type":"partnership","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"452
+        Connelly Mount","address_street2":null,"address_city":"Lake Tiffanyburgh","address_subdivision":"FL","address_postal_code":"96590","address_country_code":"TV","details":{"ofac":"no_match","tax_id":"match","entity_name":"mismatch","incorp_date":"no_match","state":"no_match","address":"no_match","country_code":"no_match"}}'
+    http_version: 
+  recorded_at: Fri, 18 Sep 2015 17:10:34 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/companies
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"d8482d4fb7b6d4ff9f14dbd9f3c7e46e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 5825d6a3-8e35-479f-a84c-fd6e1cc05a9c
+      X-Runtime:
+      - '0.092850'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 18 Sep 2015 17:10:35 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"total_count":1601,"has_more":true,"object":"list","data":[{"object":"company","id":"55fc458a3961380003000732","created_at":1442596234,"updated_at":1442596234,"status":"valid","livemode":false,"entity_name":"0f222bcb487f9de689c5c60b854973bc","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"YE","incorporation_type":"partnership","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"452
+        Connelly Mount","address_street2":null,"address_city":"Lake Tiffanyburgh","address_subdivision":"FL","address_postal_code":"96590","address_country_code":"TV","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"mismatch","incorp_date":"no_match","country_code":"no_match"}},{"object":"company","id":"55fc45893238330003000712","created_at":1442596233,"updated_at":1442596233,"status":"valid","livemode":false,"entity_name":"4580ab610751f6f37078329357ff98db","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"BT","incorporation_type":"corporation","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"499
+        Abraham Row","address_street2":null,"address_city":"Port Joelle","address_subdivision":"ID","address_postal_code":"19301","address_country_code":"SR","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"mismatch","incorp_date":"no_match","country_code":"no_match"}},{"object":"company","id":"55fc45893238330003000711","created_at":1442596233,"updated_at":1442596233,"status":"valid","livemode":false,"entity_name":"Stamm
+        and Sons","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"IN","incorporation_type":"llc","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"1145
+        Matt View","address_street2":null,"address_city":"Antoniamouth","address_subdivision":"AZ","address_postal_code":"25647","address_country_code":"BJ","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"mismatch","incorp_date":"no_match","country_code":"no_match"}},{"object":"company","id":"55fc4587323666000300072b","created_at":1442596231,"updated_at":1442596231,"status":"valid","livemode":false,"entity_name":"Koss,
+        Mante and Sporer","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"SX","incorporation_type":"llc","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"3524
+        Daniela Curve","address_street2":null,"address_city":"Lake Maciton","address_subdivision":"SD","address_postal_code":"37553","address_country_code":"AS","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"mismatch","incorp_date":"no_match","country_code":"no_match"}},{"object":"company","id":"55fc45863961380003000731","created_at":1442596230,"updated_at":1442596230,"status":"valid","livemode":false,"entity_name":"Ferry,
+        Donnelly and Dickinson","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"LR","incorporation_type":"corporation","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"3802
+        Stiedemann Shoals","address_street2":null,"address_city":"North Alfordburgh","address_subdivision":"DE","address_postal_code":"71327","address_country_code":"LA","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"mismatch","incorp_date":"no_match","country_code":"no_match"}},{"object":"company","id":"55fc45853238330003000710","created_at":1442596229,"updated_at":1442596229,"status":"valid","livemode":false,"entity_name":"Koelpin-Graham","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"DZ","incorporation_type":"corporation","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"7338
+        Weimann Glens","address_street2":null,"address_city":"West Mustafa","address_subdivision":"SD","address_postal_code":"99785-3087","address_country_code":"PW","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"mismatch","incorp_date":"no_match","country_code":"no_match"}},{"object":"company","id":"55fc4584323833000300070f","created_at":1442596228,"updated_at":1442596228,"status":"valid","livemode":false,"entity_name":"Gleason
+        Inc","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"IN","incorporation_type":"sp","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"2382
+        Schulist Mountains","address_street2":null,"address_city":"Adellaberg","address_subdivision":"SC","address_postal_code":"77687-4182","address_country_code":"MW","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"mismatch","incorp_date":"no_match","country_code":"no_match"}},{"object":"company","id":"55fc45833961380003000730","created_at":1442596227,"updated_at":1442596227,"status":"valid","livemode":false,"entity_name":"Stiedemann,
+        Turcotte and Erdman","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"AZ","incorporation_type":"sp","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"3351
+        Obie Loop","address_street2":null,"address_city":"Kovacekmouth","address_subdivision":"OK","address_postal_code":"63751-8682","address_country_code":"JM","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"mismatch","incorp_date":"no_match","country_code":"no_match"}},{"object":"company","id":"55fc45823939360003000712","created_at":1442596226,"updated_at":1442596226,"status":"valid","livemode":false,"entity_name":"BlockScore","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"BQ","incorporation_type":"other","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"3568
+        O''Conner Pines","address_street2":null,"address_city":"Prestonland","address_subdivision":"OK","address_postal_code":"85284-5703","address_country_code":"SX","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"match","incorp_date":"no_match","country_code":"no_match"}},{"object":"company","id":"55fc3f1932383300030006b5","created_at":1442594585,"updated_at":1442594585,"status":"invalid","livemode":false,"entity_name":"Johnson,
+        Reynolds and Schaden","tax_id":"000000001","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"CI","incorporation_type":"other","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"47456
+        Onie Turnpike","address_street2":null,"address_city":"MacGyvermouth","address_subdivision":"AR","address_postal_code":"95088-3836","address_country_code":"AS","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"mismatch","incorp_date":"no_match","country_code":"no_match"}},{"object":"company","id":"55fc3f1839613800030006d3","created_at":1442594584,"updated_at":1442594584,"status":"invalid","livemode":false,"entity_name":"Volkman
+        Inc","tax_id":"000000001","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"JP","incorporation_type":"corporation","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"34425
+        Mario Drive","address_street2":null,"address_city":"West Rosalinda","address_subdivision":"NJ","address_postal_code":"46896","address_country_code":"IT","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"mismatch","incorp_date":"no_match","country_code":"no_match"}},{"object":"company","id":"55fc3f1839613800030006d2","created_at":1442594584,"updated_at":1442594584,"status":"valid","livemode":false,"entity_name":"Dooley-Goldner","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"GI","incorporation_type":"other","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"375
+        Bode Avenue","address_street2":null,"address_city":"South Johanna","address_subdivision":"MN","address_postal_code":"72231-8874","address_country_code":"NI","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"mismatch","incorp_date":"no_match","country_code":"no_match"}},{"object":"company","id":"55fc3f1739393600030006b4","created_at":1442594583,"updated_at":1442594583,"status":"valid","livemode":false,"entity_name":"Goldner-Becker","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"SV","incorporation_type":"partnership","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"2130
+        Karley Neck","address_street2":null,"address_city":"North Shealand","address_subdivision":"DE","address_postal_code":"72543","address_country_code":"ES","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"mismatch","incorp_date":"no_match","country_code":"no_match"}},{"object":"company","id":"55fc3f1632383300030006b4","created_at":1442594582,"updated_at":1442594582,"status":"valid","livemode":false,"entity_name":"Spencer,
+        Bechtelar and Ruecker","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"MC","incorporation_type":"other","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"25098
+        Nicholaus Field","address_street2":null,"address_city":"Waldoshire","address_subdivision":"NM","address_postal_code":"51322","address_country_code":"TT","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"mismatch","incorp_date":"no_match","country_code":"no_match"}},{"object":"company","id":"55fc3f1632366600030006bc","created_at":1442594582,"updated_at":1442594582,"status":"valid","livemode":false,"entity_name":"Reinger,
+        Frami and Marks","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"MA","incorporation_type":"llc","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"54648
+        Schaden Stream","address_street2":null,"address_city":"East Uriahchester","address_subdivision":"WI","address_postal_code":"58200","address_country_code":"TO","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"mismatch","incorp_date":"no_match","country_code":"no_match"}},{"object":"company","id":"55fc3f1539613800030006d1","created_at":1442594581,"updated_at":1442594581,"status":"valid","livemode":false,"entity_name":"Lang,
+        Daniel and Leuschke","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"MS","incorporation_type":"other","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"54186
+        Erdman Crossing","address_street2":null,"address_city":"West Daxberg","address_subdivision":"TX","address_postal_code":"22497","address_country_code":"UG","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"mismatch","incorp_date":"no_match","country_code":"no_match"}},{"object":"company","id":"55fc3f1432366600030006bb","created_at":1442594580,"updated_at":1442594580,"status":"valid","livemode":false,"entity_name":"Abshire,
+        Kerluke and Frami","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"LR","incorporation_type":"sp","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"91846
+        Wilfrid Parks","address_street2":null,"address_city":"West Benedict","address_subdivision":"FL","address_postal_code":"67646-8181","address_country_code":"SK","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"mismatch","incorp_date":"no_match","country_code":"no_match"}},{"object":"company","id":"55fc3f1332366600030006ba","created_at":1442594579,"updated_at":1442594579,"status":"valid","livemode":false,"entity_name":"Price-Hane","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"IM","incorporation_type":"partnership","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"508
+        Anderson Garden","address_street2":null,"address_city":"South Dorcas","address_subdivision":"ID","address_postal_code":"86135","address_country_code":"GE","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"mismatch","incorp_date":"no_match","country_code":"no_match"}},{"object":"company","id":"55fc3f1339613800030006d0","created_at":1442594579,"updated_at":1442594579,"status":"valid","livemode":false,"entity_name":"Steuber,
+        Medhurst and D''Amore","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"PY","incorporation_type":"other","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"5270
+        Manuela Fall","address_street2":null,"address_city":"Klinghaven","address_subdivision":"AZ","address_postal_code":"92219-7575","address_country_code":"EE","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"mismatch","incorp_date":"no_match","country_code":"no_match"}},{"object":"company","id":"55fc3f1239393600030006b3","created_at":1442594578,"updated_at":1442594578,"status":"valid","livemode":false,"entity_name":"BlockScore","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"ZM","incorporation_type":"sp","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"97999
+        Cade Groves","address_street2":null,"address_city":"Langmouth","address_subdivision":"HI","address_postal_code":"37686-7604","address_country_code":"GW","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"match","incorp_date":"no_match","country_code":"no_match"}},{"object":"company","id":"55fc3f1032366600030006b9","created_at":1442594576,"updated_at":1442594576,"status":"valid","livemode":false,"entity_name":"Fahey-Johnson","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"CA","incorporation_type":"llc","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"393
+        Bashirian Fall","address_street2":null,"address_city":"Caterinaport","address_subdivision":"MT","address_postal_code":"92630","address_country_code":"MY","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"mismatch","incorp_date":"no_match","country_code":"no_match"}},{"object":"company","id":"55fc3f1039393600030006b2","created_at":1442594576,"updated_at":1442594576,"status":"valid","livemode":false,"entity_name":"Greenfelder-Borer","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"TV","incorporation_type":"other","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"3641
+        Lesley Junction","address_street2":null,"address_city":"East Jaylanshire","address_subdivision":"VT","address_postal_code":"16426","address_country_code":"LV","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"mismatch","incorp_date":"no_match","country_code":"no_match"}},{"object":"company","id":"55fc3f0f32366600030006b8","created_at":1442594575,"updated_at":1442594575,"status":"valid","livemode":false,"entity_name":"Renner
+        LLC","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"VN","incorporation_type":"corporation","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"4289
+        Dach Hollow","address_street2":null,"address_city":"Lake Rahul","address_subdivision":"CO","address_postal_code":"38160","address_country_code":"SJ","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"mismatch","incorp_date":"no_match","country_code":"no_match"}},{"object":"company","id":"55fc3f0d32366600030006b7","created_at":1442594573,"updated_at":1442594573,"status":"valid","livemode":false,"entity_name":"0f222bcb487f9de689c5c60b854973bc","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"PM","incorporation_type":"other","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"233
+        Patience Ways","address_street2":null,"address_city":"Bennybury","address_subdivision":"MN","address_postal_code":"88480","address_country_code":"GQ","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"mismatch","incorp_date":"no_match","country_code":"no_match"}},{"object":"company","id":"55fc3f0c39613800030006cf","created_at":1442594572,"updated_at":1442594572,"status":"valid","livemode":false,"entity_name":"4580ab610751f6f37078329357ff98db","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"LB","incorporation_type":"other","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"294
+        Kirlin Locks","address_street2":null,"address_city":"East Kareem","address_subdivision":"IA","address_postal_code":"77350-7578","address_country_code":"KM","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"mismatch","incorp_date":"no_match","country_code":"no_match"}}]}'
+    http_version: 
+  recorded_at: Fri, 18 Sep 2015 17:10:35 GMT
+recorded_with: VCR 2.9.3

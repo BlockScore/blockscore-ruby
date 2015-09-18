@@ -29,7 +29,7 @@ module BlockScore
 
     def inspect
       str_attr = "JSON:#{JSON.pretty_generate(attributes)}"
-      "#<#{self.class}:0x#{object_id.to_s(16)} #{str_attr}>"
+      "#<#{self.class}:#{format('%#016x', object_id << 1)} #{str_attr}>"
     end
 
     def refresh
@@ -69,7 +69,7 @@ module BlockScore
     end
 
     def persisted?
-      !id.nil?
+      !id.nil? && !attributes[:deleted]
     end
 
     protected

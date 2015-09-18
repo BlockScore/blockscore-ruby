@@ -1,0 +1,194 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Jan","name_last":"Okuneva","document_type":"ssn","document_value":"0000","birth_day":12,"birth_month":2,"birth_year":2013,"address_street1":"97765
+        Hazel Canyon","address_city":"New Domenic","address_subdivision":"HI","address_postal_code":"33573-6001","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"0edbd90669d18c3fcfafdf75b5d97099"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 9aa402bb-0e73-4403-b917-dc4776f81cbf
+      X-Runtime:
+      - '0.205248'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 18 Sep 2015 17:11:49 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"55fc45d53238330003000723","created_at":1442596309,"updated_at":1442596309,"status":"valid","livemode":false,"phone_number":null,"ip_address":"","birth_day":12,"birth_month":2,"birth_year":2013,"name_first":"Jan","name_middle":null,"name_last":"Okuneva","address_street1":"97765
+        Hazel Canyon","address_street2":null,"address_city":"New Domenic","address_subdivision":"HI","address_postal_code":"33573-6001","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version: 
+  recorded_at: Fri, 18 Sep 2015 17:11:50 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/question_sets
+    body:
+      encoding: UTF-8
+      string: '{"person_id":"55fc45d53238330003000723"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"23dd37e7f8585e47d79a4412c56c4b6e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a056026e-8275-41d4-a6cc-ea13c70660b6
+      X-Runtime:
+      - '0.087699'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 18 Sep 2015 17:11:50 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"question_set","id":"55fc45d63939360003000726","created_at":1442596310,"updated_at":1442596310,"livemode":false,"person_id":"55fc45d53238330003000723","score":null,"expired":false,"time_limit":0,"questions":[{"id":1,"question":"Which
+        one of the following area codes is associated with you?","answers":[{"id":1,"answer":"605"},{"id":2,"answer":"904"},{"id":3,"answer":"812"},{"id":4,"answer":"832"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":2,"question":"Which one of the following adult individuals
+        is most closely associated with you?","answers":[{"id":1,"answer":"Jose"},{"id":2,"answer":"Nicole"},{"id":3,"answer":"Julian"},{"id":4,"answer":"Jason"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":3,"question":"What state was your SSN issued in?","answers":[{"id":1,"answer":"Idaho"},{"id":2,"answer":"New
+        Hampshire"},{"id":3,"answer":"Kentucky"},{"id":4,"answer":"Delaware"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":4,"question":"Which one of the following counties is
+        associated with you?","answers":[{"id":1,"answer":"Jasper"},{"id":2,"answer":"El
+        Paso"},{"id":3,"answer":"Floyd"},{"id":4,"answer":"Boone"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":5,"question":"Which one of the following addresses
+        is associated with you?","answers":[{"id":1,"answer":"309 Colver Rd"},{"id":2,"answer":"430
+        Dwight"},{"id":3,"answer":"31 Cottage Ct"},{"id":4,"answer":"467 Meridian
+        Rd"},{"id":5,"answer":"None Of The Above"}]}]}'
+    http_version: 
+  recorded_at: Fri, 18 Sep 2015 17:11:50 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/question_sets/55fc45d63939360003000726/score
+    body:
+      encoding: UTF-8
+      string: '{"answers":[{"question_id":1,"answer_id":3},{"question_id":2,"answer_id":5},{"question_id":3,"answer_id":5},{"question_id":4,"answer_id":1},{"question_id":5,"answer_id":1}]}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"e16b66430beaa8e952b98c4969ca37c7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 523ee2de-3928-4af4-885b-2868c3880c73
+      X-Runtime:
+      - '0.048786'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 18 Sep 2015 17:11:51 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"question_set","id":"55fc45d63939360003000726","created_at":1442596310,"updated_at":1442596311,"livemode":false,"person_id":"55fc45d53238330003000723","score":100.0,"expired":false,"time_limit":0,"questions":[{"id":1,"question":"Which
+        one of the following area codes is associated with you?","answers":[{"id":1,"answer":"605"},{"id":2,"answer":"904"},{"id":3,"answer":"812"},{"id":4,"answer":"832"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":2,"question":"Which one of the following adult individuals
+        is most closely associated with you?","answers":[{"id":1,"answer":"Jose"},{"id":2,"answer":"Nicole"},{"id":3,"answer":"Julian"},{"id":4,"answer":"Jason"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":3,"question":"What state was your SSN issued in?","answers":[{"id":1,"answer":"Idaho"},{"id":2,"answer":"New
+        Hampshire"},{"id":3,"answer":"Kentucky"},{"id":4,"answer":"Delaware"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":4,"question":"Which one of the following counties is
+        associated with you?","answers":[{"id":1,"answer":"Jasper"},{"id":2,"answer":"El
+        Paso"},{"id":3,"answer":"Floyd"},{"id":4,"answer":"Boone"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":5,"question":"Which one of the following addresses
+        is associated with you?","answers":[{"id":1,"answer":"309 Colver Rd"},{"id":2,"answer":"430
+        Dwight"},{"id":3,"answer":"31 Cottage Ct"},{"id":4,"answer":"467 Meridian
+        Rd"},{"id":5,"answer":"None Of The Above"}]}]}'
+    http_version: 
+  recorded_at: Fri, 18 Sep 2015 17:11:51 GMT
+recorded_with: VCR 2.9.3

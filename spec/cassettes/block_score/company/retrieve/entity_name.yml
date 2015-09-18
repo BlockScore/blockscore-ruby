@@ -1,0 +1,118 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/companies
+    body:
+      encoding: UTF-8
+      string: '{"entity_name":"Koss, Mante and Sporer","tax_id":"000000000","incorporation_country_code":"SX","incorporation_type":"llc","address_street1":"3524
+        Daniela Curve","address_city":"Lake Maciton","address_subdivision":"SD","address_postal_code":"37553","address_country_code":"AS"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"975cd8f68d5acb1590d2df51351b87e6"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ed7934e0-ff5c-4f2c-9f77-85339ee71ed0
+      X-Runtime:
+      - '0.066816'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 18 Sep 2015 17:10:31 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"company","id":"55fc4587323666000300072b","created_at":1442596231,"updated_at":1442596231,"status":"valid","livemode":false,"entity_name":"Koss,
+        Mante and Sporer","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"SX","incorporation_type":"llc","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"3524
+        Daniela Curve","address_street2":null,"address_city":"Lake Maciton","address_subdivision":"SD","address_postal_code":"37553","address_country_code":"AS","details":{"entity_name":"mismatch","incorp_date":"no_match","tax_id":"match","state":"no_match","address":"no_match","country_code":"no_match","ofac":"no_match"}}'
+    http_version: 
+  recorded_at: Fri, 18 Sep 2015 17:10:32 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/companies/55fc4587323666000300072b
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"43759648ef5ed7c153b61c4365df35c0"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - ae02b848-14dc-430a-9099-94be62235b94
+      X-Runtime:
+      - '0.014069'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 18 Sep 2015 17:10:32 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"company","id":"55fc4587323666000300072b","created_at":1442596231,"updated_at":1442596231,"status":"valid","livemode":false,"entity_name":"Koss,
+        Mante and Sporer","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"SX","incorporation_type":"llc","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":"","address_street1":"3524
+        Daniela Curve","address_street2":null,"address_city":"Lake Maciton","address_subdivision":"SD","address_postal_code":"37553","address_country_code":"AS","details":{"ofac":"no_match","state":"no_match","tax_id":"match","address":"no_match","entity_name":"mismatch","incorp_date":"no_match","country_code":"no_match"}}'
+    http_version: 
+  recorded_at: Fri, 18 Sep 2015 17:10:32 GMT
+recorded_with: VCR 2.9.3

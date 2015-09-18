@@ -1,0 +1,125 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Johnnie","name_last":"Ortiz","document_type":"ssn","document_value":"0000","birth_day":12,"birth_month":5,"birth_year":1977,"address_street1":"21288
+        Hilpert Hollow","address_city":"Lake Jakobville","address_subdivision":"NV","address_postal_code":"93594","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"1ee047eda46ebace7b0430b5a4f15a11"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 06ee7321-4aab-4f07-889f-0aecf41b54de
+      X-Runtime:
+      - '0.185096'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 18 Sep 2015 17:11:17 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"55fc45b5323833000300071d","created_at":1442596277,"updated_at":1442596277,"status":"valid","livemode":false,"phone_number":null,"ip_address":"","birth_day":12,"birth_month":5,"birth_year":1977,"name_first":"Johnnie","name_middle":null,"name_last":"Ortiz","address_street1":"21288
+        Hilpert Hollow","address_street2":null,"address_city":"Lake Jakobville","address_subdivision":"NV","address_postal_code":"93594","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version: 
+  recorded_at: Fri, 18 Sep 2015 17:11:17 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/question_sets
+    body:
+      encoding: UTF-8
+      string: '{"person_id":"55fc45b5323833000300071d"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f7c6a6c82f87c189a318c359eb181272"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 2737c4e4-1388-423d-a6cc-e0c232decfbd
+      X-Runtime:
+      - '0.100245'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 18 Sep 2015 17:11:18 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"question_set","id":"55fc45b6393936000300071e","created_at":1442596278,"updated_at":1442596278,"livemode":false,"person_id":"55fc45b5323833000300071d","score":null,"expired":false,"time_limit":0,"questions":[{"id":1,"question":"What
+        state was your SSN issued in?","answers":[{"id":1,"answer":"Idaho"},{"id":2,"answer":"Oklahoma"},{"id":3,"answer":"Kentucky"},{"id":4,"answer":"Maine"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":2,"question":"Which one of the following zip codes
+        is associated with you?","answers":[{"id":1,"answer":"49557"},{"id":2,"answer":"49728"},{"id":3,"answer":"49230"},{"id":4,"answer":"49268"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":3,"question":"Which one of the following adult individuals
+        is most closely associated with you?","answers":[{"id":1,"answer":"Jose"},{"id":2,"answer":"Cecilia"},{"id":3,"answer":"Nathan"},{"id":4,"answer":"Evan"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":4,"question":"Which one of the following area codes
+        is associated with you?","answers":[{"id":1,"answer":"812"},{"id":2,"answer":"308"},{"id":3,"answer":"336"},{"id":4,"answer":"832"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":5,"question":"Which one of the following counties is
+        associated with you?","answers":[{"id":1,"answer":"Floyd"},{"id":2,"answer":"Jasper"},{"id":3,"answer":"Schoharie"},{"id":4,"answer":"Nantucket"},{"id":5,"answer":"None
+        Of The Above"}]}]}'
+    http_version: 
+  recorded_at: Fri, 18 Sep 2015 17:11:18 GMT
+recorded_with: VCR 2.9.3
