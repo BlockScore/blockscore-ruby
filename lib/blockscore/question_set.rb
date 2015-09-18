@@ -13,7 +13,7 @@ module BlockScore
         attributes[:score]
       else
         @attributes = post("#{endpoint}/#{id}/score", answers: answers).attributes
-        self
+        score
       end
     end
   end
