@@ -1,0 +1,258 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Tyree","name_last":"Flatley","document_type":"ssn","document_value":"0000","birth_day":12,"birth_month":4,"birth_year":1996,"address_street1":"309
+        Franecki Stream","address_city":"East Zoiestad","address_subdivision":"OH","address_postal_code":"26964","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b5b05ab273113d669fabecad4af7c736"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 928817a3-9986-4f01-a28e-6cda4b4c88cf
+      X-Runtime:
+      - '0.185736'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 18 Sep 2015 20:14:23 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"55fc709f32366600030008d2","created_at":1442607263,"updated_at":1442607263,"status":"valid","livemode":false,"phone_number":null,"ip_address":"","birth_day":12,"birth_month":4,"birth_year":1996,"name_first":"Tyree","name_middle":null,"name_last":"Flatley","address_street1":"309
+        Franecki Stream","address_street2":null,"address_city":"East Zoiestad","address_subdivision":"OH","address_postal_code":"26964","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version: 
+  recorded_at: Fri, 18 Sep 2015 20:14:23 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/question_sets
+    body:
+      encoding: UTF-8
+      string: '{"person_id":"55fc709f32366600030008d2"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"c9a248fe3e8356ce81fce62b6e55d34f"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - d641cd5c-38b7-4ac6-b839-623a927d46ea
+      X-Runtime:
+      - '0.119202'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 18 Sep 2015 20:14:24 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"question_set","id":"55fc70a0323833000300089c","created_at":1442607264,"updated_at":1442607264,"livemode":false,"person_id":"55fc709f32366600030008d2","score":null,"expired":false,"time_limit":0,"questions":[{"id":1,"question":"Which
+        one of the following counties is associated with you?","answers":[{"id":1,"answer":"Nantucket"},{"id":2,"answer":"Niagara"},{"id":3,"answer":"Sangamon"},{"id":4,"answer":"Jasper"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":2,"question":"Which one of the following area codes
+        is associated with you?","answers":[{"id":1,"answer":"812"},{"id":2,"answer":"605"},{"id":3,"answer":"904"},{"id":4,"answer":"308"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":3,"question":"Which one of the following adult individuals
+        is most closely associated with you?","answers":[{"id":1,"answer":"Evan"},{"id":2,"answer":"Nicole"},{"id":3,"answer":"Julian"},{"id":4,"answer":"Nathan"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":4,"question":"Which one of the following addresses
+        is associated with you?","answers":[{"id":1,"answer":"52 Canandaigua Rd"},{"id":2,"answer":"309
+        Colver Rd"},{"id":3,"answer":"902 Grass Lake Rd"},{"id":4,"answer":"863 Carelton"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":5,"question":"What state was your SSN issued in?","answers":[{"id":1,"answer":"New
+        Hampshire"},{"id":2,"answer":"Delaware"},{"id":3,"answer":"California"},{"id":4,"answer":"Maine"},{"id":5,"answer":"None
+        Of The Above"}]}]}'
+    http_version: 
+  recorded_at: Fri, 18 Sep 2015 20:14:24 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/question_sets/55fc70a0323833000300089c/score
+    body:
+      encoding: UTF-8
+      string: '{"answers":[{"question_id":1,"answer_id":4},{"question_id":2,"answer_id":1},{"question_id":3,"answer_id":5},{"question_id":4,"answer_id":2},{"question_id":5,"answer_id":5}]}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"06d42f92eca2334156edf8455514a2e9"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 77506c14-b965-47d3-91b5-eaa35a562738
+      X-Runtime:
+      - '0.048940'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 18 Sep 2015 20:14:25 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"question_set","id":"55fc70a0323833000300089c","created_at":1442607264,"updated_at":1442607265,"livemode":false,"person_id":"55fc709f32366600030008d2","score":100.0,"expired":false,"time_limit":0,"questions":[{"id":1,"question":"Which
+        one of the following counties is associated with you?","answers":[{"id":1,"answer":"Nantucket"},{"id":2,"answer":"Niagara"},{"id":3,"answer":"Sangamon"},{"id":4,"answer":"Jasper"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":2,"question":"Which one of the following area codes
+        is associated with you?","answers":[{"id":1,"answer":"812"},{"id":2,"answer":"605"},{"id":3,"answer":"904"},{"id":4,"answer":"308"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":3,"question":"Which one of the following adult individuals
+        is most closely associated with you?","answers":[{"id":1,"answer":"Evan"},{"id":2,"answer":"Nicole"},{"id":3,"answer":"Julian"},{"id":4,"answer":"Nathan"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":4,"question":"Which one of the following addresses
+        is associated with you?","answers":[{"id":1,"answer":"52 Canandaigua Rd"},{"id":2,"answer":"309
+        Colver Rd"},{"id":3,"answer":"902 Grass Lake Rd"},{"id":4,"answer":"863 Carelton"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":5,"question":"What state was your SSN issued in?","answers":[{"id":1,"answer":"New
+        Hampshire"},{"id":2,"answer":"Delaware"},{"id":3,"answer":"California"},{"id":4,"answer":"Maine"},{"id":5,"answer":"None
+        Of The Above"}]}]}'
+    http_version: 
+  recorded_at: Fri, 18 Sep 2015 20:14:25 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/question_sets/55fc70a0323833000300089c/score
+    body:
+      encoding: UTF-8
+      string: '{"answers":[{"question_id":1,"answer_id":4},{"question_id":2,"answer_id":1},{"question_id":3,"answer_id":5},{"question_id":4,"answer_id":2},{"question_id":5,"answer_id":5}]}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"06d42f92eca2334156edf8455514a2e9"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 563cddef-aa0f-4d9b-a1a7-784f97a63f4f
+      X-Runtime:
+      - '0.052519'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 18 Sep 2015 20:14:25 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"question_set","id":"55fc70a0323833000300089c","created_at":1442607264,"updated_at":1442607265,"livemode":false,"person_id":"55fc709f32366600030008d2","score":100.0,"expired":false,"time_limit":0,"questions":[{"id":1,"question":"Which
+        one of the following counties is associated with you?","answers":[{"id":1,"answer":"Nantucket"},{"id":2,"answer":"Niagara"},{"id":3,"answer":"Sangamon"},{"id":4,"answer":"Jasper"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":2,"question":"Which one of the following area codes
+        is associated with you?","answers":[{"id":1,"answer":"812"},{"id":2,"answer":"605"},{"id":3,"answer":"904"},{"id":4,"answer":"308"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":3,"question":"Which one of the following adult individuals
+        is most closely associated with you?","answers":[{"id":1,"answer":"Evan"},{"id":2,"answer":"Nicole"},{"id":3,"answer":"Julian"},{"id":4,"answer":"Nathan"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":4,"question":"Which one of the following addresses
+        is associated with you?","answers":[{"id":1,"answer":"52 Canandaigua Rd"},{"id":2,"answer":"309
+        Colver Rd"},{"id":3,"answer":"902 Grass Lake Rd"},{"id":4,"answer":"863 Carelton"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":5,"question":"What state was your SSN issued in?","answers":[{"id":1,"answer":"New
+        Hampshire"},{"id":2,"answer":"Delaware"},{"id":3,"answer":"California"},{"id":4,"answer":"Maine"},{"id":5,"answer":"None
+        Of The Above"}]}]}'
+    http_version: 
+  recorded_at: Fri, 18 Sep 2015 20:14:25 GMT
+recorded_with: VCR 2.9.3

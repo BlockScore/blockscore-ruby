@@ -50,19 +50,21 @@ module BlockScore
 
     describe '#score' do
       subject(:question_set) { create(:question_set) }
+      let(:correct_answers) { QuestionSetHelper.correct_answers(question_set.questions) }
+      let(:incorrect_answers) { QuestionSetHelper.incorrect_answers(question_set.questions) }
 
       context 'correct answers' do
-        let(:answers) { QuestionSetHelper.correct_answers(question_set.questions) }
-        before { question_set.score(answers) }
+        before { question_set.score(correct_answers) }
 
         its(:score) { should eq 100.0 }
+        it { expect(question_set.score(correct_answers)).to eq 100.0 }
       end
 
       context 'incorrect answers' do
-        let(:answers) { QuestionSetHelper.incorrect_answers(question_set.questions) }
-        before { question_set.score(answers) }
+        before { question_set.score(incorrect_answers) }
 
         its(:score) { should eq 0.0 }
+        it { expect(question_set.score(incorrect_answers)).to eq 0.0 }
       end
     end
 
