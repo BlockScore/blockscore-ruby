@@ -1,4 +1,4 @@
-# Blockscore-Ruby ![logo](https://d1vf4z01lc8cfc.cloudfront.net/assets/logo-footer-ee82ad3d16c743790d0bc4baa14c393a.png)
+# blockscore-ruby
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/BlockScore/blockscore-ruby/blob/master/LICENSE)
 [![Circle CI](https://img.shields.io/circleci/project/BlockScore/blockscore-ruby/master.svg?style=flat-square)](https://circleci.com/gh/BlockScore/blockscore-ruby)
