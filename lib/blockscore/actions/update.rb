@@ -27,19 +27,38 @@ module BlockScore
 
       def_delegators 'self.class', :endpoint, :patch
 
+      # May be deprecated in future releases, prefer :update.
       def save!
         if persisted?
-          patch("#{endpoint}/#{id}", filter_params)
+          patch(update_url, filter_params)
           true
         else
           super
         end
       end
 
+      def update(params)
+        update!(params)
+        true
+      rescue
+        false
+      end
+
+      def update!(params)
+        response = patch(update_url, params)
+        initialize_from(response.attributes)
+      end
+
       # Filters out the non-updateable params.
       def filter_params
         # Cannot %i syntax, not introduced until Ruby 2.0.0
         attributes.reject { |key, _| PERSISTENT_ATTRIBUTES.include?(key) }
+      end
+
+      private
+      
+      def update_url
+        "#{endpoint}/#{id}"    
       end
     end
   end

@@ -90,6 +90,11 @@ module BlockScore
       end
     end
 
+    # Reinitializes an object based on a hash of values.
+    def initialize_from(values)
+      @attributes = values
+    end
+
     private
 
     def method_missing(method, *args, &block)
