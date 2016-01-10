@@ -13,6 +13,11 @@ module BlockScore
     #  foo.name_first = 'John'
     #  foo.save
     #  # => true
+    #
+    #  foo = Foo.new(name_first: 'John')
+    #  foo.update(name_first: 'Jane')
+    #  foo.name_first
+    #  # => 'Jane'
     module Update
       extend Forwardable
 
@@ -46,7 +51,7 @@ module BlockScore
 
       def update!(params)
         response = patch(update_url, params)
-        initialize_from(response.attributes)
+        self.attributes = response.attributes
       end
 
       # Filters out the non-updateable params.
