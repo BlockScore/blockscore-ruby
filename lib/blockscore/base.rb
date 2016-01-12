@@ -90,9 +90,6 @@ module BlockScore
       end
     end
 
-    # Allow reinitialization of an object's attributes. In the future, if
-    # more work is done during reinitialization, may want to break this out
-    # into a :initialize_from method.
     attr_writer :attributes
 
     private

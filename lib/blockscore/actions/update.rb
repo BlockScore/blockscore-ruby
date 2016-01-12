@@ -32,7 +32,6 @@ module BlockScore
 
       def_delegators 'self.class', :endpoint, :patch
 
-      # May be deprecated in future releases, prefer :update.
       def save!
         if persisted?
           patch(update_url, filter_params)
