@@ -1,0 +1,116 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1988-07-26","name_first":"John","name_last":"Gorczany","address_street1":"4788
+        Jerrell Port","address_city":"New Stoneshire","address_country_code":"CH"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"5e017096a6446afb3e4811f32719fd2f"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 1b4a4e7d-ebb4-4724-9c7d-997cd9758ade
+      X-Runtime:
+      - '0.041767'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Sat, 09 Jan 2016 03:24:38 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56907d76333764000300030e","created_at":1452309878,"updated_at":1452309878,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1988-07-26","name_first":"John","name_middle":null,"name_last":"Gorczany","address_street1":"4788
+        Jerrell Port","address_street2":null,"address_city":"New Stoneshire","address_subdivision":null,"address_postal_code":null,"address_country_code":"CH"}'
+    http_version: 
+  recorded_at: Sat, 09 Jan 2016 03:24:38 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56907d76333764000300030e
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Jane"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"9e5b34483f0d76e7f6d0d196c865db48"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a8dca8bb-310e-4d67-8e70-2c4900c6d502
+      X-Runtime:
+      - '0.024184'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Sat, 09 Jan 2016 03:24:38 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56907d76333764000300030e","created_at":1452309878,"updated_at":1452309878,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1988-07-26","name_first":"Jane","name_middle":null,"name_last":"Gorczany","address_street1":"4788
+        Jerrell Port","address_street2":null,"address_city":"New Stoneshire","address_subdivision":null,"address_postal_code":null,"address_country_code":"CH"}'
+    http_version: 
+  recorded_at: Sat, 09 Jan 2016 03:24:38 GMT
+recorded_with: VCR 3.0.1

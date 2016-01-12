@@ -1,0 +1,116 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1935-09-16","name_first":"John","name_last":"Lind","address_street1":"6376
+        Bruen Hills","address_city":"Port Shane","address_country_code":"LT"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"2444e84e509eb03d782c2a3461cdf604"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 55332395-c56f-4f71-bc82-819b45398455
+      X-Runtime:
+      - '0.039426'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Sat, 09 Jan 2016 03:24:39 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56907d77333764000300030f","created_at":1452309879,"updated_at":1452309879,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-09-16","name_first":"John","name_middle":null,"name_last":"Lind","address_street1":"6376
+        Bruen Hills","address_street2":null,"address_city":"Port Shane","address_subdivision":null,"address_postal_code":null,"address_country_code":"LT"}'
+    http_version: 
+  recorded_at: Sat, 09 Jan 2016 03:24:39 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56907d77333764000300030f
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Jane"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"c131a94a47916aa7a8227a41e49919c7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 2ba2e7d3-7fab-450f-a9ac-92604ca82651
+      X-Runtime:
+      - '0.023023'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Sat, 09 Jan 2016 03:24:39 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56907d77333764000300030f","created_at":1452309879,"updated_at":1452309879,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-09-16","name_first":"Jane","name_middle":null,"name_last":"Lind","address_street1":"6376
+        Bruen Hills","address_street2":null,"address_city":"Port Shane","address_subdivision":null,"address_postal_code":null,"address_country_code":"LT"}'
+    http_version: 
+  recorded_at: Sat, 09 Jan 2016 03:24:39 GMT
+recorded_with: VCR 3.0.1

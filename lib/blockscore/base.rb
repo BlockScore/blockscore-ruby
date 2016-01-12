@@ -90,6 +90,8 @@ module BlockScore
       end
     end
 
+    attr_writer :attributes
+
     private
 
     def method_missing(method, *args, &block)

@@ -108,7 +108,7 @@ module BlockScore
       it { is_expected.to match(/^#<BlockScore::Candidate:0x/) }
     end
 
-    pending '#update' do
+    describe '#update' do
       subject(:candidate) { create(:candidate, name_first: 'John') }
       before do
         candidate.update(name_first: 'Jane')
