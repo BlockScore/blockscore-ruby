@@ -1,5 +1,5 @@
 module BlockScore
-  # Collection is a proxy between the parent and the asssociated members
+  # Collection is a proxy between the parent and the associated members
   # where parent is some instance of a resource
   #
   class Collection < Array
@@ -17,7 +17,7 @@ module BlockScore
     # Sets parent and member_class then registers embedded ids
     #
     # @param [BlockScore::Base] parent
-    # @param [Class] class of collection members
+    # @param [Class] member_class of collection members
     #
     # @return [undefined]
     #
@@ -42,7 +42,7 @@ module BlockScore
 
     # Initializes new {member_class} with `params`
     #
-    # - Ensures a parent id is meged into `params` (see #default_params).
+    # - Ensures a parent id is merged into `params` (see #default_params).
     # - Defines method `#save` on new collection member
     # - Adds new item to collection
     #
@@ -68,7 +68,7 @@ module BlockScore
       end
     end
 
-    # Relaod the contents of the collection
+    # Reload the contents of the collection
     #
     # @example usage
     #   person.question_sets.refresh # => [#<BlockScore::QuestionSet...]
@@ -162,18 +162,18 @@ module BlockScore
     # @api private
     def default_params
       {
-        foriegn_key => parent.id
+        foreign_key => parent.id
       }
     end
 
     private
 
-    # Generate foriegn key name for parent resource
+    # Generate foreign key name for parent resource
     #
     # @return [Symbol] resource name as id
     #
     # @api private
-    def foriegn_key
+    def foreign_key
       :"#{parent_name}_id"
     end
 
@@ -197,7 +197,7 @@ module BlockScore
     #
     # @api private
     def parent_id?(item)
-      parent.id && item.send(foriegn_key) == parent.id
+      parent.id && item.send(foreign_key) == parent.id
     end
 
     # Register a resource in collection
