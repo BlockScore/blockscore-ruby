@@ -27,10 +27,11 @@ module BlockScore
     end
 
     def request(method, path, params)
-      fail NoAPIKeyError, 'No API key was provided.' unless BlockScore.api_key
+      api_key = params.delete(:api_key) || BlockScore.api_key
+      fail NoAPIKeyError, 'No API key was provided.' unless api_key
 
       begin
-        response = execute_request(method, path, params)
+        response = execute_request(method, path, params, api_key)
       rescue SocketError, Errno::ECONNREFUSED => e
         raise APIConnectionError, e.message
       end
@@ -38,8 +39,8 @@ module BlockScore
       Response.handle_response(resource, response)
     end
 
-    def execute_request(method, path, params)
-      auth = { username: BlockScore.api_key, password: '' }
+    def execute_request(method, path, params, api_key)
+      auth = { username: api_key, password: '' }
 
       if method == :get
         path = encode_path_params(path, params)
