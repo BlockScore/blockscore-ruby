@@ -78,7 +78,7 @@ module BlockScore
       attr_reader :instance
 
       # @!attribute [r] parent
-      # collection parent the collectino conditionally updates
+      # collection parent the collection conditionally updates
       #
       # @return [BlockScore::Base]
       #
