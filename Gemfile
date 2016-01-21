@@ -4,7 +4,7 @@ gemspec
 
 group :test do
   platform :mri_22 do
-    gem 'devtools', github: 'mbj/devtools'
+    gem 'devtools', '~> 0.1.3'
   end
 
   # API Request Faking
