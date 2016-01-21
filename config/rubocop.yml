@@ -1,16 +1,16 @@
-inherit_from: .rubocop_todo.yml
+---
 require: rubocop-rspec
 AllCops:
   Include:
   - "**/*.rake"
   - "**/Gemfile"
   - "**/Rakefile"
+  Exclude:
+  - vendor/**/*
+  - db/**/*
   DisplayCopNames: true
+# This ends up being too spammy
 Style/Documentation:
-  Enabled: false
-Style/TrailingWhitespace:
-  Enabled: false
-Style/TrailingBlankLines:
   Enabled: false
 Style/ExtraSpacing:
   Enabled: false
@@ -18,15 +18,22 @@ Style/StringLiterals:
   EnforcedStyle: single_quotes
 Metrics/LineLength:
   Max: 100
+  Exclude:
+    - 'lib/blockscore/connection.rb'              # temporary
+    - 'lib/blockscore/util.rb'                    # temporary
+    - 'spec/unit/blockscore/candidate_spec.rb'    # temporary
+    - 'spec/unit/blockscore/candidate_spec.rb'    # temporary
+    - 'spec/unit/blockscore/collection_spec.rb'   # temporary
+    - 'spec/unit/blockscore/company_spec.rb'      # temporary
+    - 'spec/unit/blockscore/person_spec.rb'       # temporary
+    - 'spec/unit/blockscore/question_set_spec.rb' # temporary
+    - 'spec/unit/blockscore/question_set_spec.rb' # temporary
 Style/DotPosition:
   EnforcedStyle: leading
 Style/CommentAnnotation:
   Description: Checks formatting of special comments (TODO, FIXME, OPTIMIZE, HACK,
     REVIEW).
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#annotate-keywords
-  Enabled: true
-Rails/Delegate:
-  Description: Prefer delegate method for delegations.
   Enabled: true
 Style/FileName:
   Enabled: true
@@ -55,20 +62,18 @@ Style/PercentLiteralDelimiters:
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#percent-literal-braces
   Enabled: true
   PreferredDelimiters:
-    "%": "()"
-    "%i": "()"
-    "%q": "()"
-    "%Q": "()"
-    "%r": "()"
-    "%s": "()"
-    "%w": "()"
-    "%W": "()"
-    "%x": "()"
+    '%i': '[]'
+    '%I': '[]'
+    '%q': '{}'
+    '%Q': '{}'
+    '%r': '{}'
+    '%s': ()
+    '%w': '[]'
+    '%W': '[]'
+    '%x': ()
 Style/RegexpLiteral:
-  Description: Use %r for regular expressions matching more than `MaxSlashes` '/'
-    characters. Use %r only for regular expressions matching more than `MaxSlashes`
-    '/' character.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#percent-r
+  Description: 'Use / or %r around regular expressions.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#percent-r'
   Enabled: true
 Style/SignalException:
   Description: Checks for proper usage of fail and raise.
@@ -122,6 +127,8 @@ Style/SymbolArray:
   Description: Use %i or %I for arrays of symbols.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#percent-i
   Enabled: true
+  Exclude:
+    - 'lib/blockscore/actions/update.rb' # Temporary
 Style/AccessorMethodName:
   Description: Check the naming of accessor methods for get_/set_.
   Enabled: true
@@ -229,7 +236,7 @@ Style/AndOr:
   - always
   - conditionals
 Style/BarePercentLiterals:
-  EnforcedStyle: bare_percent
+  EnforcedStyle: percent_q
   SupportedStyles:
   - percent_q
   - bare_percent
@@ -285,7 +292,9 @@ Style/CollectionMethods:
     collect: map
     collect!: map!
     inject: reduce
+    reduce: reduce
     detect: find
+    find:   find
     find_all: select
 Style/CommandLiteral:
   EnforcedStyle: backticks
@@ -484,6 +493,9 @@ Style/WhileUntilModifier:
   MaxLineLength: 80
 Metrics/AbcSize:
   Max: 15
+  Exclude:
+    - 'lib/blockscore/collection/member.rb' # Temporary
+    - 'lib/blockscore/util.rb'              # Temporary
 Metrics/BlockNesting:
   Max: 3
 Metrics/ModuleLength:
@@ -491,6 +503,8 @@ Metrics/ModuleLength:
   Max: 100
 Metrics/CyclomaticComplexity:
   Max: 6
+  Exclude:
+    - 'lib/blockscore/util.rb' # Temporary
 Metrics/MethodLength:
   CountComments: false
   Max: 10
@@ -513,3 +527,39 @@ Lint/DefEndAlignment:
   - start_of_line
   - def
   AutoCorrect: false
+
+Metrics/MethodLength:
+  Exclude:
+    - 'lib/blockscore/util.rb'              # Temporary
+    - 'spec/support/question_set_helper.rb' # Temporary
+
+Metrics/ModuleLength:
+  Exclude:
+    - 'spec/unit/blockscore/candidate_spec.rb' # Temporary
+    - 'spec/unit/blockscore/person_spec.rb'    # Temporary
+
+Metrics/PerceivedComplexity:
+  Exclude:
+    - 'lib/blockscore/util.rb' # Temporary
+
+Style/EachWithObject:
+  Exclude:
+    - 'lib/blockscore/util.rb' # Temporary
+
+Style/ModuleFunction:
+  Exclude:
+    - 'lib/blockscore/response.rb' # Temporary
+    - 'lib/blockscore/util.rb'     # Temporary
+    - 'spec/vcr_setup.rb'          # Temporary
+
+Style/PercentLiteralDelimiters:
+  Exclude:
+    - 'spec/factories/companies.rb'                              # Temporary
+    - 'spec/support/api_request_behavior.rb'                     # Temporary
+    - 'spec/unit/blockscore/errors/api_connection_error_spec.rb' # Temporary
+    - 'spec/vcr_setup.rb'                                        # Temporary
+
+Style/RaiseArgs:
+  Enabled: false
+  Exclude:
+    - 'lib/blockscore/response.rb' # Temporary

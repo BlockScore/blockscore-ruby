@@ -1,0 +1,5 @@
+---
+name: blockscore
+namespace: BlockScore
+expect_coverage: 1/1
+ignore_subjects: []
