@@ -8,7 +8,7 @@ module BlockScore
     end
 
     describe '.create' do
-      context 'vaild person' do
+      context 'valid person' do
         let(:person_id) { create(:valid_person).id }
         subject(:question_set) { BlockScore::QuestionSet.create(person_id: person_id) }
 
@@ -16,7 +16,7 @@ module BlockScore
         its(:class) { should be BlockScore::QuestionSet }
       end
 
-      context 'invaild person' do
+      context 'invalid person' do
         let(:person_id) { create(:invalid_person).id }
 
         it { expect { BlockScore::QuestionSet.create(person_id: person_id) }.to raise_error BlockScore::InvalidRequestError }
@@ -32,7 +32,7 @@ module BlockScore
         its(:questions) { is_expected.not_to be_empty }
       end
 
-      context 'invalid person id' do
+      context 'invalid question set id' do
         let(:question_set_id) { 'f3a243ddc8075a6acd603b7758d05b3c' }
 
         it { expect { BlockScore::QuestionSet.find(question_set_id) }.to raise_error BlockScore::RecordNotFound }
