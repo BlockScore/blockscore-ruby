@@ -12,7 +12,7 @@ module BlockScore
     module Retrieve
       module ClassMethods
         def retrieve(id, options = {})
-          fail ArgumentError if id.empty?
+          fail ArgumentError, 'ID must be supplied' if id.nil? || id.empty?
           req = ->() { get("#{endpoint}/#{id}", options) }
           new(id: id, &req)
         end

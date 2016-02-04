@@ -46,6 +46,17 @@ module BlockScore
       it { is_expected.to be_persisted }
       its(:name_first) { is_expected.not_to be_empty }
       its(:class) { should be BlockScore::Person }
+      context 'null id presented' do
+        let(:person_id) { nil }
+
+        it { expect { BlockScore::Person.retrieve(person_id) }.to raise_error(ArgumentError, 'ID must be supplied') }
+      end
+
+      context 'empty id presented' do
+        let(:person_id) { '' }
+
+        it { expect { BlockScore::Person.retrieve(person_id) }.to raise_error(ArgumentError, 'ID must be supplied') }
+      end
     end
 
     describe '.all' do
