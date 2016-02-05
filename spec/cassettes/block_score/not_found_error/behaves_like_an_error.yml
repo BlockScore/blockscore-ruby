@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people/invalid_id
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people/abc123
     body:
       encoding: US-ASCII
       string: ''
@@ -51,7 +51,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"error":{"type":"invalid_request_error","message":"Person with id
-        invalid_id could not be found"}}'
+        abc123 could not be found"}}'
     http_version: 
   recorded_at: Fri, 18 Sep 2015 17:11:51 GMT
 recorded_with: VCR 2.9.3

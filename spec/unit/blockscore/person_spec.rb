@@ -57,6 +57,12 @@ module BlockScore
 
         it { expect { BlockScore::Person.retrieve(person_id) }.to raise_error(ArgumentError, 'ID must be supplied') }
       end
+
+      context 'Malformed ID presented' do
+        let(:person_id) { 'ABC&&234' }
+
+        it { expect { BlockScore::Person.retrieve(person_id) }.to raise_error(ArgumentError, 'ID is malformed') }
+      end
     end
 
     describe '.all' do
