@@ -8,7 +8,7 @@ module BlockScore
     end
 
     describe '.create' do
-      context 'vaild company' do
+      context 'valid company' do
         subject(:company) { BlockScore::Company.create(attributes_for(:company)) }
 
         it { is_expected.to be_persisted }

@@ -8,14 +8,14 @@ module BlockScore
     end
 
     describe '.create' do
-      context 'vaild person' do
+      context 'valid person' do
         subject(:person) { BlockScore::Person.create(attributes_for(:person)) }
 
         it { is_expected.to be_persisted }
         its(:class) { should be BlockScore::Person }
       end
 
-      context 'invaild person' do
+      context 'invalid person' do
         subject(:person) { BlockScore::Person.create(attributes_for(:invalid_person)) }
 
         it { is_expected.to be_persisted }
