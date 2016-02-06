@@ -15,15 +15,17 @@ module BlockScore
     # end
     def initialize(response)
       super
-      @param = @http_body[:error][:param]
+      @param = error_advice[:param]
     end
 
     def to_s
-      status_string = @http_status ? "(Status: #{@http_status})" : ''
-      type_string = @error_type ? "(Type: #{@error_type})" : ''
-      param_string = @param ? "(#{@param})" : ''
-
       "#{type_string} #{@message} #{param_string} #{status_string}"
+    end
+
+    private
+
+    def param_string
+      "(#{param})" if param
     end
   end
 end

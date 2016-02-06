@@ -1,3 +1,5 @@
+require 'blockscore/errors/error'
+
 module BlockScore
   class APIError < Error
     attr_reader :http_status
@@ -15,19 +17,29 @@ module BlockScore
     # APIError - Indicates an error on the server side (HTTP 5xx)
     # AuthenticationError - Indicates an authentication error (HTTP 401)
     def initialize(response)
-      body = JSON.parse(response.body, symbolize_names: true)
+      @http_body = JSON.parse(response.body, symbolize_names: true)
 
-      @message = body[:error][:message]
+      @message = error_advice[:message]
       @http_status = response.code
-      @error_type = body[:error][:type]
-      @http_body = body
+      @error_type = error_advice[:type]
     end
 
     def to_s
-      status_string = @http_status ? "(Status: #{@http_status})" : ''
-      type_string = @error_type ? "(Type: #{@error_type})" : ''
-
       "#{type_string} #{@message} #{status_string}"
+    end
+
+    private
+
+    def error_advice
+      http_body.fetch(:error)
+    end
+
+    def type_string
+      "(Type: #{error_type})" if error_type
+    end
+
+    def status_string
+      "(Status: #{http_status})" if http_status
     end
   end
 end
