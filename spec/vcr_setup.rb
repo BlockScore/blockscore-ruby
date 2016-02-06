@@ -31,7 +31,9 @@ module BlockScore
 
   def run_vcr_example(options, example)
     if options.fetch(:record).equal?(:skip)
+      WebMock.allow_net_connect!
       VCR.turned_off(&example)
+      WebMock.disable_net_connect!
     else
       path = BlockScore.build_path(example.metadata.fetch(:full_description))
 
