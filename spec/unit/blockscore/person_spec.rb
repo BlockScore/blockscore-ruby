@@ -23,22 +23,6 @@ module BlockScore
       end
     end
 
-    pending '.find' do
-      context 'valid person id' do
-        let(:person_id)  { create(:person).id }
-        subject(:person) { BlockScore::Person.find(person_id) }
-
-        it { is_expected.to be_persisted }
-        its(:name_first) { is_expected.not_to be_empty }
-      end
-
-      context 'invalid person id' do
-        let(:person_id) { '6c89646eea50fcaa42ca1fe1667a470b' }
-
-        it { expect { BlockScore::Person.find(person_id) }.to raise_error BlockScore::RecordNotFound }
-      end
-    end
-
     describe '.retrieve' do
       let(:person_id)  { create(:person).id }
       subject(:person) { BlockScore::Person.retrieve(person_id) }
