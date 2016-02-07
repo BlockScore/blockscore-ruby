@@ -19,9 +19,9 @@ module BlockScore
     def initialize(response)
       @http_body = JSON.parse(response.body, symbolize_names: true)
 
-      @message = error_advice[:message]
+      @message = error_advice.fetch(:message)
       @http_status = response.code
-      @error_type = error_advice[:type]
+      @error_type = error_advice.fetch(:type)
     end
 
     def to_s
@@ -35,11 +35,11 @@ module BlockScore
     end
 
     def type_string
-      "(Type: #{error_type})" if error_type
+      "(Type: #{error_type})"
     end
 
     def status_string
-      "(Status: #{http_status})" if http_status
+      "(Status: #{http_status})"
     end
   end
 end
