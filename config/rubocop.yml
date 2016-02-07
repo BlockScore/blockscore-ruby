@@ -20,11 +20,9 @@ Metrics/LineLength:
   Max: 100
   Exclude:
     - 'spec/unit/blockscore/candidate_spec.rb'    # temporary
-    - 'spec/unit/blockscore/candidate_spec.rb'    # temporary
     - 'spec/unit/blockscore/collection_spec.rb'   # temporary
     - 'spec/unit/blockscore/company_spec.rb'      # temporary
     - 'spec/unit/blockscore/person_spec.rb'       # temporary
-    - 'spec/unit/blockscore/question_set_spec.rb' # temporary
     - 'spec/unit/blockscore/question_set_spec.rb' # temporary
 Style/DotPosition:
   EnforcedStyle: leading
