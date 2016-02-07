@@ -19,7 +19,6 @@ Style/StringLiterals:
 Metrics/LineLength:
   Max: 100
   Exclude:
-    - 'lib/blockscore/connection.rb'              # temporary
     - 'spec/unit/blockscore/candidate_spec.rb'    # temporary
     - 'spec/unit/blockscore/candidate_spec.rb'    # temporary
     - 'spec/unit/blockscore/collection_spec.rb'   # temporary
