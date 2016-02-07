@@ -11,7 +11,6 @@ module BlockScore
     # => #<BlockScore::Person:0x007fe39c424410>
     module Retrieve
       module ClassMethods
-
         RESOURCE_ID_FORMAT = /\A[a-f0-9]+\z/.freeze
 
         def retrieve(id, options = {})
