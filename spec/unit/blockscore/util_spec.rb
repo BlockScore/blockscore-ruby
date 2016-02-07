@@ -97,7 +97,8 @@ module BlockScore
 
       context 'translates errors' do
         let(:error) do
-          'An error has occurred. If this problem persists, please message support@blockscore.com.'
+          'An error has occurred. ' \
+          'If this problem persists, please message support@blockscore.com.'
         end
         let(:input) { '{{' }
         subject(:parse_attempt) { -> { described_class.parse_json(input) } }
