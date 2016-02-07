@@ -19,14 +19,14 @@ Style/StringLiterals:
 Metrics/LineLength:
   Max: 100
   Exclude:
-    - 'lib/blockscore/connection.rb'                              # temporary
-    - 'lib/blockscore/util.rb'                                    # temporary
-    - 'spec/unit/blockscore/candidate_spec.rb'                    # temporary
-    - 'spec/unit/blockscore/collection_spec.rb'                   # temporary
-    - 'spec/unit/blockscore/company_spec.rb'                      # temporary
-    - 'spec/unit/blockscore/person_spec.rb'                       # temporary
-    - 'spec/unit/blockscore/question_set_spec.rb'                 # temporary
-    - 'spec/unit/blockscore/errors/invalid_request_error_spec.rb' # temporary
+    - 'lib/blockscore/connection.rb'              # temporary
+    - 'spec/unit/blockscore/candidate_spec.rb'    # temporary
+    - 'spec/unit/blockscore/candidate_spec.rb'    # temporary
+    - 'spec/unit/blockscore/collection_spec.rb'   # temporary
+    - 'spec/unit/blockscore/company_spec.rb'      # temporary
+    - 'spec/unit/blockscore/person_spec.rb'       # temporary
+    - 'spec/unit/blockscore/question_set_spec.rb' # temporary
+    - 'spec/unit/blockscore/question_set_spec.rb' # temporary
 Style/DotPosition:
   EnforcedStyle: leading
 Style/CommentAnnotation:
