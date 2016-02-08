@@ -24,7 +24,7 @@ module BlockScore
     end
 
     describe '.retrieve' do
-      let(:question_set_id)  { create(:question_set).id }
+      let(:question_set_id) { create(:question_set).id }
       subject(:question_set) { BlockScore::QuestionSet.retrieve(question_set_id) }
 
       it { is_expected.to be_persisted }
@@ -38,17 +38,30 @@ module BlockScore
       let(:incorrect_answers) { QuestionSetHelper.incorrect_answers(question_set.questions) }
 
       context 'correct answers' do
-        before { question_set.score(correct_answers) }
-
-        its(:score) { should eq 100.0 }
-        it { expect(question_set.score(correct_answers)).to eq 100.0 }
+        it { expect(question_set.score(correct_answers)).to be 100.0 }
       end
 
       context 'incorrect answers' do
-        before { question_set.score(incorrect_answers) }
+        it { expect(question_set.score(incorrect_answers)).to be 0.0 }
+      end
 
-        its(:score) { should eq 0.0 }
-        it { expect(question_set.score(incorrect_answers)).to eq 0.0 }
+      context 'malformed answers' do
+        it 'raises an error when answers are not an array of hashes' do
+          expect { question_set.score([]) }
+            .to raise_error InvalidRequestError, \
+                            '(Type: invalid_request_error) ' \
+                            'Answers should be an array of objects  (Status: 400)'
+        end
+      end
+
+      context 'previous answers' do
+        before { question_set.score(correct_answers) }
+
+        it { expect(question_set.score).to be 100.0 }
+      end
+
+      context 'previously no answers' do
+        it { expect(question_set.score).to be nil }
       end
     end
 
