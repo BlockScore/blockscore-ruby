@@ -93,7 +93,16 @@ module BlockScore
       #
       # @api private
       def ids
-        parent.attributes.fetch(:"#{Util.to_plural(instance.class.resource)}", [])
+        parent.attributes.fetch(resource_name, [])
+      end
+
+      # Plural resource name as symbol
+      #
+      # @return Symbol
+      #
+      # @api private
+      def resource_name
+        Util.to_plural(instance.class.resource).to_sym
       end
     end
   end
