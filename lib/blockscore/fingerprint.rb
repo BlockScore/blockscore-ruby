@@ -36,7 +36,11 @@ module BlockScore
 
     # hash style list format
     def resource_index?
-      body.is_a?(Hash) && body[:object] == 'list'
+      body.is_a?(Hash) && list_object?
+    end
+
+    def list_object?
+      body.fetch(:object).eql?('list')
     end
 
     def watchlist_hits?
