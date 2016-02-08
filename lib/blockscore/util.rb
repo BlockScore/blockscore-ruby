@@ -34,7 +34,7 @@ module BlockScore
     end
 
     def to_plural(str)
-      PLURAL_LOOKUP[str]
+      PLURAL_LOOKUP.fetch(str)
     end
 
     # Taken from activesupport: http://git.io/vkWtR
