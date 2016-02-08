@@ -103,7 +103,7 @@ module BlockScore
         let(:input) { '{{' }
         subject(:parse_attempt) { -> { described_class.parse_json(input) } }
 
-        it do
+        it 'raises an error when the json fails to parse' do
           expect { subject.call }.to raise_error do |err|
             expect(err).to be_an_instance_of(Error)
             expect(err.message).to eql(error)
