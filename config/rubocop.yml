@@ -17,13 +17,17 @@ Style/ExtraSpacing:
 Style/StringLiterals:
   EnforcedStyle: single_quotes
 Metrics/LineLength:
-  Max: 100
+  Max: 80
+# DO not update the exclusions for the sake of fixing the line lengths
   Exclude:
-    - 'spec/unit/blockscore/candidate_spec.rb'    # temporary
-    - 'spec/unit/blockscore/collection_spec.rb'   # temporary
-    - 'spec/unit/blockscore/company_spec.rb'      # temporary
-    - 'spec/unit/blockscore/person_spec.rb'       # temporary
-    - 'spec/unit/blockscore/question_set_spec.rb' # temporary
+    - 'lib/blockscore/question_set.rb'                            # temporary
+    - 'spec/unit/blockscore/candidate_spec.rb'                    # temporary
+    - 'spec/unit/blockscore/collection_spec.rb'                   # temporary
+    - 'spec/unit/blockscore/company_spec.rb'                      # temporary
+    - 'spec/unit/blockscore/person_spec.rb'                       # temporary
+    - 'spec/unit/blockscore/question_set_spec.rb'                 # temporary
+    - 'spec/unit/blockscore/errors/invalid_request_error_spec.rb' # temporary
+    - 'spec/unit/blockscore/errors/not_found_error_spec.rb'       # temporary
 Style/DotPosition:
   EnforcedStyle: leading
 Style/CommentAnnotation:
