@@ -18,13 +18,6 @@ module BlockScore
       @attributes
     end
 
-    def force!
-      res = @proc.call
-      @attributes = res.attributes.merge(@attributes)
-      @loaded = true
-      self
-    end
-
     def id
       @attributes.fetch(:id, nil)
     end
@@ -93,6 +86,11 @@ module BlockScore
     end
 
     private
+
+    def force!
+      @attributes = @proc.call.attributes.merge(@attributes)
+      @loaded = true
+    end
 
     def method_missing(method, *args, &block)
       if respond_to_missing?(method)
