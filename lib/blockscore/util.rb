@@ -71,7 +71,7 @@ module BlockScore
     end
 
     def to_camelcase(str)
-      str.split('_').map(&:capitalize).join('')
+      str.split('_').map(&:capitalize).join
     end
 
     # Taken from Rulers: http://git.io/vkWqf
