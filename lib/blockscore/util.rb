@@ -3,16 +3,17 @@ module BlockScore
     extend self
 
     PLURAL_LOOKUP = {
-      'candidate' => 'candidates',
-      'company' => 'companies',
-      'person' => 'people',
-      'question_set' => 'question_sets',
+      'candidate'     => 'candidates',
+      'company'       => 'companies',
+      'person'        => 'people',
+      'question_set'  => 'question_sets',
       'watchlist_hit' => 'watchlist_hits'
     }
 
     PARSE_ERROR =
       'An error has occurred. ' \
-        'If this problem persists, please message support@blockscore.com.'
+        'If this problem persists, ' \
+        'please message support@blockscore.com.'.freeze
 
     def parse_json!(json_obj)
       JSON.parse(json_obj, symbolize_names: true)

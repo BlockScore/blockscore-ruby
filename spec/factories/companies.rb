@@ -6,7 +6,9 @@ FactoryGirl.define do
     entity_name                 { Faker::Company.name }
     tax_id                      { '000000000' }
     incorporation_country_code  { Faker::Address.country_code }
-    incorporation_type          { %w(corporation llc partnership sp other).sample }
+    incorporation_type do
+      %w(corporation llc partnership sp other).sample
+    end
     address_street1             { Faker::Address.street_address }
     address_city                { Faker::Address.city }
     address_subdivision         { Faker::Address.state_abbr }

@@ -48,7 +48,7 @@ module BlockScore
     #
     # @example usage
     #
-    #   >> person = person = BlockScore::Person.retrieve('55de4af7643735000300000f')
+    #   >> person = BlockScore::Person.retrieve('55de4af7643735000300000f')
     #   >> person.question_sets.new
     #   => #<BlockScore::QuestionSet:0x3fc67902f1b4 JSON:{
     #     "person_id": "55de4af7643735000300000f"
@@ -123,7 +123,8 @@ module BlockScore
     # Retrieve a collection member by its id
     #
     # @example usage
-    #   person.question_sets.retrieve('55ef5b4e3532630003000178') # => instance of QuestionSet
+    #   person.question_sets.retrieve('55ef5b4e3532630003000178')
+    #           => instance of QuestionSet
     #
     # @param id [String] resource id
     #
