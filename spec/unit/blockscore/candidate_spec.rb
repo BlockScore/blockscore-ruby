@@ -16,22 +16,6 @@ module BlockScore
       its(:class) { should be BlockScore::Candidate }
     end
 
-    pending '.find' do
-      context 'valid candidate id' do
-        let(:candidate_id)  { create(:candidate).id }
-        subject(:candidate) { BlockScore::Candidate.find(candidate_id) }
-
-        it { is_expected.to be_persisted }
-        its(:name_first) { is_expected.not_to be be_empty }
-      end
-
-      context 'invalid candidate id' do
-        let(:candidate_id) { '6c89646eea50fcaa42ca1fe1667a470b' }
-
-        it { expect { BlockScore::Candidate.find(candidate_id) }.to raise_error BlockScore::RecordNotFound }
-      end
-    end
-
     describe '.retrieve' do
       let(:candidate_id)  { create(:candidate).id }
       subject(:candidate) { BlockScore::Candidate.retrieve(candidate_id) }
@@ -80,15 +64,6 @@ module BlockScore
         it { is_expected.to be_persisted }
         its(:name_first) { is_expected.to eq 'Jane' }
       end
-
-      pending 'after deleting a candidate' do
-        subject(:candidate) { create(:candidate) }
-        before do
-          candidate.delete
-        end
-
-        it { expect { candidate.save }.to raise_error }
-      end
     end
 
     describe '#refresh' do
@@ -106,16 +81,6 @@ module BlockScore
 
       its(:class) { should be String }
       it { is_expected.to match(/^#<BlockScore::Candidate:0x/) }
-    end
-
-    pending '#update' do
-      subject(:candidate) { create(:candidate, name_first: 'John') }
-      before do
-        candidate.update(name_first: 'Jane')
-      end
-
-      it { is_expected.to be_persisted }
-      its(:name_first) { is_expected.to eq 'Jane' }
     end
 
     describe '#delete' do

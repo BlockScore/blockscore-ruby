@@ -23,22 +23,6 @@ module BlockScore
       end
     end
 
-    pending '.find' do
-      context 'valid question set id' do
-        let(:question_set_id)  { create(:question_set).id }
-        subject(:question_set) { BlockScore::QuestionSet.find(question_set_id) }
-
-        it { is_expected.to be_persisted }
-        its(:questions) { is_expected.not_to be_empty }
-      end
-
-      context 'invalid question set id' do
-        let(:question_set_id) { 'f3a243ddc8075a6acd603b7758d05b3c' }
-
-        it { expect { BlockScore::QuestionSet.find(question_set_id) }.to raise_error BlockScore::RecordNotFound }
-      end
-    end
-
     describe '.retrieve' do
       let(:question_set_id)  { create(:question_set).id }
       subject(:question_set) { BlockScore::QuestionSet.retrieve(question_set_id) }

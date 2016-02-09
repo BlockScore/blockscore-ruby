@@ -23,23 +23,6 @@ module BlockScore
       end
     end
 
-    pending '.find' do
-      context 'valid company id' do
-        let(:company_id)  { create(:company).id }
-        subject(:company) { BlockScore::Company.find(company_id) }
-
-        it { is_expected.to be_persisted }
-        its(:entity_name) { is_expected.not_to be_empty }
-        its(:class) { should be BlockScore::Company }
-      end
-
-      context 'invalid company id' do
-        let(:company_id) { 'e61fa4a8cf1426cdf5befd36abfb7300' }
-
-        it { expect { BlockScore::Company.find(company_id) }.to raise_error BlockScore::RecordNotFound }
-      end
-    end
-
     describe '.retrieve' do
       let(:company_id)  { create(:company).id }
       subject(:company) { BlockScore::Company.retrieve(company_id) }
