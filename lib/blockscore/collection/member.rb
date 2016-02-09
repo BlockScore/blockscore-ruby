@@ -66,7 +66,7 @@ module BlockScore
       #
       # @api private
       def parent_saved?
-        parent.id
+        !parent.id.nil?
       end
 
       # @!attribute [r] instance
