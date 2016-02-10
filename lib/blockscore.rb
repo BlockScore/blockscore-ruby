@@ -19,6 +19,8 @@ require 'blockscore/errors/invalid_request_error'
 require 'blockscore/errors/no_api_key_error'
 require 'blockscore/errors/not_found_error'
 
+require 'blockscore/version'
+
 require 'blockscore/base'
 require 'blockscore/candidate'
 require 'blockscore/company'
@@ -33,7 +35,6 @@ require 'blockscore/dispatch'
 require 'blockscore/fingerprint'
 require 'blockscore/response'
 require 'blockscore/util'
-require 'blockscore/version'
 
 module BlockScore
   class << self
