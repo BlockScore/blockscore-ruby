@@ -15,11 +15,11 @@ module BlockScore
     def attributes
       return @attributes if @loaded
       force!
-      @attributes
+      attributes
     end
 
     def id
-      @attributes.fetch(:id, nil)
+      attributes.fetch(:id, nil)
     end
 
     def inspect
@@ -28,8 +28,7 @@ module BlockScore
     end
 
     def refresh
-      res = self.class.retrieve(id)
-      @attributes = res.attributes
+      capture_attributes(self.class.retrieve(id))
 
       true
     rescue Error
@@ -43,9 +42,7 @@ module BlockScore
     end
 
     def save!
-      response = self.class.post(self.class.endpoint, attributes)
-      @attributes = response.attributes
-
+      capture_attributes(self.class.post(self.class.endpoint, attributes))
       true
     end
 
@@ -64,10 +61,14 @@ module BlockScore
     end
 
     def persisted?
-      !id.nil? && !attributes[:deleted]
+      !id.nil? && !attributes.fetch(:deleted, false)
     end
 
     protected
+
+    def capture_attributes(source)
+      @attributes = source.attributes
+    end
 
     def add_accessor(symbol, *_args)
       singleton_class.instance_eval do

@@ -16,7 +16,7 @@ module BlockScore
     private
 
     def rescore(answers)
-      @attributes = post("#{endpoint}/#{id}/score", answers: answers).attributes
+      capture_attributes(post("#{endpoint}/#{id}/score", answers: answers))
     end
   end
 end
