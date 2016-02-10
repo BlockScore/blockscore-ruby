@@ -1,10 +1,12 @@
 require 'blockscore/connection'
+require 'uri'
 
 module BlockScore
   class Base
     extend Connection
 
     ABSTRACT_WARNING = 'Base is an abstract class, not an API resource'.freeze
+    API_URL = URI.parse('https://api.blockscore.com/').freeze
 
     def initialize(options = {}, &block)
       @loaded = !(block)
@@ -50,14 +52,10 @@ module BlockScore
       @resource ||= Util.to_underscore(to_s.split('::').last)
     end
 
-    def self.api_url
-      'https://api.blockscore.com/'
-    end
-
     def self.endpoint
       fail NotImplementedError, ABSTRACT_WARNING if equal?(Base)
 
-      "#{api_url}#{Util.to_plural(resource)}"
+      API_URL + Util.to_plural(resource)
     end
 
     def persisted?
