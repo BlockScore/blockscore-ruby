@@ -255,4 +255,58 @@ http_interactions:
         Hampshire"},{"id":4,"answer":"Utah"},{"id":5,"answer":"None Of The Above"}]}]}'
     http_version: 
   recorded_at: Fri, 18 Sep 2015 20:14:20 GMT
-recorded_with: VCR 2.9.3
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/question_sets/55fc709a39613800030008dc
+    body:
+      encoding: UTF-8
+      string: '{"answers":[{"question_id":1,"answer_id":2},{"question_id":2,"answer_id":2},{"question_id":3,"answer_id":2},{"question_id":4,"answer_id":0},{"question_id":5,"answer_id":1}]}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 24eae17d-d08b-4dd4-910d-c4e5731306b0
+      X-Runtime:
+      - '0.007744'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Tue, 09 Feb 2016 02:21:55 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"error":{"type":"invalid_request_error","message":"Cannot create requests
+        at this path (POST /question_sets/55fc709a39613800030008dc)"}}'
+    http_version:
+  recorded_at: Tue, 09 Feb 2016 02:21:55 GMT
+recorded_with: VCR 3.0.1

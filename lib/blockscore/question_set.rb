@@ -9,12 +9,14 @@ module BlockScore
     def_delegators 'self.class', :post, :endpoint
 
     def score(answers = nil)
-      if answers.nil? && attributes
-        attributes[:score]
-      else
-        @attributes = post("#{endpoint}/#{id}/score", answers: answers).attributes
-        score
-      end
+      rescore(answers) if answers
+      attributes.fetch(:score)
+    end
+
+    private
+
+    def rescore(answers)
+      @attributes = post("#{endpoint}/#{id}/score", answers: answers).attributes
     end
   end
 end
