@@ -222,8 +222,7 @@ module BlockScore
     # @api private
     def register_parent_data
       ids.each do |id|
-        item = member_class.retrieve(id)
-        self << item
+        self << member_class.retrieve(id)
       end
     end
 
