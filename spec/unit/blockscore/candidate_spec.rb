@@ -21,7 +21,7 @@ module BlockScore
       subject(:candidate) { BlockScore::Candidate.retrieve(candidate_id) }
 
       it { is_expected.to be_persisted }
-      its(:name_first) { is_expected.not_to be be_empty }
+      its(:name_first) { is_expected.not_to be_empty }
       its(:class) { should be BlockScore::Candidate }
     end
 
@@ -41,8 +41,8 @@ module BlockScore
       end
 
       it { is_expected.not_to be_empty }
-      it { expect(candidates[0].name_last).to eq uniq_token_two }
-      it { expect(candidates[1].name_last).to eq uniq_token_one }
+      it { expect(candidates[0].name_last).to eql uniq_token_two }
+      it { expect(candidates[1].name_last).to eql uniq_token_one }
     end
 
     describe '#save' do
@@ -51,7 +51,7 @@ module BlockScore
         before { candidate.save }
 
         it { is_expected.to be_persisted }
-        its(:name_first) { is_expected.not_to be be_empty }
+        its(:name_first) { is_expected.not_to be_empty }
       end
 
       context 'when updating an existing candidate' do
@@ -62,7 +62,7 @@ module BlockScore
         end
 
         it { is_expected.to be_persisted }
-        its(:name_first) { is_expected.to eq 'Jane' }
+        its(:name_first) { is_expected.to eql 'Jane' }
       end
     end
 
@@ -73,7 +73,7 @@ module BlockScore
         candidate.refresh
       end
 
-      its(:name_last) { is_expected.to eq 'Smith' }
+      its(:name_last) { is_expected.to eql 'Smith' }
     end
 
     describe '#inspect' do
@@ -89,7 +89,7 @@ module BlockScore
       before { candidate.delete }
 
       it { is_expected.not_to be_persisted }
-      it { expect { BlockScore::Candidate.retrieve(candidate_id).force! }.to raise_error BlockScore::NotFoundError }
+      it { expect(candidate.deleted).to be true }
     end
 
     describe '#history' do
@@ -104,9 +104,9 @@ module BlockScore
 
       its(:history) { is_expected.not_to be_empty }
       it { expect(candidate.history[0].class).to be BlockScore::Candidate }
-      it { expect(candidate.history[0].name_first).to eq 'version_2' }
-      it { expect(candidate.history[1].name_first).to eq 'version_1' }
-      it { expect(candidate.history[2].name_first).to eq 'version_0' }
+      it { expect(candidate.history[0].name_first).to eql 'version_2' }
+      it { expect(candidate.history[1].name_first).to eql 'version_1' }
+      it { expect(candidate.history[2].name_first).to eql 'version_0' }
     end
 
     describe '#hits' do
@@ -124,14 +124,14 @@ module BlockScore
       end
 
       its(:hits) { is_expected.not_to be_empty }
-      it { expect(candidate.hits.first.class).to be BlockScore::WatchlistHit }
+      it { expect(candidate.hits.first).to be_an_instance_of BlockScore::WatchlistHit }
     end
 
     describe '#search' do
       subject(:candidate_search) { create(:watched_candidate).search }
 
       it { is_expected.not_to be_empty }
-      it { expect(candidate_search.first.class).to be BlockScore::WatchlistHit }
+      it { expect(candidate_search.first).to be_an_instance_of BlockScore::WatchlistHit }
     end
   end
 end
