@@ -64,11 +64,6 @@ module BlockScore
       it { is_expected.to match(/^#<BlockScore::Company:0x/) }
     end
 
-    describe '#update' do
-      subject(:company) { create(:company) }
-      it { expect { company.update(entity_name: 'new_name') }.to raise_error NoMethodError }
-    end
-
     describe '#delete' do
       subject(:company) { create(:company) }
       it { expect { company.delete }.to raise_error NoMethodError }

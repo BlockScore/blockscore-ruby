@@ -82,11 +82,6 @@ module BlockScore
       it { is_expected.to match(/^#<BlockScore::QuestionSet:0x/) }
     end
 
-    describe '#update' do
-      subject(:question_set) { create(:question_set) }
-      it { expect { question_set.delete }.to raise_error NoMethodError }
-    end
-
     describe '#delete' do
       subject(:question_set) { create(:question_set) }
       it { expect { question_set.delete }.to raise_error NoMethodError }

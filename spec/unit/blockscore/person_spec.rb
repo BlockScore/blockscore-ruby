@@ -119,11 +119,6 @@ module BlockScore
       it { is_expected.to match(/^#<BlockScore::Person:0x/) }
     end
 
-    describe '#update' do
-      subject(:person) { create(:person) }
-      it { expect { person.update(name_first: 'new_name') }.to raise_error NoMethodError }
-    end
-
     describe '#delete' do
       subject(:person) { create(:person) }
       it { expect { person.delete }.to raise_error NoMethodError }
