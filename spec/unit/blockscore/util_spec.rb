@@ -97,12 +97,18 @@ module BlockScore
 
       context 'translates errors' do
         let(:error) do
-          'An error has occurred. If this problem persists, please message support@blockscore.com.'
+          'An error has occurred. ' \
+          'If this problem persists, please message support@blockscore.com.'
         end
         let(:input) { '{{' }
         subject(:parse_attempt) { -> { described_class.parse_json(input) } }
 
-        it { should raise_error(Error) { |err| expect(err.message).to eql(error) } }
+        it 'raises an error when the json fails to parse' do
+          expect { subject.call }.to raise_error do |err|
+            expect(err).to be_an_instance_of(Error)
+            expect(err.message).to eql(error)
+          end
+        end
       end
     end
   end

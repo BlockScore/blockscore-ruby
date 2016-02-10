@@ -3,12 +3,17 @@ module BlockScore
     extend self
 
     PLURAL_LOOKUP = {
-      'candidate' => 'candidates',
-      'company' => 'companies',
-      'person' => 'people',
-      'question_set' => 'question_sets',
+      'candidate'     => 'candidates',
+      'company'       => 'companies',
+      'person'        => 'people',
+      'question_set'  => 'question_sets',
       'watchlist_hit' => 'watchlist_hits'
     }
+
+    PARSE_ERROR =
+      'An error has occurred. ' \
+        'If this problem persists, ' \
+        'please message support@blockscore.com.'.freeze
 
     def parse_json!(json_obj)
       JSON.parse(json_obj, symbolize_names: true)
@@ -17,7 +22,7 @@ module BlockScore
     def parse_json(json_obj)
       parse_json! json_obj
     rescue JSON::ParserError
-      raise Error, 'An error has occurred. If this problem persists, please message support@blockscore.com.'
+      raise Error, PARSE_ERROR
     end
 
     def create_object(resource, options = {})
@@ -36,7 +41,8 @@ module BlockScore
     def to_constant(camel_cased_word)
       names = camel_cased_word.split('::')
 
-      # Trigger a built-in NameError exception including the ill-formed constant in the message.
+      # Trigger a built-in NameError exception including
+      # the ill-formed constant in the message.
       Object.const_get(camel_cased_word) if names.empty?
 
       # Remove the first blank element in case of '::ClassName' notation.

@@ -1,5 +1,12 @@
 module BlockScore
   module Connection
+    MAJOR_VERSION = BlockScore::VERSION.to_i
+    REPO          = 'https://github.com/BlockScore/blockscore-ruby'.freeze
+    API_VERSION   = "version=#{MAJOR_VERSION}".freeze
+    ACCEPT_HEADER = "application/vnd.blockscore+json;#{API_VERSION}".freeze
+    USER_AGENT    = "blockscore-ruby/#{BlockScore::VERSION} (#{REPO})".freeze
+    CONTENT_TYPE  = 'application/json'.freeze
+
     def get(path, params)
       request :get, path, params
     end
@@ -20,9 +27,9 @@ module BlockScore
 
     def headers
       @headers ||= {
-        'Accept' => "application/vnd.blockscore+json;version=#{BlockScore::VERSION.to_i}",
-        'User-Agent' => "blockscore-ruby/#{BlockScore::VERSION} (https://github.com/BlockScore/blockscore-ruby)",
-        'Content-Type' => 'application/json'
+        'Accept'       => ACCEPT_HEADER,
+        'User-Agent'   => USER_AGENT,
+        'Content-Type' => CONTENT_TYPE
       }
     end
 

@@ -1,5 +1,11 @@
 module QuestionSetHelper
-  VALID_ANSWERS = ['309 Colver Rd', '812', 'Jasper', '49230', 'None Of The Above']
+  VALID_ANSWERS = [
+    '309 Colver Rd'.freeze,
+    '812'.freeze,
+    'Jasper'.freeze,
+    '49230'.freeze,
+    'None Of The Above'.freeze
+  ].freeze
 
   def self.correct_answers(questions)
     answers(questions, true)

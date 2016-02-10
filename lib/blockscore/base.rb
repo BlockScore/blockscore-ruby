@@ -4,6 +4,8 @@ module BlockScore
   class Base
     extend Connection
 
+    ABSTRACT_WARNING = 'Base is an abstract class, not an API resource'.freeze
+
     def initialize(options = {}, &block)
       @loaded = !(block)
       @proc = block
@@ -63,7 +65,7 @@ module BlockScore
     end
 
     def self.endpoint
-      fail NotImplementedError, 'Base is an abstract class, not an API resource' if equal?(Base)
+      fail NotImplementedError, ABSTRACT_WARNING if equal?(Base)
 
       "#{api_url}#{Util.to_plural(resource)}"
     end
