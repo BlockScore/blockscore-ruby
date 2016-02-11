@@ -32,7 +32,7 @@ module BlockScore
     end
 
     def refresh
-      capture_attributes(self.class.retrieve(id))
+      capture_attributes(retrieve(id))
 
       true
     rescue Error
