@@ -4,9 +4,11 @@ require 'uri'
 module BlockScore
   class Base
     extend Connection
+    extend Forwardable
 
     ABSTRACT_WARNING = 'Base is an abstract class, not an API resource'.freeze
-    API_URL = URI.parse('https://api.blockscore.com/').freeze
+
+    def_delegators 'self.class', :endpoint, :post, :retrieve
 
     def initialize(options = {}, &block)
       @loaded = !(block)
@@ -44,7 +46,7 @@ module BlockScore
     end
 
     def save!
-      capture_attributes(self.class.post(self.class.endpoint, attributes))
+      capture_attributes(post(endpoint, attributes))
       true
     end
 
@@ -55,7 +57,11 @@ module BlockScore
     def self.endpoint
       fail NotImplementedError, ABSTRACT_WARNING if equal?(Base)
 
-      API_URL + Util.to_plural(resource)
+      Pathname(Util.to_plural(resource))
+    end
+
+    def member_endpoint
+      endpoint + id
     end
 
     def persisted?

@@ -25,11 +25,11 @@ module BlockScore
         :livemode
       ]
 
-      def_delegators 'self.class', :endpoint, :patch
+      def_delegators 'self.class', :patch
 
       def save!
         if persisted?
-          patch("#{endpoint}/#{id}", filter_params)
+          patch(member_endpoint, filter_params)
           true
         else
           super

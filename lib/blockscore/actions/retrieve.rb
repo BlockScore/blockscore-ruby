@@ -16,7 +16,7 @@ module BlockScore
         def retrieve(id, options = {})
           fail ArgumentError, 'ID must be supplied' if id.nil? || id.empty?
           fail ArgumentError, 'ID is malformed' unless id =~ RESOURCE_ID_FORMAT
-          req = ->() { get("#{endpoint}/#{id}", options) }
+          req = ->() { get(endpoint + id, options) }
           new(id: id, &req)
         end
       end
