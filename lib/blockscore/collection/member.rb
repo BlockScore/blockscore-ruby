@@ -57,7 +57,7 @@ module BlockScore
       #
       # @api private
       def save_parent
-        parent.save unless parent_saved?
+        parent.save! unless parent_saved?
       end
 
       # Check if parent is saved
@@ -66,7 +66,7 @@ module BlockScore
       #
       # @api private
       def parent_saved?
-        parent.id
+        !parent.id.nil?
       end
 
       # @!attribute [r] instance

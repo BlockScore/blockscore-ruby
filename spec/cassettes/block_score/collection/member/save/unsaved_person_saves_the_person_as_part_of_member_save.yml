@@ -1,0 +1,189 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Emilie","name_last":"Turcotte","document_type":"ssn","document_value":"0000","birth_day":12,"birth_month":8,"birth_year":1932,"address_street1":"908
+        Ledner Rest","address_city":"Rutheton","address_subdivision":"KY","address_postal_code":"12602","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"c890b93a6d4ff02c14202f0002dde3ad"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 0cebe115-d892-4ae4-aef3-77779a26ac75
+      X-Runtime:
+      - '1.007183'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Tue, 09 Feb 2016 17:38:16 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"56ba2407636161000300067b","created_at":1455039495,"updated_at":1455039495,"status":"valid","livemode":false,"phone_number":null,"ip_address":null,"birth_day":12,"birth_month":8,"birth_year":1932,"name_first":"Emilie","name_middle":null,"name_last":"Turcotte","address_street1":"908
+        Ledner Rest","address_street2":null,"address_city":"Rutheton","address_subdivision":"KY","address_postal_code":"12602","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version:
+  recorded_at: Tue, 09 Feb 2016 17:38:16 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/question_sets
+    body:
+      encoding: UTF-8
+      string: '{"person_id":"56ba2407636161000300067b"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"07c4a401cda4f21d974ffcc5e1206a32"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 395c1691-4edb-43f9-83ac-d31efe0ad0b2
+      X-Runtime:
+      - '0.080298'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Tue, 09 Feb 2016 17:38:17 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"question_set","id":"56ba24093232320003000610","created_at":1455039497,"updated_at":1455039497,"livemode":false,"person_id":"56ba2407636161000300067b","score":null,"expired":false,"time_limit":0,"questions":[{"id":1,"question":"Which
+        one of the following counties is associated with you?","answers":[{"id":1,"answer":"Schoharie"},{"id":2,"answer":"Boone"},{"id":3,"answer":"Niagara"},{"id":4,"answer":"Jasper"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":2,"question":"What state was your SSN issued in?","answers":[{"id":1,"answer":"Delaware"},{"id":2,"answer":"Oregon"},{"id":3,"answer":"Utah"},{"id":4,"answer":"Maine"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":3,"question":"Which one of the following addresses
+        is associated with you?","answers":[{"id":1,"answer":"309 Colver Rd"},{"id":2,"answer":"430
+        Dwight"},{"id":3,"answer":"467 Meridian Rd"},{"id":4,"answer":"221 Wolf Lake"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":4,"question":"Which one of the following zip codes
+        is associated with you?","answers":[{"id":1,"answer":"49268"},{"id":2,"answer":"49230"},{"id":3,"answer":"49209"},{"id":4,"answer":"49993"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":5,"question":"Which one of the following adult individuals
+        is most closely associated with you?","answers":[{"id":1,"answer":"Nathan"},{"id":2,"answer":"Julian"},{"id":3,"answer":"Jason"},{"id":4,"answer":"Jose"},{"id":5,"answer":"None
+        Of The Above"}]}]}'
+    http_version:
+  recorded_at: Tue, 09 Feb 2016 17:38:17 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/question_sets
+    body:
+      encoding: UTF-8
+      string: '{"object":"question_set","id":"56ba24093232320003000610","created_at":1455039497,"updated_at":1455039497,"livemode":false,"person_id":null,"score":null,"expired":false,"time_limit":0,"questions":[{"id":1,"question":"Which
+        one of the following counties is associated with you?","answers":[{"id":1,"answer":"Schoharie"},{"id":2,"answer":"Boone"},{"id":3,"answer":"Niagara"},{"id":4,"answer":"Jasper"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":2,"question":"What state was your SSN issued in?","answers":[{"id":1,"answer":"Delaware"},{"id":2,"answer":"Oregon"},{"id":3,"answer":"Utah"},{"id":4,"answer":"Maine"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":3,"question":"Which one of the following addresses
+        is associated with you?","answers":[{"id":1,"answer":"309 Colver Rd"},{"id":2,"answer":"430
+        Dwight"},{"id":3,"answer":"467 Meridian Rd"},{"id":4,"answer":"221 Wolf Lake"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":4,"question":"Which one of the following zip codes
+        is associated with you?","answers":[{"id":1,"answer":"49268"},{"id":2,"answer":"49230"},{"id":3,"answer":"49209"},{"id":4,"answer":"49993"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":5,"question":"Which one of the following adult individuals
+        is most closely associated with you?","answers":[{"id":1,"answer":"Nathan"},{"id":2,"answer":"Julian"},{"id":3,"answer":"Jason"},{"id":4,"answer":"Jose"},{"id":5,"answer":"None
+        Of The Above"}]}]}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - b82a7be0-83f6-488a-a14e-27c4eec2d220
+      X-Runtime:
+      - '0.011251'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Tue, 09 Feb 2016 17:38:29 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"error":{"type":"invalid_request_error","message":"Question with id
+        {:type=>\"Person\", :id=>nil} could not be found"}}'
+    http_version:
+  recorded_at: Tue, 09 Feb 2016 17:38:29 GMT
+recorded_with: VCR 3.0.1
