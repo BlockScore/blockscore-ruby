@@ -48,12 +48,12 @@ module BlockScore
     def execute_request(method, path, params)
       auth = { username: BlockScore.api_key, password: '' }
 
-      if method == :get
-        path = encode_path_params(path, params)
-        params = nil
-      else
-        params = params.to_json
-      end
+      params = if method.equal?(:get)
+                 path = encode_path_params(path, params)
+                 nil
+               else
+                 params.to_json
+               end
 
       options = { basic_auth: auth, headers: headers, body: params }
 

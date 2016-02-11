@@ -34,7 +34,7 @@ module BlockScore
     end
 
     def to_plural(str)
-      PLURAL_LOOKUP[str]
+      PLURAL_LOOKUP.fetch(str)
     end
 
     # Taken from activesupport: http://git.io/vkWtR
@@ -49,7 +49,7 @@ module BlockScore
       names.shift if names.size > 1 && names.first.empty?
 
       names.inject(Object) do |constant, name|
-        if constant == Object
+        if constant.equal?(Object)
           constant.const_get(name)
         else
           candidate = constant.const_get(name)
@@ -59,7 +59,7 @@ module BlockScore
           # Go down the ancestors to check if it is owned directly. The check
           # stops when we reach Object or the end of ancestors tree.
           constant = constant.ancestors.inject do |const, ancestor|
-            break const    if ancestor == Object
+            break const    if ancestor.equal?(Object)
             break ancestor if ancestor.const_defined?(name, false)
             const
           end
@@ -71,7 +71,7 @@ module BlockScore
     end
 
     def to_camelcase(str)
-      str.split('_').map(&:capitalize).join('')
+      str.split('_').map(&:capitalize).join
     end
 
     # Taken from Rulers: http://git.io/vkWqf

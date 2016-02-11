@@ -134,8 +134,7 @@ module BlockScore
     # @api public
     def retrieve(id)
       each do |item|
-        next unless item.id == id
-        return item
+        return item if item.id.eql?(id)
       end
 
       instance = member_class.retrieve(id)
@@ -198,7 +197,7 @@ module BlockScore
     #
     # @api private
     def parent_id?(item)
-      parent.id && item.send(foreign_key) == parent.id
+      parent.id && item.send(foreign_key).eql?(parent.id)
     end
 
     # Register a resource in collection
