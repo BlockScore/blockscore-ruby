@@ -1,6 +1,6 @@
 module BlockScore
   module Connection
-    MAJOR_VERSION = BlockScore::VERSION.to_i
+    MAJOR_VERSION = BlockScore::VERSION.split('.').first
     REPO          = 'https://github.com/BlockScore/blockscore-ruby'.freeze
     API_VERSION   = "version=#{MAJOR_VERSION}".freeze
     ACCEPT_HEADER = "application/vnd.blockscore+json;#{API_VERSION}".freeze
