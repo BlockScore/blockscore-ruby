@@ -144,7 +144,7 @@ module BlockScore
       end
     end
 
-    protected
+    private
 
     # @!attribute [r] member_class
     # class which will be used for the embedded
@@ -165,8 +165,6 @@ module BlockScore
         foreign_key => parent.id
       }
     end
-
-    private
 
     # Generate foreign key name for parent resource
     #

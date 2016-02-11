@@ -23,7 +23,7 @@ module BlockScore
     end
 
     def id
-      attributes.fetch(:id, nil)
+      attributes[:id]
     end
 
     def inspect
@@ -65,10 +65,10 @@ module BlockScore
     end
 
     def persisted?
-      !id.nil? && !attributes.fetch(:deleted, false)
+      !id.nil? && !deleted?
     end
 
-    protected
+    private
 
     def capture_attributes(source)
       @attributes = source.attributes
@@ -90,7 +90,9 @@ module BlockScore
       end
     end
 
-    private
+    def deleted?
+      attributes.fetch(:deleted, false)
+    end
 
     def force!
       @attributes = @proc.call.attributes.merge(@attributes)
