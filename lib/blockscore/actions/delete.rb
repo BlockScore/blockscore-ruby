@@ -11,10 +11,6 @@ module BlockScore
     # candidate.delete
     # => #<BlockScore::Candidate:0x007fe39c424410>
     module Delete
-      extend Forwardable
-
-      def_delegators 'self.class', :endpoint
-
       def delete
         delete!
       rescue Error
@@ -22,7 +18,7 @@ module BlockScore
       end
 
       def delete!
-        self.class.delete("#{endpoint}/#{id}", {})
+        self.class.delete(member_endpoint, {})
         attributes[:deleted] = true
         true
       end

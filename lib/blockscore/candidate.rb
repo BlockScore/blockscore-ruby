@@ -8,7 +8,7 @@ module BlockScore
     include BlockScore::Actions::Delete
     include BlockScore::Actions::All
 
-    def_delegators 'self.class', :api_url, :endpoint, :get, :post
+    def_delegators 'self.class', :get, :post
 
     def history
       resource_member 'history'
@@ -19,13 +19,13 @@ module BlockScore
     end
 
     def search(options = {})
-      post "#{api_url}watchlists", options.merge(candidate_id: id)
+      post 'watchlists', options.merge(candidate_id: id)
     end
 
     private
 
-    def resource_member(member)
-      get "#{endpoint}/#{id}/#{member}", {}
+    def resource_member(target)
+      get member_endpoint + target, {}
     end
   end
 end

@@ -6,7 +6,7 @@ module BlockScore
     include BlockScore::Actions::Retrieve
     include BlockScore::Actions::All
 
-    def_delegators 'self.class', :post, :endpoint
+    def_delegators 'self.class', :post
 
     def score(answers = nil)
       rescore(answers) if answers
@@ -16,7 +16,7 @@ module BlockScore
     private
 
     def rescore(answers)
-      @attributes = post("#{endpoint}/#{id}/score", answers: answers).attributes
+      capture_attributes(post(member_endpoint + 'score', answers: answers))
     end
   end
 end

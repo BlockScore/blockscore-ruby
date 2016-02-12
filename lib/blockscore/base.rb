@@ -1,10 +1,14 @@
 require 'blockscore/connection'
+require 'uri'
 
 module BlockScore
   class Base
     extend Connection
+    extend Forwardable
 
     ABSTRACT_WARNING = 'Base is an abstract class, not an API resource'.freeze
+
+    def_delegators 'self.class', :endpoint, :post, :retrieve
 
     def initialize(options = {}, &block)
       @loaded = !(block)
@@ -15,11 +19,11 @@ module BlockScore
     def attributes
       return @attributes if @loaded
       force!
-      @attributes
+      attributes
     end
 
     def id
-      @attributes.fetch(:id, nil)
+      attributes[:id]
     end
 
     def inspect
@@ -28,8 +32,7 @@ module BlockScore
     end
 
     def refresh
-      res = self.class.retrieve(id)
-      @attributes = res.attributes
+      capture_attributes(retrieve(id))
 
       true
     rescue Error
@@ -43,9 +46,7 @@ module BlockScore
     end
 
     def save!
-      response = self.class.post(self.class.endpoint, attributes)
-      @attributes = response.attributes
-
+      capture_attributes(post(endpoint, attributes))
       true
     end
 
@@ -53,21 +54,25 @@ module BlockScore
       @resource ||= Util.to_underscore(to_s.split('::').last)
     end
 
-    def self.api_url
-      'https://api.blockscore.com/'
-    end
-
     def self.endpoint
       fail NotImplementedError, ABSTRACT_WARNING if equal?(Base)
 
-      "#{api_url}#{Util.to_plural(resource)}"
+      Pathname(Util.to_plural(resource))
+    end
+
+    def member_endpoint
+      endpoint + id
     end
 
     def persisted?
-      !id.nil? && !attributes[:deleted]
+      !id.nil? && !deleted?
     end
 
-    protected
+    private
+
+    def capture_attributes(source)
+      @attributes = source.attributes
+    end
 
     def add_accessor(symbol, *_args)
       singleton_class.instance_eval do
@@ -85,7 +90,9 @@ module BlockScore
       end
     end
 
-    private
+    def deleted?
+      attributes.fetch(:deleted, false)
+    end
 
     def force!
       @attributes = @proc.call.attributes.merge(@attributes)

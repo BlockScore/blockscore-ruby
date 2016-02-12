@@ -144,7 +144,7 @@ module BlockScore
       end
     end
 
-    protected
+    private
 
     # @!attribute [r] member_class
     # class which will be used for the embedded
@@ -165,8 +165,6 @@ module BlockScore
         foreign_key => parent.id
       }
     end
-
-    private
 
     # Generate foreign key name for parent resource
     #
@@ -222,8 +220,7 @@ module BlockScore
     # @api private
     def register_parent_data
       ids.each do |id|
-        item = member_class.retrieve(id)
-        self << item
+        self << member_class.retrieve(id)
       end
     end
 
