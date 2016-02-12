@@ -55,7 +55,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"object":"person","id":"56b91b673565650003000ec0","created_at":1454971751,"updated_at":1454971751,"status":"valid","livemode":false,"phone_number":null,"ip_address":null,"birth_day":12,"birth_month":3,"birth_year":1985,"name_first":"Edythe","name_middle":null,"name_last":"Sipes","address_street1":"695
         Okuneva Garden","address_street2":null,"address_city":"Boganland","address_subdivision":"TN","address_postal_code":"91407-1759","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
-    http_version:
+    http_version: 
   recorded_at: Mon, 08 Feb 2016 22:49:12 GMT
 - request:
     method: post
@@ -121,7 +121,7 @@ http_interactions:
         is associated with you?","answers":[{"id":1,"answer":"52 Canandaigua Rd"},{"id":2,"answer":"902
         Grass Lake Rd"},{"id":3,"answer":"221 Wolf Lake"},{"id":4,"answer":"309 Colver
         Rd"},{"id":5,"answer":"None Of The Above"}]}]}'
-    http_version:
+    http_version: 
   recorded_at: Mon, 08 Feb 2016 22:49:12 GMT
 - request:
     method: post

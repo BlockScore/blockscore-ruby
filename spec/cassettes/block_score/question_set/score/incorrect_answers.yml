@@ -307,7 +307,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"error":{"type":"invalid_request_error","message":"Cannot create requests
         at this path (POST /question_sets/55fc709a39613800030008dc)"}}'
-    http_version:
+    http_version: 
   recorded_at: Tue, 09 Feb 2016 02:21:55 GMT
 - request:
     method: post
