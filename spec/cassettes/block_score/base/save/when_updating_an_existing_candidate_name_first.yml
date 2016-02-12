@@ -1,0 +1,113 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"2003-02-10","name_first":"John","name_last":"Lind","address_street1":"125
+        Danny Corner","address_city":"Lake Hermannside","address_country_code":"AM"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"484c5562dd929fe5bfa5e23385e085c7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 99cfdfa4-5491-4e38-bf76-44e3abf9c916
+      X-Runtime:
+      - '0.039436'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 11 Feb 2016 22:57:01 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bd6466610003000379","created_at":1455231421,"updated_at":1455231421,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2003-02-10","name_first":"John","name_middle":null,"name_last":"Lind","address_street1":"125
+        Danny Corner","address_street2":null,"address_city":"Lake Hermannside","address_subdivision":null,"address_postal_code":null,"address_country_code":"AM"}'
+    http_version:
+  recorded_at: Thu, 11 Feb 2016 22:57:01 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bd6466610003000379
+    body:
+      encoding: UTF-8
+      string: '{"note":null,"ssn":"0000","passport":null,"date_of_birth":"2003-02-10","name_first":"Jane","name_middle":null,"name_last":"Lind","address_street1":"125
+        Danny Corner","address_street2":null,"address_city":"Lake Hermannside","address_subdivision":null,"address_postal_code":null,"address_country_code":"AM"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"099f4933a6c7e0e25f209b1d1ff8355e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 08508693-1d9a-4d54-b3fa-9d0b4c7eb4de
+      X-Runtime:
+      - '0.020061'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 11 Feb 2016 22:57:02 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bd6466610003000379","created_at":1455231421,"updated_at":1455231422,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2003-02-10","name_first":"Jane","name_middle":null,"name_last":"Lind","address_street1":"125
+        Danny Corner","address_street2":null,"address_city":"Lake Hermannside","address_subdivision":null,"address_postal_code":null,"address_country_code":"AM"}'
+    http_version:
+  recorded_at: Thu, 11 Feb 2016 22:57:02 GMT
+recorded_with: VCR 3.0.1
