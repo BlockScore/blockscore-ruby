@@ -22,7 +22,7 @@ module BlockScore
       def_delegators 'self.class', :resource
 
       def save!
-        saveable? ? super : failure
+        saveable? ? super() : failure
       end
 
       private
@@ -32,10 +32,10 @@ module BlockScore
       end
 
       def failure
-        fail BlockScore::Error, "#{resource} is immutable once saved"
+        fail Error, "#{resource} is immutable once saved"
       end
 
-      def add_setter(symbol, *_args)
+      def add_setter(*)
         saveable? ? super : failure
       end
     end
