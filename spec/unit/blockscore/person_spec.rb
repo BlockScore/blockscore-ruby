@@ -1,10 +1,12 @@
 module BlockScore
   RSpec.describe Person do
     describe '.new' do
-      subject(:person) { BlockScore::Person.new(attributes_for(:person)) }
+      let(:attrs)      { attributes_for(:person) }
+      subject(:person) { BlockScore::Person.new(attrs) }
 
       it { is_expected.not_to be_persisted }
       its(:class) { should be BlockScore::Person }
+      its(:question_sets) { should be_an_instance_of BlockScore::Collection }
     end
 
     describe '.create' do
