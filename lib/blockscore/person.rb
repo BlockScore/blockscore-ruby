@@ -5,6 +5,7 @@ module BlockScore
 
     include BlockScore::Actions::Create
     include BlockScore::Actions::Retrieve
+    include BlockScore::Actions::WriteOnce
     include BlockScore::Actions::All
 
     attr_reader :question_sets
