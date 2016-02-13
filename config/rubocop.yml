@@ -20,14 +20,14 @@ Metrics/LineLength:
   Max: 80
 # DO not update the exclusions for the sake of fixing the line lengths
   Exclude:
-    - 'lib/blockscore/question_set.rb'                            # temporary
-    - 'spec/unit/blockscore/candidate_spec.rb'                    # temporary
-    - 'spec/unit/blockscore/collection_spec.rb'                   # temporary
-    - 'spec/unit/blockscore/company_spec.rb'                      # temporary
-    - 'spec/unit/blockscore/person_spec.rb'                       # temporary
-    - 'spec/unit/blockscore/question_set_spec.rb'                 # temporary
-    - 'spec/unit/blockscore/errors/invalid_request_error_spec.rb' # temporary
-    - 'spec/unit/blockscore/errors/not_found_error_spec.rb'       # temporary
+    - 'lib/blockscore/question_set.rb'                             # temporary
+    - 'spec/unit/block_score/candidate_spec.rb'                    # temporary
+    - 'spec/unit/block_score/collection_spec.rb'                   # temporary
+    - 'spec/unit/block_score/company_spec.rb'                      # temporary
+    - 'spec/unit/block_score/person_spec.rb'                       # temporary
+    - 'spec/unit/block_score/question_set_spec.rb'                 # temporary
+    - 'spec/unit/block_score/invalid_request_error_spec.rb'        # temporary
+    - 'spec/unit/block_score/not_found_error_spec.rb'              # temporary
 Style/DotPosition:
   EnforcedStyle: leading
 Style/CommentAnnotation:
@@ -501,6 +501,8 @@ Metrics/BlockNesting:
 Metrics/ModuleLength:
   CountComments: false
   Max: 100
+  Exclude:
+    - 'spec/unit/block_score/person_spec.rb'    # Temporary
 Metrics/CyclomaticComplexity:
   Max: 6
   Exclude:
@@ -508,6 +510,9 @@ Metrics/CyclomaticComplexity:
 Metrics/MethodLength:
   CountComments: false
   Max: 10
+  Exclude:
+    - 'lib/blockscore/util.rb'              # Temporary
+    - 'spec/support/question_set_helper.rb' # Temporary
 Metrics/ParameterLists:
   Max: 5
   CountKeywordArgs: true
@@ -528,16 +533,6 @@ Lint/DefEndAlignment:
   - def
   AutoCorrect: false
 
-Metrics/MethodLength:
-  Exclude:
-    - 'lib/blockscore/util.rb'              # Temporary
-    - 'spec/support/question_set_helper.rb' # Temporary
-
-Metrics/ModuleLength:
-  Exclude:
-    - 'spec/unit/blockscore/candidate_spec.rb' # Temporary
-    - 'spec/unit/blockscore/person_spec.rb'    # Temporary
-
 Metrics/PerceivedComplexity:
   Exclude:
     - 'lib/blockscore/util.rb' # Temporary
@@ -556,7 +551,6 @@ Style/PercentLiteralDelimiters:
   Exclude:
     - 'spec/factories/companies.rb'                              # Temporary
     - 'spec/support/api_request_behavior.rb'                     # Temporary
-    - 'spec/unit/blockscore/errors/api_connection_error_spec.rb' # Temporary
     - 'spec/vcr_setup.rb'                                        # Temporary
 
 Style/RaiseArgs:
