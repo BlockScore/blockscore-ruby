@@ -113,11 +113,8 @@ module BlockScore
     def create(params = {})
       fail Error, 'Create parent first' unless parent.id
       assoc_params = default_params.merge(params)
-      instance = member_class.create(assoc_params)
 
-      new_member(instance) do |member|
-        register_to_parent(member)
-      end
+      add_instance(member_class.create(assoc_params))
     end
 
     # Retrieve a collection member by its id
@@ -137,14 +134,14 @@ module BlockScore
         return item if item.id.eql?(id)
       end
 
-      instance = member_class.retrieve(id)
-
-      new_member(instance) do |member|
-        register_to_parent(member)
-      end
+      add_instance(member_class.retrieve(id))
     end
 
     private
+
+    def add_instance(instance)
+      new_member(instance, &method(:register_to_parent))
+    end
 
     # @!attribute [r] member_class
     # class which will be used for the embedded
