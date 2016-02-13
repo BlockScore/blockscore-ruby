@@ -33,7 +33,6 @@ module BlockScore
 
     def refresh
       capture_attributes(retrieve(id))
-
       true
     rescue Error
       false
@@ -57,7 +56,6 @@ module BlockScore
 
     def self.endpoint
       fail NotImplementedError, ABSTRACT_WARNING if equal?(Base)
-
       Pathname(Util.to_plural(resource))
     end
 
