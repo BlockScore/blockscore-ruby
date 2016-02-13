@@ -1,0 +1,220 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1917-11-28","name_first":"John","name_last":"Kilback","address_street1":"42873
+        Bruen Junction","address_city":"Port Julius","address_country_code":"BL"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"3a8a45474a1052fba070b1552fec60d5"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 16a3a8d3-a741-492b-baac-f6d38ac7fe7f
+      X-Runtime:
+      - '0.049393'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:19:25 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56be687d6665660003000194","created_at":1455319165,"updated_at":1455319165,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1917-11-28","name_first":"John","name_middle":null,"name_last":"Kilback","address_street1":"42873
+        Bruen Junction","address_street2":null,"address_city":"Port Julius","address_subdivision":null,"address_postal_code":null,"address_country_code":"BL"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:19:25 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56be687d6665660003000194
+    body:
+      encoding: UTF-8
+      string: '{"note":null,"ssn":"0000","passport":null,"date_of_birth":"1917-11-28","name_first":"Jane","name_middle":null,"name_last":"Kilback","address_street1":"42873
+        Bruen Junction","address_street2":null,"address_city":"Port Julius","address_subdivision":null,"address_postal_code":null,"address_country_code":"BL"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"6650593881a77016ce2d60e3d22d4e3f"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 92e21a16-b077-488b-8934-27f90ee0ac08
+      X-Runtime:
+      - '0.045833'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:19:26 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56be687d6665660003000194","created_at":1455319165,"updated_at":1455319166,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1917-11-28","name_first":"Jane","name_middle":null,"name_last":"Kilback","address_street1":"42873
+        Bruen Junction","address_street2":null,"address_city":"Port Julius","address_subdivision":null,"address_postal_code":null,"address_country_code":"BL"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:19:26 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1949-03-03","name_first":"John","name_last":"Medhurst","address_street1":"933
+        Lloyd Ville","address_city":"East Anissamouth","address_country_code":"IR"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Request-Id:
+      - 8da53a9f-1966-498d-9ad4-f8d60f71d5bf
+      X-Runtime:
+      - '0.002027'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:20:16 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Content-Length:
+      - '36'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"status":"404","error":"Not Found"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:20:16 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56be687d6665660003000194","created_at":1455319165,"updated_at":1455319165,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1917-11-28","name_first":"Jane","name_middle":null,"name_last":"Kilback","address_street1":"42873
+        Bruen Junction","address_street2":null,"address_city":"Port Julius","address_subdivision":null,"address_postal_code":null,"address_country_code":"BL"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"3386daa2780220875d4b5807d166a265"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - f070fe63-9e17-4cbd-850b-29a78927e285
+      X-Runtime:
+      - '0.034095'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:22:48 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56be694866656600030001a1","created_at":1455319368,"updated_at":1455319368,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1917-11-28","name_first":"Jane","name_middle":null,"name_last":"Kilback","address_street1":"42873
+        Bruen Junction","address_street2":null,"address_city":"Port Julius","address_subdivision":null,"address_postal_code":null,"address_country_code":"BL"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:22:48 GMT
+recorded_with: VCR 3.0.1

@@ -206,4 +206,5971 @@ http_interactions:
       string: '{"status":"404","error":"Not Found"}'
     http_version:
   recorded_at: Thu, 11 Feb 2016 22:57:31 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache, private
+      X-Request-Id:
+      - 27d607d6-3541-41a3-a3ea-105be1048529
+      X-Runtime:
+      - '0.004646'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:45:42 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"error":{"type":"invalid_request_error","message":"Cannot create requests
+        at this path (GET /candidates56bd11bc336633000300037a)"}}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:45:42 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - f493254e-0f2a-4e2f-9c2f-32b87d366fe6
+      X-Runtime:
+      - '0.009346'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:53:17 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:53:17 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 2f964e95-9c33-4e48-b24f-015547a499cd
+      X-Runtime:
+      - '0.008786'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:53:18 GMT
+      X-Rack-Cache:
+      - miss
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:53:18 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - d7292ef8-5763-4f8c-9b78-b95adb19999d
+      X-Runtime:
+      - '0.012055'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:53:18 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:53:18 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - eb3d2426-25b6-469f-b3b6-e058659bd148
+      X-Runtime:
+      - '0.007832'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:53:19 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:53:19 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 89eec012-7984-4b22-8484-ddfaf4d62a56
+      X-Runtime:
+      - '0.009023'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:53:19 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:53:19 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 0ef05962-494b-4142-87f4-0e9b3c56abf0
+      X-Runtime:
+      - '0.007051'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:53:20 GMT
+      X-Rack-Cache:
+      - miss
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:53:20 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 2e67264e-109f-47a6-a482-b3f2f3599799
+      X-Runtime:
+      - '0.007295'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:53:20 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:53:20 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - e6467b4f-4b39-4ec7-9df7-0a08238ea22f
+      X-Runtime:
+      - '0.006229'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:53:20 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:53:20 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 940a5a27-9d49-478b-980e-7c70df919313
+      X-Runtime:
+      - '0.007164'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:53:21 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:53:21 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - d51a747e-8ddc-465d-96ec-ad2e290aae98
+      X-Runtime:
+      - '0.007501'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:53:21 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:53:21 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - c5131a65-c92c-4e57-bb01-ef9ac36e85fa
+      X-Runtime:
+      - '0.009337'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:53:22 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:53:22 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - a51d4bd0-2f18-4b0c-83fb-c0be783d7a71
+      X-Runtime:
+      - '0.007230'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:53:22 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:53:22 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - c5175f64-df7c-4257-8327-e4299dc28b7c
+      X-Runtime:
+      - '0.007685'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:53:23 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:53:23 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 7f03187c-9964-4c8a-80ff-1de1b1eff869
+      X-Runtime:
+      - '0.007270'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:53:23 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:53:23 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 4e517346-6e20-4066-8117-8d4bf988b445
+      X-Runtime:
+      - '0.006776'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:53:24 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:53:24 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 49776ee9-405c-4e71-aa16-c11bbb2eb8f4
+      X-Runtime:
+      - '0.008071'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:53:24 GMT
+      X-Rack-Cache:
+      - miss
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:53:24 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 9b87629b-0dcd-47ab-8ed7-a261eea664b6
+      X-Runtime:
+      - '0.009442'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:53:25 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:53:25 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 47021e9f-f7c4-4a0d-88bc-b598a8222467
+      X-Runtime:
+      - '0.007067'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:53:25 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:53:25 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - ba698def-55c2-40ce-89bb-156c6aea886a
+      X-Runtime:
+      - '0.021823'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:53:25 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:53:25 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 88fa4212-255f-4878-bddf-a127fd34481d
+      X-Runtime:
+      - '0.007230'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:53:26 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:53:26 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 088b3e2d-59e0-4d93-b353-2633b17c55a5
+      X-Runtime:
+      - '0.009922'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:53:26 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:53:26 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 04a50cee-487b-4bab-8bb1-5a041049b4ee
+      X-Runtime:
+      - '0.009388'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:53:27 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:53:27 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1932-02-17","name_first":"Jacky","name_last":"Smith","address_street1":"92979
+        Chadd Ports","address_city":"Lake Nyah","address_country_code":"NU"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Request-Id:
+      - 34be2d71-1b02-42a3-a445-ffc72d7f9e7a
+      X-Runtime:
+      - '0.004568'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:58:54 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Content-Length:
+      - '36'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"status":"404","error":"Not Found"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:58:54 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/Pathname
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"2008-12-16","name_first":"Jorge","name_last":"Smith","address_street1":"662
+        Berge Tunnel","address_city":"South Leoneburgh","address_country_code":"MD"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 7419b1af-46d3-4798-bdda-936497cc6e5a
+      X-Runtime:
+      - '0.005860'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:58:56 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"error":{"type":"invalid_request_error","message":"Cannot create requests
+        at this path (POST /Pathname)"}}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:58:56 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - b328880e-b00e-4822-a6c4-1fcc5d249502
+      X-Runtime:
+      - '0.008109'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:59:11 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:59:11 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 4c00199a-46ae-4898-a1c8-a103bcd0ff99
+      X-Runtime:
+      - '0.007299'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:59:12 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:59:12 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 9a2b2d37-b274-4937-91c3-5a5605b40ebe
+      X-Runtime:
+      - '0.006440'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:59:12 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:59:12 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 3cc01958-d3d2-475f-8971-c16ea5822597
+      X-Runtime:
+      - '0.006942'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:59:13 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:59:13 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - fa10f947-2541-4454-b751-1f937e1cffbc
+      X-Runtime:
+      - '0.007594'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:59:13 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:59:13 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 9870c82a-6f22-428c-a73d-7223b4cd9759
+      X-Runtime:
+      - '0.006456'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:59:13 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:59:13 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 1f3e063b-5270-488e-9b12-8b763ae6dd04
+      X-Runtime:
+      - '0.008462'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:59:14 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:59:14 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 5df414e4-9dbd-4645-aeb5-1b4a1ab5124f
+      X-Runtime:
+      - '0.007072'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:59:14 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:59:14 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 88b57d78-edf4-4f1d-9a15-5aae4f696cad
+      X-Runtime:
+      - '0.007397'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:59:15 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:59:15 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 0c3cff83-c8ea-4b73-afa8-31e5a7f2e581
+      X-Runtime:
+      - '0.006250'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:59:15 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:59:15 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - c789109b-d7b2-4828-b1a1-a28f678e0a58
+      X-Runtime:
+      - '0.009103'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:59:16 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:59:16 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - a8ab8772-ce7e-4419-a15d-c19192550a6a
+      X-Runtime:
+      - '0.007565'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:59:16 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:59:16 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 580f50f0-ae85-45ca-9dcf-e5606ac43e94
+      X-Runtime:
+      - '0.006266'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:59:17 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:59:17 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - b7689984-9bab-487c-b99a-be0d0bad979b
+      X-Runtime:
+      - '0.008991'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:59:17 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:59:17 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - ca3c68fe-5cd1-4119-baa0-eeb58c6b7f4a
+      X-Runtime:
+      - '0.007531'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:59:18 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:59:18 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 3595a36d-1232-4466-a5e9-cf865f61e15f
+      X-Runtime:
+      - '0.007102'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:59:18 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:59:18 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - ce98c372-4210-4ef9-97b2-c5ffbdf5ed43
+      X-Runtime:
+      - '0.006947'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:59:18 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:59:18 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - a699b92e-8d04-43d1-b351-49add576d2be
+      X-Runtime:
+      - '0.009070'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:59:19 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:59:19 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 5367900d-f9cb-4a87-9c59-fb78416c755f
+      X-Runtime:
+      - '0.007365'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:59:19 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:59:19 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 786c3ce9-32b0-4305-9140-61cf26f54a0d
+      X-Runtime:
+      - '0.009240'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 22:59:20 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 22:59:20 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - b05c2858-5b6f-4b25-bb8e-81a21e26cca7
+      X-Runtime:
+      - '0.007822'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:01:52 GMT
+      X-Rack-Cache:
+      - miss
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:01:52 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 28d0d3b8-b362-47f5-80dd-aaa3c2642f11
+      X-Runtime:
+      - '0.007937'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:01:53 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:01:53 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 8249930c-1028-4d4f-9310-4a2acbce277e
+      X-Runtime:
+      - '0.007301'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:01:53 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:01:53 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 9e9e3790-c982-4317-bce7-4b422e655c02
+      X-Runtime:
+      - '0.008138'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:01:54 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:01:54 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 889207c7-692e-4789-b090-82e728d9471a
+      X-Runtime:
+      - '0.007306'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:01:54 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:01:54 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 34e763db-06d1-43d1-a540-6f2cd70dd1f1
+      X-Runtime:
+      - '0.010242'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:01:55 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:01:55 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 34b2c17b-b013-4150-87bd-660d8b1b9e54
+      X-Runtime:
+      - '0.008160'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:01:55 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:01:55 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 232dadd9-64a1-494d-99da-c2c3295ee3ba
+      X-Runtime:
+      - '0.007609'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:01:55 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:01:55 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 38e9e23b-696d-4d09-87b6-2fa8c0869d24
+      X-Runtime:
+      - '0.006324'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:01:56 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:01:56 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - fa2774b0-a8fa-4e8d-8134-b0870acbb6ab
+      X-Runtime:
+      - '0.024254'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:01:56 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:01:56 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 8ec30b62-3484-4c41-9858-d31e8ec11181
+      X-Runtime:
+      - '0.007500'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:01:57 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:01:57 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 4a6c99a9-d813-434b-9022-7522d642479e
+      X-Runtime:
+      - '0.007502'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:01:57 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:01:57 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 8d5bd17e-8f4d-475c-b419-c22fdddc41b6
+      X-Runtime:
+      - '0.007733'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:01:57 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:01:58 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 54fb3983-3f27-442e-9b3a-53f0332741c2
+      X-Runtime:
+      - '0.006490'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:01:58 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:01:58 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - f8877142-5219-448a-8d42-c386c674655e
+      X-Runtime:
+      - '0.010168'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:01:58 GMT
+      X-Rack-Cache:
+      - miss
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:01:58 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 8b61fbfe-dc3d-40e2-850c-64d179849a1c
+      X-Runtime:
+      - '0.009773'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:01:59 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:01:59 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 739d0fe0-1f4f-4b7c-bd32-1078c77098a2
+      X-Runtime:
+      - '0.007843'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:01:59 GMT
+      X-Rack-Cache:
+      - miss
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:01:59 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - c4671a16-c21c-4425-8fa9-ef6d21b22025
+      X-Runtime:
+      - '0.007862'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:02:00 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:02:00 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 720d3043-23e2-4edb-9550-ac655bb710dd
+      X-Runtime:
+      - '0.007504'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:02:00 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:02:00 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 6f009cd7-c043-4ee4-a295-2d029530f29e
+      X-Runtime:
+      - '0.008289'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:12:28 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:12:28 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 3e6f1f47-1571-4e3a-90a3-89aa38b1c3f2
+      X-Runtime:
+      - '0.008293'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:12:29 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:12:29 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - b2d2be61-e126-4225-b1c0-61c69f4aa5f6
+      X-Runtime:
+      - '0.006864'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:12:29 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:12:29 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 735d06ef-b427-431d-ab54-f69827dfe348
+      X-Runtime:
+      - '0.006769'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:12:29 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:12:29 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - ae5861d2-c08d-4a00-9e04-0213d0a38988
+      X-Runtime:
+      - '0.007340'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:12:30 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:12:30 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - d9ec53bc-80c6-435f-8c4d-ee6dde9b8763
+      X-Runtime:
+      - '0.020425'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:12:30 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:12:30 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - c066109f-9594-482c-bc1e-d0844c4d2c27
+      X-Runtime:
+      - '0.008758'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:12:31 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:12:31 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 687f24b7-ed63-4132-ad59-f02001242db6
+      X-Runtime:
+      - '0.007422'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:12:31 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:12:31 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 5229c1b6-2676-4c2b-9794-e6104b63bd8e
+      X-Runtime:
+      - '0.008589'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:12:31 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:12:31 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 27da71fe-c8f7-4979-8ffa-7926df82fee1
+      X-Runtime:
+      - '0.006859'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:12:32 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:12:32 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - f315115e-edca-4db5-96c3-e0d956d1ca13
+      X-Runtime:
+      - '0.007446'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:12:32 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:12:32 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 53972c59-723c-4449-adc2-6e8a0aba2039
+      X-Runtime:
+      - '0.007176'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:12:33 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:12:33 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 7c3eba39-20af-487d-b857-f5d3a9a8184c
+      X-Runtime:
+      - '0.008870'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:12:33 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:12:33 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 56413d36-155f-4947-b17d-b49bd27c988b
+      X-Runtime:
+      - '0.008414'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:12:34 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:12:34 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 699408e1-ca13-4884-b180-762ba37917f0
+      X-Runtime:
+      - '0.009250'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:12:34 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:12:34 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 4f0e1aef-fa1f-45c3-9cd6-a5a870645105
+      X-Runtime:
+      - '0.009639'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:12:35 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:12:35 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - d1038f8e-3edd-479f-b195-194100a00409
+      X-Runtime:
+      - '0.006996'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:28:13 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:28:13 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - e2821140-05e2-44c9-b2b1-44848cee7319
+      X-Runtime:
+      - '0.007459'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:28:14 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:28:14 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - d78ec187-65b6-4943-a736-e8dc0f79a09f
+      X-Runtime:
+      - '0.007561'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:28:14 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:28:14 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - e89427e1-00a5-4047-9c27-65189982f394
+      X-Runtime:
+      - '0.008148'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:28:15 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:28:15 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - e7f76686-6e60-4a39-93fe-c42ec4dcd544
+      X-Runtime:
+      - '0.007143'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:28:15 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:28:15 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 0b522f87-5dda-4830-b328-88eeb1d1f959
+      X-Runtime:
+      - '0.008303'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:28:16 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:28:16 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 905770b9-7c8c-4f07-a04f-fd7220bf78af
+      X-Runtime:
+      - '0.009870'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:28:16 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:28:16 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 50d8a2ec-ccbc-4ad5-97ee-fdd9ba67b006
+      X-Runtime:
+      - '0.007463'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:28:16 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:28:16 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 7602dc50-780b-4a28-a4b3-abe55549458e
+      X-Runtime:
+      - '0.007503'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:28:17 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:28:17 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 8f349a59-f4aa-4407-b4b2-c558436636e1
+      X-Runtime:
+      - '0.006609'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:28:17 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:28:17 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 578764fb-9c04-4a89-84eb-2c0a60991cee
+      X-Runtime:
+      - '0.008223'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:28:18 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:28:18 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 418be111-4990-4dcd-96e5-c02a47f8bd7d
+      X-Runtime:
+      - '0.007380'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:28:18 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:28:18 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - d71df8bf-f292-47c1-bdea-e30c3445b5a8
+      X-Runtime:
+      - '0.006884'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:28:19 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:28:19 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 9af3bbff-aa88-425f-acb4-b42ce797666e
+      X-Runtime:
+      - '0.007714'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:28:19 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:28:19 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - f529a664-8d2f-422a-b7e3-944951a2161a
+      X-Runtime:
+      - '0.007067'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:28:19 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:28:19 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 4379462c-4fc9-436c-b257-59f77db3fc26
+      X-Runtime:
+      - '0.007506'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:32:07 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:32:07 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 862eb555-ba0a-4f26-9814-d01ceb83536d
+      X-Runtime:
+      - '0.007040'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:32:07 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:32:07 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - ce7f167a-8d63-4c18-8633-56bb4139060e
+      X-Runtime:
+      - '0.006325'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:32:08 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:32:08 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 1a82ba7b-9151-471e-8692-8b8d15c7a4b3
+      X-Runtime:
+      - '0.006814'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:32:08 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:32:08 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 3564ebf9-ba31-431b-8286-29aa78d24bd6
+      X-Runtime:
+      - '0.010154'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:32:09 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:32:09 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - ccc2ff4d-9a06-4e97-91a5-01907434822d
+      X-Runtime:
+      - '0.007212'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:32:09 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:32:09 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - f61b4442-57f9-4ee9-acdb-1f917654cc1e
+      X-Runtime:
+      - '0.007348'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:32:10 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:32:10 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 06501f2c-fd24-4bdd-a479-d3488b0e011c
+      X-Runtime:
+      - '0.007384'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:32:10 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:32:10 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 9682bcf3-7351-4633-a288-a6ed31125f25
+      X-Runtime:
+      - '0.007515'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:32:10 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:32:10 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - db4a3c0a-4b64-4740-a13b-6b8723ea19d8
+      X-Runtime:
+      - '0.006760'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:32:11 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:32:11 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - b02a675b-369c-4ff9-9246-2280d1e6a5b2
+      X-Runtime:
+      - '0.007220'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:32:11 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:32:11 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc336633000300037a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b37ba820099bb215377e8e145f81262e"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 09c05bd2-e569-4c78-ab8e-10418e91c7dd
+      X-Runtime:
+      - '0.007325'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:32:12 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc336633000300037a","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-12-05","name_first":"Electa","name_middle":null,"name_last":"Smith","address_street1":"4318
+        Hermann Mount","address_street2":null,"address_city":"Kreigerberg","address_subdivision":null,"address_postal_code":null,"address_country_code":"NO"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:32:12 GMT
 recorded_with: VCR 3.0.1

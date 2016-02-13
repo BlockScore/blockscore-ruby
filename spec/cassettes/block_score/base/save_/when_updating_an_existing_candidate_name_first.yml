@@ -1,0 +1,117 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1966-06-27","name_first":"John","name_last":"Braun","address_street1":"20777
+        Fahey Brook","address_city":"North Luellaville","address_country_code":"TF"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f34e99cbb4978a9f31aeb35d2d6846ec"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b271c095-b6a2-4fb9-bb90-0fdeaa667a0e
+      X-Runtime:
+      - '0.038310'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:19:26 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56be687e65626600030001a8","created_at":1455319166,"updated_at":1455319166,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1966-06-27","name_first":"John","name_middle":null,"name_last":"Braun","address_street1":"20777
+        Fahey Brook","address_street2":null,"address_city":"North Luellaville","address_subdivision":null,"address_postal_code":null,"address_country_code":"TF"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:19:26 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56be687e65626600030001a8
+    body:
+      encoding: UTF-8
+      string: '{"note":null,"ssn":"0000","passport":null,"date_of_birth":"1966-06-27","name_first":"Jane","name_middle":null,"name_last":"Braun","address_street1":"20777
+        Fahey Brook","address_street2":null,"address_city":"North Luellaville","address_subdivision":null,"address_postal_code":null,"address_country_code":"TF"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"5af854f6b18fc73c628b04d8a28aba97"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4f4bc0e0-33c7-4f88-8f25-f4d208b5f9bc
+      X-Runtime:
+      - '0.021411'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:19:27 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56be687e65626600030001a8","created_at":1455319166,"updated_at":1455319167,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1966-06-27","name_first":"Jane","name_middle":null,"name_last":"Braun","address_street1":"20777
+        Fahey Brook","address_street2":null,"address_city":"North Luellaville","address_subdivision":null,"address_postal_code":null,"address_country_code":"TF"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:19:27 GMT
+recorded_with: VCR 3.0.1
