@@ -15,7 +15,9 @@ RSpec.describe BlockScore::Person do
     end
 
     context 'invalid person' do
-      subject(:person) { described_class.create(attributes_for(:invalid_person)) }
+      subject(:person) do
+        described_class.create(attributes_for(:invalid_person))
+      end
 
       it { is_expected.to be_persisted }
       it { is_expected.to be_an_instance_of described_class }
@@ -29,22 +31,21 @@ RSpec.describe BlockScore::Person do
     it { is_expected.to be_persisted }
     its(:name_first) { is_expected.not_to be_empty }
     it { is_expected.to be_an_instance_of described_class }
-    context 'null id presented' do
-      let(:person_id) { nil }
 
-      it { expect { described_class.retrieve(person_id) }.to raise_error(ArgumentError, 'ID must be supplied') }
-    end
-
-    context 'empty id presented' do
-      let(:person_id) { '' }
-
-      it { expect { described_class.retrieve(person_id) }.to raise_error(ArgumentError, 'ID must be supplied') }
+    it 'must supply an ID' do
+      expect { described_class.retrieve(nil) }
+        .to raise_error(ArgumentError, 'ID must be supplied')
+      expect { described_class.retrieve('') }
+        .to raise_error(ArgumentError, 'ID must be supplied')
     end
 
     context 'Malformed ID presented' do
       let(:person_id) { 'ABC&&234' }
 
-      it { expect { described_class.retrieve(person_id) }.to raise_error(ArgumentError, 'ID is malformed') }
+      it 'must have a properly formed ID' do
+        expect { described_class.retrieve(person_id) }
+          .to raise_error(ArgumentError, 'ID is malformed')
+      end
     end
   end
 
