@@ -1,5 +1,5 @@
 RSpec.describe BlockScore::NotFoundError do
-  subject { -> { BlockScore::Person.retrieve('abc123') } }
+  subject { BlockScore::Person.retrieve('abc123') }
   let(:message) do
     '(Type: invalid_request_error) ' \
     'Person with id abc123 could not be found (Status: 404)'
