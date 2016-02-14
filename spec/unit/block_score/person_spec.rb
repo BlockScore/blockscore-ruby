@@ -51,12 +51,9 @@ RSpec.describe BlockScore::Person do
   describe '.all' do
     let(:uniq_token_one) { '4c2c019a1e3c33442644d9f52c7a93f7' }
     let(:uniq_token_two) { 'b19a680671c6c006c6105aa450837668' }
+    let!(:p1) { create(:person, name_first: 'John', name_last: uniq_token_one) }
+    let!(:p2) { create(:person, name_first: 'John', name_last: uniq_token_two) }
     subject(:people) { described_class.all }
-
-    before do
-      create(:person, name_first: 'John', name_last: uniq_token_one)
-      create(:person, name_first: 'John', name_last: uniq_token_two)
-    end
 
     it { is_expected.not_to be_empty }
     it { expect(people[0].name_last).to eql uniq_token_two }

@@ -34,12 +34,9 @@ RSpec.describe BlockScore::Company do
   describe '.all' do
     let(:uniq_token_one) { '4580ab610751f6f37078329357ff98db' }
     let(:uniq_token_two) { '0f222bcb487f9de689c5c60b854973bc' }
+    let!(:c1) { create(:company, entity_name: uniq_token_one) }
+    let!(:c2) { create(:company, entity_name: uniq_token_two) }
     subject(:companies) { described_class.all }
-
-    before do
-      create(:company, entity_name: uniq_token_one)
-      create(:company, entity_name: uniq_token_two)
-    end
 
     it { expect(companies[0].entity_name).to eql uniq_token_two }
     it { expect(companies[1].entity_name).to eql uniq_token_one }
