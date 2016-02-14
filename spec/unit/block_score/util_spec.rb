@@ -100,10 +100,10 @@ RSpec.describe BlockScore::Util do
           'If this problem persists, please message support@blockscore.com.'
       end
       let(:input) { '{{' }
-      subject(:parse_attempt) { -> { described_class.parse_json(input) } }
+      subject(:parse_attempt) { described_class.parse_json(input) }
 
       it 'raises an error when the json fails to parse' do
-        expect { subject.call }.to raise_error do |err|
+        expect { subject }.to raise_error do |err|
           expect(err).to be_an_instance_of(BlockScore::Error)
           expect(err.message).to eql(error)
         end
