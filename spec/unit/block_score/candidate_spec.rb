@@ -101,7 +101,7 @@ RSpec.describe BlockScore::Candidate do
       #
       # After a new recording, the empty responses should be edited out to
       #   prevent baking in the sleeps, as they will be replayed in order.
-      VCRHelper.spinlock_until { candidate.hits.count != 0 }
+      VCRHelper.spinlock_until { candidate.hits.any? }
       # ==================================================
     end
 
