@@ -40,7 +40,7 @@ module BlockScore
 
     def save
       save!
-    rescue
+    rescue BlockScore::Error
       false
     end
 
