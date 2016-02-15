@@ -229,4 +229,166 @@ http_interactions:
         Swift Field","address_street2":null,"address_city":"Urielville","address_subdivision":null,"address_postal_code":null,"address_country_code":"YT"}]'
     http_version: 
   recorded_at: Fri, 18 Sep 2015 17:11:01 GMT
-recorded_with: VCR 2.9.3
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/55fc45a33961380003000738/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache, private
+      X-Request-Id:
+      - 235e27ec-c59d-4523-9577-8e2476e07907
+      X-Runtime:
+      - '0.010751'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 11 Feb 2016 20:09:33 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"error":{"type":"invalid_request_error","message":"Candidate with
+        id 55fc45a33961380003000738 could not be found"}}'
+    http_version:
+  recorded_at: Thu, 11 Feb 2016 20:09:33 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates55fc45a33961380003000738/history
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache, private
+      X-Request-Id:
+      - ca5838f6-8035-49a7-945a-2e2db1eb143a
+      X-Runtime:
+      - '0.006281'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 11 Feb 2016 20:11:10 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"error":{"type":"invalid_request_error","message":"Cannot create requests
+        at this path (GET /candidates55fc45a33961380003000738/history)"}}'
+    http_version:
+  recorded_at: Thu, 11 Feb 2016 20:11:10 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/55fc45a33961380003000738history
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache, private
+      X-Request-Id:
+      - deb38a1c-007e-4bc2-aca8-3417a052aa4f
+      X-Runtime:
+      - '0.008045'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 11 Feb 2016 20:11:10 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"error":{"type":"invalid_request_error","message":"Candidate with
+        id 55fc45a33961380003000738history could not be found"}}'
+    http_version:
+  recorded_at: Thu, 11 Feb 2016 20:11:10 GMT
+recorded_with: VCR 3.0.1

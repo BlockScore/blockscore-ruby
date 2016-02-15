@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"2015-11-25","name_first":"Adrianna","name_last":"Daniel","address_street1":"827
+        Parisian Fall","address_city":"South Freda","address_country_code":"CV"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"fa59fb7c4ebd0859b400147fa46a5e86"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 30878293-35dd-4f61-9bf0-bec8d4062af3
+      X-Runtime:
+      - '0.059384'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 11 Feb 2016 22:57:02 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11be646661000300037b","created_at":1455231422,"updated_at":1455231422,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2015-11-25","name_first":"Adrianna","name_middle":null,"name_last":"Daniel","address_street1":"827
+        Parisian Fall","address_street2":null,"address_city":"South Freda","address_subdivision":null,"address_postal_code":null,"address_country_code":"CV"}'
+    http_version:
+  recorded_at: Thu, 11 Feb 2016 22:57:03 GMT
+recorded_with: VCR 3.0.1

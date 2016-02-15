@@ -1,0 +1,146 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1958-04-02","name_first":"Jackson","name_last":"Feeney","address_street1":"2613
+        Xzavier Well","address_city":"South Ulises","address_country_code":"BI"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b86b843583b0a5798d1cff3b05f7d5fc"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a20a0574-d9c3-4a49-94b4-cfd81456049e
+      X-Runtime:
+      - '0.032482'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 11 Feb 2016 22:57:03 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bf3366330003000386","created_at":1455231423,"updated_at":1455231423,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1958-04-02","name_first":"Jackson","name_middle":null,"name_last":"Feeney","address_street1":"2613
+        Xzavier Well","address_street2":null,"address_city":"South Ulises","address_subdivision":null,"address_postal_code":null,"address_country_code":"BI"}'
+    http_version:
+  recorded_at: Thu, 11 Feb 2016 22:57:03 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1996-01-17","name_first":"Hans","name_last":"Miller","address_street1":"231
+        Herman Street","address_city":"Tonyville","address_country_code":"CA"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Request-Id:
+      - ff622647-e8f0-4c6c-a258-d9abd497bce4
+      X-Runtime:
+      - '0.001922'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 11 Feb 2016 22:59:05 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Content-Length:
+      - '36'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"status":"404","error":"Not Found"}'
+    http_version:
+  recorded_at: Thu, 11 Feb 2016 22:59:05 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1953-09-03","name_first":"Deangelo","name_last":"Hane","address_street1":"504
+        Mayer Radial","address_city":"Port Dameon","address_country_code":"HM"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Request-Id:
+      - 37147a6f-3333-4c47-9496-017b643637f9
+      X-Runtime:
+      - '0.002268'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 11 Feb 2016 22:59:35 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Content-Length:
+      - '36'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"status":"404","error":"Not Found"}'
+    http_version:
+  recorded_at: Thu, 11 Feb 2016 22:59:35 GMT
+recorded_with: VCR 3.0.1

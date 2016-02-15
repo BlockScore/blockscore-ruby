@@ -1,0 +1,168 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1995-05-16","name_first":"John","name_last":"Kris","address_street1":"42286
+        Considine Squares","address_city":"New Brigitte","address_country_code":"PS"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"bd85e8f0040b0fee5ee11967996b2924"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 59b32c9a-afda-407d-b58f-18a0d05756f6
+      X-Runtime:
+      - '0.039187'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 11 Feb 2016 22:57:00 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc6466610003000377","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1995-05-16","name_first":"John","name_middle":null,"name_last":"Kris","address_street1":"42286
+        Considine Squares","address_street2":null,"address_city":"New Brigitte","address_subdivision":null,"address_postal_code":null,"address_country_code":"PS"}'
+    http_version:
+  recorded_at: Thu, 11 Feb 2016 22:57:00 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc6466610003000377
+    body:
+      encoding: UTF-8
+      string: '{"note":null,"ssn":"0000","passport":null,"date_of_birth":"1995-05-16","name_first":"Jane","name_middle":null,"name_last":"Kris","address_street1":"42286
+        Considine Squares","address_street2":null,"address_city":"New Brigitte","address_subdivision":null,"address_postal_code":null,"address_country_code":"PS"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"eb5ebc653df4192c02de6d1417ca2edc"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 6aec7e98-da68-41bd-983a-1f1c91f378f6
+      X-Runtime:
+      - '0.022676'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 11 Feb 2016 22:57:01 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc6466610003000377","created_at":1455231420,"updated_at":1455231421,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1995-05-16","name_first":"Jane","name_middle":null,"name_last":"Kris","address_street1":"42286
+        Considine Squares","address_street2":null,"address_city":"New Brigitte","address_subdivision":null,"address_postal_code":null,"address_country_code":"PS"}'
+    http_version:
+  recorded_at: Thu, 11 Feb 2016 22:57:01 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bc6466610003000377","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1995-05-16","name_first":"Jane","name_middle":null,"name_last":"Kris","address_street1":"42286
+        Considine Squares","address_street2":null,"address_city":"New Brigitte","address_subdivision":null,"address_postal_code":null,"address_country_code":"PS"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f89d1981b22af8513325ecde9a5abd84"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 21360e16-b258-4486-8153-2f62ba3a89c9
+      X-Runtime:
+      - '0.035735'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Thu, 11 Feb 2016 22:57:30 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11da3530650003000386","created_at":1455231450,"updated_at":1455231450,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1995-05-16","name_first":"Jane","name_middle":null,"name_last":"Kris","address_street1":"42286
+        Considine Squares","address_street2":null,"address_city":"New Brigitte","address_subdivision":null,"address_postal_code":null,"address_country_code":"PS"}'
+    http_version:
+  recorded_at: Thu, 11 Feb 2016 22:57:30 GMT
+recorded_with: VCR 3.0.1
