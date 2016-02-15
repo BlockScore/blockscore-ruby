@@ -52,27 +52,6 @@ RSpec.describe BlockScore::Base do
     end
   end
 
-  describe '#refresh' do
-    subject(:candidate) { create(:candidate, name_last: 'Smith') }
-    context 'refresh an existing resource' do
-      before do
-        candidate.name_last = 'John'
-        candidate.refresh
-      end
-
-      its(:name_last) { is_expected.to eql 'Smith' }
-    end
-
-    context 'refresh a non saved item' do
-      subject(:candidate) { build(:candidate, name_last: 'Smith') }
-
-      it 'is false return if not refreshable' do
-        expect { candidate.refresh }
-          .to raise_error(ArgumentError, 'ID must be supplied')
-      end
-    end
-  end
-
   describe '#id' do
     subject(:candidate) { create(:candidate, name_last: 'Smith') }
 
@@ -89,12 +68,7 @@ RSpec.describe BlockScore::Base do
                      ofac: 'no_match',
                      pep: 'no_match')
     end
-    before do
-      person.name_last = 'John'
-      person.refresh
-    end
 
-    its(:name_last) { is_expected.to eql 'Smith' }
     its(:details) { is_expected.to eql expectation }
   end
 

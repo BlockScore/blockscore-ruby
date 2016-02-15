@@ -31,13 +31,6 @@ module BlockScore
       "#<#{self.class}:#{format('%#016x', object_id << 1)} #{str_attr}>"
     end
 
-    def refresh
-      capture_attributes(retrieve(id))
-      true
-    rescue Error
-      false
-    end
-
     def save
       save!
     rescue BlockScore::Error
