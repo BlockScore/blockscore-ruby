@@ -31,27 +31,8 @@ RSpec.describe BlockScore::Company do
     it { is_expected.to be_an_instance_of described_class }
   end
 
-  describe '.all' do
-    let(:uniq_token_one) { '4580ab610751f6f37078329357ff98db' }
-    let(:uniq_token_two) { '0f222bcb487f9de689c5c60b854973bc' }
-    let!(:c1) { create(:company, entity_name: uniq_token_one) }
-    let!(:c2) { create(:company, entity_name: uniq_token_two) }
-    subject(:companies) { described_class.all }
-
-    it { expect(companies[0].entity_name).to eql uniq_token_two }
-    it { expect(companies[1].entity_name).to eql uniq_token_one }
-  end
-
   describe '#delete' do
     subject(:company) { create(:company) }
     it { expect { company.delete }.to raise_error NoMethodError }
-  end
-
-  describe '#save' do
-    subject(:company) { build(:company) }
-    before { company.save }
-
-    it { is_expected.to be_persisted }
-    it { is_expected.to be_an_instance_of described_class }
   end
 end
