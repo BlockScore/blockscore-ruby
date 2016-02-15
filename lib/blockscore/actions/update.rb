@@ -22,7 +22,8 @@ module BlockScore
         :object,
         :created_at,
         :updated_at,
-        :livemode
+        :livemode,
+        :deleted
       ]
 
       def_delegators 'self.class', :patch

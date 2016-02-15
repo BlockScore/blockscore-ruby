@@ -10,6 +10,7 @@ require 'blockscore/actions/create'
 require 'blockscore/actions/delete'
 require 'blockscore/actions/retrieve'
 require 'blockscore/actions/update'
+require 'blockscore/actions/write_once'
 
 require 'blockscore/errors/api_connection_error'
 require 'blockscore/errors/api_error'

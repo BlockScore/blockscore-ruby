@@ -23,6 +23,10 @@ RSpec.describe BlockScore::Collection::Member do
           .to eql([question_set.id])
         expect(member).to be_an_instance_of described_class
         expect(member.person_id).to eql person.id
+
+        member.save
+        expect(person.attributes.fetch(:question_sets))
+          .to eql([question_set.id])
       end
     end
   end

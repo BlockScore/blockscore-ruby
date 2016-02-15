@@ -8,7 +8,7 @@ module BlockScore
 
     ABSTRACT_WARNING = 'Base is an abstract class, not an API resource'.freeze
 
-    def_delegators 'self.class', :endpoint, :post, :retrieve
+    def_delegators 'self.class', :endpoint, :post, :retrieve, :resource
 
     def initialize(options = {}, &block)
       @loaded = !(block)
@@ -46,6 +46,7 @@ module BlockScore
     end
 
     def save!
+      fail BlockScore::Error, "#{resource} is already deleted" if deleted?
       capture_attributes(post(endpoint, attributes))
       true
     end
