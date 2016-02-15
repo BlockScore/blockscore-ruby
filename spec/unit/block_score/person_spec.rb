@@ -4,6 +4,18 @@ RSpec.describe BlockScore::Person do
 
     it { is_expected.not_to be_persisted }
     it { is_expected.to be_an_instance_of described_class }
+
+    it 'creates question sets collection' do
+      expect(person.question_sets).to be_an_instance_of BlockScore::Collection
+    end
+
+    it 'has a question_set with proper member_class' do
+      expect(person.question_sets.new).to be_an_instance_of BlockScore::Collection::Member
+    end
+
+    it 'is setup from the options provided' do
+      expect(person.name_first).to_not be_empty
+    end
   end
 
   describe '.create' do
