@@ -9,7 +9,7 @@ RSpec.describe BlockScore::Candidate do
   end
 
   describe '.create' do
-    subject(:candidate) { described_class.create(attributes_for(:candidate)) }
+    subject(:candidate) { described_class.create }
 
     it { is_expected.to be_persisted }
     it { is_expected.to be_an_instance_of described_class }
