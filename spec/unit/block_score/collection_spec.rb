@@ -44,15 +44,16 @@ RSpec.describe BlockScore::Collection do
     it 'is the proper class' do
       expect(question_sets.retrieve(question_set_id))
         .to be_an_instance_of BlockScore::Collection::Member
-      expect(question_sets.retrieve(question_set_id))
-        .to be_an_instance_of BlockScore::Collection::Member
-      expect(question_sets.count).to equal(1)
+
+      # prove retrieving same question set is not duplicating in cache
+      question_sets.retrieve(question_set_id)
+      expect(question_sets.count).to be(1)
 
       expect(question_sets.retrieve(question_set_id2))
         .to be_an_instance_of BlockScore::Collection::Member
       expect(question_sets.retrieve(question_set_id2).id)
         .to eql question_set_id2.dup
-      expect(question_sets.count).to equal(2)
+      expect(question_sets.count).to be(2)
     end
   end
 end
