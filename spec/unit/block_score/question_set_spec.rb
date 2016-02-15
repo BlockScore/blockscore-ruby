@@ -62,12 +62,4 @@ RSpec.describe BlockScore::QuestionSet do
     subject(:question_set) { create(:question_set) }
     it { expect { question_set.delete }.to raise_error NoMethodError }
   end
-
-  describe '#save' do
-    subject(:question_set) { build(:question_set) }
-    before { question_set.save }
-
-    it { is_expected.to be_persisted }
-    it { is_expected.to be_an_instance_of described_class }
-  end
 end

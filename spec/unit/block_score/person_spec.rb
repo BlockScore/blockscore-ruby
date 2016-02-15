@@ -76,12 +76,4 @@ RSpec.describe BlockScore::Person do
     subject(:person) { create(:person) }
     it { expect { person.delete }.to raise_error NoMethodError }
   end
-
-  describe '#save' do
-    subject(:person) { build(:person) }
-    before { person.save }
-
-    it { is_expected.to be_persisted }
-    it { is_expected.to be_an_instance_of described_class }
-  end
 end
