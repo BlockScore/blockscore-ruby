@@ -16,14 +16,6 @@ RSpec.describe BlockScore::Candidate do
   end
 
   describe '#save' do
-    context 'when creating a new candidate' do
-      subject(:candidate) { build(:candidate) }
-      before { candidate.save }
-
-      it { is_expected.to be_persisted }
-      its(:name_first) { is_expected.not_to be_empty }
-    end
-
     context 'when updating an existing candidate' do
       subject(:candidate) { create(:candidate, name_first: 'John') }
       before do
