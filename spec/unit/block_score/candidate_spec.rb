@@ -36,15 +36,6 @@ RSpec.describe BlockScore::Candidate do
     end
   end
 
-  describe '#delete' do
-    subject(:candidate) { create(:candidate) }
-    let(:candidate_id) { candidate.id }
-    before { candidate.delete }
-
-    it { is_expected.not_to be_persisted }
-    it { expect(candidate.deleted).to be true }
-  end
-
   describe '#history' do
     subject(:candidate) { create(:candidate, name_first: 'version_0') }
     before do

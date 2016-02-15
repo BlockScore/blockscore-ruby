@@ -22,6 +22,7 @@ RSpec.describe BlockScore::Company do
     end
   end
 
+  # This example is to confirm that this class of objects is not deletable
   describe '#delete' do
     subject(:company) { create(:company) }
     it { expect { company.delete }.to raise_error NoMethodError }
