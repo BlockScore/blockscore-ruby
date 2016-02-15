@@ -5,13 +5,13 @@ module BlockScore
     #
     # Examples
     #
-    #  class Foo
+    #  class Candidate
     #    include BlockScore::Actions::Update
     #  end
     #
-    #  foo = Foo.new
-    #  foo.name_first = 'John'
-    #  foo.save
+    #  candidate = Candidate.new
+    #  candidate.name_first = 'John'
+    #  candidate.save
     #  # => true
     module Update
       extend Forwardable
