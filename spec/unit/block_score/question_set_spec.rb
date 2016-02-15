@@ -25,15 +25,6 @@ RSpec.describe BlockScore::QuestionSet do
     end
   end
 
-  describe '.retrieve' do
-    let(:question_set_id) { create(:question_set).id }
-    subject(:question_set) { described_class.retrieve(question_set_id) }
-
-    it { is_expected.to be_persisted }
-    its(:questions) { is_expected.not_to be_empty }
-    it { is_expected.to be_an_instance_of described_class }
-  end
-
   describe '#score' do
     subject(:question_set) { create(:question_set) }
     let(:correct_answers) { QuestionSetHelper.correct_answers(question_set.questions) }

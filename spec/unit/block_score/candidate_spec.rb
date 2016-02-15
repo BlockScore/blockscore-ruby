@@ -15,15 +15,6 @@ RSpec.describe BlockScore::Candidate do
     it { is_expected.to be_an_instance_of described_class }
   end
 
-  describe '.retrieve' do
-    let(:candidate_id) { create(:candidate).id }
-    subject(:candidate) { described_class.retrieve(candidate_id) }
-
-    it { is_expected.to be_persisted }
-    its(:name_first) { is_expected.not_to be_empty }
-    it { is_expected.to be_an_instance_of described_class }
-  end
-
   # NB: At the time of writing, the testing API does not reset. Making this
   #     test less then perfect. To work around the near certain availability
   #     of historical candidates from other tests known candidates are created

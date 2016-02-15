@@ -36,31 +36,6 @@ RSpec.describe BlockScore::Person do
     end
   end
 
-  describe '.retrieve' do
-    let(:person_id) { create(:person).id }
-    subject(:person) { described_class.retrieve(person_id) }
-
-    it { is_expected.to be_persisted }
-    its(:name_first) { is_expected.not_to be_empty }
-    it { is_expected.to be_an_instance_of described_class }
-
-    it 'must supply an ID' do
-      expect { described_class.retrieve(nil) }
-        .to raise_error(ArgumentError, 'ID must be supplied')
-      expect { described_class.retrieve('') }
-        .to raise_error(ArgumentError, 'ID must be supplied')
-    end
-
-    context 'Malformed ID presented' do
-      let(:person_id) { 'ABC&&234' }
-
-      it 'must have a properly formed ID' do
-        expect { described_class.retrieve(person_id) }
-          .to raise_error(ArgumentError, 'ID is malformed')
-      end
-    end
-  end
-
   describe '#valid?' do
     context 'valid person' do
       subject(:person) { create(:valid_person) }
