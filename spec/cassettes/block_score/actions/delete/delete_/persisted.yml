@@ -1,0 +1,116 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1968-11-09","name_first":"Camilla","name_last":"Abshire","address_street1":"3540
+        Treutel Parks","address_city":"West Nathanaelmouth","address_country_code":"ZM"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"0eb0e6165a6bdf65b4e228117f0babe5"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 66681f41-789a-4945-a20f-d6ee2fb4e57e
+      X-Runtime:
+      - '0.034493'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Tue, 16 Feb 2016 16:59:12 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c355603438620003000527","created_at":1455641952,"updated_at":1455641952,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1968-11-09","name_first":"Camilla","name_middle":null,"name_last":"Abshire","address_street1":"3540
+        Treutel Parks","address_street2":null,"address_city":"West Nathanaelmouth","address_subdivision":null,"address_postal_code":null,"address_country_code":"ZM"}'
+    http_version:
+  recorded_at: Tue, 16 Feb 2016 16:59:12 GMT
+- request:
+    method: delete
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56c355603438620003000527
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"9669e090dc687cb2dc1e9c6cd72c33fc"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 418f32ef-ba4d-4ee6-b7a9-5318382b69b8
+      X-Runtime:
+      - '0.024160'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Tue, 16 Feb 2016 17:00:27 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c355603438620003000527","created_at":1455641952,"updated_at":1455642027,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1968-11-09","name_first":"Camilla","name_middle":null,"name_last":"Abshire","address_street1":"3540
+        Treutel Parks","address_street2":null,"address_city":"West Nathanaelmouth","address_subdivision":null,"address_postal_code":null,"address_country_code":"ZM","deleted":true}'
+    http_version:
+  recorded_at: Tue, 16 Feb 2016 17:00:27 GMT
+recorded_with: VCR 3.0.1

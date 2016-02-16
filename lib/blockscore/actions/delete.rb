@@ -18,9 +18,9 @@ module BlockScore
       end
 
       def delete!
+        assert_not_deleted
         self.class.delete(member_endpoint, {})
         attributes[:deleted] = true
-        true
       end
     end
   end
