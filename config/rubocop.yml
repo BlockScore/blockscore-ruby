@@ -78,7 +78,7 @@ Style/RegexpLiteral:
 Style/SignalException:
   Description: Checks for proper usage of fail and raise.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#fail-method
-  Enabled: true
+  Enabled: false
 Style/SingleLineMethods:
   Description: Avoid single-line methods.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-single-line-methods
@@ -449,9 +449,7 @@ Style/SpaceAroundEqualsInParameterDefault:
   - space
   - no_space
 Style/SpaceAroundOperators:
-  MultiSpaceAllowedForOperators:
-  - "="
-  - "=>"
+  AllowForAlignment: true
 Style/SpaceBeforeBlockBraces:
   EnforcedStyle: space
   SupportedStyles:
@@ -478,7 +476,7 @@ Style/SpaceInsideStringInterpolation:
 Style/SymbolProc:
   IgnoredMethods:
   - respond_to
-Style/TrailingComma:
+Style/TrailingCommaInLiteral:
   EnforcedStyleForMultiline: no_comma
   SupportedStyles:
   - comma

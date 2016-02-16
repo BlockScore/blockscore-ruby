@@ -8,7 +8,7 @@ module BlockScore
       'person'        => 'people',
       'question_set'  => 'question_sets',
       'watchlist_hit' => 'watchlist_hits'
-    }
+    }.freeze
 
     PARSE_ERROR =
       'An error has occurred. ' \
@@ -22,7 +22,7 @@ module BlockScore
     def parse_json(json_obj)
       parse_json! json_obj
     rescue JSON::ParserError
-      raise Error, PARSE_ERROR
+      fail Error, PARSE_ERROR
     end
 
     def create_object(resource, options = {})
@@ -77,10 +77,10 @@ module BlockScore
     # Taken from Rulers: http://git.io/vkWqf
     def to_underscore(str)
       str.gsub(/::/, '/')
-        .gsub(/([A-Z]+)([A-Z][a-z])/, '\1_\2')
-        .gsub(/([a-z\d])([A-Z])/, '\1_\2')
-        .tr('-', '_')
-        .downcase
+         .gsub(/([A-Z]+)([A-Z][a-z])/, '\1_\2')
+         .gsub(/([a-z\d])([A-Z])/, '\1_\2')
+         .tr('-', '_')
+         .downcase
     end
   end
 end

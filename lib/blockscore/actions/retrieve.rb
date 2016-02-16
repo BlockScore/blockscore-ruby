@@ -11,7 +11,7 @@ module BlockScore
     # => #<BlockScore::Person:0x007fe39c424410>
     module Retrieve
       module ClassMethods
-        RESOURCE_ID_FORMAT = /\A[a-f0-9]+\z/.freeze
+        RESOURCE_ID_FORMAT = /\A[a-f0-9]+\z/
 
         def retrieve(id, options = {})
           fail ArgumentError, 'ID must be supplied' if id.nil? || id.empty?

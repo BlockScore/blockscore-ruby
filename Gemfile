@@ -4,7 +4,7 @@ gemspec
 
 group :test do
   platform :mri_22 do
-    gem 'devtools', '~> 0.1.3'
+    gem 'devtools', '~> 0.1.5'
   end
 
   # API Request Faking
@@ -13,5 +13,5 @@ group :test do
   gem 'webmock'
   gem 'fuubar'
   gem 'codeclimate-test-reporter'
-  gem 'rubocop-rspec', '<= 1.3.1'
+  gem 'rubocop-rspec'
 end

@@ -7,7 +7,7 @@ RSpec.describe BlockScore::Collection::Member do
       let(:person) { BlockScore::Person.new(attributes_for(:person)) }
 
       it 'saves the person as part of member save' do
-        expect(person).to_not be_persisted
+        expect(person).not_to be_persisted
         expect(member.save).to be true
         expect(person).to be_persisted
       end
