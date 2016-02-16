@@ -10,7 +10,7 @@ module BlockScore
 
     attr_reader :question_sets
 
-    def initialize(options = {})
+    def initialize(*)
       super
       @question_sets = Collection.new(self, QuestionSet)
     end

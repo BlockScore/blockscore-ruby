@@ -12,6 +12,7 @@ require 'dotenv'
 Dotenv.load
 
 require 'blockscore'
+require 'timeout'
 require 'vcr_setup'
 require 'factory_girl'
 require 'webmock'
@@ -45,5 +46,9 @@ module BlockScore
 
     config.order = :random
     Kernel.srand config.seed
+
+    config.around do |example|
+      Timeout.timeout(10, &example)
+    end
   end
 end

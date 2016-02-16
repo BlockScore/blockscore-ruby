@@ -5,8 +5,8 @@ http_interactions:
     uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
     body:
       encoding: UTF-8
-      string: '{"ssn":"0000","date_of_birth":"1995-05-16","name_first":"John","name_last":"Kris","address_street1":"42286
-        Considine Squares","address_city":"New Brigitte","address_country_code":"PS"}'
+      string: '{"ssn":"0000","date_of_birth":"1931-08-21","name_first":"John","name_last":"O''Hara","address_street1":"569
+        Justus Vista","address_city":"Curtischester","address_country_code":"SE"}'
     headers:
       Accept:
       - application/vnd.blockscore+json;version=4
@@ -32,36 +32,37 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"bd85e8f0040b0fee5ee11967996b2924"
+      - W/"6d4f6287cfc38fb86f57d08993677ea3"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 59b32c9a-afda-407d-b58f-18a0d05756f6
+      - 0a53ea0e-0a1c-462b-8595-81aed7a5ddb5
       X-Runtime:
-      - '0.039187'
+      - '0.038131'
       Strict-Transport-Security:
       - max-age=31536000
       Date:
-      - Thu, 11 Feb 2016 22:57:00 GMT
+      - Fri, 12 Feb 2016 23:19:27 GMT
       X-Rack-Cache:
       - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"object":"candidate","id":"56bd11bc6466610003000377","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1995-05-16","name_first":"John","name_middle":null,"name_last":"Kris","address_street1":"42286
-        Considine Squares","address_street2":null,"address_city":"New Brigitte","address_subdivision":null,"address_postal_code":null,"address_country_code":"PS"}'
-    http_version:
-  recorded_at: Thu, 11 Feb 2016 22:57:00 GMT
+      string: '{"object":"candidate","id":"56be687f65626600030001ab","created_at":1455319167,"updated_at":1455319167,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1931-08-21","name_first":"John","name_middle":null,"name_last":"O''Hara","address_street1":"569
+        Justus Vista","address_street2":null,"address_city":"Curtischester","address_subdivision":null,"address_postal_code":null,"address_country_code":"SE"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:19:27 GMT
 - request:
-    method: patch
-    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bd11bc6466610003000377
+    method: delete
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56be687f65626600030001ab
     body:
       encoding: UTF-8
-      string: '{"note":null,"ssn":"0000","passport":null,"date_of_birth":"1995-05-16","name_first":"Jane","name_middle":null,"name_last":"Kris","address_street1":"42286
-        Considine Squares","address_street2":null,"address_city":"New Brigitte","address_subdivision":null,"address_postal_code":null,"address_country_code":"PS"}'
+      string: "{}"
     headers:
       Accept:
       - application/vnd.blockscore+json;version=4
@@ -87,36 +88,38 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"eb5ebc653df4192c02de6d1417ca2edc"
+      - W/"8b7489404d3007e2380e688870bab5dd"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 6aec7e98-da68-41bd-983a-1f1c91f378f6
+      - c3e45f73-a6da-4450-9aa2-c27ddf5e754a
       X-Runtime:
-      - '0.022676'
+      - '0.017788'
       Strict-Transport-Security:
       - max-age=31536000
       Date:
-      - Thu, 11 Feb 2016 22:57:01 GMT
+      - Fri, 12 Feb 2016 23:19:28 GMT
       X-Rack-Cache:
       - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"object":"candidate","id":"56bd11bc6466610003000377","created_at":1455231420,"updated_at":1455231421,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1995-05-16","name_first":"Jane","name_middle":null,"name_last":"Kris","address_street1":"42286
-        Considine Squares","address_street2":null,"address_city":"New Brigitte","address_subdivision":null,"address_postal_code":null,"address_country_code":"PS"}'
-    http_version:
-  recorded_at: Thu, 11 Feb 2016 22:57:01 GMT
+      string: '{"object":"candidate","id":"56be687f65626600030001ab","created_at":1455319167,"updated_at":1455319168,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1931-08-21","name_first":"John","name_middle":null,"name_last":"O''Hara","address_street1":"569
+        Justus Vista","address_street2":null,"address_city":"Curtischester","address_subdivision":null,"address_postal_code":null,"address_country_code":"SE","deleted":true}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:19:28 GMT
 - request:
     method: post
     uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
     body:
       encoding: UTF-8
-      string: '{"object":"candidate","id":"56bd11bc6466610003000377","created_at":1455231420,"updated_at":1455231420,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1995-05-16","name_first":"Jane","name_middle":null,"name_last":"Kris","address_street1":"42286
-        Considine Squares","address_street2":null,"address_city":"New Brigitte","address_subdivision":null,"address_postal_code":null,"address_country_code":"PS"}'
+      string: '{"object":"candidate","id":"56be687f65626600030001ab","created_at":1455319167,"updated_at":1455319167,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1931-08-21","name_first":"John","name_middle":null,"name_last":"O''Hara","address_street1":"569
+        Justus Vista","address_street2":null,"address_city":"Curtischester","address_subdivision":null,"address_postal_code":null,"address_country_code":"SE","deleted":true}'
     headers:
       Accept:
       - application/vnd.blockscore+json;version=4
@@ -142,82 +145,38 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"f89d1981b22af8513325ecde9a5abd84"
+      - W/"f34b07038085e36f9f9b3a9f80fa36c2"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 21360e16-b258-4486-8153-2f62ba3a89c9
+      - 57fd9339-ccc5-4399-895a-b13711a31f35
       X-Runtime:
-      - '0.035735'
+      - '0.031003'
       Strict-Transport-Security:
       - max-age=31536000
       Date:
-      - Thu, 11 Feb 2016 22:57:30 GMT
+      - Fri, 12 Feb 2016 23:20:14 GMT
       X-Rack-Cache:
       - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"object":"candidate","id":"56bd11da3530650003000386","created_at":1455231450,"updated_at":1455231450,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1995-05-16","name_first":"Jane","name_middle":null,"name_last":"Kris","address_street1":"42286
-        Considine Squares","address_street2":null,"address_city":"New Brigitte","address_subdivision":null,"address_postal_code":null,"address_country_code":"PS"}'
-    http_version:
-  recorded_at: Thu, 11 Feb 2016 22:57:30 GMT
-- request:
-    method: post
-    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/
-    body:
-      encoding: UTF-8
-      string: '{"ssn":"0000","date_of_birth":"1976-01-12","name_first":"John","name_last":"Herman","address_street1":"66389
-        Dare Coves","address_city":"New Earnestineburgh","address_country_code":"SM"}'
-    headers:
-      Accept:
-      - application/vnd.blockscore+json;version=4
-      User-Agent:
-      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
-      Content-Type:
-      - application/json
-  response:
-    status:
-      code: 404
-      message: Not Found
-    headers:
-      Server:
-      - Cowboy
-      Connection:
-      - keep-alive
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Request-Id:
-      - eaebb28b-dfed-4d7f-a74a-1e711b953b74
-      X-Runtime:
-      - '0.002461'
-      Strict-Transport-Security:
-      - max-age=31536000
-      Date:
-      - Fri, 12 Feb 2016 22:52:59 GMT
-      X-Rack-Cache:
-      - invalidate, pass
-      Set-Cookie:
-      - __profilin=p%3Dt; path=/
-      Content-Length:
-      - '36'
-      Via:
-      - 1.1 vegur
-    body:
-      encoding: UTF-8
-      string: '{"status":"404","error":"Not Found"}'
+      string: '{"object":"candidate","id":"56be68ae6563610003000194","created_at":1455319214,"updated_at":1455319214,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1931-08-21","name_first":"John","name_middle":null,"name_last":"O''Hara","address_street1":"569
+        Justus Vista","address_street2":null,"address_city":"Curtischester","address_subdivision":null,"address_postal_code":null,"address_country_code":"SE"}'
     http_version: 
-  recorded_at: Fri, 12 Feb 2016 22:52:59 GMT
+  recorded_at: Fri, 12 Feb 2016 23:20:14 GMT
 - request:
-    method: post
-    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidate
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56be687f65626600030001ab
     body:
       encoding: UTF-8
-      string: '{"ssn":"0000","date_of_birth":"1964-03-28","name_first":"John","name_last":"Marquardt","address_street1":"5109
-        Jalen Ranch","address_city":"New Stevie","address_country_code":"KY"}'
+      string: '{"note":null,"ssn":"0000","passport":null,"date_of_birth":"1931-08-21","name_first":"John","name_middle":null,"name_last":"O''Hara","address_street1":"569
+        Justus Vista","address_street2":null,"address_city":"Curtischester","address_subdivision":null,"address_postal_code":null,"address_country_code":"SE"}'
     headers:
       Accept:
       - application/vnd.blockscore+json;version=4
@@ -227,8 +186,8 @@ http_interactions:
       - application/json
   response:
     status:
-      code: 404
-      message: Not Found
+      code: 200
+      message: OK
     headers:
       Server:
       - Cowboy
@@ -242,35 +201,38 @@ http_interactions:
       - nosniff
       Content-Type:
       - application/json; charset=utf-8
+      Etag:
+      - W/"8b7489404d3007e2380e688870bab5dd"
       Cache-Control:
-      - no-cache
+      - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 9e74d8dc-c285-4819-b1fd-c03c07743a4b
+      - 764e97aa-18dc-445b-89d7-cd7cdc95da90
       X-Runtime:
-      - '0.007382'
+      - '0.015329'
       Strict-Transport-Security:
       - max-age=31536000
       Date:
-      - Fri, 12 Feb 2016 22:53:01 GMT
+      - Fri, 12 Feb 2016 23:22:19 GMT
       X-Rack-Cache:
       - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"error":{"type":"invalid_request_error","message":"Cannot create requests
-        at this path (POST /candidate)"}}'
+      string: '{"object":"candidate","id":"56be687f65626600030001ab","created_at":1455319167,"updated_at":1455319168,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1931-08-21","name_first":"John","name_middle":null,"name_last":"O''Hara","address_street1":"569
+        Justus Vista","address_street2":null,"address_city":"Curtischester","address_subdivision":null,"address_postal_code":null,"address_country_code":"SE","deleted":true}'
     http_version: 
-  recorded_at: Fri, 12 Feb 2016 22:53:01 GMT
+  recorded_at: Fri, 12 Feb 2016 23:22:19 GMT
 - request:
-    method: patch
+    method: delete
     uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/
     body:
       encoding: UTF-8
-      string: '{"note":null,"ssn":"0000","passport":null,"date_of_birth":"1995-05-16","name_first":"Jane","name_middle":null,"name_last":"Kris","address_street1":"42286
-        Considine Squares","address_street2":null,"address_city":"New Brigitte","address_subdivision":null,"address_postal_code":null,"address_country_code":"PS"}'
+      string: "{}"
     headers:
       Accept:
       - application/vnd.blockscore+json;version=4
@@ -290,13 +252,13 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       X-Request-Id:
-      - 42870c30-f953-46c8-b86e-4fa02df3cb7e
+      - e7f325c8-752d-48b5-adc9-3585e570657d
       X-Runtime:
-      - '0.003098'
+      - '0.001909'
       Strict-Transport-Security:
       - max-age=31536000
       Date:
-      - Fri, 12 Feb 2016 22:53:34 GMT
+      - Fri, 12 Feb 2016 23:22:39 GMT
       X-Rack-Cache:
       - invalidate, pass
       Set-Cookie:
@@ -309,14 +271,13 @@ http_interactions:
       encoding: UTF-8
       string: '{"status":"404","error":"Not Found"}'
     http_version: 
-  recorded_at: Fri, 12 Feb 2016 22:53:34 GMT
+  recorded_at: Fri, 12 Feb 2016 23:22:39 GMT
 - request:
-    method: patch
-    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/56bd11bc6466610003000377
+    method: delete
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/56be687f65626600030001ab
     body:
       encoding: UTF-8
-      string: '{"note":null,"ssn":"0000","passport":null,"date_of_birth":"1995-05-16","name_first":"Jane","name_middle":null,"name_last":"Kris","address_street1":"42286
-        Considine Squares","address_street2":null,"address_city":"New Brigitte","address_subdivision":null,"address_postal_code":null,"address_country_code":"PS"}'
+      string: "{}"
     headers:
       Accept:
       - application/vnd.blockscore+json;version=4
@@ -336,13 +297,13 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       X-Request-Id:
-      - f0605800-8a25-4dab-83f2-f1249e52209f
+      - 8a6c1387-e9ab-4cff-b0db-d7703e254367
       X-Runtime:
-      - '0.002477'
+      - '0.001861'
       Strict-Transport-Security:
       - max-age=31536000
       Date:
-      - Fri, 12 Feb 2016 22:53:35 GMT
+      - Fri, 12 Feb 2016 23:22:39 GMT
       X-Rack-Cache:
       - invalidate, pass
       Set-Cookie:
@@ -355,14 +316,104 @@ http_interactions:
       encoding: UTF-8
       string: '{"status":"404","error":"Not Found"}'
     http_version: 
-  recorded_at: Fri, 12 Feb 2016 22:53:35 GMT
+  recorded_at: Fri, 12 Feb 2016 23:22:40 GMT
 - request:
-    method: patch
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1942-04-27","name_first":"John","name_last":"Torphy","address_street1":"9965
+        Isaac Islands","address_city":"Mayaport","address_country_code":"CA"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Request-Id:
+      - db4f8b88-2c03-46fd-8b77-4b651607cc08
+      X-Runtime:
+      - '0.002081'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:23:03 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Content-Length:
+      - '36'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"status":"404","error":"Not Found"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:23:03 GMT
+- request:
+    method: delete
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates56be687f65626600030001ab
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Request-Id:
+      - b6cfb764-bad7-4eb9-aede-da59d346fe15
+      X-Runtime:
+      - '0.002024'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:27:52 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Content-Length:
+      - '36'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"status":"404","error":"Not Found"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:27:52 GMT
+- request:
+    method: delete
     uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
     body:
       encoding: UTF-8
-      string: '{"note":null,"ssn":"0000","passport":null,"date_of_birth":"1995-05-16","name_first":"Jane","name_middle":null,"name_last":"Kris","address_street1":"42286
-        Considine Squares","address_street2":null,"address_city":"New Brigitte","address_subdivision":null,"address_postal_code":null,"address_country_code":"PS"}'
+      string: "{}"
     headers:
       Accept:
       - application/vnd.blockscore+json;version=4
@@ -382,13 +433,13 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       X-Request-Id:
-      - 63b3f471-1b3d-4eac-9d4a-21b793a97533
+      - bca76893-f5ac-481a-9a44-014a83d2b4e6
       X-Runtime:
-      - '0.001903'
+      - '0.002167'
       Strict-Transport-Security:
       - max-age=31536000
       Date:
-      - Fri, 12 Feb 2016 23:02:07 GMT
+      - Fri, 12 Feb 2016 23:28:26 GMT
       X-Rack-Cache:
       - invalidate, pass
       Set-Cookie:
@@ -401,51 +452,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"status":"404","error":"Not Found"}'
     http_version: 
-  recorded_at: Fri, 12 Feb 2016 23:02:07 GMT
-- request:
-    method: patch
-    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates56bd11bc6466610003000377
-    body:
-      encoding: UTF-8
-      string: '{"note":null,"ssn":"0000","passport":null,"date_of_birth":"1995-05-16","name_first":"Jane","name_middle":null,"name_last":"Kris","address_street1":"42286
-        Considine Squares","address_street2":null,"address_city":"New Brigitte","address_subdivision":null,"address_postal_code":null,"address_country_code":"PS"}'
-    headers:
-      Accept:
-      - application/vnd.blockscore+json;version=4
-      User-Agent:
-      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
-      Content-Type:
-      - application/json
-  response:
-    status:
-      code: 404
-      message: Not Found
-    headers:
-      Server:
-      - Cowboy
-      Connection:
-      - keep-alive
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Request-Id:
-      - a091cd69-3de9-4301-923b-20b03e1b5693
-      X-Runtime:
-      - '0.002955'
-      Strict-Transport-Security:
-      - max-age=31536000
-      Date:
-      - Fri, 12 Feb 2016 23:05:18 GMT
-      X-Rack-Cache:
-      - invalidate, pass
-      Set-Cookie:
-      - __profilin=p%3Dt; path=/
-      Content-Length:
-      - '36'
-      Via:
-      - 1.1 vegur
-    body:
-      encoding: UTF-8
-      string: '{"status":"404","error":"Not Found"}'
-    http_version: 
-  recorded_at: Fri, 12 Feb 2016 23:05:18 GMT
+  recorded_at: Fri, 12 Feb 2016 23:28:26 GMT
 recorded_with: VCR 3.0.1

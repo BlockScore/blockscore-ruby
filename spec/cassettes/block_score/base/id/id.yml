@@ -5,8 +5,8 @@ http_interactions:
     uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
     body:
       encoding: UTF-8
-      string: '{"ssn":"0000","date_of_birth":"2015-11-25","name_first":"Adrianna","name_last":"Daniel","address_street1":"827
-        Parisian Fall","address_city":"South Freda","address_country_code":"CV"}'
+      string: '{"ssn":"0000","date_of_birth":"1978-01-18","name_first":"Lou","name_last":"Smith","address_street1":"114
+        Mikel Brooks","address_city":"Marjolaineside","address_country_code":"CW"}'
     headers:
       Accept:
       - application/vnd.blockscore+json;version=4
@@ -32,36 +32,38 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"fa59fb7c4ebd0859b400147fa46a5e86"
+      - W/"e089a2cffbfd8ce70e673c2a43e7e9c8"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 30878293-35dd-4f61-9bf0-bec8d4062af3
+      - 0cf76c15-eaba-4b84-957b-6efe4a0518e1
       X-Runtime:
-      - '0.059384'
+      - '0.032329'
       Strict-Transport-Security:
       - max-age=31536000
       Date:
-      - Thu, 11 Feb 2016 22:57:02 GMT
+      - Fri, 12 Feb 2016 23:22:00 GMT
       X-Rack-Cache:
       - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"object":"candidate","id":"56bd11be646661000300037b","created_at":1455231422,"updated_at":1455231422,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2015-11-25","name_first":"Adrianna","name_middle":null,"name_last":"Daniel","address_street1":"827
-        Parisian Fall","address_street2":null,"address_city":"South Freda","address_subdivision":null,"address_postal_code":null,"address_country_code":"CV"}'
-    http_version:
-  recorded_at: Thu, 11 Feb 2016 22:57:03 GMT
+      string: '{"object":"candidate","id":"56be69186563610003000197","created_at":1455319320,"updated_at":1455319320,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1978-01-18","name_first":"Lou","name_middle":null,"name_last":"Smith","address_street1":"114
+        Mikel Brooks","address_street2":null,"address_city":"Marjolaineside","address_subdivision":null,"address_postal_code":null,"address_country_code":"CW"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:22:00 GMT
 - request:
     method: post
     uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/
     body:
       encoding: UTF-8
-      string: '{"ssn":"0000","date_of_birth":"1992-06-25","name_first":"Herminia","name_last":"Tromp","address_street1":"1012
-        Hubert Ports","address_city":"Mayerville","address_country_code":"ML"}'
+      string: '{"ssn":"0000","date_of_birth":"1986-11-28","name_first":"Sydnie","name_last":"Smith","address_street1":"59272
+        Friesen Brooks","address_city":"South Bridget","address_country_code":"TH"}'
     headers:
       Accept:
       - application/vnd.blockscore+json;version=4
@@ -81,13 +83,13 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       X-Request-Id:
-      - 8adedb9e-84fc-47e5-9434-dc1f5c70c3cd
+      - fc909af1-9dd0-4b61-aff9-61ec267df5e3
       X-Runtime:
-      - '0.002637'
+      - '0.007238'
       Strict-Transport-Security:
       - max-age=31536000
       Date:
-      - Fri, 12 Feb 2016 23:05:16 GMT
+      - Fri, 12 Feb 2016 23:27:49 GMT
       X-Rack-Cache:
       - invalidate, pass
       Set-Cookie:
@@ -100,14 +102,14 @@ http_interactions:
       encoding: UTF-8
       string: '{"status":"404","error":"Not Found"}'
     http_version: 
-  recorded_at: Fri, 12 Feb 2016 23:05:16 GMT
+  recorded_at: Fri, 12 Feb 2016 23:27:49 GMT
 - request:
     method: post
     uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidate
     body:
       encoding: UTF-8
-      string: '{"ssn":"0000","date_of_birth":"1996-11-18","name_first":"Yasmine","name_last":"Leannon","address_street1":"161
-        Hermiston Crescent","address_city":"Ziemetown","address_country_code":"LA"}'
+      string: '{"ssn":"0000","date_of_birth":"1957-02-11","name_first":"Clifford","name_last":"Smith","address_street1":"5240
+        Heidenreich Cliffs","address_city":"Macejkovicland","address_country_code":"VG"}'
     headers:
       Accept:
       - application/vnd.blockscore+json;version=4
@@ -135,13 +137,13 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 5be18282-c9c3-4805-8542-d52eb82ead20
+      - 90e80abd-40f7-420d-804f-cde4da83616d
       X-Runtime:
-      - '0.005523'
+      - '0.006383'
       Strict-Transport-Security:
       - max-age=31536000
       Date:
-      - Fri, 12 Feb 2016 23:05:18 GMT
+      - Fri, 12 Feb 2016 23:27:52 GMT
       X-Rack-Cache:
       - invalidate, pass
       Set-Cookie:
@@ -155,60 +157,5 @@ http_interactions:
       string: '{"error":{"type":"invalid_request_error","message":"Cannot create requests
         at this path (POST /candidate)"}}'
     http_version: 
-  recorded_at: Fri, 12 Feb 2016 23:05:18 GMT
-- request:
-    method: post
-    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/Pathname
-    body:
-      encoding: UTF-8
-      string: '{"ssn":"0000","date_of_birth":"1938-02-09","name_first":"Elody","name_last":"Aufderhar","address_street1":"4830
-        Clementina Overpass","address_city":"Boscoberg","address_country_code":"IO"}'
-    headers:
-      Accept:
-      - application/vnd.blockscore+json;version=4
-      User-Agent:
-      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
-      Content-Type:
-      - application/json
-  response:
-    status:
-      code: 404
-      message: Not Found
-    headers:
-      Server:
-      - Cowboy
-      Connection:
-      - keep-alive
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/json; charset=utf-8
-      Cache-Control:
-      - no-cache
-      X-Request-Id:
-      - 10340295-0fff-49a8-93a3-1f411f93e4ff
-      X-Runtime:
-      - '0.005661'
-      Strict-Transport-Security:
-      - max-age=31536000
-      Date:
-      - Fri, 12 Feb 2016 23:19:30 GMT
-      X-Rack-Cache:
-      - invalidate, pass
-      Set-Cookie:
-      - __profilin=p%3Dt; path=/
-      Transfer-Encoding:
-      - chunked
-      Via:
-      - 1.1 vegur
-    body:
-      encoding: UTF-8
-      string: '{"error":{"type":"invalid_request_error","message":"Cannot create requests
-        at this path (POST /Pathname)"}}'
-    http_version: 
-  recorded_at: Fri, 12 Feb 2016 23:19:30 GMT
+  recorded_at: Fri, 12 Feb 2016 23:27:52 GMT
 recorded_with: VCR 3.0.1

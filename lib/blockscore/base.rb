@@ -31,17 +31,9 @@ module BlockScore
       "#<#{self.class}:#{format('%#016x', object_id << 1)} #{str_attr}>"
     end
 
-    def refresh
-      capture_attributes(retrieve(id))
-
-      true
-    rescue Error
-      false
-    end
-
     def save
       save!
-    rescue
+    rescue BlockScore::Error
       false
     end
 
@@ -57,7 +49,6 @@ module BlockScore
 
     def self.endpoint
       fail NotImplementedError, ABSTRACT_WARNING if equal?(Base)
-
       Pathname(Util.to_plural(resource))
     end
 

@@ -9,66 +9,10 @@ RSpec.describe BlockScore::Candidate do
   end
 
   describe '.create' do
-    subject(:candidate) { described_class.create(attributes_for(:candidate)) }
+    subject(:candidate) { described_class.create }
 
     it { is_expected.to be_persisted }
     it { is_expected.to be_an_instance_of described_class }
-  end
-
-  describe '.retrieve' do
-    let(:candidate_id) { create(:candidate).id }
-    subject(:candidate) { described_class.retrieve(candidate_id) }
-
-    it { is_expected.to be_persisted }
-    its(:name_first) { is_expected.not_to be_empty }
-    it { is_expected.to be_an_instance_of described_class }
-  end
-
-  # NB: At the time of writing, the testing API does not reset. Making this
-  #     test less then perfect. To work around the near certain availability
-  #     of historical candidates from other tests known candidates are created
-  #     and checked. This has the side effect of being susceptible to race
-  #     conditions if tested against the live API in parallel.
-  describe '.all' do
-    let(:uniq_token_one) { '05816347d2234ef4a92465e9784c7ce1' }
-    let(:uniq_token_two) { 'b4cd5fb645788c3b37c11407b83d7741' }
-    let!(:c1) { create(:candidate, name_first: 'John', name_last: uniq_token_one) }
-    let!(:c2) { create(:candidate, name_first: 'John', name_last: uniq_token_two) }
-    subject(:candidates) { described_class.all }
-
-    it { is_expected.not_to be_empty }
-    it { expect(candidates[0].name_last).to eql uniq_token_two }
-    it { expect(candidates[1].name_last).to eql uniq_token_one }
-  end
-
-  describe '#save' do
-    context 'when creating a new candidate' do
-      subject(:candidate) { build(:candidate) }
-      before { candidate.save }
-
-      it { is_expected.to be_persisted }
-      its(:name_first) { is_expected.not_to be_empty }
-    end
-
-    context 'when updating an existing candidate' do
-      subject(:candidate) { create(:candidate, name_first: 'John') }
-      before do
-        candidate.name_first = 'Jane'
-        candidate.save
-      end
-
-      it { is_expected.to be_persisted }
-      its(:name_first) { is_expected.to eql 'Jane' }
-    end
-  end
-
-  describe '#delete' do
-    subject(:candidate) { create(:candidate) }
-    let(:candidate_id) { candidate.id }
-    before { candidate.delete }
-
-    it { is_expected.not_to be_persisted }
-    it { expect(candidate.deleted).to be true }
   end
 
   describe '#history' do

@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Hellen","name_last":"Treutel","document_type":"ssn","document_value":"0000","birth_day":12,"birth_month":11,"birth_year":1939,"address_street1":"568
+        Predovic Locks","address_city":"New Haylie","address_subdivision":"AZ","address_postal_code":"95376-4926","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"ac4f826f2768b0814952467536ee6aaa"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7fcdfce6-42dd-477d-9382-3ec88ffe831e
+      X-Runtime:
+      - '0.472406'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 12 Feb 2016 23:12:04 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"56be66c46665660003000185","created_at":1455318724,"updated_at":1455318724,"status":"valid","livemode":false,"phone_number":null,"ip_address":null,"birth_day":12,"birth_month":11,"birth_year":1939,"name_first":"Hellen","name_middle":null,"name_last":"Treutel","address_street1":"568
+        Predovic Locks","address_street2":null,"address_city":"New Haylie","address_subdivision":"AZ","address_postal_code":"95376-4926","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2016 23:12:04 GMT
+recorded_with: VCR 3.0.1
