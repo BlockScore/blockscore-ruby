@@ -1,0 +1,162 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1960-02-15","name_first":"John","name_last":"Romaguera","address_street1":"2456
+        Goldner Glens","address_city":"New Taureanborough","address_country_code":"NP"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"15ed2c6a2880e13270f55cfef5f823be"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a77c33d1-b5d2-412d-9b94-44e9f19b5074
+      X-Runtime:
+      - '0.035262'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 19 Feb 2016 00:12:03 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c65dd330663000030003ae","created_at":1455840723,"updated_at":1455840723,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1960-02-15","name_first":"John","name_middle":null,"name_last":"Romaguera","address_street1":"2456
+        Goldner Glens","address_street2":null,"address_city":"New Taureanborough","address_subdivision":null,"address_postal_code":null,"address_country_code":"NP"}'
+    http_version:
+  recorded_at: Fri, 19 Feb 2016 00:12:03 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56c65dd330663000030003ae
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"15ed2c6a2880e13270f55cfef5f823be"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 94ca1bea-5799-4310-8d0e-a13220cc4da8
+      X-Runtime:
+      - '0.008407'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 19 Feb 2016 00:12:03 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c65dd330663000030003ae","created_at":1455840723,"updated_at":1455840723,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1960-02-15","name_first":"John","name_middle":null,"name_last":"Romaguera","address_street1":"2456
+        Goldner Glens","address_street2":null,"address_city":"New Taureanborough","address_subdivision":null,"address_postal_code":null,"address_country_code":"NP"}'
+    http_version:
+  recorded_at: Fri, 19 Feb 2016 00:12:03 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1943-07-21","name_first":"John","name_last":"Bayer","address_street1":"653
+        Brant Lights","address_city":"Jaidenview","address_country_code":"GI"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Request-Id:
+      - e87876b6-00dc-480e-acd3-b34f880e6a5a
+      X-Runtime:
+      - '0.001878'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 19 Feb 2016 00:12:04 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Content-Length:
+      - '36'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"status":"404","error":"Not Found"}'
+    http_version:
+  recorded_at: Fri, 19 Feb 2016 00:12:04 GMT
+recorded_with: VCR 3.0.1

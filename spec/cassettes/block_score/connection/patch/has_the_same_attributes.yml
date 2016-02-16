@@ -1,0 +1,276 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"2010-04-02","name_first":"John","name_last":"Rempel","address_street1":"3708
+        Cyril Shores","address_city":"Lake Esperanzaside","address_country_code":"AL"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f9e032d7521065c7997fc2f9a483debe"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - bea61f93-5a25-4785-8c76-8615aa46f064
+      X-Runtime:
+      - '0.038836'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 19 Feb 2016 00:47:05 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c6660930363200030004a5","created_at":1455842825,"updated_at":1455842825,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2010-04-02","name_first":"John","name_middle":null,"name_last":"Rempel","address_street1":"3708
+        Cyril Shores","address_street2":null,"address_city":"Lake Esperanzaside","address_subdivision":null,"address_postal_code":null,"address_country_code":"AL"}'
+    http_version:
+  recorded_at: Fri, 19 Feb 2016 00:47:05 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56c6660930363200030004a5
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c6660930363200030004a5","created_at":1455842825,"updated_at":1455842825,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2010-04-02","name_first":"Janie","name_middle":null,"name_last":"Rempel","address_street1":"3708
+        Cyril Shores","address_street2":null,"address_city":"Lake Esperanzaside","address_subdivision":null,"address_postal_code":null,"address_country_code":"AL"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"31e7cdd05aed8ad359eda51594eaaec7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 1fc3b8c2-66c9-41ca-aac9-a9e7f4f79989
+      X-Runtime:
+      - '0.022495'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 19 Feb 2016 00:47:05 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c6660930363200030004a5","created_at":1455842825,"updated_at":1455842825,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2010-04-02","name_first":"Janie","name_middle":null,"name_last":"Rempel","address_street1":"3708
+        Cyril Shores","address_street2":null,"address_city":"Lake Esperanzaside","address_subdivision":null,"address_postal_code":null,"address_country_code":"AL"}'
+    http_version:
+  recorded_at: Fri, 19 Feb 2016 00:47:05 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56c6660930363200030004a5
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c6660930363200030004a5","created_at":1455842825,"updated_at":1455842825,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2010-04-02","name_first":"Jane","name_middle":null,"name_last":"Rempel","address_street1":"3708
+        Cyril Shores","address_street2":null,"address_city":"Lake Esperanzaside","address_subdivision":null,"address_postal_code":null,"address_country_code":"AL"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"335217f7953cde4a2869d3db727cc360"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - d16141ba-6155-4b52-9209-5eaf1723900e
+      X-Runtime:
+      - '0.082887'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 19 Feb 2016 00:47:06 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c6660930363200030004a5","created_at":1455842825,"updated_at":1455842826,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2010-04-02","name_first":"Jane","name_middle":null,"name_last":"Rempel","address_street1":"3708
+        Cyril Shores","address_street2":null,"address_city":"Lake Esperanzaside","address_subdivision":null,"address_postal_code":null,"address_country_code":"AL"}'
+    http_version:
+  recorded_at: Fri, 19 Feb 2016 00:47:06 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56c6660930363200030004a5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"335217f7953cde4a2869d3db727cc360"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 2d27b5f1-498b-43ec-b4ad-52325853e4cd
+      X-Runtime:
+      - '0.007517'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 19 Feb 2016 00:47:06 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c6660930363200030004a5","created_at":1455842825,"updated_at":1455842826,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2010-04-02","name_first":"Jane","name_middle":null,"name_last":"Rempel","address_street1":"3708
+        Cyril Shores","address_street2":null,"address_city":"Lake Esperanzaside","address_subdivision":null,"address_postal_code":null,"address_country_code":"AL"}'
+    http_version:
+  recorded_at: Fri, 19 Feb 2016 00:47:06 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c6660930363200030004a5","created_at":1455842825,"updated_at":1455842825,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2010-04-02","name_first":"Janie","name_middle":null,"name_last":"Rempel","address_street1":"3708
+        Cyril Shores","address_street2":null,"address_city":"Lake Esperanzaside","address_subdivision":null,"address_postal_code":null,"address_country_code":"AL"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Request-Id:
+      - b7226527-bfa6-47e8-bd11-63297084f79c
+      X-Runtime:
+      - '0.002259'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 19 Feb 2016 00:47:37 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Content-Length:
+      - '36'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"status":"404","error":"Not Found"}'
+    http_version:
+  recorded_at: Fri, 19 Feb 2016 00:47:37 GMT
+recorded_with: VCR 3.0.1
