@@ -116,5 +116,21 @@ RSpec.describe BlockScore::Candidate do
 
       it { is_expected.to be_empty }
     end
+
+    context 'proof of similarity filtering' do
+      subject(:candidate_search) do
+        described_class.create(name_first: 'mohammed').search(similarity_threshold: 0.98)
+      end
+
+      it { is_expected.to be_empty }
+    end
+
+    context 'proof of similarity filtering (rejected and accepted)' do
+      subject(:candidate_search) do
+        described_class.create(name_first: 'mohammed').search(similarity_threshold: 0.93)
+      end
+
+      it { expect(candidate_search.size).to be > 6 }
+    end
   end
 end
