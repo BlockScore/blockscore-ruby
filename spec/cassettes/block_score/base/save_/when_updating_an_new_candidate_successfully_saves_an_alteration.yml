@@ -1,0 +1,116 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1924-04-14","name_first":"Jane","name_last":"Bahringer","address_street1":"3915
+        Payton Mews","address_city":"Flatleystad","address_country_code":"PM"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"e9d314192936844d2abd3e8712c09d0b"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ef0e5b62-13ea-47bc-aca2-8807d31fd07d
+      X-Runtime:
+      - '0.038634'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 19 Feb 2016 01:53:56 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c675b43330610003000586","created_at":1455846836,"updated_at":1455846836,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1924-04-14","name_first":"Jane","name_middle":null,"name_last":"Bahringer","address_street1":"3915
+        Payton Mews","address_street2":null,"address_city":"Flatleystad","address_subdivision":null,"address_postal_code":null,"address_country_code":"PM"}'
+    http_version: 
+  recorded_at: Fri, 19 Feb 2016 01:53:57 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56c675b43330610003000586
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"e9d314192936844d2abd3e8712c09d0b"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 955fd9dc-2140-445c-a6dc-5be569c5e7e2
+      X-Runtime:
+      - '0.008299'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 19 Feb 2016 01:53:57 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c675b43330610003000586","created_at":1455846836,"updated_at":1455846836,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1924-04-14","name_first":"Jane","name_middle":null,"name_last":"Bahringer","address_street1":"3915
+        Payton Mews","address_street2":null,"address_city":"Flatleystad","address_subdivision":null,"address_postal_code":null,"address_country_code":"PM"}'
+    http_version: 
+  recorded_at: Fri, 19 Feb 2016 01:53:57 GMT
+recorded_with: VCR 3.0.1
