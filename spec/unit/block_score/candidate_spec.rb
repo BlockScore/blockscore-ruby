@@ -119,7 +119,9 @@ RSpec.describe BlockScore::Candidate do
 
     context 'proof of similarity filtering' do
       subject(:candidate_search) do
-        described_class.create(name_first: 'mohammed').search(similarity_threshold: 0.98)
+        described_class
+          .create(name_first: 'mohammed')
+          .search(similarity_threshold: 0.98)
       end
 
       it { is_expected.to be_empty }
@@ -127,10 +129,22 @@ RSpec.describe BlockScore::Candidate do
 
     context 'proof of similarity filtering (rejected and accepted)' do
       subject(:candidate_search) do
-        described_class.create(name_first: 'mohammed').search(similarity_threshold: 0.93)
+        described_class
+          .create(name_first: 'mohammed')
+          .search(similarity_threshold: 0.93)
       end
 
       it { expect(candidate_search.size).to be > 6 }
+    end
+
+    context 'proof of similarity filtering with match on company' do
+      subject(:candidate_search) do
+        described_class
+          .create(name_first: 'mohammed')
+          .search(match_type: 'company', similarity_threshold: 0.93)
+      end
+
+      it { expect(candidate_search.size).to be(0) }
     end
   end
 end
