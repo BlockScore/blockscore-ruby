@@ -49,7 +49,7 @@ RSpec.describe BlockScore::Candidate do
     its(:hits) { is_expected.not_to be_empty }
     it 'returns a watchlist hit' do
       expect(candidate.hits)
-        .to all(be_an_instance_of BlockScore::WatchlistHit)
+        .to all(be_an_instance_of(BlockScore::WatchlistHit))
     end
   end
 
@@ -57,6 +57,6 @@ RSpec.describe BlockScore::Candidate do
     subject(:candidate_search) { create(:watched_candidate).search }
 
     it { is_expected.not_to be_empty }
-    it { is_expected.to all(be_an_instance_of BlockScore::WatchlistHit) }
+    it { is_expected.to all(be_an_instance_of(BlockScore::WatchlistHit)) }
   end
 end

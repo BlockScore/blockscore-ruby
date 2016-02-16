@@ -11,7 +11,7 @@ module BlockScore
     def_delegators 'self.class', :endpoint, :post, :retrieve, :resource
 
     def initialize(options = {}, &block)
-      @loaded = !(block)
+      @loaded = !block
       @proc = block
       @attributes = options
     end

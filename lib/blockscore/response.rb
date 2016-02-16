@@ -14,15 +14,19 @@ module BlockScore
     private
 
     def api_error(response)
+      fail error_class(response), response
+    end
+
+    def error_class(response)
       case response.code
-      when 400
-        fail InvalidRequestError.new(response)
-      when 401
-        fail AuthenticationError.new(response)
-      when 404
-        fail NotFoundError.new(response)
+      when 400 then
+        InvalidRequestError
+      when 401 then
+        AuthenticationError
+      when 404 then
+        NotFoundError
       else
-        fail APIError.new(response)
+        APIError
       end
     end
   end

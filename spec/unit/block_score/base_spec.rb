@@ -37,7 +37,7 @@ RSpec.describe BlockScore::Base do
       it 'successfully saves an alteration' do
         candidate.name_first = 'Jane'
 
-        expect { candidate.save! } .to_not change(candidate, :id)
+        expect { candidate.save! } .not_to change(candidate, :id)
         expect(candidate.persisted?).to be true
         expect(candidate.name_first).to eql 'Jane'
       end
@@ -76,6 +76,6 @@ RSpec.describe BlockScore::Base do
     subject(:candidate_inspection) { create(:candidate).inspect }
 
     it { is_expected.to be_an_instance_of String }
-    it { is_expected.to match(/\A#<BlockScore::Candidate:0x/) }
+    it { is_expected.to start_with('#<BlockScore::Candidate:0x') }
   end
 end

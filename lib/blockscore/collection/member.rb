@@ -85,8 +85,6 @@ module BlockScore
       # @api private
       attr_reader :parent
 
-      private
-
       # ids that belong to associated parent resource
       #
       # @return [Array<String>]

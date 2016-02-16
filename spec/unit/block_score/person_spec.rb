@@ -14,7 +14,7 @@ RSpec.describe BlockScore::Person do
     end
 
     it 'is setup from the options provided' do
-      expect(person.name_first).to_not be_empty
+      expect(person.name_first).not_to be_empty
     end
   end
 

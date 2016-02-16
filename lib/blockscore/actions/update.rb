@@ -24,7 +24,7 @@ module BlockScore
         :updated_at,
         :livemode,
         :deleted
-      ]
+      ].freeze
 
       def_delegators 'self.class', :patch
 
