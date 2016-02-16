@@ -53,7 +53,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"object":"candidate","id":"56bd11bd6466610003000379","created_at":1455231421,"updated_at":1455231421,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2003-02-10","name_first":"John","name_middle":null,"name_last":"Lind","address_street1":"125
         Danny Corner","address_street2":null,"address_city":"Lake Hermannside","address_subdivision":null,"address_postal_code":null,"address_country_code":"AM"}'
-    http_version:
+    http_version: 
   recorded_at: Thu, 11 Feb 2016 22:57:01 GMT
 - request:
     method: patch
@@ -108,7 +108,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"object":"candidate","id":"56bd11bd6466610003000379","created_at":1455231421,"updated_at":1455231422,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2003-02-10","name_first":"Jane","name_middle":null,"name_last":"Lind","address_street1":"125
         Danny Corner","address_street2":null,"address_city":"Lake Hermannside","address_subdivision":null,"address_postal_code":null,"address_country_code":"AM"}'
-    http_version:
+    http_version: 
   recorded_at: Thu, 11 Feb 2016 22:57:02 GMT
 - request:
     method: patch
@@ -294,4 +294,61 @@ http_interactions:
       string: '{"status":"404","error":"Not Found"}'
     http_version: 
   recorded_at: Fri, 12 Feb 2016 23:02:08 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bd11bd6466610003000379","created_at":1455231421,"updated_at":1455231421,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2003-02-10","name_first":"Jane","name_middle":null,"name_last":"Lind","address_street1":"125
+        Danny Corner","address_street2":null,"address_city":"Lake Hermannside","address_subdivision":null,"address_postal_code":null,"address_country_code":"AM"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f4ceb49f02ba0e415d39d054ecf5be76"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b51d6075-3494-4bb2-b995-aafa558780dc
+      X-Runtime:
+      - '0.032190'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Tue, 16 Feb 2016 16:32:54 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c34f3634386200030004cf","created_at":1455640374,"updated_at":1455640374,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2003-02-10","name_first":"Jane","name_middle":null,"name_last":"Lind","address_street1":"125
+        Danny Corner","address_street2":null,"address_city":"Lake Hermannside","address_subdivision":null,"address_postal_code":null,"address_country_code":"AM"}'
+    http_version: 
+  recorded_at: Tue, 16 Feb 2016 16:32:54 GMT
 recorded_with: VCR 3.0.1

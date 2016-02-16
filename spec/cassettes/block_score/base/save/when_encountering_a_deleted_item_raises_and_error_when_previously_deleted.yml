@@ -170,4 +170,301 @@ http_interactions:
         Schuppe Mill","address_street2":null,"address_city":"South Norbertomouth","address_subdivision":null,"address_postal_code":null,"address_country_code":"IT","deleted":true}'
     http_version: 
   recorded_at: Fri, 12 Feb 2016 23:19:43 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1980-01-25","name_first":"John","name_last":"Rippin","address_street1":"3713
+        Rogers Trail","address_city":"South Jacyntheshire","address_country_code":"KR"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Request-Id:
+      - 48f84298-e17a-4fc6-af48-1aabaa2e8f46
+      X-Runtime:
+      - '0.001926'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Mon, 15 Feb 2016 21:04:30 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Content-Length:
+      - '36'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"status":"404","error":"Not Found"}'
+    http_version: 
+  recorded_at: Mon, 15 Feb 2016 21:04:30 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidate
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1927-10-19","name_first":"John","name_last":"Walsh","address_street1":"178
+        Janet Wall","address_city":"Chesleymouth","address_country_code":"UM"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 32ae6050-e6bf-46f6-95bb-c2a757993a6c
+      X-Runtime:
+      - '0.006790'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Mon, 15 Feb 2016 21:04:34 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"error":{"type":"invalid_request_error","message":"Cannot create requests
+        at this path (POST /candidate)"}}'
+    http_version: 
+  recorded_at: Mon, 15 Feb 2016 21:04:34 GMT
+- request:
+    method: delete
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/56be687c3062300003000170
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Request-Id:
+      - 3628df51-6ced-420c-98d0-18c25d56da02
+      X-Runtime:
+      - '0.002841'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Mon, 15 Feb 2016 21:05:03 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Content-Length:
+      - '36'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"status":"404","error":"Not Found"}'
+    http_version: 
+  recorded_at: Mon, 15 Feb 2016 21:05:03 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/Pathname
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1919-08-26","name_first":"John","name_last":"Balistreri","address_street1":"91202
+        Thelma Divide","address_city":"Jeremieberg","address_country_code":"TJ"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - b61e94e2-431e-49d5-9d12-5484f8159590
+      X-Runtime:
+      - '0.006264'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Tue, 16 Feb 2016 16:32:16 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"error":{"type":"invalid_request_error","message":"Cannot create requests
+        at this path (POST /Pathname)"}}'
+    http_version: 
+  recorded_at: Tue, 16 Feb 2016 16:32:16 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56be687c3062300003000170","created_at":1455319164,"updated_at":1455319164,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1978-12-16","name_first":"John","name_middle":null,"name_last":"Larson","address_street1":"9671
+        Schuppe Mill","address_street2":null,"address_city":"South Norbertomouth","address_subdivision":null,"address_postal_code":null,"address_country_code":"IT","deleted":true}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"c62755b897f7d12ced68f7b9e2f777e9"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 9c5dfdb2-2b75-4dd9-90f3-72d523d20613
+      X-Runtime:
+      - '0.034180'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Tue, 16 Feb 2016 16:32:25 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c34f1934353000030004d3","created_at":1455640345,"updated_at":1455640345,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1978-12-16","name_first":"John","name_middle":null,"name_last":"Larson","address_street1":"9671
+        Schuppe Mill","address_street2":null,"address_city":"South Norbertomouth","address_subdivision":null,"address_postal_code":null,"address_country_code":"IT"}'
+    http_version: 
+  recorded_at: Tue, 16 Feb 2016 16:32:25 GMT
+- request:
+    method: delete
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Request-Id:
+      - 52c7ba0c-3781-4589-99a9-4224f7bb0261
+      X-Runtime:
+      - '0.001857'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Tue, 16 Feb 2016 16:32:46 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Content-Length:
+      - '36'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"status":"404","error":"Not Found"}'
+    http_version: 
+  recorded_at: Tue, 16 Feb 2016 16:32:46 GMT
 recorded_with: VCR 3.0.1

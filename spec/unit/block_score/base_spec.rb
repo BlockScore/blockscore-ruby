@@ -6,7 +6,7 @@ RSpec.describe BlockScore::Base, vcr: true do
       subject(:candidate) { build(:candidate) }
       before { candidate.save }
 
-      it { is_expected.to be_persisted }
+      its(:persisted?) { is_expected.to be true }
       its(:name_first) { is_expected.not_to be_empty }
     end
 
@@ -17,7 +17,7 @@ RSpec.describe BlockScore::Base, vcr: true do
         expect(candidate.save).to be true
       end
 
-      it { is_expected.to be_persisted }
+      its(:persisted?) { is_expected.to be true }
       its(:name_first) { is_expected.to eql 'Jane' }
     end
 
