@@ -38,3 +38,27 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+
+task('metrics:mutant').clear
+
+namespace :metrics do
+  config = Devtools.project.mutant
+
+  desc 'Measure mutation coverage'
+  task mutant: :coverage do
+    require 'mutant'
+
+    arguments = %W(
+      --jobs 1
+      --use #{config.strategy}
+      --since #{config.since}
+      --include lib
+      --expect-coverage #{config.expect_coverage}
+      --
+    ).concat(Array(config.namespace).map { |namespace| "#{namespace}*" })
+
+    unless Mutant::CLI.run(arguments)
+      Devtools.notify_metric_violation('Mutant task is not successful')
+    end
+  end
+end
