@@ -28,5 +28,5 @@ if [[ "$1" = "build" ]]; then
 elif [[ "$1" = "spec" && "$BUILD" = "tests" ]]; then
   rvm-exec $CIRCLE_NODE_RUBY_VERSION rspec;
 elif [[ "$1" = "spec" && "$BUILD" = "metrics" ]]; then
-  rvm-exec $CIRCLE_NODE_RUBY_VERSION bundle exec rake metrics:rubocop;
+  rvm-exec $CIRCLE_NODE_RUBY_VERSION bundle exec rake metrics:mutant metrics:rubocop;
 fi
