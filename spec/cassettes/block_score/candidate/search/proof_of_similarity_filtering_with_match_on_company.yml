@@ -1,0 +1,113 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"mohammed"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"bb5b6426ee79150769b63dca52a2c0f3"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 458e279b-c2ab-4cec-8d5d-e6618b24923f
+      X-Runtime:
+      - '0.032986'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Tue, 16 Feb 2016 20:04:42 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c380da3438620003000890","created_at":1455653082,"updated_at":1455653082,"livemode":false,"note":null,"ssn":null,"passport":null,"date_of_birth":null,"name_first":"mohammed","name_middle":null,"name_last":null,"address_street1":null,"address_street2":null,"address_city":null,"address_subdivision":null,"address_postal_code":null,"address_country_code":null}'
+    http_version: 
+  recorded_at: Tue, 16 Feb 2016 20:04:42 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/watchlists
+    body:
+      encoding: UTF-8
+      string: '{"match_type":"company","similarity_threshold":0.93,"candidate_id":"56c380da3438620003000890"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"ed3ede833e93ed7fe9743a906e06a616"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - d6fb1e46-14ac-4177-9c70-6fd1dfac3e0b
+      X-Runtime:
+      - '0.068593'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Tue, 16 Feb 2016 20:04:42 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"livemode":false,"searched_lists":[],"count":0,"matches":[]}'
+    http_version: 
+  recorded_at: Tue, 16 Feb 2016 20:04:42 GMT
+recorded_with: VCR 3.0.1

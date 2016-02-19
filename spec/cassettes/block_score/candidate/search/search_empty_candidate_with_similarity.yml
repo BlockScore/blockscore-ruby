@@ -1,0 +1,113 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"7c67cceb67a76262062a2b952cb80d9f"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ce78219a-32cf-4e8d-be8b-88d7b1e42dd4
+      X-Runtime:
+      - '0.086368'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Tue, 16 Feb 2016 17:31:48 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c35d0434386200030005a0","created_at":1455643908,"updated_at":1455643908,"livemode":false,"note":null,"ssn":null,"passport":null,"date_of_birth":null,"name_first":null,"name_middle":null,"name_last":null,"address_street1":null,"address_street2":null,"address_city":null,"address_subdivision":null,"address_postal_code":null,"address_country_code":null}'
+    http_version: 
+  recorded_at: Tue, 16 Feb 2016 17:31:48 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/watchlists
+    body:
+      encoding: UTF-8
+      string: '{"similarity_threshold":0.0,"candidate_id":"56c35d0434386200030005a0"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"ed3ede833e93ed7fe9743a906e06a616"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 8894f320-9394-429c-aff1-ba1bb2839452
+      X-Runtime:
+      - '0.034381'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Tue, 16 Feb 2016 17:31:48 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"livemode":false,"searched_lists":[],"count":0,"matches":[]}'
+    http_version: 
+  recorded_at: Tue, 16 Feb 2016 17:31:48 GMT
+recorded_with: VCR 3.0.1

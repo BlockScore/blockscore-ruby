@@ -517,4 +517,59 @@ http_interactions:
         at this path (GET /hits)"}}'
     http_version: 
   recorded_at: Mon, 15 Feb 2016 19:50:32 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56bceada3534370003000048
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"a6b2a06b6659378b0c2e5404d27657c7"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 6b5b3225-d63e-4343-bf41-729b29ddf712
+      X-Runtime:
+      - '0.008492'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Mon, 15 Feb 2016 20:23:20 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56bceada3534370003000048","created_at":1455221466,"updated_at":1455221466,"livemode":false,"note":null,"ssn":null,"passport":null,"date_of_birth":null,"name_first":"John","name_middle":null,"name_last":"Bredenkamp","address_street1":null,"address_street2":null,"address_city":null,"address_subdivision":null,"address_postal_code":null,"address_country_code":null}'
+    http_version: 
+  recorded_at: Mon, 15 Feb 2016 20:23:20 GMT
 recorded_with: VCR 3.0.1

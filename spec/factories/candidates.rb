@@ -12,7 +12,7 @@ FactoryGirl.define do
     address_country_code { Faker::Address.country_code }
 
     # TODO: Update to use '0010' AND style option set
-    trait :watched do
+    trait :watched_person do
       ssn                  { nil }
       date_of_birth        { nil }
       name_first           { 'John' }
@@ -22,6 +22,6 @@ FactoryGirl.define do
       address_country_code { nil }
     end
 
-    factory :watched_candidate, traits: [:watched]
+    factory :watched_person_candidate, traits: [:watched_person]
   end
 end
