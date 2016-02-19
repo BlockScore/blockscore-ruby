@@ -1,4 +1,4 @@
-RSpec.describe BlockScore::QuestionSet do
+RSpec.describe BlockScore::QuestionSet, vcr: true do
   describe '.new' do
     subject(:question_set) { described_class.new }
 

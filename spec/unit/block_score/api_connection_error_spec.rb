@@ -1,4 +1,4 @@
-RSpec.describe BlockScore::APIConnectionError do
+RSpec.describe BlockScore::APIConnectionError, vcr: true do
   let(:stubbed_route_pattern) { %r{.*api\.blockscore\.com/people/abc123} }
   let(:stubbed_error) { Errno::ECONNREFUSED }
   let(:message) { 'Connection refused - Exception from WebMock' }

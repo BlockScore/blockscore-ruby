@@ -1,4 +1,4 @@
-RSpec.describe BlockScore::Person do
+RSpec.describe BlockScore::Person, vcr: true do
   describe '.new' do
     subject(:person) { described_class.new(attributes_for(:person)) }
 

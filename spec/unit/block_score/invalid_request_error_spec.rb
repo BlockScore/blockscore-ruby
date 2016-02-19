@@ -1,4 +1,4 @@
-RSpec.describe BlockScore::InvalidRequestError do
+RSpec.describe BlockScore::InvalidRequestError, vcr: true do
   subject { BlockScore::Person.create(first_name: 'John') }
   let(:message) do
     '(Type: invalid_request_error) ' \

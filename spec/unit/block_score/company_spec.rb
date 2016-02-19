@@ -1,4 +1,4 @@
-RSpec.describe BlockScore::Company do
+RSpec.describe BlockScore::Company, vcr: true do
   describe '.new' do
     subject(:company) { described_class.new(attributes_for(:company)) }
 

@@ -1,6 +1,6 @@
 require 'faker'
 
-RSpec.describe BlockScore::Actions::Delete do
+RSpec.describe BlockScore::Actions::Delete, vcr: true do
   describe '#delete' do
     subject(:candidate) { create(:candidate) }
     before { candidate.delete }

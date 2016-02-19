@@ -1,4 +1,4 @@
-RSpec.describe BlockScore::Collection::Member do
+RSpec.describe BlockScore::Collection::Member, vcr: true do
   describe '#save' do
     let(:question_set) { BlockScore::QuestionSet.new }
     subject(:member) { described_class.new(person, question_set) }

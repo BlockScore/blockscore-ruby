@@ -1,6 +1,6 @@
 require 'faker'
 
-RSpec.describe BlockScore::Base do
+RSpec.describe BlockScore::Base, vcr: true do
   describe '#save' do
     context 'when creating a new candidate' do
       subject(:candidate) { build(:candidate) }

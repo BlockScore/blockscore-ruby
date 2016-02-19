@@ -1,6 +1,6 @@
 require 'faker'
 
-RSpec.describe BlockScore::Actions::Update do
+RSpec.describe BlockScore::Actions::Update, vcr: true do
   describe '#save!' do
     context 'when updating an existing candidate' do
       subject(:candidate) { create(:candidate, name_first: 'John') }
