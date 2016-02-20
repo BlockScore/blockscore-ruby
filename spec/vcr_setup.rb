@@ -9,7 +9,7 @@ module BlockScore
   extend self
 
   RSpec.configure do |config|
-    config.before(:suite) do
+    config.before(:context) do
       BlockScore.api_key = ENV.fetch(ENVIRONMENT_API_KEY, PLACEHOLDER_API_KEY)
     end
 
