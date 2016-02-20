@@ -1,6 +1,6 @@
 require 'faker'
 
-RSpec.describe BlockScore::Actions::All do
+RSpec.describe BlockScore::Actions::All, vcr: true do
   describe '.all' do
     let(:uniq_token_one) { '4a2c019a1e3c33442644d9f52c7a93f7' }
     let(:uniq_token_two) { 'ba9a680671c6c006c6105aa450837668' }

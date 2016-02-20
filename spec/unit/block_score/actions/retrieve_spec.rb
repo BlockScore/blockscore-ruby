@@ -1,6 +1,6 @@
 require 'faker'
 
-RSpec.describe BlockScore::Actions::Retrieve do
+RSpec.describe BlockScore::Actions::Retrieve, vcr: true do
   describe '.retrieve' do
     let(:person_id) { create(:person).id }
     subject(:person) { BlockScore::Person.retrieve(person_id) }

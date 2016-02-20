@@ -1,6 +1,6 @@
 require 'faker'
 
-RSpec.describe BlockScore::Actions::WriteOnce do
+RSpec.describe BlockScore::Actions::WriteOnce, vcr: true do
   describe '#save!' do
     context 'when creating a new person' do
       subject(:person) { build(:person) }

@@ -1,4 +1,4 @@
-RSpec.describe BlockScore::NotFoundError do
+RSpec.describe BlockScore::NotFoundError, vcr: true do
   subject { BlockScore::Person.retrieve('abc123') }
   let(:message) do
     '(Type: invalid_request_error) ' \

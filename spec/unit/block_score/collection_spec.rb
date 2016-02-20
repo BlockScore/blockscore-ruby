@@ -1,4 +1,4 @@
-RSpec.describe BlockScore::Collection do
+RSpec.describe BlockScore::Collection, vcr: true do
   let(:person) { create(:person) }
   subject(:question_sets) { person.question_sets }
 

@@ -1,6 +1,6 @@
 require 'faker'
 
-RSpec.describe BlockScore::Actions::Create do
+RSpec.describe BlockScore::Actions::Create, vcr: true do
   describe '.create' do
     subject(:candidate) do
       BlockScore::Candidate.create(attributes_for(:candidate))

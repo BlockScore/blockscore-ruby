@@ -13,10 +13,9 @@ module BlockScore
       BlockScore.api_key = ENV.fetch(ENVIRONMENT_API_KEY, PLACEHOLDER_API_KEY)
     end
 
-    config.around(:each) do |example|
+    config.around(vcr: true) do |example|
       record_option = ENV.fetch(RECORD_MODE_KEY, :none).to_sym
-      options = example.metadata.fetch(:vcr, record: record_option)
-      BlockScore.run_vcr_example(options, example)
+      BlockScore.run_vcr_example({ record: record_option }, example)
     end
   end
 

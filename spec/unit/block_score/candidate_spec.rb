@@ -1,6 +1,6 @@
 require 'faker'
 
-RSpec.describe BlockScore::Candidate do
+RSpec.describe BlockScore::Candidate, vcr: true do
   describe '.new' do
     subject(:candidate) { described_class.new(attributes_for(:candidate)) }
 

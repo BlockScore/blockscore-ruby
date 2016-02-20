@@ -1,4 +1,4 @@
-RSpec.describe BlockScore::Util do
+RSpec.describe BlockScore::Util, vcr: true do
   shared_context 'a transform' do
     subject(:actual) { described_class.send(method, input) }
     it { should eql(output) }
