@@ -9,13 +9,15 @@ module BlockScore
   extend self
 
   RSpec.configure do |config|
-    config.before(:suite) do
+    config.before(:context) do
       BlockScore.api_key = ENV.fetch(ENVIRONMENT_API_KEY, PLACEHOLDER_API_KEY)
     end
 
-    config.around(vcr: true) do |example|
+    config.around(:each) do |example|
       record_option = ENV.fetch(RECORD_MODE_KEY, :none).to_sym
-      BlockScore.run_vcr_example({ record: record_option }, example)
+      vcr_on = example.metadata.fetch(:vcr, false)
+      options = { record: (vcr_on ? record_option : :skip) }
+      BlockScore.run_vcr_example(options, example)
     end
   end
 
