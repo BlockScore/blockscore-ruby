@@ -1,0 +1,217 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1957-06-13","name_first":"Gennaro","name_last":"Gutkowski","address_street1":"4270
+        Becker Crossing","address_city":"Brayanshire","address_country_code":"GP"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"5d7e86859c06d77ba5fe7d1cc64f6c2d"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 56d29b6c-6f0d-475a-a453-a58dfed50340
+      X-Runtime:
+      - '0.036964'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Mon, 15 Feb 2016 22:49:39 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c256036261650003000857","created_at":1455576579,"updated_at":1455576579,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1957-06-13","name_first":"Gennaro","name_middle":null,"name_last":"Gutkowski","address_street1":"4270
+        Becker Crossing","address_street2":null,"address_city":"Brayanshire","address_subdivision":null,"address_postal_code":null,"address_country_code":"GP"}'
+    http_version:
+  recorded_at: Mon, 15 Feb 2016 22:49:39 GMT
+- request:
+    method: delete
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56c256036261650003000857
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f6c99340ded68eddcc3e55dee35de7e7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 43304b70-237e-4033-9c98-afdb07789efb
+      X-Runtime:
+      - '0.020795'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Mon, 15 Feb 2016 22:49:40 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c256036261650003000857","created_at":1455576579,"updated_at":1455576580,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1957-06-13","name_first":"Gennaro","name_middle":null,"name_last":"Gutkowski","address_street1":"4270
+        Becker Crossing","address_street2":null,"address_city":"Brayanshire","address_subdivision":null,"address_postal_code":null,"address_country_code":"GP","deleted":true}'
+    http_version:
+  recorded_at: Mon, 15 Feb 2016 22:49:40 GMT
+- request:
+    method: delete
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56c256036261650003000857
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f6c99340ded68eddcc3e55dee35de7e7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a5da9b7d-c6b2-48ac-902e-b7206b11cb93
+      X-Runtime:
+      - '0.015202'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Mon, 15 Feb 2016 22:49:40 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c256036261650003000857","created_at":1455576579,"updated_at":1455576580,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1957-06-13","name_first":"Gennaro","name_middle":null,"name_last":"Gutkowski","address_street1":"4270
+        Becker Crossing","address_street2":null,"address_city":"Brayanshire","address_subdivision":null,"address_postal_code":null,"address_country_code":"GP","deleted":true}'
+    http_version:
+  recorded_at: Mon, 15 Feb 2016 22:49:40 GMT
+- request:
+    method: delete
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Request-Id:
+      - a6894ab0-559e-4e8e-a8df-78a2736db60a
+      X-Runtime:
+      - '0.001963'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Tue, 16 Feb 2016 16:59:12 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Content-Length:
+      - '36'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"status":"404","error":"Not Found"}'
+    http_version:
+  recorded_at: Tue, 16 Feb 2016 16:59:12 GMT
+recorded_with: VCR 3.0.1
