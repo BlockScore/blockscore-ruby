@@ -1,0 +1,159 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1972-02-15","name_first":"John","name_last":"Denesik","address_street1":"6339
+        Adolph Camp","address_city":"Pfefferview","address_country_code":"GP"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"e89526cc3e2a1a86d7d7406b03268d8e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ddba2a2f-6b0e-471e-8e2c-8fabf402ae99
+      X-Runtime:
+      - '0.044730'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 19 Feb 2016 01:51:08 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c6750c6566650003000527","created_at":1455846668,"updated_at":1455846668,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1972-02-15","name_first":"John","name_middle":null,"name_last":"Denesik","address_street1":"6339
+        Adolph Camp","address_street2":null,"address_city":"Pfefferview","address_subdivision":null,"address_postal_code":null,"address_country_code":"GP"}'
+    http_version: 
+  recorded_at: Fri, 19 Feb 2016 01:51:08 GMT
+- request:
+    method: delete
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56c6750c6566650003000527
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"475fc1a95557b8cf82ce1047475414b0"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - bc367a18-e4d0-481a-b27b-33cab456646f
+      X-Runtime:
+      - '0.020897'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 19 Feb 2016 01:51:08 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c6750c6566650003000527","created_at":1455846668,"updated_at":1455846668,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1972-02-15","name_first":"John","name_middle":null,"name_last":"Denesik","address_street1":"6339
+        Adolph Camp","address_street2":null,"address_city":"Pfefferview","address_subdivision":null,"address_postal_code":null,"address_country_code":"GP","deleted":true}'
+    http_version: 
+  recorded_at: Fri, 19 Feb 2016 01:51:08 GMT
+- request:
+    method: delete
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates56c6750c6566650003000527
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Request-Id:
+      - ea2da640-b0b6-42ba-8b8b-54390a419955
+      X-Runtime:
+      - '0.002217'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 19 Feb 2016 01:54:04 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Content-Length:
+      - '36'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"status":"404","error":"Not Found"}'
+    http_version: 
+  recorded_at: Fri, 19 Feb 2016 01:54:04 GMT
+recorded_with: VCR 3.0.1

@@ -1,0 +1,168 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1987-06-29","name_first":"John","name_last":"Hartmann","address_street1":"1184
+        Pfannerstill Lights","address_city":"Nehachester","address_country_code":"FI"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"7592602d960c38c399bf6df3010d6f1d"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ad6cd42c-fe7e-4ecb-bac2-a138a4b0fc09
+      X-Runtime:
+      - '0.049764'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Tue, 16 Feb 2016 16:32:12 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c34f0c363932000300051b","created_at":1455640332,"updated_at":1455640332,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1987-06-29","name_first":"John","name_middle":null,"name_last":"Hartmann","address_street1":"1184
+        Pfannerstill Lights","address_street2":null,"address_city":"Nehachester","address_subdivision":null,"address_postal_code":null,"address_country_code":"FI"}'
+    http_version: 
+  recorded_at: Tue, 16 Feb 2016 16:32:12 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56c34f0c363932000300051b
+    body:
+      encoding: UTF-8
+      string: '{"note":null,"ssn":"0000","passport":null,"date_of_birth":"1987-06-29","name_first":"Jane","name_middle":null,"name_last":"Hartmann","address_street1":"1184
+        Pfannerstill Lights","address_street2":null,"address_city":"Nehachester","address_subdivision":null,"address_postal_code":null,"address_country_code":"FI"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"299c9ccaf69e697133595f51b646365c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b634a907-4df0-4685-9f66-42b2c102f866
+      X-Runtime:
+      - '0.024001'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Tue, 16 Feb 2016 16:32:13 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c34f0c363932000300051b","created_at":1455640332,"updated_at":1455640332,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1987-06-29","name_first":"Jane","name_middle":null,"name_last":"Hartmann","address_street1":"1184
+        Pfannerstill Lights","address_street2":null,"address_city":"Nehachester","address_subdivision":null,"address_postal_code":null,"address_country_code":"FI"}'
+    http_version: 
+  recorded_at: Tue, 16 Feb 2016 16:32:13 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c34f0c363932000300051b","created_at":1455640332,"updated_at":1455640332,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1987-06-29","name_first":"Jane","name_middle":null,"name_last":"Hartmann","address_street1":"1184
+        Pfannerstill Lights","address_street2":null,"address_city":"Nehachester","address_subdivision":null,"address_postal_code":null,"address_country_code":"FI"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"d351eca782ff1b008194cfa89ca15eb8"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - f7d32c07-8506-48ad-87b1-813e6a7f2b15
+      X-Runtime:
+      - '0.033889'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Tue, 16 Feb 2016 16:32:55 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c34f3734313500030004f5","created_at":1455640375,"updated_at":1455640375,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1987-06-29","name_first":"Jane","name_middle":null,"name_last":"Hartmann","address_street1":"1184
+        Pfannerstill Lights","address_street2":null,"address_city":"Nehachester","address_subdivision":null,"address_postal_code":null,"address_country_code":"FI"}'
+    http_version: 
+  recorded_at: Tue, 16 Feb 2016 16:32:55 GMT
+recorded_with: VCR 3.0.1

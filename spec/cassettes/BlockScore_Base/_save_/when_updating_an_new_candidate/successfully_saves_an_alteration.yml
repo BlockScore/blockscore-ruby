@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1916-09-27","name_first":"Jane","name_last":"Orn","address_street1":"9979
+        Koepp Mill","address_city":"North Violettebury","address_country_code":"BE"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Request-Id:
+      - 6762e317-81c1-435c-baad-b5c2af796372
+      X-Runtime:
+      - '0.001928'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Mon, 22 Feb 2016 19:24:06 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Content-Length:
+      - '36'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"status":"404","error":"Not Found"}'
+    http_version: 
+  recorded_at: Mon, 22 Feb 2016 19:24:06 GMT
+recorded_with: VCR 3.0.1

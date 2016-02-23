@@ -6,7 +6,7 @@ RSpec.describe BlockScore::Base, vcr: true do
       subject(:candidate) { build(:candidate) }
       before { candidate.save }
 
-      it { is_expected.to be_persisted }
+      its(:persisted?) { is_expected.to be true }
       its(:name_first) { is_expected.not_to be_empty }
     end
 
@@ -17,7 +17,7 @@ RSpec.describe BlockScore::Base, vcr: true do
         expect(candidate.save).to be true
       end
 
-      it { is_expected.to be_persisted }
+      its(:persisted?) { is_expected.to be true }
       its(:name_first) { is_expected.to eql 'Jane' }
     end
 
@@ -31,19 +31,34 @@ RSpec.describe BlockScore::Base, vcr: true do
     end
   end
 
-  describe '#save!' do
+  describe '#deleted?' do
     subject(:candidate) { create(:candidate, name_first: 'John') }
-    context 'when updating an existing candidate' do
+    it 'reflects deleted?' do
+      expect { candidate.delete }.to change(candidate, :deleted?)
+        .from(false)
+        .to(true)
+    end
+  end
+
+  describe '#save!' do
+    subject(:candidate) { build(:candidate, name_first: 'John') }
+    context 'when updating an new candidate' do
       it 'successfully saves an alteration' do
         candidate.name_first = 'Jane'
 
-        expect { candidate.save! } .not_to change(candidate, :id)
+        expect(candidate)
+          .to receive(:post)
+          .with(kind_of(Pathname),
+                hash_including(name_first: 'Jane'))
+          .and_call_original
+        expect(candidate.save!).to be true
         expect(candidate.persisted?).to be true
         expect(candidate.name_first).to eql 'Jane'
       end
     end
 
     context 'when encountering a deleted item' do
+      subject(:candidate) { create(:candidate, name_first: 'John') }
       it 'raises an error when previously deleted' do
         candidate.delete
         expect { candidate.save! }

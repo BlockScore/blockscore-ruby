@@ -33,12 +33,12 @@ module BlockScore
 
     def save
       save!
-    rescue BlockScore::Error
+    rescue Error
       false
     end
 
     def save!
-      fail BlockScore::Error, "#{resource} is already deleted" if deleted?
+      assert_not_deleted
       capture_attributes(post(endpoint, attributes))
       true
     end
@@ -60,7 +60,15 @@ module BlockScore
       !id.nil? && !deleted?
     end
 
+    def deleted?
+      attributes.fetch(:deleted, false)
+    end
+
     private
+
+    def assert_not_deleted
+      fail Error, "#{resource} is already deleted" if deleted?
+    end
 
     def capture_attributes(source)
       @attributes = source.attributes
@@ -80,10 +88,6 @@ module BlockScore
           attributes[symbol.to_s.chop.to_sym] = value
         end
       end
-    end
-
-    def deleted?
-      attributes.fetch(:deleted, false)
     end
 
     def force!

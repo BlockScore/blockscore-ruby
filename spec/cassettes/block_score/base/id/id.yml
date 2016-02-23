@@ -158,4 +158,59 @@ http_interactions:
         at this path (POST /candidate)"}}'
     http_version: 
   recorded_at: Fri, 12 Feb 2016 23:27:52 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/Pathname
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"2008-05-15","name_first":"Eugenia","name_last":"Smith","address_street1":"159
+        Tristin Summit","address_city":"Mohrside","address_country_code":"BN"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 61b22dbe-8dc6-4e34-8b6b-cf015fba95b9
+      X-Runtime:
+      - '0.006551'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 19 Feb 2016 01:54:04 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"error":{"type":"invalid_request_error","message":"Cannot create requests
+        at this path (POST /Pathname)"}}'
+    http_version: 
+  recorded_at: Fri, 19 Feb 2016 01:54:04 GMT
 recorded_with: VCR 3.0.1
