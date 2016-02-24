@@ -7,13 +7,13 @@ module BlockScore
     extend Forwardable
 
     ABSTRACT_WARNING = 'Base is an abstract class, not an API resource'.freeze
-    IMMUTABLE_ATTRS = %i(id object created_at updated_at livemode deleted).freeze
+    IMMUTABLE_ATTRS  = %i(id object created_at updated_at livemode deleted).freeze
 
     def_delegators 'self.class', :endpoint, :post, :retrieve, :resource
 
     def initialize(options = {}, &block)
-      @loaded = !block
-      @proc = block
+      @loaded     = !block
+      @proc       = block
       @attributes = options
     end
 
