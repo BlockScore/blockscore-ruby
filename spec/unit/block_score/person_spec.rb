@@ -71,10 +71,4 @@ RSpec.describe BlockScore::Person, vcr: true do
       it { is_expected.to be_an_instance_of described_class }
     end
   end
-
-  # This example is to confirm that this class of objects is not deletable
-  describe '#delete' do
-    subject(:person) { create(:person) }
-    it { expect { person.delete }.to raise_error NoMethodError }
-  end
 end
