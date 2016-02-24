@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Mallie","name_last":"Kiehn","document_type":"ssn","document_value":"0001","birth_day":12,"birth_month":7,"birth_year":1992,"address_street1":"7812
+        Hilll Fort","address_city":"Port Haleystad","address_subdivision":"CT","address_postal_code":"61658-5037","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"04a8055b482084bfd4039f65ab5972fd"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a46da47d-1787-44e1-97b0-8f52fa09b611
+      X-Runtime:
+      - '0.263331'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:04:03 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"56ce28d3616431000300013e","created_at":1456351443,"updated_at":1456351443,"status":"invalid","livemode":false,"phone_number":null,"ip_address":null,"birth_day":12,"birth_month":7,"birth_year":1992,"name_first":"Mallie","name_middle":null,"name_last":"Kiehn","address_street1":"7812
+        Hilll Fort","address_street2":null,"address_city":"Port Haleystad","address_subdivision":"CT","address_postal_code":"61658-5037","address_country_code":"US","document_type":"ssn","document_value":"0001","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:04:03 GMT
+recorded_with: VCR 3.0.1

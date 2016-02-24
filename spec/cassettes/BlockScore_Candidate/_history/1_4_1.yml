@@ -1,0 +1,232 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"2014-12-06","name_first":"version_0","name_last":"Reichert","address_street1":"29261
+        Huel Ville","address_city":"North Eladio","address_country_code":"SC"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"9b3eeb529a0411265f6ccbb4723f1fad"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 5f59ce1f-6725-47a2-b77c-0b0fc9d61eda
+      X-Runtime:
+      - '0.037220'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:04:27 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28eb313139000300010f","created_at":1456351467,"updated_at":1456351467,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2014-12-06","name_first":"version_0","name_middle":null,"name_last":"Reichert","address_street1":"29261
+        Huel Ville","address_street2":null,"address_city":"North Eladio","address_subdivision":null,"address_postal_code":null,"address_country_code":"SC"}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:04:27 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56ce28eb313139000300010f
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28eb313139000300010f","created_at":1456351467,"updated_at":1456351467,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2014-12-06","name_first":"version_1","name_middle":null,"name_last":"Reichert","address_street1":"29261
+        Huel Ville","address_street2":null,"address_city":"North Eladio","address_subdivision":null,"address_postal_code":null,"address_country_code":"SC"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"306e93396dfb69b0d2155870e28c25fd"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - cc1d6b4e-d369-4bab-91ec-6360d20e6cd0
+      X-Runtime:
+      - '0.024576'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:04:28 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28eb313139000300010f","created_at":1456351467,"updated_at":1456351468,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2014-12-06","name_first":"version_1","name_middle":null,"name_last":"Reichert","address_street1":"29261
+        Huel Ville","address_street2":null,"address_city":"North Eladio","address_subdivision":null,"address_postal_code":null,"address_country_code":"SC"}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:04:28 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56ce28eb313139000300010f
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28eb313139000300010f","created_at":1456351467,"updated_at":1456351467,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2014-12-06","name_first":"version_2","name_middle":null,"name_last":"Reichert","address_street1":"29261
+        Huel Ville","address_street2":null,"address_city":"North Eladio","address_subdivision":null,"address_postal_code":null,"address_country_code":"SC"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"2b1ff19efc89029c9732e18708f40466"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - d6e33552-45cf-4404-9d27-4ef857008767
+      X-Runtime:
+      - '0.022330'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:04:28 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28eb313139000300010f","created_at":1456351467,"updated_at":1456351468,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2014-12-06","name_first":"version_2","name_middle":null,"name_last":"Reichert","address_street1":"29261
+        Huel Ville","address_street2":null,"address_city":"North Eladio","address_subdivision":null,"address_postal_code":null,"address_country_code":"SC"}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:04:28 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56ce28eb313139000300010f/history
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"6a11e0640c5af5da9fe4a8b1a37253bd"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - d783c325-eb3b-4f56-be5c-9326f47c6403
+      X-Runtime:
+      - '0.017801'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:04:28 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"object":"candidate","id":"56ce28eb313139000300010f","created_at":1456351467,"updated_at":1456351468,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2014-12-06","name_first":"version_2","name_middle":null,"name_last":"Reichert","address_street1":"29261
+        Huel Ville","address_street2":null,"address_city":"North Eladio","address_subdivision":null,"address_postal_code":null,"address_country_code":"SC"},{"object":"candidate","id":"56ce28eb313139000300010f","created_at":1456351467,"updated_at":1456351468,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2014-12-06","name_first":"version_1","name_middle":null,"name_last":"Reichert","address_street1":"29261
+        Huel Ville","address_street2":null,"address_city":"North Eladio","address_subdivision":null,"address_postal_code":null,"address_country_code":"SC"},{"object":"candidate","id":"56ce28eb313139000300010f","created_at":1456351467,"updated_at":1456351467,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2014-12-06","name_first":"version_0","name_middle":null,"name_last":"Reichert","address_street1":"29261
+        Huel Ville","address_street2":null,"address_city":"North Eladio","address_subdivision":null,"address_postal_code":null,"address_country_code":"SC"}]'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:04:28 GMT
+recorded_with: VCR 3.0.1

@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/companies
+    body:
+      encoding: UTF-8
+      string: '{"entity_name":"Zulauf-Trantow","tax_id":"000000001","incorporation_country_code":"CK","incorporation_type":"partnership","address_street1":"52921
+        Mya Avenue","address_city":"Marksview","address_subdivision":"IA","address_postal_code":"76947-1256","address_country_code":"EE"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"529b87789fcb8d8d7bfac646c2929bf1"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 3962c4a9-8325-4340-9f08-5c6555f4a91e
+      X-Runtime:
+      - '0.064455'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:03:38 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"company","id":"56ce28ba386435000300011d","created_at":1456351418,"updated_at":1456351418,"status":"invalid","livemode":false,"entity_name":"Zulauf-Trantow","tax_id":"000000001","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"CK","incorporation_type":"partnership","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":null,"address_street1":"52921
+        Mya Avenue","address_street2":null,"address_city":"Marksview","address_subdivision":"IA","address_postal_code":"76947-1256","address_country_code":"EE","details":{"entity_name":"mismatch","tax_id":"match","state":"no_match","address":"no_match","country_code":"no_match","incorp_date":"no_match","ofac":"no_match"}}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:03:38 GMT
+recorded_with: VCR 3.0.1

@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"2009-01-24","name_first":"Nathaniel","name_last":"Lesch","address_street1":"698
+        Leuschke Forge","address_city":"Jayceetown","address_country_code":"KY"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"52107daf55df73949e211885095659ee"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e51e3f94-3d8f-4a6d-801e-d1dd4ad00ba5
+      X-Runtime:
+      - '0.035396'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:03:39 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28bb31313900030000fe","created_at":1456351419,"updated_at":1456351419,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2009-01-24","name_first":"Nathaniel","name_middle":null,"name_last":"Lesch","address_street1":"698
+        Leuschke Forge","address_street2":null,"address_city":"Jayceetown","address_subdivision":null,"address_postal_code":null,"address_country_code":"KY"}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:03:39 GMT
+recorded_with: VCR 3.0.1

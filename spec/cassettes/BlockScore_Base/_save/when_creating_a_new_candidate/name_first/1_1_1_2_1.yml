@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1984-02-19","name_first":"Zita","name_last":"Ankunding","address_street1":"89216
+        Simonis Branch","address_city":"Port Kaden","address_country_code":"GH"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"02b9256bcc798c0ae0de4464618b44de"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ab528f67-4773-463b-9598-fe062876e007
+      X-Runtime:
+      - '0.035034'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:03:43 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28bf3131390003000103","created_at":1456351423,"updated_at":1456351423,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1984-02-19","name_first":"Zita","name_middle":null,"name_last":"Ankunding","address_street1":"89216
+        Simonis Branch","address_street2":null,"address_city":"Port Kaden","address_subdivision":null,"address_postal_code":null,"address_country_code":"GH"}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:03:43 GMT
+recorded_with: VCR 3.0.1

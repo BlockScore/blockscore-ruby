@@ -1,0 +1,232 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1955-09-21","name_first":"version_0","name_last":"Reynolds","address_street1":"9027
+        Teresa Plaza","address_city":"South Rhiannon","address_country_code":"AL"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"4253d3d73e8fb61cd9ca72e52059e81b"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 316fa367-fb42-46bf-bc27-d4504704b29c
+      X-Runtime:
+      - '0.036430'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:04:24 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28e8313139000300010e","created_at":1456351464,"updated_at":1456351464,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1955-09-21","name_first":"version_0","name_middle":null,"name_last":"Reynolds","address_street1":"9027
+        Teresa Plaza","address_street2":null,"address_city":"South Rhiannon","address_subdivision":null,"address_postal_code":null,"address_country_code":"AL"}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:04:24 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56ce28e8313139000300010e
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28e8313139000300010e","created_at":1456351464,"updated_at":1456351464,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1955-09-21","name_first":"version_1","name_middle":null,"name_last":"Reynolds","address_street1":"9027
+        Teresa Plaza","address_street2":null,"address_city":"South Rhiannon","address_subdivision":null,"address_postal_code":null,"address_country_code":"AL"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"6511c2107ec4e36d4e909da6acee16b1"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 0a8cc5c0-aca1-48ce-847a-2990669fabd4
+      X-Runtime:
+      - '0.023904'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:04:24 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28e8313139000300010e","created_at":1456351464,"updated_at":1456351464,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1955-09-21","name_first":"version_1","name_middle":null,"name_last":"Reynolds","address_street1":"9027
+        Teresa Plaza","address_street2":null,"address_city":"South Rhiannon","address_subdivision":null,"address_postal_code":null,"address_country_code":"AL"}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:04:24 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56ce28e8313139000300010e
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28e8313139000300010e","created_at":1456351464,"updated_at":1456351464,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1955-09-21","name_first":"version_2","name_middle":null,"name_last":"Reynolds","address_street1":"9027
+        Teresa Plaza","address_street2":null,"address_city":"South Rhiannon","address_subdivision":null,"address_postal_code":null,"address_country_code":"AL"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"08311057a68a18b5ba7837d1d2102bd3"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 6657add4-637e-4ccb-9538-cde112780380
+      X-Runtime:
+      - '0.022044'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:04:24 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28e8313139000300010e","created_at":1456351464,"updated_at":1456351464,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1955-09-21","name_first":"version_2","name_middle":null,"name_last":"Reynolds","address_street1":"9027
+        Teresa Plaza","address_street2":null,"address_city":"South Rhiannon","address_subdivision":null,"address_postal_code":null,"address_country_code":"AL"}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:04:24 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56ce28e8313139000300010e/history
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"d50f70f9616078c7fc5a2cc01b72c847"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 511c73ec-ccce-4a22-adbc-25d9e626e0c6
+      X-Runtime:
+      - '0.018574'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:04:25 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"object":"candidate","id":"56ce28e8313139000300010e","created_at":1456351464,"updated_at":1456351464,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1955-09-21","name_first":"version_2","name_middle":null,"name_last":"Reynolds","address_street1":"9027
+        Teresa Plaza","address_street2":null,"address_city":"South Rhiannon","address_subdivision":null,"address_postal_code":null,"address_country_code":"AL"},{"object":"candidate","id":"56ce28e8313139000300010e","created_at":1456351464,"updated_at":1456351464,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1955-09-21","name_first":"version_1","name_middle":null,"name_last":"Reynolds","address_street1":"9027
+        Teresa Plaza","address_street2":null,"address_city":"South Rhiannon","address_subdivision":null,"address_postal_code":null,"address_country_code":"AL"},{"object":"candidate","id":"56ce28e8313139000300010e","created_at":1456351464,"updated_at":1456351464,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1955-09-21","name_first":"version_0","name_middle":null,"name_last":"Reynolds","address_street1":"9027
+        Teresa Plaza","address_street2":null,"address_city":"South Rhiannon","address_subdivision":null,"address_postal_code":null,"address_country_code":"AL"}]'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:04:25 GMT
+recorded_with: VCR 3.0.1

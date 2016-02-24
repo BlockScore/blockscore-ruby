@@ -1,0 +1,190 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Bethel","name_last":"Schuppe","document_type":"ssn","document_value":"0000","birth_day":12,"birth_month":4,"birth_year":2009,"address_street1":"6974
+        Jon Well","address_city":"Quitzonbury","address_subdivision":"CT","address_postal_code":"59482","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"c862fd38f7443081ec782ae86a444d50"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - eb6bcef3-6260-4e40-8dd7-020e8e6205ed
+      X-Runtime:
+      - '0.297659'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:03:32 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"56ce28b4616431000300012c","created_at":1456351412,"updated_at":1456351412,"status":"valid","livemode":false,"phone_number":null,"ip_address":null,"birth_day":12,"birth_month":4,"birth_year":2009,"name_first":"Bethel","name_middle":null,"name_last":"Schuppe","address_street1":"6974
+        Jon Well","address_street2":null,"address_city":"Quitzonbury","address_subdivision":"CT","address_postal_code":"59482","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:03:32 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/question_sets
+    body:
+      encoding: UTF-8
+      string: '{"person_id":"56ce28b4616431000300012c"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"5ce338c83f840a8d3b3241f83c6aac2f"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - bf745b71-6a22-404e-92b7-caa16e33844b
+      X-Runtime:
+      - '0.110362'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:03:32 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"question_set","id":"56ce28b431313900030000f9","created_at":1456351412,"updated_at":1456351412,"livemode":false,"person_id":"56ce28b4616431000300012c","score":null,"expired":false,"time_limit":0,"questions":[{"id":1,"question":"Which
+        one of the following addresses is associated with you?","answers":[{"id":1,"answer":"123
+        Main St"},{"id":2,"answer":"52 Canandaigua Rd"},{"id":3,"answer":"309 Colver
+        Rd"},{"id":4,"answer":"467 Meridian Rd"},{"id":5,"answer":"None Of The Above"}]},{"id":2,"question":"Which
+        one of the following zip codes is associated with you?","answers":[{"id":1,"answer":"49268"},{"id":2,"answer":"49209"},{"id":3,"answer":"49230"},{"id":4,"answer":"49532"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":3,"question":"What state was your SSN issued in?","answers":[{"id":1,"answer":"Idaho"},{"id":2,"answer":"Delaware"},{"id":3,"answer":"New
+        Hampshire"},{"id":4,"answer":"California"},{"id":5,"answer":"None Of The Above"}]},{"id":4,"question":"Which
+        one of the following counties is associated with you?","answers":[{"id":1,"answer":"Niagara"},{"id":2,"answer":"Floyd"},{"id":3,"answer":"Jasper"},{"id":4,"answer":"Boone"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":5,"question":"Which one of the following adult individuals
+        is most closely associated with you?","answers":[{"id":1,"answer":"Nicole"},{"id":2,"answer":"Luis"},{"id":3,"answer":"Jason"},{"id":4,"answer":"Cecilia"},{"id":5,"answer":"None
+        Of The Above"}]}]}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:03:32 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/question_sets/56ce28b431313900030000f9/score
+    body:
+      encoding: UTF-8
+      string: '{"answers":[{"question_id":1,"answer_id":3},{"question_id":2,"answer_id":3},{"question_id":3,"answer_id":5},{"question_id":4,"answer_id":3},{"question_id":5,"answer_id":5}]}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"8701c298027691a8dce2d6785ccd2fe2"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - dc6b005f-6a28-4a99-b09d-b9e90a2b6e16
+      X-Runtime:
+      - '0.058730'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:03:33 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"question_set","id":"56ce28b431313900030000f9","created_at":1456351412,"updated_at":1456351413,"livemode":false,"person_id":"56ce28b4616431000300012c","score":100.0,"expired":false,"time_limit":0,"questions":[{"id":1,"question":"Which
+        one of the following addresses is associated with you?","answers":[{"id":1,"answer":"123
+        Main St"},{"id":2,"answer":"52 Canandaigua Rd"},{"id":3,"answer":"309 Colver
+        Rd"},{"id":4,"answer":"467 Meridian Rd"},{"id":5,"answer":"None Of The Above"}]},{"id":2,"question":"Which
+        one of the following zip codes is associated with you?","answers":[{"id":1,"answer":"49268"},{"id":2,"answer":"49209"},{"id":3,"answer":"49230"},{"id":4,"answer":"49532"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":3,"question":"What state was your SSN issued in?","answers":[{"id":1,"answer":"Idaho"},{"id":2,"answer":"Delaware"},{"id":3,"answer":"New
+        Hampshire"},{"id":4,"answer":"California"},{"id":5,"answer":"None Of The Above"}]},{"id":4,"question":"Which
+        one of the following counties is associated with you?","answers":[{"id":1,"answer":"Niagara"},{"id":2,"answer":"Floyd"},{"id":3,"answer":"Jasper"},{"id":4,"answer":"Boone"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":5,"question":"Which one of the following adult individuals
+        is most closely associated with you?","answers":[{"id":1,"answer":"Nicole"},{"id":2,"answer":"Luis"},{"id":3,"answer":"Jason"},{"id":4,"answer":"Cecilia"},{"id":5,"answer":"None
+        Of The Above"}]}]}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:03:33 GMT
+recorded_with: VCR 3.0.1

@@ -1,0 +1,232 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1917-10-16","name_first":"version_0","name_last":"Fay","address_street1":"751
+        Frank Fords","address_city":"Lillianashire","address_country_code":"AF"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"ceb199a9acc18cb5d85d5c4ab9c13b5a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ea7eca82-9548-4923-9003-683b5e84b8c6
+      X-Runtime:
+      - '0.037347'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:04:22 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28e6313139000300010d","created_at":1456351462,"updated_at":1456351462,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1917-10-16","name_first":"version_0","name_middle":null,"name_last":"Fay","address_street1":"751
+        Frank Fords","address_street2":null,"address_city":"Lillianashire","address_subdivision":null,"address_postal_code":null,"address_country_code":"AF"}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:04:22 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56ce28e6313139000300010d
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28e6313139000300010d","created_at":1456351462,"updated_at":1456351462,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1917-10-16","name_first":"version_1","name_middle":null,"name_last":"Fay","address_street1":"751
+        Frank Fords","address_street2":null,"address_city":"Lillianashire","address_subdivision":null,"address_postal_code":null,"address_country_code":"AF"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"ac88a2cd8caf2e9ea63de65e33dd0414"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 2ad5f9cf-8c35-4a6e-9a4d-ca4e632a8261
+      X-Runtime:
+      - '0.023845'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:04:22 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28e6313139000300010d","created_at":1456351462,"updated_at":1456351462,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1917-10-16","name_first":"version_1","name_middle":null,"name_last":"Fay","address_street1":"751
+        Frank Fords","address_street2":null,"address_city":"Lillianashire","address_subdivision":null,"address_postal_code":null,"address_country_code":"AF"}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:04:22 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56ce28e6313139000300010d
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28e6313139000300010d","created_at":1456351462,"updated_at":1456351462,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1917-10-16","name_first":"version_2","name_middle":null,"name_last":"Fay","address_street1":"751
+        Frank Fords","address_street2":null,"address_city":"Lillianashire","address_subdivision":null,"address_postal_code":null,"address_country_code":"AF"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"292ccf7cbb21b069f670e2f0efcb4d5b"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - dbf02586-795f-4869-ba81-6ffb3de33147
+      X-Runtime:
+      - '0.022445'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:04:23 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28e6313139000300010d","created_at":1456351462,"updated_at":1456351463,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1917-10-16","name_first":"version_2","name_middle":null,"name_last":"Fay","address_street1":"751
+        Frank Fords","address_street2":null,"address_city":"Lillianashire","address_subdivision":null,"address_postal_code":null,"address_country_code":"AF"}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:04:23 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56ce28e6313139000300010d/history
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"7c064a98a0c92ecbc48a02eb631e6ad5"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 604c5f5c-f4bf-4cc3-8f27-bef23592ffd7
+      X-Runtime:
+      - '0.021276'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:04:23 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"object":"candidate","id":"56ce28e6313139000300010d","created_at":1456351462,"updated_at":1456351463,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1917-10-16","name_first":"version_2","name_middle":null,"name_last":"Fay","address_street1":"751
+        Frank Fords","address_street2":null,"address_city":"Lillianashire","address_subdivision":null,"address_postal_code":null,"address_country_code":"AF"},{"object":"candidate","id":"56ce28e6313139000300010d","created_at":1456351462,"updated_at":1456351462,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1917-10-16","name_first":"version_1","name_middle":null,"name_last":"Fay","address_street1":"751
+        Frank Fords","address_street2":null,"address_city":"Lillianashire","address_subdivision":null,"address_postal_code":null,"address_country_code":"AF"},{"object":"candidate","id":"56ce28e6313139000300010d","created_at":1456351462,"updated_at":1456351462,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1917-10-16","name_first":"version_0","name_middle":null,"name_last":"Fay","address_street1":"751
+        Frank Fords","address_street2":null,"address_city":"Lillianashire","address_subdivision":null,"address_postal_code":null,"address_country_code":"AF"}]'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:04:23 GMT
+recorded_with: VCR 3.0.1

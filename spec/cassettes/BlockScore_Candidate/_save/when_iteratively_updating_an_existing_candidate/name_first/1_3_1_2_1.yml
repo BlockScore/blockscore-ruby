@@ -1,0 +1,174 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1944-05-16","name_first":"John","name_last":"Medhurst","address_street1":"739
+        Avis Spurs","address_city":"Bernhardside","address_country_code":"RE"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"54208754d43a8344a383ee72a8224215"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 9c80cd12-f74d-4979-a6a7-97be651cd844
+      X-Runtime:
+      - '0.033711'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:04:06 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28d66164310003000141","created_at":1456351446,"updated_at":1456351446,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1944-05-16","name_first":"John","name_middle":null,"name_last":"Medhurst","address_street1":"739
+        Avis Spurs","address_street2":null,"address_city":"Bernhardside","address_subdivision":null,"address_postal_code":null,"address_country_code":"RE"}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:04:06 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56ce28d66164310003000141
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28d66164310003000141","created_at":1456351446,"updated_at":1456351446,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1944-05-16","name_first":"Jane","name_middle":null,"name_last":"Medhurst","address_street1":"739
+        Avis Spurs","address_street2":null,"address_city":"Bernhardside","address_subdivision":null,"address_postal_code":null,"address_country_code":"RE"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f890787d00d972187f8b303fa8fcea84"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - d14cddfa-18f3-4235-9043-2e6662bb0c69
+      X-Runtime:
+      - '0.028707'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:04:06 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28d66164310003000141","created_at":1456351446,"updated_at":1456351446,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1944-05-16","name_first":"Jane","name_middle":null,"name_last":"Medhurst","address_street1":"739
+        Avis Spurs","address_street2":null,"address_city":"Bernhardside","address_subdivision":null,"address_postal_code":null,"address_country_code":"RE"}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:04:06 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56ce28d66164310003000141
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28d66164310003000141","created_at":1456351446,"updated_at":1456351446,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1944-05-16","name_first":"Jane","name_middle":"Arel","name_last":"Medhurst","address_street1":"739
+        Avis Spurs","address_street2":null,"address_city":"Bernhardside","address_subdivision":null,"address_postal_code":null,"address_country_code":"RE"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"60561382f0e2885a99fae3f0264aaff0"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - cedcd3b2-e607-4fee-a560-f3171668f307
+      X-Runtime:
+      - '0.029009'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:04:07 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28d66164310003000141","created_at":1456351446,"updated_at":1456351447,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1944-05-16","name_first":"Jane","name_middle":"Arel","name_last":"Medhurst","address_street1":"739
+        Avis Spurs","address_street2":null,"address_city":"Bernhardside","address_subdivision":null,"address_postal_code":null,"address_country_code":"RE"}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:04:07 GMT
+recorded_with: VCR 3.0.1

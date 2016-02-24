@@ -1,0 +1,117 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"2000-09-09","name_first":"John","name_last":"Wolf","address_street1":"8339
+        Gislason Circle","address_city":"Port Mia","address_country_code":"MX"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"dbffc9b78d409047a588d751dfeb4c82"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 915fa466-1bc8-46f5-b53c-d4d135271476
+      X-Runtime:
+      - '0.031197'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:03:41 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28bd386435000300011f","created_at":1456351421,"updated_at":1456351421,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2000-09-09","name_first":"John","name_middle":null,"name_last":"Wolf","address_street1":"8339
+        Gislason Circle","address_street2":null,"address_city":"Port Mia","address_subdivision":null,"address_postal_code":null,"address_country_code":"MX"}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:03:41 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56ce28bd386435000300011f
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28bd386435000300011f","created_at":1456351421,"updated_at":1456351421,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2000-09-09","name_first":"Jane","name_middle":null,"name_last":"Wolf","address_street1":"8339
+        Gislason Circle","address_street2":null,"address_city":"Port Mia","address_subdivision":null,"address_postal_code":null,"address_country_code":"MX"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"6a4af24907adacf57349f50471636a3a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e5a8067e-7313-428b-bb05-db01bd5afd29
+      X-Runtime:
+      - '0.022061'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:03:41 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28bd386435000300011f","created_at":1456351421,"updated_at":1456351421,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2000-09-09","name_first":"Jane","name_middle":null,"name_last":"Wolf","address_street1":"8339
+        Gislason Circle","address_street2":null,"address_city":"Port Mia","address_subdivision":null,"address_postal_code":null,"address_country_code":"MX"}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:03:41 GMT
+recorded_with: VCR 3.0.1

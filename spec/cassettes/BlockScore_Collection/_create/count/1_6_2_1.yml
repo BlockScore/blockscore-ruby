@@ -1,0 +1,125 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Brandyn","name_last":"Bechtelar","document_type":"ssn","document_value":"0000","birth_day":12,"birth_month":1,"birth_year":1984,"address_street1":"76748
+        Weimann Street","address_city":"Cassidyfurt","address_subdivision":"WY","address_postal_code":"27688-3342","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"624b9e92436bf1f25a46439395c0ec5b"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a4410715-6c69-45bb-939f-d688fc3a441c
+      X-Runtime:
+      - '0.321203'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:04:50 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"56ce2901386435000300012e","created_at":1456351489,"updated_at":1456351489,"status":"valid","livemode":false,"phone_number":null,"ip_address":null,"birth_day":12,"birth_month":1,"birth_year":1984,"name_first":"Brandyn","name_middle":null,"name_last":"Bechtelar","address_street1":"76748
+        Weimann Street","address_street2":null,"address_city":"Cassidyfurt","address_subdivision":"WY","address_postal_code":"27688-3342","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:04:50 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/question_sets
+    body:
+      encoding: UTF-8
+      string: '{"person_id":"56ce2901386435000300012e"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"091e2f1102313e1eb124906d2f029251"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - d57750fb-3728-4c10-b342-ad02096726b8
+      X-Runtime:
+      - '0.093548'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:04:50 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"question_set","id":"56ce29026164310003000152","created_at":1456351490,"updated_at":1456351490,"livemode":false,"person_id":"56ce2901386435000300012e","score":null,"expired":false,"time_limit":0,"questions":[{"id":1,"question":"What
+        state was your SSN issued in?","answers":[{"id":1,"answer":"Oregon"},{"id":2,"answer":"Maine"},{"id":3,"answer":"Kentucky"},{"id":4,"answer":"Oklahoma"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":2,"question":"Which one of the following counties is
+        associated with you?","answers":[{"id":1,"answer":"Jasper"},{"id":2,"answer":"Floyd"},{"id":3,"answer":"Schoharie"},{"id":4,"answer":"Sangamon"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":3,"question":"Which one of the following adult individuals
+        is most closely associated with you?","answers":[{"id":1,"answer":"Jose"},{"id":2,"answer":"Miranda"},{"id":3,"answer":"Nicole"},{"id":4,"answer":"Luis"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":4,"question":"Which one of the following area codes
+        is associated with you?","answers":[{"id":1,"answer":"605"},{"id":2,"answer":"812"},{"id":3,"answer":"832"},{"id":4,"answer":"870"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":5,"question":"Which one of the following zip codes
+        is associated with you?","answers":[{"id":1,"answer":"49184"},{"id":2,"answer":"49209"},{"id":3,"answer":"49728"},{"id":4,"answer":"49230"},{"id":5,"answer":"None
+        Of The Above"}]}]}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:04:50 GMT
+recorded_with: VCR 3.0.1

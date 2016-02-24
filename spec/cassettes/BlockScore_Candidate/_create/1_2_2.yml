@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"e02ccfb42c9392e8226dc9abd36321c2"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 9d2631e2-b65e-4169-98d2-384b147b05f5
+      X-Runtime:
+      - '0.034191'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:04:10 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28da6164310003000142","created_at":1456351450,"updated_at":1456351450,"livemode":false,"note":null,"ssn":null,"passport":null,"date_of_birth":null,"name_first":null,"name_middle":null,"name_last":null,"address_street1":null,"address_street2":null,"address_city":null,"address_subdivision":null,"address_postal_code":null,"address_country_code":null}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:04:10 GMT
+recorded_with: VCR 3.0.1

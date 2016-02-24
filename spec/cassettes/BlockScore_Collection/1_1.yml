@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Hershel","name_last":"Hills","document_type":"ssn","document_value":"0000","birth_day":12,"birth_month":9,"birth_year":1949,"address_street1":"99818
+        Funk Mews","address_city":"South Glennaland","address_subdivision":"DE","address_postal_code":"85111-5174","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"3e73691c5ff06d21fd16df275180a9ee"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - fce0cbab-0e75-411f-a938-980420280172
+      X-Runtime:
+      - '0.298841'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:04:41 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"56ce28f83131390003000112","created_at":1456351480,"updated_at":1456351480,"status":"valid","livemode":false,"phone_number":null,"ip_address":null,"birth_day":12,"birth_month":9,"birth_year":1949,"name_first":"Hershel","name_middle":null,"name_last":"Hills","address_street1":"99818
+        Funk Mews","address_street2":null,"address_city":"South Glennaland","address_subdivision":"DE","address_postal_code":"85111-5174","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:04:41 GMT
+recorded_with: VCR 3.0.1

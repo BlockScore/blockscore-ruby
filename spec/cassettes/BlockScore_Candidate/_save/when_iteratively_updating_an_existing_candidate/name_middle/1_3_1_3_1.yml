@@ -1,0 +1,174 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1916-08-28","name_first":"John","name_last":"Jenkins","address_street1":"942
+        Kasandra Shoals","address_city":"North Trevorbury","address_country_code":"BT"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"742cf140674140e6be3e8dbc3c6ddab9"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 99e78290-fbcb-4c1f-aac4-9595bd45730b
+      X-Runtime:
+      - '0.047232'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:04:08 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28d8313139000300010a","created_at":1456351448,"updated_at":1456351448,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1916-08-28","name_first":"John","name_middle":null,"name_last":"Jenkins","address_street1":"942
+        Kasandra Shoals","address_street2":null,"address_city":"North Trevorbury","address_subdivision":null,"address_postal_code":null,"address_country_code":"BT"}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:04:09 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56ce28d8313139000300010a
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28d8313139000300010a","created_at":1456351448,"updated_at":1456351448,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1916-08-28","name_first":"Jane","name_middle":null,"name_last":"Jenkins","address_street1":"942
+        Kasandra Shoals","address_street2":null,"address_city":"North Trevorbury","address_subdivision":null,"address_postal_code":null,"address_country_code":"BT"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"8879a233aad218a6e6ca13d7560b30a3"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 550c5421-679c-4026-8cea-eb2d99e00b7c
+      X-Runtime:
+      - '0.022387'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:04:09 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28d8313139000300010a","created_at":1456351448,"updated_at":1456351449,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1916-08-28","name_first":"Jane","name_middle":null,"name_last":"Jenkins","address_street1":"942
+        Kasandra Shoals","address_street2":null,"address_city":"North Trevorbury","address_subdivision":null,"address_postal_code":null,"address_country_code":"BT"}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:04:09 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56ce28d8313139000300010a
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28d8313139000300010a","created_at":1456351448,"updated_at":1456351448,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1916-08-28","name_first":"Jane","name_middle":"Arel","name_last":"Jenkins","address_street1":"942
+        Kasandra Shoals","address_street2":null,"address_city":"North Trevorbury","address_subdivision":null,"address_postal_code":null,"address_country_code":"BT"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"929c5759427818d32f5d89039eb0b028"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a45d39a3-9406-4017-b439-93b490a39b39
+      X-Runtime:
+      - '0.024396'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 22:04:09 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce28d8313139000300010a","created_at":1456351448,"updated_at":1456351449,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1916-08-28","name_first":"Jane","name_middle":"Arel","name_last":"Jenkins","address_street1":"942
+        Kasandra Shoals","address_street2":null,"address_city":"North Trevorbury","address_subdivision":null,"address_postal_code":null,"address_country_code":"BT"}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:04:09 GMT
+recorded_with: VCR 3.0.1
