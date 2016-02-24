@@ -1,6 +1,6 @@
 require 'faker'
 
-RSpec.describe BlockScore::Actions::Update do
+RSpec.describe BlockScore::Actions::Update, vcr: true do
   describe '#save!' do
     subject(:candidate) { build(:candidate, name_first: 'John') }
 
@@ -12,14 +12,14 @@ RSpec.describe BlockScore::Actions::Update do
         expect(candidate.persisted?).to be true
 
         candidate.name_first = 'Janie'
-        expect { candidate.save! }.not_to change(candidate, :id)
-        expect(candidate.save!).to be true
+        expect(candidate)
+          .to receive(:patch)
+          .with(kind_of(Pathname),
+                hash_including(name_first: 'Janie'))
+          .and_call_original
 
-        result = BlockScore::Candidate.retrieve(candidate.id)
-        expect(result.attributes.reject { |key, _| key.equal?(:updated_at) })
-          .to eql(candidate.attributes.reject do |key, _|
-            key.equal?(:updated_at)
-          end)
+        expect { expect(candidate.save!).to be(true) }
+          .not_to change(candidate, :id)
       end
     end
   end
