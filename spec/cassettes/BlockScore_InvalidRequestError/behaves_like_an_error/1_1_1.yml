@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.blockscore+json;version=4
       User-Agent:
-      - blockscore-ruby/4.2.0 (https://github.com/BlockScore/blockscore-ruby)
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
       Content-Type:
       - application/json
   response:
@@ -33,13 +33,13 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - a1608400-49e0-4136-a141-2665546c96df
+      - f4820a83-e49a-421c-9947-a12371924949
       X-Runtime:
-      - '0.013548'
+      - '0.014191'
       Strict-Transport-Security:
       - max-age=31536000
       Date:
-      - Fri, 18 Sep 2015 17:10:03 GMT
+      - Wed, 24 Feb 2016 22:00:34 GMT
       X-Rack-Cache:
       - invalidate, pass
       Set-Cookie:
@@ -52,6 +52,6 @@ http_interactions:
       encoding: UTF-8
       string: '{"error":{"type":"invalid_request_error","param":"name_first","code":"cant_be_blank","message":"One
         or more required parameters are invalid"}}'
-    http_version: 
-  recorded_at: Fri, 18 Sep 2015 17:10:03 GMT
-recorded_with: VCR 2.9.3
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 22:00:34 GMT
+recorded_with: VCR 3.0.1
