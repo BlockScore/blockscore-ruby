@@ -1,0 +1,116 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1927-07-28","name_first":"Tania","name_last":"Hessel","address_street1":"78646
+        Bethany Pines","address_city":"New Rodrickmouth","address_country_code":"BD"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"cdc936ffb1a146e3b6b22eb9ebb28698"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 743af03a-0225-4621-bd71-4301abc265cc
+      X-Runtime:
+      - '0.041051'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 21:45:02 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce245e62653100030000ce","created_at":1456350302,"updated_at":1456350302,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1927-07-28","name_first":"Tania","name_middle":null,"name_last":"Hessel","address_street1":"78646
+        Bethany Pines","address_street2":null,"address_city":"New Rodrickmouth","address_subdivision":null,"address_postal_code":null,"address_country_code":"BD"}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 21:45:02 GMT
+- request:
+    method: delete
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56ce245e62653100030000ce
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"644d63e1e635f6cabab590484c77a865"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 0f4683ad-fbb5-4715-86f1-7cc76f85e3d0
+      X-Runtime:
+      - '0.023537'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 21:45:02 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56ce245e62653100030000ce","created_at":1456350302,"updated_at":1456350302,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1927-07-28","name_first":"Tania","name_middle":null,"name_last":"Hessel","address_street1":"78646
+        Bethany Pines","address_street2":null,"address_city":"New Rodrickmouth","address_subdivision":null,"address_postal_code":null,"address_country_code":"BD","deleted":true}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 21:45:02 GMT
+recorded_with: VCR 3.0.1
