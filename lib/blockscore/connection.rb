@@ -7,60 +7,51 @@ module BlockScore
     USER_AGENT    = "blockscore-ruby/#{BlockScore::VERSION} (#{REPO})".freeze
     CONTENT_TYPE  = 'application/json'.freeze
     API_URL       = URI.parse('https://api.blockscore.com').freeze
+    HEADERS       = {
+      'Accept'       => ACCEPT_HEADER,
+      'User-Agent'   => USER_AGENT,
+      'Content-Type' => CONTENT_TYPE
+    }.freeze
 
-    def get(path, params)
-      request(:get, path, params)
-    end
-
-    def post(path, params)
-      request(:post, path, params)
-    end
-
-    def patch(path, params)
-      request(:patch, path, params)
-    end
-
-    def delete(path, params)
-      request(:delete, path, params)
+    def delete(path, _)
+      request(:delete, path, nil)
     end
 
     private
 
-    def headers
-      @headers ||= {
-        'Accept'       => ACCEPT_HEADER,
-        'User-Agent'   => USER_AGENT,
-        'Content-Type' => CONTENT_TYPE
-      }
+    def get(path, params)
+      request(:get, encode_path_params(path, params), nil)
     end
 
-    def request(method, endpoint, params)
-      fail NoAPIKeyError, 'No API key was provided.' unless BlockScore.api_key
+    def post(path, params)
+      request(:post, path, params.to_json)
+    end
 
-      path = API_URL + endpoint.to_s
+    def patch(path, params)
+      request(:patch, path, params.to_json)
+    end
 
+    def request(method, final_endpoint, params)
       begin
-        response = execute_request(method, path, params)
+        response = execute_request(method,
+                                   API_URL + final_endpoint.to_s,
+                                   params)
       rescue SocketError, Errno::ECONNREFUSED => e
-        fail APIConnectionError, e.message
+        fail APIConnectionError, e
       end
 
       Response.handle_response(resource, response)
     end
 
     def execute_request(method, path, params)
-      auth = { username: BlockScore.api_key, password: '' }
+      options = { basic_auth: authentication, headers: HEADERS, body: params }
 
-      params = if method.equal?(:get)
-                 path = encode_path_params(path, params)
-                 nil
-               else
-                 params.to_json
-               end
+      HTTParty.public_send(method, path, options)
+    end
 
-      options = { basic_auth: auth, headers: headers, body: params }
-
-      HTTParty.send(method, path, options)
+    def authentication
+      fail NoAPIKeyError, 'No API key was provided.' unless BlockScore.api_key
+      { username: BlockScore.api_key }
     end
 
     def encode_path_params(path, params)

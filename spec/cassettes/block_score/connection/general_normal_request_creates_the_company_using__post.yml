@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/companies
+    body:
+      encoding: UTF-8
+      string: '{"entity_name":"Hansen-Dach","tax_id":"000000000","incorporation_country_code":"CO","incorporation_type":"other","address_street1":"43747
+        Donny Fall","address_city":"Port Sydneebury","address_subdivision":"HI","address_postal_code":"90191","address_country_code":"TH"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"560f93f3de2e3e77cb815cfcba350f5e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e1e8c069-8d72-4163-9ef1-22bda98ed74f
+      X-Runtime:
+      - '0.101196'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 19 Feb 2016 00:47:04 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"company","id":"56c66608306630000300050a","created_at":1455842824,"updated_at":1455842824,"status":"valid","livemode":false,"entity_name":"Hansen-Dach","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"CO","incorporation_type":"other","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":null,"address_street1":"43747
+        Donny Fall","address_street2":null,"address_city":"Port Sydneebury","address_subdivision":"HI","address_postal_code":"90191","address_country_code":"TH","details":{"ofac":"no_match","tax_id":"match","entity_name":"mismatch","state":"no_match","address":"no_match","country_code":"no_match","incorp_date":"no_match"}}'
+    http_version:
+  recorded_at: Fri, 19 Feb 2016 00:47:04 GMT
+recorded_with: VCR 3.0.1

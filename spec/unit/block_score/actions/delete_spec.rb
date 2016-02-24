@@ -39,4 +39,17 @@ RSpec.describe BlockScore::Actions::Delete, vcr: true do
       end
     end
   end
+
+  describe '#delete!' do
+    subject(:candidate) { create(:candidate) }
+    before do
+      expect(BlockScore::Candidate)
+        .to receive(:delete)
+        .with(kind_of(Pathname), {})
+        .and_call_original
+
+      candidate.delete
+    end
+    it { is_expected.not_to be_persisted }
+  end
 end
