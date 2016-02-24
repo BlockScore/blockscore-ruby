@@ -8,6 +8,7 @@ module BlockScore
 
     ABSTRACT_WARNING = 'Base is an abstract class, not an API resource'.freeze
     IMMUTABLE_ATTRS  = %i(id object created_at updated_at livemode deleted).freeze
+    EQUAL_SIGN       = '='.freeze
 
     def_delegators 'self.class', :endpoint, :post, :retrieve, :resource
 
@@ -84,7 +85,7 @@ module BlockScore
     end
 
     def add_setter(symbol)
-      attr = symbol.to_s.chop.to_sym
+      attr = symbol.to_s.chomp(EQUAL_SIGN).to_sym
       assert_mutable(attr)
       singleton_class.instance_eval do
         define_method(symbol) do |value|
@@ -117,7 +118,7 @@ module BlockScore
     end
 
     def setter?(symbol)
-      symbol.to_s.end_with?('=')
+      symbol.to_s.end_with?(EQUAL_SIGN)
     end
 
     def wrap_attribute(attribute)
