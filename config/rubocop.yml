@@ -20,6 +20,7 @@ Metrics/LineLength:
   Max: 80
 # DO not update the exclusions for the sake of fixing the line lengths
   Exclude:
+    - 'lib/blockscore/base.rb'                                     # temporary
     - 'lib/blockscore/question_set.rb'                             # temporary
     - 'spec/unit/block_score/candidate_spec.rb'                    # temporary
     - 'spec/unit/block_score/collection_spec.rb'                   # temporary
@@ -530,6 +531,9 @@ Lint/DefEndAlignment:
   - start_of_line
   - def
   AutoCorrect: false
+Lint/UnusedMethodArgument:
+  Exclude:
+    - 'lib/blockscore/base.rb'
 
 Metrics/PerceivedComplexity:
   Exclude:

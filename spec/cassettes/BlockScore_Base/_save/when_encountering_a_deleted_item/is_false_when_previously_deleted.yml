@@ -1,0 +1,114 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1944-07-19","name_first":"John","name_last":"Blanda","address_street1":"788
+        Konopelski Corners","address_city":"Trantowbury","address_country_code":"NE"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"dd0cdce0e48cc6afe844736aeaba1835"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - fdd97e5c-d78c-4ad2-a3da-c9f1e652c03c
+      X-Runtime:
+      - '0.033267'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 18:41:49 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cdf96d3337330003000674","created_at":1456339309,"updated_at":1456339309,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1944-07-19","name_first":"John","name_middle":null,"name_last":"Blanda","address_street1":"788
+        Konopelski Corners","address_street2":null,"address_city":"Trantowbury","address_subdivision":null,"address_postal_code":null,"address_country_code":"NE"}'
+    http_version: 
+  recorded_at: Wed, 24 Feb 2016 18:41:49 GMT
+- request:
+    method: delete
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56cdf96d3337330003000674
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"d88a3fbc235871710d4c44e8acc0c663"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4e84d6a6-9087-467d-bfdd-9ed08613cebc
+      X-Runtime:
+      - '0.041846'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 18:41:50 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cdf96d3337330003000674","created_at":1456339309,"updated_at":1456339310,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1944-07-19","name_first":"John","name_middle":null,"name_last":"Blanda","address_street1":"788
+        Konopelski Corners","address_street2":null,"address_city":"Trantowbury","address_subdivision":null,"address_postal_code":null,"address_country_code":"NE","deleted":true}'
+    http_version: 
+  recorded_at: Wed, 24 Feb 2016 18:41:50 GMT
+recorded_with: VCR 3.0.1

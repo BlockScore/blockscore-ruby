@@ -48,7 +48,7 @@ module BlockScore
     Kernel.srand config.seed
 
     config.around do |example|
-      Timeout.timeout(10, &example)
+      Timeout.timeout(6, &example)
     end
   end
 end

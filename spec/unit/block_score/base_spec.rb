@@ -24,7 +24,7 @@ RSpec.describe BlockScore::Base, vcr: true do
     context 'when encountering a deleted item' do
       subject(:candidate) { create(:candidate, name_first: 'John') }
 
-      it 'raises and error when previously deleted' do
+      it 'is false when previously deleted' do
         candidate.delete
         expect(candidate.save).to be false
       end
@@ -52,6 +52,7 @@ RSpec.describe BlockScore::Base, vcr: true do
                 hash_including(name_first: 'Jane'))
           .and_call_original
         expect(candidate.save!).to be true
+
         expect(candidate.persisted?).to be true
         expect(candidate.name_first).to eql 'Jane'
       end
@@ -64,6 +65,56 @@ RSpec.describe BlockScore::Base, vcr: true do
         expect { candidate.save! }
           .to raise_error(BlockScore::Error, 'candidate is already deleted')
       end
+    end
+  end
+
+  describe '#attributes' do
+    let(:person_id) { create(:person).id }
+    subject(:person) { BlockScore::Person.retrieve(person_id) }
+    its(:name_first) { is_expected.not_to be_empty }
+
+    it 'retrieves the attributes' do
+      f = BlockScore::Candidate.all.first
+
+      expect(BlockScore::Candidate.retrieve(f.id).id).to eql f.id
+      expect(BlockScore::Candidate.new(foo: 'bar'))
+        .to be_an_instance_of(BlockScore::Candidate)
+    end
+  end
+
+  describe '#initialize' do
+    let(:person_id) { create(:person).id }
+    subject(:person) { BlockScore::Person.retrieve(person_id) }
+    its(:name_first) { is_expected.not_to be_empty }
+
+    it 'establishes the attributes' do
+      f = BlockScore::Candidate.new(id: 'ffff')
+      expect(f.id).to eql 'ffff'
+
+      f2 = BlockScore::Candidate.new
+      expect(f2.id).to be_nil
+    end
+
+    it 'loads the block' do
+      f = BlockScore::Candidate.all.first
+
+      expect(BlockScore::Candidate.retrieve(f.id).id).to eql f.id
+      foo = BlockScore::Candidate.new(foo: 'bar')
+      expect(foo.foo).to eql 'bar'
+      expect(foo.method(:foo)).to be_an_instance_of(Method)
+      expect { foo.method(:baz) }.to raise_error(NameError)
+    end
+  end
+
+  describe '#capture_attributes' do
+    subject(:candidate) { create(:candidate, name_first: 'John') }
+    it 'captures the attributes from a http response' do
+      expect(candidate.id).to be_an_instance_of(String)
+
+      expect { candidate.id = '234' }
+        .to raise_error(NoMethodError, 'id is immutable')
+      expect { candidate.name_first = '234' }.not_to raise_error
+      expect { candidate.foo }.to raise_error(NoMethodError)
     end
   end
 

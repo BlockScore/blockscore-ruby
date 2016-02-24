@@ -1,16 +1,26 @@
 require 'faker'
 
-RSpec.describe BlockScore::Actions::Update, vcr: true do
+RSpec.describe BlockScore::Actions::Update do
   describe '#save!' do
-    context 'when updating an existing candidate' do
-      subject(:candidate) { create(:candidate, name_first: 'John') }
-      before do
-        candidate.name_first = 'Jane'
-        candidate.save!
-      end
+    subject(:candidate) { build(:candidate, name_first: 'John') }
 
-      it { is_expected.to be_persisted }
-      its(:name_first) { is_expected.to eql 'Jane' }
+    context 'when changing first update candidate' do
+      it 'has the same attributes' do
+        expect(candidate.persisted?).to be false
+        expect(candidate.save!).to be true
+
+        expect(candidate.persisted?).to be true
+
+        candidate.name_first = 'Janie'
+        expect { candidate.save! }.not_to change(candidate, :id)
+        expect(candidate.save!).to be true
+
+        result = BlockScore::Candidate.retrieve(candidate.id)
+        expect(result.attributes.reject { |key, _| key.equal?(:updated_at) })
+          .to eql(candidate.attributes.reject do |key, _|
+            key.equal?(:updated_at)
+          end)
+      end
     end
   end
 end

@@ -7,6 +7,7 @@ module BlockScore
     extend Forwardable
 
     ABSTRACT_WARNING = 'Base is an abstract class, not an API resource'.freeze
+    IMMUTABLE_ATTRS = %i(id object created_at updated_at livemode deleted).freeze
 
     def_delegators 'self.class', :endpoint, :post, :retrieve, :resource
 
@@ -74,42 +75,45 @@ module BlockScore
       @attributes = source.attributes
     end
 
-    def add_accessor(symbol, *_args)
+    def add_accessor(symbol)
       singleton_class.instance_eval do
         define_method(symbol) do
-          wrap_attribute(attributes[symbol])
+          wrap_attribute(attributes.fetch(symbol))
         end
       end
     end
 
-    def add_setter(symbol, *_args)
+    def add_setter(symbol)
+      attr = symbol.to_s.chop.to_sym
+      assert_mutable(attr)
       singleton_class.instance_eval do
         define_method(symbol) do |value|
-          attributes[symbol.to_s.chop.to_sym] = value
+          attributes[attr] = value
         end
       end
     end
 
     def force!
-      @attributes = @proc.call.attributes.merge(@attributes)
-      @loaded = true
+      @attributes = @proc.call.attributes
+      @loaded     = true
     end
 
-    def method_missing(method, *args, &block)
-      if respond_to_missing?(method)
-        if setter?(method)
-          add_setter(method, args)
-        else
-          add_accessor(method, args)
-        end
-        send(method, *args)
+    def method_missing(method, *args)
+      super unless respond_to_missing?(method)
+      if setter?(method)
+        add_setter(method)
       else
-        super
+        add_accessor(method)
       end
+      public_send(method, *args)
     end
 
-    def respond_to_missing?(symbol, include_private = false)
-      setter?(symbol) || attributes && attributes.key?(symbol) || super
+    def assert_mutable(attr)
+      fail NoMethodError, "#{attr} is immutable" if IMMUTABLE_ATTRS.include?(attr)
+    end
+
+    def respond_to_missing?(symbol, *)
+      setter?(symbol) || attributes.key?(symbol)
     end
 
     def setter?(symbol)

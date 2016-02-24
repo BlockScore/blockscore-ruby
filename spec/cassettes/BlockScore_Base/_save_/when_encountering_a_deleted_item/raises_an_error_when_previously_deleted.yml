@@ -41,6 +41,115 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"status":"404","error":"Not Found"}'
-    http_version:
+    http_version: 
   recorded_at: Mon, 22 Feb 2016 21:25:21 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1998-06-04","name_first":"John","name_last":"Kub","address_street1":"90405
+        Jorge Stravenue","address_city":"East Vivienchester","address_country_code":"FK"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"2471e8582d55c3e48c162b843e38e032"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - bc3b3e16-a4dc-4615-ab0a-7a85a66257fb
+      X-Runtime:
+      - '0.038525'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 18:45:07 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cdfa333337330003000696","created_at":1456339507,"updated_at":1456339507,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1998-06-04","name_first":"John","name_middle":null,"name_last":"Kub","address_street1":"90405
+        Jorge Stravenue","address_street2":null,"address_city":"East Vivienchester","address_subdivision":null,"address_postal_code":null,"address_country_code":"FK"}'
+    http_version: 
+  recorded_at: Wed, 24 Feb 2016 18:45:07 GMT
+- request:
+    method: delete
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56cdfa333337330003000696
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"86e1a78cb31ba4a484826c34a107bd87"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 2c9afa12-ba4f-42b9-bb78-b522db5ac314
+      X-Runtime:
+      - '0.018583'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Wed, 24 Feb 2016 18:45:07 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cdfa333337330003000696","created_at":1456339507,"updated_at":1456339507,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1998-06-04","name_first":"John","name_middle":null,"name_last":"Kub","address_street1":"90405
+        Jorge Stravenue","address_street2":null,"address_city":"East Vivienchester","address_subdivision":null,"address_postal_code":null,"address_country_code":"FK","deleted":true}'
+    http_version: 
+  recorded_at: Wed, 24 Feb 2016 18:45:07 GMT
 recorded_with: VCR 3.0.1

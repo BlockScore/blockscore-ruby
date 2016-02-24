@@ -1,0 +1,173 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1974-04-20","name_first":"John","name_last":"Lesch","address_street1":"544
+        Klein Rest","address_city":"West Dominiqueville","address_country_code":"BO"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"09df4c9fd8d17c1904f2c77289a76f1f"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 234feba3-4fe0-4d31-8b18-eb71bbaff946
+      X-Runtime:
+      - '0.038940'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 19 Feb 2016 17:50:34 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c755ea3330610003000ac1","created_at":1455904234,"updated_at":1455904234,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1974-04-20","name_first":"John","name_middle":null,"name_last":"Lesch","address_street1":"544
+        Klein Rest","address_street2":null,"address_city":"West Dominiqueville","address_subdivision":null,"address_postal_code":null,"address_country_code":"BO"}'
+    http_version: 
+  recorded_at: Fri, 19 Feb 2016 17:50:34 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56c755ea3330610003000ac1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"09df4c9fd8d17c1904f2c77289a76f1f"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 1b533c7c-28c8-4bf5-b858-74db7a7484d4
+      X-Runtime:
+      - '0.007005'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 19 Feb 2016 17:50:35 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c755ea3330610003000ac1","created_at":1455904234,"updated_at":1455904234,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1974-04-20","name_first":"John","name_middle":null,"name_last":"Lesch","address_street1":"544
+        Klein Rest","address_street2":null,"address_city":"West Dominiqueville","address_subdivision":null,"address_postal_code":null,"address_country_code":"BO"}'
+    http_version: 
+  recorded_at: Fri, 19 Feb 2016 17:50:35 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56c755ea3330610003000ac1
+    body:
+      encoding: UTF-8
+      string: '{"note":null,"ssn":"0000","passport":null,"date_of_birth":"1974-04-20","name_first":"John","name_middle":null,"name_last":"Lesch","address_street1":"544
+        Klein Rest","address_street2":null,"address_city":"West Dominiqueville","address_subdivision":null,"address_postal_code":null,"address_country_code":"BO"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"09df4c9fd8d17c1904f2c77289a76f1f"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 091afa8a-b8dc-401f-a1c6-b220e68ec7d0
+      X-Runtime:
+      - '0.016979'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 19 Feb 2016 17:50:42 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c755ea3330610003000ac1","created_at":1455904234,"updated_at":1455904234,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1974-04-20","name_first":"John","name_middle":null,"name_last":"Lesch","address_street1":"544
+        Klein Rest","address_street2":null,"address_city":"West Dominiqueville","address_subdivision":null,"address_postal_code":null,"address_country_code":"BO"}'
+    http_version: 
+  recorded_at: Fri, 19 Feb 2016 17:50:42 GMT
+recorded_with: VCR 3.0.1
