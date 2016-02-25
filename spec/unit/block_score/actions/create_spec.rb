@@ -10,17 +10,5 @@ RSpec.describe BlockScore::Actions::Create, vcr: true do
     it { is_expected.to be_an_instance_of BlockScore::Candidate }
   end
 
-  describe '.included' do
-    subject { object }
-    let(:object) { described_class }
-    let(:klass) { Class.new }
-
-    it 'extends the klass' do
-      expect(klass.singleton_class)
-        .not_to include(described_class::ClassMethods)
-      klass.send(:include, subject)
-      expect(klass.singleton_class)
-        .to include(described_class::ClassMethods)
-    end
-  end
+  it_behaves_like 'included class methods'
 end

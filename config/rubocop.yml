@@ -559,3 +559,8 @@ Style/RaiseArgs:
   Enabled: false
   Exclude:
     - 'lib/blockscore/response.rb' # Temporary
+
+RSpec/DescribeClass:
+  Enabled: true
+  Exclude:
+    - 'spec/support/included_class_methods.rb'
