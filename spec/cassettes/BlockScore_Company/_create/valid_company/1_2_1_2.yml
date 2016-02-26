@@ -5,8 +5,8 @@ http_interactions:
     uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/companies
     body:
       encoding: UTF-8
-      string: '{"entity_name":"Heaney, DuBuque and Kirlin","tax_id":"000000000","incorporation_country_code":"EE","incorporation_type":"corporation","address_street1":"941
-        Tabitha Key","address_city":"Xanderside","address_subdivision":"WA","address_postal_code":"35959","address_country_code":"MN"}'
+      string: '{"entity_name":"Kuhic-Weissnat","tax_id":"000000000","incorporation_country_code":"IM","incorporation_type":"llc","address_street1":"9835
+        Nathan Drives","address_city":"New Coleman","address_subdivision":"MT","address_postal_code":"85176-1167","address_country_code":"SM"}'
     headers:
       Accept:
       - application/vnd.blockscore+json;version=4
@@ -32,17 +32,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"a956d132792f6df42059d972a86c6f41"
+      - W/"bdad5ae0d56a9359c2f7cad049d4fabc"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b29d1d27-dc62-42b7-94fd-0a0253bed7ab
+      - cff83c3a-b6ea-480b-8674-9276c673bb07
       X-Runtime:
-      - '0.062842'
+      - '0.065035'
       Strict-Transport-Security:
       - max-age=31536000
       Date:
-      - Wed, 24 Feb 2016 22:03:37 GMT
+      - Fri, 26 Feb 2016 05:00:10 GMT
       X-Rack-Cache:
       - invalidate, pass
       Set-Cookie:
@@ -53,9 +53,8 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"object":"company","id":"56ce28b9386435000300011c","created_at":1456351417,"updated_at":1456351417,"status":"valid","livemode":false,"entity_name":"Heaney,
-        DuBuque and Kirlin","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"EE","incorporation_type":"corporation","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":null,"address_street1":"941
-        Tabitha Key","address_street2":null,"address_city":"Xanderside","address_subdivision":"WA","address_postal_code":"35959","address_country_code":"MN","details":{"entity_name":"mismatch","tax_id":"match","state":"no_match","address":"no_match","country_code":"no_match","incorp_date":"no_match","ofac":"no_match"}}'
+      string: '{"object":"company","id":"56cfdbda623738000300013e","created_at":1456462810,"updated_at":1456462810,"status":"valid","livemode":false,"entity_name":"Kuhic-Weissnat","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"IM","incorporation_type":"llc","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":null,"address_street1":"9835
+        Nathan Drives","address_street2":null,"address_city":"New Coleman","address_subdivision":"MT","address_postal_code":"85176-1167","address_country_code":"SM","details":{"entity_name":"mismatch","tax_id":"match","state":"no_match","address":"no_match","country_code":"no_match","ofac":"no_match","incorp_date":"no_match"}}'
     http_version:
-  recorded_at: Wed, 24 Feb 2016 22:03:38 GMT
+  recorded_at: Fri, 26 Feb 2016 05:00:10 GMT
 recorded_with: VCR 3.0.1

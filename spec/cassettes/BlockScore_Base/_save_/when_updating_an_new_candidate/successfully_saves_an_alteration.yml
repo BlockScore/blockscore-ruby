@@ -2,55 +2,11 @@
 http_interactions:
 - request:
     method: post
-    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/
-    body:
-      encoding: UTF-8
-      string: '{"ssn":"0000","date_of_birth":"1916-09-27","name_first":"Jane","name_last":"Orn","address_street1":"9979
-        Koepp Mill","address_city":"North Violettebury","address_country_code":"BE"}'
-    headers:
-      Accept:
-      - application/vnd.blockscore+json;version=4
-      User-Agent:
-      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
-      Content-Type:
-      - application/json
-  response:
-    status:
-      code: 404
-      message: Not Found
-    headers:
-      Server:
-      - Cowboy
-      Connection:
-      - keep-alive
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Request-Id:
-      - 6762e317-81c1-435c-baad-b5c2af796372
-      X-Runtime:
-      - '0.001928'
-      Strict-Transport-Security:
-      - max-age=31536000
-      Date:
-      - Mon, 22 Feb 2016 19:24:06 GMT
-      X-Rack-Cache:
-      - invalidate, pass
-      Content-Length:
-      - '36'
-      Via:
-      - 1.1 vegur
-    body:
-      encoding: UTF-8
-      string: '{"status":"404","error":"Not Found"}'
-    http_version: 
-  recorded_at: Mon, 22 Feb 2016 19:24:06 GMT
-- request:
-    method: post
     uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
     body:
       encoding: UTF-8
-      string: '{"ssn":"0000","date_of_birth":"2006-07-10","name_first":"Jane","name_last":"Goodwin","address_street1":"168
-        Ellie Mount","address_city":"Jedland","address_country_code":"ML"}'
+      string: '{"ssn":"0000","date_of_birth":"2008-04-14","name_first":"Jane","name_last":"Goyette","address_street1":"16149
+        Grimes Passage","address_city":"Bodefurt","address_country_code":"GU"}'
     headers:
       Accept:
       - application/vnd.blockscore+json;version=4
@@ -76,17 +32,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"e4fc74bef0cd5345c3c9c849ef256df9"
+      - W/"81b5efbfa8e3ac434cbd3950c9d89f37"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 175d9e50-c28a-4c2e-af0d-ae4315e5d4e8
+      - ebd4389d-e15b-40ac-b08f-10958285bc8a
       X-Runtime:
-      - '0.033602'
+      - '0.037922'
       Strict-Transport-Security:
       - max-age=31536000
       Date:
-      - Wed, 24 Feb 2016 22:10:53 GMT
+      - Fri, 26 Feb 2016 05:00:00 GMT
       X-Rack-Cache:
       - invalidate, pass
       Set-Cookie:
@@ -97,8 +53,8 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"object":"candidate","id":"56ce2a6d386435000300013f","created_at":1456351853,"updated_at":1456351853,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2006-07-10","name_first":"Jane","name_middle":null,"name_last":"Goodwin","address_street1":"168
-        Ellie Mount","address_street2":null,"address_city":"Jedland","address_subdivision":null,"address_postal_code":null,"address_country_code":"ML"}'
+      string: '{"object":"candidate","id":"56cfdbd06237380003000136","created_at":1456462800,"updated_at":1456462800,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2008-04-14","name_first":"Jane","name_middle":null,"name_last":"Goyette","address_street1":"16149
+        Grimes Passage","address_street2":null,"address_city":"Bodefurt","address_subdivision":null,"address_postal_code":null,"address_country_code":"GU"}'
     http_version:
-  recorded_at: Wed, 24 Feb 2016 22:10:53 GMT
+  recorded_at: Fri, 26 Feb 2016 05:00:01 GMT
 recorded_with: VCR 3.0.1

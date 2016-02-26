@@ -31,17 +31,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"e027e0e3b1d313ee3a3510fcbf6ba8da"
+      - W/"2d9b9305e1f9def86125aca198ffdf1c"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 8033f568-8bcb-44ee-9cde-70c02daa09db
+      - 94df944c-98a8-4361-ac2e-4dde0c9a07c1
       X-Runtime:
-      - '0.033518'
+      - '0.030765'
       Strict-Transport-Security:
       - max-age=31536000
       Date:
-      - Wed, 24 Feb 2016 22:04:34 GMT
+      - Fri, 26 Feb 2016 04:58:57 GMT
       X-Rack-Cache:
       - invalidate, pass
       Set-Cookie:
@@ -52,15 +52,15 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"object":"candidate","id":"56ce28f23864350003000129","created_at":1456351474,"updated_at":1456351474,"livemode":false,"note":null,"ssn":null,"passport":null,"date_of_birth":null,"name_first":"John","name_middle":null,"name_last":"Bredenkamp","address_street1":null,"address_street2":null,"address_city":null,"address_subdivision":null,"address_postal_code":null,"address_country_code":null}'
+      string: '{"object":"candidate","id":"56cfdb916237380003000102","created_at":1456462737,"updated_at":1456462737,"livemode":false,"note":null,"ssn":null,"passport":null,"date_of_birth":null,"name_first":"John","name_middle":null,"name_last":"Bredenkamp","address_street1":null,"address_street2":null,"address_city":null,"address_subdivision":null,"address_postal_code":null,"address_country_code":null}'
     http_version:
-  recorded_at: Wed, 24 Feb 2016 22:04:34 GMT
+  recorded_at: Fri, 26 Feb 2016 04:58:57 GMT
 - request:
     method: post
     uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/watchlists
     body:
       encoding: UTF-8
-      string: '{"similarity_threshold":1.0,"candidate_id":"56ce28f23864350003000129"}'
+      string: '{"similarity_threshold":1.0,"candidate_id":"56cfdb916237380003000102"}'
     headers:
       Accept:
       - application/vnd.blockscore+json;version=4
@@ -90,13 +90,13 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 70761905-82bd-4470-ad63-5c70a8a17a96
+      - ef08e24e-7c72-4990-b868-9f35c9c1b491
       X-Runtime:
-      - '0.045789'
+      - '0.049351'
       Strict-Transport-Security:
       - max-age=31536000
       Date:
-      - Wed, 24 Feb 2016 22:04:35 GMT
+      - Fri, 26 Feb 2016 04:58:58 GMT
       X-Rack-Cache:
       - invalidate, pass
       Set-Cookie:
@@ -135,5 +135,5 @@ http_interactions:
         HP86 Mount Pleasant","address_city":"Harare","address_state":null,"address_postal_code":null,"address_country_code":"ZW","address_full":"Thetford
         Farm, P.O. Box HP86 Mount Pleasant, Harare, ZW"}]}]}'
     http_version:
-  recorded_at: Wed, 24 Feb 2016 22:04:35 GMT
+  recorded_at: Fri, 26 Feb 2016 04:58:58 GMT
 recorded_with: VCR 3.0.1

@@ -33,13 +33,13 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - cfed6010-a728-4567-b943-ef00cda335f7
+      - b280ef79-8401-4e3e-a033-083ba2b0b8c8
       X-Runtime:
-      - '0.012111'
+      - '0.007548'
       Strict-Transport-Security:
       - max-age=31536000
       Date:
-      - Wed, 24 Feb 2016 22:04:32 GMT
+      - Fri, 26 Feb 2016 04:59:04 GMT
       X-Rack-Cache:
       - invalidate, pass
       Set-Cookie:
@@ -53,5 +53,5 @@ http_interactions:
       string: '{"error":{"type":"invalid_request_error","message":"Candidate with
         id  could not be found"}}'
     http_version:
-  recorded_at: Wed, 24 Feb 2016 22:04:32 GMT
+  recorded_at: Fri, 26 Feb 2016 04:59:04 GMT
 recorded_with: VCR 3.0.1

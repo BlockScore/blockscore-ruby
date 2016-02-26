@@ -31,17 +31,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"e02ccfb42c9392e8226dc9abd36321c2"
+      - W/"a0fcd5241e1ed973854fd03d73f05e56"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 9d2631e2-b65e-4169-98d2-384b147b05f5
+      - a1f3eeab-f66f-4e59-9ad7-0b2b36bfe971
       X-Runtime:
-      - '0.034191'
+      - '0.047911'
       Strict-Transport-Security:
       - max-age=31536000
       Date:
-      - Wed, 24 Feb 2016 22:04:10 GMT
+      - Fri, 26 Feb 2016 04:59:05 GMT
       X-Rack-Cache:
       - invalidate, pass
       Set-Cookie:
@@ -52,7 +52,7 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"object":"candidate","id":"56ce28da6164310003000142","created_at":1456351450,"updated_at":1456351450,"livemode":false,"note":null,"ssn":null,"passport":null,"date_of_birth":null,"name_first":null,"name_middle":null,"name_last":null,"address_street1":null,"address_street2":null,"address_city":null,"address_subdivision":null,"address_postal_code":null,"address_country_code":null}'
+      string: '{"object":"candidate","id":"56cfdb9836636100030000af","created_at":1456462744,"updated_at":1456462744,"livemode":false,"note":null,"ssn":null,"passport":null,"date_of_birth":null,"name_first":null,"name_middle":null,"name_last":null,"address_street1":null,"address_street2":null,"address_city":null,"address_subdivision":null,"address_postal_code":null,"address_country_code":null}'
     http_version:
-  recorded_at: Wed, 24 Feb 2016 22:04:10 GMT
+  recorded_at: Fri, 26 Feb 2016 04:59:05 GMT
 recorded_with: VCR 3.0.1

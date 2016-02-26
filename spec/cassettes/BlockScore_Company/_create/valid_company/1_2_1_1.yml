@@ -5,8 +5,8 @@ http_interactions:
     uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/companies
     body:
       encoding: UTF-8
-      string: '{"entity_name":"Kunze-Walter","tax_id":"000000000","incorporation_country_code":"TT","incorporation_type":"llc","address_street1":"339
-        Jacobson Springs","address_city":"West Gilesside","address_subdivision":"AZ","address_postal_code":"18725","address_country_code":"RO"}'
+      string: '{"entity_name":"Ratke-Dibbert","tax_id":"000000000","incorporation_country_code":"KI","incorporation_type":"corporation","address_street1":"2728
+        Nienow Landing","address_city":"Archport","address_subdivision":"LA","address_postal_code":"92238-1863","address_country_code":"KW"}'
     headers:
       Accept:
       - application/vnd.blockscore+json;version=4
@@ -32,17 +32,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"713108bb74c62732bf8fd7776b18512d"
+      - W/"5919bf7feaf6dea01308aa500923367a"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 2a375453-42a7-4c2b-8a96-5925206387d3
+      - aa74bfb9-76ca-4e42-9f2a-15f1fb649583
       X-Runtime:
-      - '0.065191'
+      - '0.065729'
       Strict-Transport-Security:
       - max-age=31536000
       Date:
-      - Wed, 24 Feb 2016 22:03:37 GMT
+      - Fri, 26 Feb 2016 05:00:11 GMT
       X-Rack-Cache:
       - invalidate, pass
       Set-Cookie:
@@ -53,8 +53,8 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"object":"company","id":"56ce28b9386435000300011b","created_at":1456351417,"updated_at":1456351417,"status":"valid","livemode":false,"entity_name":"Kunze-Walter","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"TT","incorporation_type":"llc","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":null,"address_street1":"339
-        Jacobson Springs","address_street2":null,"address_city":"West Gilesside","address_subdivision":"AZ","address_postal_code":"18725","address_country_code":"RO","details":{"entity_name":"mismatch","incorp_date":"no_match","ofac":"no_match","tax_id":"match","state":"no_match","address":"no_match","country_code":"no_match"}}'
+      string: '{"object":"company","id":"56cfdbda623738000300013f","created_at":1456462810,"updated_at":1456462810,"status":"valid","livemode":false,"entity_name":"Ratke-Dibbert","tax_id":"000000000","incorporation_day":null,"incorporation_month":null,"incorporation_year":null,"incorporation_state":null,"incorporation_country_code":"KI","incorporation_type":"corporation","dbas":null,"registration_number":null,"email":null,"url":null,"phone_number":null,"note":null,"ip_address":null,"address_street1":"2728
+        Nienow Landing","address_street2":null,"address_city":"Archport","address_subdivision":"LA","address_postal_code":"92238-1863","address_country_code":"KW","details":{"entity_name":"mismatch","tax_id":"match","state":"no_match","address":"no_match","country_code":"no_match","ofac":"no_match","incorp_date":"no_match"}}'
     http_version:
-  recorded_at: Wed, 24 Feb 2016 22:03:37 GMT
+  recorded_at: Fri, 26 Feb 2016 05:00:11 GMT
 recorded_with: VCR 3.0.1
