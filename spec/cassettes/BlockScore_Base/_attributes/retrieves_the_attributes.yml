@@ -1,0 +1,307 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56c7b1af386336000300033a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f8512aea8f06108d06c53eeb1ba82098"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - a815f715-da15-4d88-b7ab-2c638829804b
+      X-Runtime:
+      - '0.008676'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Sat, 20 Feb 2016 00:22:31 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c7b1af386336000300033a","created_at":1455927727,"updated_at":1455927728,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1973-01-13","name_first":"Janie","name_middle":null,"name_last":"Kirlin","address_street1":"5277
+        Rosenbaum Passage","address_street2":null,"address_city":"Lake Shaniefort","address_subdivision":null,"address_postal_code":null,"address_country_code":"FM"}'
+    http_version: 
+  recorded_at: Sat, 20 Feb 2016 00:22:31 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56c7b2493863360003000341
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"e32977d1cce1b9d3e386236d72caa895"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 773fbe73-639b-49c3-9d37-85062b13de9a
+      X-Runtime:
+      - '0.009610'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Sat, 20 Feb 2016 00:24:45 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c7b2493863360003000341","created_at":1455927881,"updated_at":1455927881,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1949-09-05","name_first":"Janie","name_middle":null,"name_last":"Quigley","address_street1":"790
+        Gusikowski Valley","address_street2":null,"address_city":"Feeneyside","address_subdivision":null,"address_postal_code":null,"address_country_code":"YT"}'
+    http_version: 
+  recorded_at: Sat, 20 Feb 2016 00:24:46 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56c7b3653731340003000ae9
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"637f23f10589fc94ea0591171139c9be"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - ce764d9c-96fb-4838-acdd-4a4bf3ab3fc2
+      X-Runtime:
+      - '0.009685'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Sat, 20 Feb 2016 00:29:42 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c7b3653731340003000ae9","created_at":1455928165,"updated_at":1455928165,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2002-02-19","name_first":"Janie","name_middle":null,"name_last":"Bode","address_street1":"209
+        Breana Drive","address_street2":null,"address_city":"Lake Ruthiemouth","address_subdivision":null,"address_postal_code":null,"address_country_code":"BR"}'
+    http_version: 
+  recorded_at: Sat, 20 Feb 2016 00:29:42 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"4efd39e486abf0c98504bf33df9b1ba9"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - aaaa719c-a208-4452-a2ee-71a7838eef22
+      X-Runtime:
+      - '0.015238'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Sat, 20 Feb 2016 00:30:35 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"total_count":19129,"has_more":true,"object":"list","data":[{"object":"candidate","id":"56c7b3a93863360003000351","created_at":1455928233,"updated_at":1455928234,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1973-04-20","name_first":"Janie","name_middle":null,"name_last":"Block","address_street1":"18391
+        Nienow Prairie","address_street2":null,"address_city":"Brownburgh","address_subdivision":null,"address_postal_code":null,"address_country_code":"TM"},{"object":"candidate","id":"56c7b37861306400030006c0","created_at":1455928184,"updated_at":1455928185,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2005-04-04","name_first":"Janie","name_middle":null,"name_last":"Rowe","address_street1":"366
+        Stokes Pines","address_street2":null,"address_city":"Eunicetown","address_subdivision":null,"address_postal_code":null,"address_country_code":"FO"},{"object":"candidate","id":"56c7b3653731340003000ae9","created_at":1455928165,"updated_at":1455928165,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2002-02-19","name_first":"Janie","name_middle":null,"name_last":"Bode","address_street1":"209
+        Breana Drive","address_street2":null,"address_city":"Lake Ruthiemouth","address_subdivision":null,"address_postal_code":null,"address_country_code":"BR"},{"object":"candidate","id":"56c7b306386336000300034a","created_at":1455928070,"updated_at":1455928071,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1998-04-08","name_first":"Janie","name_middle":null,"name_last":"Hirthe","address_street1":"2446
+        Blanda Heights","address_street2":null,"address_city":"North Foster","address_subdivision":null,"address_postal_code":null,"address_country_code":"AZ"},{"object":"candidate","id":"56c7b2493863360003000341","created_at":1455927881,"updated_at":1455927881,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1949-09-05","name_first":"Janie","name_middle":null,"name_last":"Quigley","address_street1":"790
+        Gusikowski Valley","address_street2":null,"address_city":"Feeneyside","address_subdivision":null,"address_postal_code":null,"address_country_code":"YT"},{"object":"candidate","id":"56c7b1c9386336000300033d","created_at":1455927753,"updated_at":1455927754,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1986-09-23","name_first":"Janie","name_middle":null,"name_last":"Leannon","address_street1":"44062
+        Lottie Lock","address_street2":null,"address_city":"West Candice","address_subdivision":null,"address_postal_code":null,"address_country_code":"PF"},{"object":"candidate","id":"56c7b1af386336000300033a","created_at":1455927727,"updated_at":1455927728,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1973-01-13","name_first":"Janie","name_middle":null,"name_last":"Kirlin","address_street1":"5277
+        Rosenbaum Passage","address_street2":null,"address_city":"Lake Shaniefort","address_subdivision":null,"address_postal_code":null,"address_country_code":"FM"},{"object":"candidate","id":"56c7ade56130640003000674","created_at":1455926757,"updated_at":1455926758,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2011-05-13","name_first":"Jane","name_middle":null,"name_last":"Rath","address_street1":"7846
+        Bins Branch","address_street2":null,"address_city":"North Adelbertville","address_subdivision":null,"address_postal_code":null,"address_country_code":"BT"},{"object":"candidate","id":"56c7ade56130640003000673","created_at":1455926757,"updated_at":1455926757,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1947-07-08","name_first":"Leann","name_middle":null,"name_last":"Smith","address_street1":"39212
+        Homenick Springs","address_street2":null,"address_city":"Mayertchester","address_subdivision":null,"address_postal_code":null,"address_country_code":"MW"},{"object":"candidate","id":"56c7ade33863360003000318","created_at":1455926755,"updated_at":1455926755,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1958-02-15","name_first":"John","name_middle":null,"name_last":"Watsica","address_street1":"214
+        Haag Rapids","address_street2":null,"address_city":"Port Heaventon","address_subdivision":null,"address_postal_code":null,"address_country_code":"IQ"},{"object":"candidate","id":"56c7ade2663365000300036f","created_at":1455926754,"updated_at":1455926754,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1935-07-13","name_first":"Van","name_middle":null,"name_last":"Mante","address_street1":"9238
+        Hoeger Lodge","address_street2":null,"address_city":"Grahammouth","address_subdivision":null,"address_postal_code":null,"address_country_code":"BY"},{"object":"candidate","id":"56c7ade2663365000300036e","created_at":1455926754,"updated_at":1455926754,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2015-06-23","name_first":"Mateo","name_middle":null,"name_last":"Daniel","address_street1":"971
+        Windler Shoals","address_street2":null,"address_city":"Greenville","address_subdivision":null,"address_postal_code":null,"address_country_code":"BW"},{"object":"candidate","id":"56c7ade13731340003000a9a","created_at":1455926753,"updated_at":1455926753,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1922-12-21","name_first":"Giovanny","name_middle":null,"name_last":"Gaylord","address_street1":"8258
+        Hane Dam","address_street2":null,"address_city":"Streichbury","address_subdivision":null,"address_postal_code":null,"address_country_code":"GA"},{"object":"candidate","id":"56c7ade13863360003000317","created_at":1455926753,"updated_at":1455926753,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2000-06-02","name_first":"Alison","name_middle":null,"name_last":"Thompson","address_street1":"76527
+        Ofelia Overpass","address_street2":null,"address_city":"South Giovanna","address_subdivision":null,"address_postal_code":null,"address_country_code":"UM"},{"object":"candidate","id":"56c7ade06130640003000672","created_at":1455926752,"updated_at":1455926753,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1991-01-13","name_first":"Jane","name_middle":null,"name_last":"Kulas","address_street1":"8267
+        Graham Junction","address_street2":null,"address_city":"East Gene","address_subdivision":null,"address_postal_code":null,"address_country_code":"GG"},{"object":"candidate","id":"56c7addf3731340003000a99","created_at":1455926751,"updated_at":1455926752,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1986-09-21","name_first":"Jane","name_middle":null,"name_last":"Keeling","address_street1":"59691
+        Lonie Motorway","address_street2":null,"address_city":"Lake Maritzastad","address_subdivision":null,"address_postal_code":null,"address_country_code":"ME"},{"object":"candidate","id":"56c7adde663365000300036d","created_at":1455926750,"updated_at":1455926751,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1985-03-24","name_first":"John","name_middle":null,"name_last":"Boehm","address_street1":"7637
+        Schuster Ports","address_street2":null,"address_city":"Port Rahsaanburgh","address_subdivision":null,"address_postal_code":null,"address_country_code":"NU","deleted":true},{"object":"candidate","id":"56c7addd3731340003000a98","created_at":1455926749,"updated_at":1455926749,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1927-12-31","name_first":"John","name_middle":null,"name_last":"Kuhlman","address_street1":"9393
+        Valentin Path","address_street2":null,"address_city":"Hyatttown","address_subdivision":null,"address_postal_code":null,"address_country_code":"ZW","deleted":true},{"object":"candidate","id":"56c7addb3863360003000316","created_at":1455926747,"updated_at":1455926748,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1923-12-01","name_first":"Jane","name_middle":null,"name_last":"Little","address_street1":"883
+        Rosendo Walk","address_street2":null,"address_city":"New Jonatanstad","address_subdivision":null,"address_postal_code":null,"address_country_code":"TC"},{"object":"candidate","id":"56c7addb3731340003000a97","created_at":1455926747,"updated_at":1455926747,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1957-06-22","name_first":"Marley","name_middle":null,"name_last":"Smith","address_street1":"1988
+        Gerhard Mission","address_street2":null,"address_city":"Rennerchester","address_subdivision":null,"address_postal_code":null,"address_country_code":"DE"},{"object":"candidate","id":"56c7add63731340003000a95","created_at":1455926742,"updated_at":1455926742,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1981-04-10","name_first":"John","name_middle":null,"name_last":"Waelchi","address_street1":"2826
+        Javonte Valley","address_street2":null,"address_city":"Barrowsshire","address_subdivision":null,"address_postal_code":null,"address_country_code":"GT"},{"object":"candidate","id":"56c7add6663365000300036b","created_at":1455926742,"updated_at":1455926742,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1944-12-08","name_first":"Nick","name_middle":null,"name_last":"Heller","address_street1":"199
+        Hailey Passage","address_street2":null,"address_city":"Fisherfort","address_subdivision":null,"address_postal_code":null,"address_country_code":"AD"},{"object":"candidate","id":"56c7add53863360003000313","created_at":1455926741,"updated_at":1455926741,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1949-06-14","name_first":"Amelia","name_middle":null,"name_last":"Labadie","address_street1":"501
+        Kihn Highway","address_street2":null,"address_city":"New Fiona","address_subdivision":null,"address_postal_code":null,"address_country_code":"UA"},{"object":"candidate","id":"56c7add53731340003000a94","created_at":1455926741,"updated_at":1455926741,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1958-07-08","name_first":"Cristal","name_middle":null,"name_last":"Williamson","address_street1":"1871
+        Altenwerth Road","address_street2":null,"address_city":"Port Joana","address_subdivision":null,"address_postal_code":null,"address_country_code":"BF"},{"object":"candidate","id":"56c7add53731340003000a93","created_at":1455926741,"updated_at":1455926741,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1961-01-13","name_first":"Skyla","name_middle":null,"name_last":"Armstrong","address_street1":"71781
+        Sherman Fork","address_street2":null,"address_city":"Lake Breana","address_subdivision":null,"address_postal_code":null,"address_country_code":"RO"}]}'
+    http_version: 
+  recorded_at: Sat, 20 Feb 2016 00:30:35 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56c7b3a93863360003000351
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"5436c6aaaba43cd41aa68eff65d82e40"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - b39dcc78-4ca9-4857-a500-51b07f6a8147
+      X-Runtime:
+      - '0.008587'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Sat, 20 Feb 2016 00:30:36 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56c7b3a93863360003000351","created_at":1455928233,"updated_at":1455928234,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1973-04-20","name_first":"Janie","name_middle":null,"name_last":"Block","address_street1":"18391
+        Nienow Prairie","address_street2":null,"address_city":"Brownburgh","address_subdivision":null,"address_postal_code":null,"address_country_code":"TM"}'
+    http_version: 
+  recorded_at: Sat, 20 Feb 2016 00:30:36 GMT
+recorded_with: VCR 3.0.1

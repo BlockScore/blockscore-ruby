@@ -25,4 +25,6 @@ RSpec.describe BlockScore::Actions::Retrieve, vcr: true do
       end
     end
   end
+
+  it_behaves_like 'included class methods'
 end

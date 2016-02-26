@@ -11,5 +11,31 @@ RSpec.describe BlockScore::Actions::All, vcr: true do
     it { is_expected.not_to be_empty }
     it { expect(people[0].name_last).to eql uniq_token_two }
     it { expect(people[1].name_last).to eql uniq_token_one }
+
+    context 'invalid filter parameter' do
+      let(:expectation) do
+        '(Type: invalid_request_error) ' \
+        'Received unknown filter parameter: name_second (name_second) ' \
+        '(Status: 400)'
+      end
+      it 'returns an error if filter parameter not in list' do
+        expect { BlockScore::Person.all('filter[name_second]' => 'valid') }
+          .to raise_error(BlockScore::InvalidRequestError, expectation)
+      end
+    end
+
+    context 'invalid comparison operator' do
+      let(:expectation) do
+        '(Type: invalid_request_error) ' \
+        'Received unknown filter directive: gtx (gtx) ' \
+        '(Status: 400)'
+      end
+      it 'returns an error if comparison operator not in allowed list' do
+        expect { BlockScore::Person.all('created_at[gtx]' => 1_455_660_769) }
+          .to raise_error(BlockScore::InvalidRequestError, expectation)
+      end
+    end
   end
+
+  it_behaves_like 'included class methods'
 end

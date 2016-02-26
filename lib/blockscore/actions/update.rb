@@ -15,32 +15,17 @@ module BlockScore
     #  # => true
     module Update
       extend Forwardable
-
-      # Attributes which will not change once the object is created.
-      PERSISTENT_ATTRIBUTES = [
-        :id,
-        :object,
-        :created_at,
-        :updated_at,
-        :livemode,
-        :deleted
-      ].freeze
-
       def_delegators 'self.class', :patch
 
       def save!
-        if persisted?
-          patch(member_endpoint, filter_params)
-          true
-        else
-          super
-        end
+        persisted? ? update : super()
       end
 
-      # Filters out the non-updateable params.
-      def filter_params
-        # Cannot %i syntax, not introduced until Ruby 2.0.0
-        attributes.reject { |key, _| PERSISTENT_ATTRIBUTES.include?(key) }
+      private
+
+      def update
+        patch(member_endpoint, attributes)
+        true
       end
     end
   end

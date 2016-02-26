@@ -9,4 +9,6 @@ RSpec.describe BlockScore::Actions::Create, vcr: true do
     it { is_expected.to be_persisted }
     it { is_expected.to be_an_instance_of BlockScore::Candidate }
   end
+
+  it_behaves_like 'included class methods'
 end

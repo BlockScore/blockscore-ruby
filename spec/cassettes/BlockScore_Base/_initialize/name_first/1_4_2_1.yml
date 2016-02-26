@@ -1,0 +1,172 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people/56c7b37466336500030003b1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f5be85fb7d851fd3c908274c7b7b59fa"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 77437d1d-6f87-4480-8627-1b75c1c6b0a8
+      X-Runtime:
+      - '0.018897'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Sat, 20 Feb 2016 00:29:41 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"56c7b37466336500030003b1","created_at":1455928180,"updated_at":1455928180,"status":"valid","livemode":false,"phone_number":null,"ip_address":null,"birth_day":12,"birth_month":4,"birth_year":1937,"name_first":"Anabel","name_middle":null,"name_last":"Hartmann","address_street1":"257
+        Batz Points","address_street2":null,"address_city":"West Dan","address_subdivision":"WV","address_postal_code":"12706","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version: 
+  recorded_at: Sat, 20 Feb 2016 00:29:41 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people/56c7b38861306400030006c3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"0085ce0ca55f62fc8bce4300f23e37c6"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 040a5f52-7129-49aa-a83f-9d717fedb64b
+      X-Runtime:
+      - '0.023175'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Sat, 20 Feb 2016 00:30:01 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"56c7b38861306400030006c3","created_at":1455928200,"updated_at":1455928200,"status":"valid","livemode":false,"phone_number":null,"ip_address":null,"birth_day":12,"birth_month":3,"birth_year":2003,"name_first":"Yessenia","name_middle":null,"name_last":"Wisozk","address_street1":"8719
+        Satterfield Prairie","address_street2":null,"address_city":"Port Ardellafort","address_subdivision":"VT","address_postal_code":"71902-8676","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version: 
+  recorded_at: Sat, 20 Feb 2016 00:30:01 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Christelle","name_last":"Marquardt","document_type":"ssn","document_value":"0000","birth_day":12,"birth_month":1,"birth_year":1928,"address_street1":"753
+        Dickinson Ridge","address_city":"South Allison","address_subdivision":"OR","address_postal_code":"54646","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"abeee5207865c79fbd990165c7aed411"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 6443dc27-5c33-41a4-adca-49d03ca0fab3
+      X-Runtime:
+      - '0.274357'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Sat, 20 Feb 2016 00:30:05 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"56c7b38d66336500030003b3","created_at":1455928205,"updated_at":1455928205,"status":"valid","livemode":false,"phone_number":null,"ip_address":null,"birth_day":12,"birth_month":1,"birth_year":1928,"name_first":"Christelle","name_middle":null,"name_last":"Marquardt","address_street1":"753
+        Dickinson Ridge","address_street2":null,"address_city":"South Allison","address_subdivision":"OR","address_postal_code":"54646","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version: 
+  recorded_at: Sat, 20 Feb 2016 00:30:05 GMT
+recorded_with: VCR 3.0.1

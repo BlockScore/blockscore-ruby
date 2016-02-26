@@ -57,10 +57,4 @@ RSpec.describe BlockScore::QuestionSet, vcr: true do
       it { expect(question_set.score).to be nil }
     end
   end
-
-  # This example is to confirm that this class of objects is not deletable
-  describe '#delete' do
-    subject(:question_set) { create(:question_set) }
-    it { expect { question_set.delete }.to raise_error NoMethodError }
-  end
 end
