@@ -1,0 +1,116 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1974-01-29","name_first":"Mozell","name_last":"Kutch","address_street1":"224
+        Metz Spur","address_city":"Laceymouth","address_country_code":"PY"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"12a8799cdb76f92f64c182897f50d2f8"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 55082b0c-c83c-421b-82f6-091ccf8cb69b
+      X-Runtime:
+      - '0.036680'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 05:00:16 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdbdf36636100030000b7","created_at":1456462816,"updated_at":1456462816,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1974-01-29","name_first":"Mozell","name_middle":null,"name_last":"Kutch","address_street1":"224
+        Metz Spur","address_street2":null,"address_city":"Laceymouth","address_subdivision":null,"address_postal_code":null,"address_country_code":"PY"}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 05:00:16 GMT
+- request:
+    method: delete
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56cfdbdf36636100030000b7
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"12870e0f2d0e0e9132dfd09c51306f30"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - f85fd454-b84e-42af-8a20-9757e1c4d851
+      X-Runtime:
+      - '0.017197'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 05:00:16 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdbdf36636100030000b7","created_at":1456462816,"updated_at":1456462816,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1974-01-29","name_first":"Mozell","name_middle":null,"name_last":"Kutch","address_street1":"224
+        Metz Spur","address_street2":null,"address_city":"Laceymouth","address_subdivision":null,"address_postal_code":null,"address_country_code":"PY","deleted":true}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 05:00:16 GMT
+recorded_with: VCR 3.0.1

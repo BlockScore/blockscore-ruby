@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Hope","name_last":"Eichmann","document_type":"ssn","document_value":"0001","birth_day":12,"birth_month":5,"birth_year":1987,"address_street1":"106
+        Corwin Forks","address_city":"Kendrickborough","address_subdivision":"DE","address_postal_code":"81858-6996","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f948028120dd081e236638b7734e0b6c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 153948fb-786a-4f4b-967f-bd97aa78b89c
+      X-Runtime:
+      - '0.273055'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:59:40 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"56cfdbbc6237380003000121","created_at":1456462780,"updated_at":1456462780,"status":"invalid","livemode":false,"phone_number":null,"ip_address":null,"birth_day":12,"birth_month":5,"birth_year":1987,"name_first":"Hope","name_middle":null,"name_last":"Eichmann","address_street1":"106
+        Corwin Forks","address_street2":null,"address_city":"Kendrickborough","address_subdivision":"DE","address_postal_code":"81858-6996","address_country_code":"US","document_type":"ssn","document_value":"0001","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:59:40 GMT
+recorded_with: VCR 3.0.1

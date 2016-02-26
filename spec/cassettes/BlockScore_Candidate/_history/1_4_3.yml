@@ -1,0 +1,232 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1918-10-04","name_first":"version_0","name_last":"Nicolas","address_street1":"99159
+        Pagac Forks","address_city":"Adeleville","address_country_code":"DE"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"17af90f563e651a5dc6a524c31e5a6aa"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 34fb9367-ed6b-4ab8-864d-4a016ca41698
+      X-Runtime:
+      - '0.036122'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:59:15 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdba3623738000300010a","created_at":1456462755,"updated_at":1456462755,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1918-10-04","name_first":"version_0","name_middle":null,"name_last":"Nicolas","address_street1":"99159
+        Pagac Forks","address_street2":null,"address_city":"Adeleville","address_subdivision":null,"address_postal_code":null,"address_country_code":"DE"}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:59:15 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56cfdba3623738000300010a
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdba3623738000300010a","created_at":1456462755,"updated_at":1456462755,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1918-10-04","name_first":"version_1","name_middle":null,"name_last":"Nicolas","address_street1":"99159
+        Pagac Forks","address_street2":null,"address_city":"Adeleville","address_subdivision":null,"address_postal_code":null,"address_country_code":"DE"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"8f9f6155bdb8c65ff656d1bff129f7ef"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7d7ecdba-2c0f-4e74-a32b-47156b839457
+      X-Runtime:
+      - '0.019076'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:59:15 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdba3623738000300010a","created_at":1456462755,"updated_at":1456462755,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1918-10-04","name_first":"version_1","name_middle":null,"name_last":"Nicolas","address_street1":"99159
+        Pagac Forks","address_street2":null,"address_city":"Adeleville","address_subdivision":null,"address_postal_code":null,"address_country_code":"DE"}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:59:15 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56cfdba3623738000300010a
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdba3623738000300010a","created_at":1456462755,"updated_at":1456462755,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1918-10-04","name_first":"version_2","name_middle":null,"name_last":"Nicolas","address_street1":"99159
+        Pagac Forks","address_street2":null,"address_city":"Adeleville","address_subdivision":null,"address_postal_code":null,"address_country_code":"DE"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"5e4d3cb6b0b77560a27816f2fb5c8f48"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e4fa4053-909e-476d-89d7-98ad091ff07b
+      X-Runtime:
+      - '0.018286'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:59:16 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdba3623738000300010a","created_at":1456462755,"updated_at":1456462756,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1918-10-04","name_first":"version_2","name_middle":null,"name_last":"Nicolas","address_street1":"99159
+        Pagac Forks","address_street2":null,"address_city":"Adeleville","address_subdivision":null,"address_postal_code":null,"address_country_code":"DE"}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:59:16 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56cfdba3623738000300010a/history
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"6d5c18bfeadbd2c097dfb5800cec5850"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - beeb34d8-7a45-45d3-9ee5-92ee7aad671d
+      X-Runtime:
+      - '0.013459'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:59:16 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"object":"candidate","id":"56cfdba3623738000300010a","created_at":1456462755,"updated_at":1456462756,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1918-10-04","name_first":"version_2","name_middle":null,"name_last":"Nicolas","address_street1":"99159
+        Pagac Forks","address_street2":null,"address_city":"Adeleville","address_subdivision":null,"address_postal_code":null,"address_country_code":"DE"},{"object":"candidate","id":"56cfdba3623738000300010a","created_at":1456462755,"updated_at":1456462755,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1918-10-04","name_first":"version_1","name_middle":null,"name_last":"Nicolas","address_street1":"99159
+        Pagac Forks","address_street2":null,"address_city":"Adeleville","address_subdivision":null,"address_postal_code":null,"address_country_code":"DE"},{"object":"candidate","id":"56cfdba3623738000300010a","created_at":1456462755,"updated_at":1456462755,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1918-10-04","name_first":"version_0","name_middle":null,"name_last":"Nicolas","address_street1":"99159
+        Pagac Forks","address_street2":null,"address_city":"Adeleville","address_subdivision":null,"address_postal_code":null,"address_country_code":"DE"}]'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:59:16 GMT
+recorded_with: VCR 3.0.1

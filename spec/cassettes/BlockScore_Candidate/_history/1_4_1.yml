@@ -1,0 +1,232 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1936-03-14","name_first":"version_0","name_last":"Walter","address_street1":"38912
+        Predovic Land","address_city":"Abdullahmouth","address_country_code":"MO"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"4483e7e3b520a89e81d9fa1e0cc64f67"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 56ced417-5cb0-4983-8aa7-a998bd8dee26
+      X-Runtime:
+      - '0.032109'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:59:20 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdba8623738000300010d","created_at":1456462760,"updated_at":1456462760,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1936-03-14","name_first":"version_0","name_middle":null,"name_last":"Walter","address_street1":"38912
+        Predovic Land","address_street2":null,"address_city":"Abdullahmouth","address_subdivision":null,"address_postal_code":null,"address_country_code":"MO"}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:59:20 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56cfdba8623738000300010d
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdba8623738000300010d","created_at":1456462760,"updated_at":1456462760,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1936-03-14","name_first":"version_1","name_middle":null,"name_last":"Walter","address_street1":"38912
+        Predovic Land","address_street2":null,"address_city":"Abdullahmouth","address_subdivision":null,"address_postal_code":null,"address_country_code":"MO"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"fb08afc364ee94920c6a23131287f3b7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 53c27d5a-fa70-4820-930e-64af8baa5dfe
+      X-Runtime:
+      - '0.018718'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:59:20 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdba8623738000300010d","created_at":1456462760,"updated_at":1456462760,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1936-03-14","name_first":"version_1","name_middle":null,"name_last":"Walter","address_street1":"38912
+        Predovic Land","address_street2":null,"address_city":"Abdullahmouth","address_subdivision":null,"address_postal_code":null,"address_country_code":"MO"}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:59:20 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56cfdba8623738000300010d
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdba8623738000300010d","created_at":1456462760,"updated_at":1456462760,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1936-03-14","name_first":"version_2","name_middle":null,"name_last":"Walter","address_street1":"38912
+        Predovic Land","address_street2":null,"address_city":"Abdullahmouth","address_subdivision":null,"address_postal_code":null,"address_country_code":"MO"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"c4ae22d392ed14fa6f712b665d264faa"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 6618bad5-0226-4eb4-b9a4-9cc15f9619b8
+      X-Runtime:
+      - '0.020744'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:59:21 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdba8623738000300010d","created_at":1456462760,"updated_at":1456462761,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1936-03-14","name_first":"version_2","name_middle":null,"name_last":"Walter","address_street1":"38912
+        Predovic Land","address_street2":null,"address_city":"Abdullahmouth","address_subdivision":null,"address_postal_code":null,"address_country_code":"MO"}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:59:21 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56cfdba8623738000300010d/history
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"2b71b40457ff1659a781e2d560b9c7dc"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 60d9ba04-3b01-4ed8-89ff-a5895db16cbd
+      X-Runtime:
+      - '0.013209'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:59:21 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"object":"candidate","id":"56cfdba8623738000300010d","created_at":1456462760,"updated_at":1456462761,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1936-03-14","name_first":"version_2","name_middle":null,"name_last":"Walter","address_street1":"38912
+        Predovic Land","address_street2":null,"address_city":"Abdullahmouth","address_subdivision":null,"address_postal_code":null,"address_country_code":"MO"},{"object":"candidate","id":"56cfdba8623738000300010d","created_at":1456462760,"updated_at":1456462760,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1936-03-14","name_first":"version_1","name_middle":null,"name_last":"Walter","address_street1":"38912
+        Predovic Land","address_street2":null,"address_city":"Abdullahmouth","address_subdivision":null,"address_postal_code":null,"address_country_code":"MO"},{"object":"candidate","id":"56cfdba8623738000300010d","created_at":1456462760,"updated_at":1456462760,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1936-03-14","name_first":"version_0","name_middle":null,"name_last":"Walter","address_street1":"38912
+        Predovic Land","address_street2":null,"address_city":"Abdullahmouth","address_subdivision":null,"address_postal_code":null,"address_country_code":"MO"}]'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:59:21 GMT
+recorded_with: VCR 3.0.1

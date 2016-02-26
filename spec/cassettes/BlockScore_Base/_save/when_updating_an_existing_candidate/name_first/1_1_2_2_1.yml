@@ -1,0 +1,117 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1921-12-10","name_first":"John","name_last":"Stracke","address_street1":"13293
+        Swift Fords","address_city":"Nellemouth","address_country_code":"TT"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"c237c910aaee23d164a553ac52c78584"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 90d5a46a-a56d-49be-ac93-f93d248172fe
+      X-Runtime:
+      - '0.032920'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:59:59 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdbcf6237380003000134","created_at":1456462799,"updated_at":1456462799,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1921-12-10","name_first":"John","name_middle":null,"name_last":"Stracke","address_street1":"13293
+        Swift Fords","address_street2":null,"address_city":"Nellemouth","address_subdivision":null,"address_postal_code":null,"address_country_code":"TT"}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:59:59 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56cfdbcf6237380003000134
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdbcf6237380003000134","created_at":1456462799,"updated_at":1456462799,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1921-12-10","name_first":"Jane","name_middle":null,"name_last":"Stracke","address_street1":"13293
+        Swift Fords","address_street2":null,"address_city":"Nellemouth","address_subdivision":null,"address_postal_code":null,"address_country_code":"TT"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"e216c4d9aca688d443924e797e8997c1"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 88f95c4b-7b10-42d4-a689-cc7b6181c2d5
+      X-Runtime:
+      - '0.019662'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:59:59 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdbcf6237380003000134","created_at":1456462799,"updated_at":1456462799,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1921-12-10","name_first":"Jane","name_middle":null,"name_last":"Stracke","address_street1":"13293
+        Swift Fords","address_street2":null,"address_city":"Nellemouth","address_subdivision":null,"address_postal_code":null,"address_country_code":"TT"}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:59:59 GMT
+recorded_with: VCR 3.0.1

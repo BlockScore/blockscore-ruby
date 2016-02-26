@@ -1,0 +1,126 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Hoyt","name_last":"Emard","document_type":"ssn","document_value":"0000","birth_day":12,"birth_month":12,"birth_year":1965,"address_street1":"3344
+        Altenwerth Court","address_city":"South Josianneborough","address_subdivision":"NE","address_postal_code":"19575","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"9e7d17d323b3773a22c9254d858c0680"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 732203ba-760a-4a27-aaa9-1ab861c872a5
+      X-Runtime:
+      - '0.284161'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 05:00:27 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"56cfdbeb65663600030000d2","created_at":1456462827,"updated_at":1456462827,"status":"valid","livemode":false,"phone_number":null,"ip_address":null,"birth_day":12,"birth_month":12,"birth_year":1965,"name_first":"Hoyt","name_middle":null,"name_last":"Emard","address_street1":"3344
+        Altenwerth Court","address_street2":null,"address_city":"South Josianneborough","address_subdivision":"NE","address_postal_code":"19575","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 05:00:27 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/question_sets
+    body:
+      encoding: UTF-8
+      string: '{"person_id":"56cfdbeb65663600030000d2"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"6be6f2c6435cd7760669b431a5314ca6"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b48437c4-bb84-47e7-808b-5ff46bc1fd30
+      X-Runtime:
+      - '0.095908'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 05:00:28 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"question_set","id":"56cfdbec623738000300014d","created_at":1456462828,"updated_at":1456462828,"livemode":false,"person_id":"56cfdbeb65663600030000d2","score":null,"expired":false,"time_limit":0,"questions":[{"id":1,"question":"Which
+        one of the following addresses is associated with you?","answers":[{"id":1,"answer":"309
+        Colver Rd"},{"id":2,"answer":"430 Dwight"},{"id":3,"answer":"221 Wolf Lake"},{"id":4,"answer":"31
+        Cottage Ct"},{"id":5,"answer":"None Of The Above"}]},{"id":2,"question":"Which
+        one of the following zip codes is associated with you?","answers":[{"id":1,"answer":"49511"},{"id":2,"answer":"49209"},{"id":3,"answer":"49230"},{"id":4,"answer":"49268"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":3,"question":"Which one of the following counties is
+        associated with you?","answers":[{"id":1,"answer":"Sangamon"},{"id":2,"answer":"Schoharie"},{"id":3,"answer":"Boone"},{"id":4,"answer":"Jasper"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":4,"question":"Which one of the following area codes
+        is associated with you?","answers":[{"id":1,"answer":"812"},{"id":2,"answer":"336"},{"id":3,"answer":"228"},{"id":4,"answer":"832"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":5,"question":"Which one of the following adult individuals
+        is most closely associated with you?","answers":[{"id":1,"answer":"Nicole"},{"id":2,"answer":"Evan"},{"id":3,"answer":"Jose"},{"id":4,"answer":"Julian"},{"id":5,"answer":"None
+        Of The Above"}]}]}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 05:00:28 GMT
+recorded_with: VCR 3.0.1

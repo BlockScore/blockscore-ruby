@@ -1,0 +1,232 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1963-07-19","name_first":"version_0","name_last":"Kuvalis","address_street1":"64925
+        Botsford Lakes","address_city":"Astridchester","address_country_code":"AT"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"5053157b59f794bbb7846d86f9e3e9f5"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7d006a1c-fa52-4bbe-ac16-e440d6a1e8dd
+      X-Runtime:
+      - '0.032663'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:59:17 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdba4623738000300010b","created_at":1456462756,"updated_at":1456462756,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1963-07-19","name_first":"version_0","name_middle":null,"name_last":"Kuvalis","address_street1":"64925
+        Botsford Lakes","address_street2":null,"address_city":"Astridchester","address_subdivision":null,"address_postal_code":null,"address_country_code":"AT"}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:59:17 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56cfdba4623738000300010b
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdba4623738000300010b","created_at":1456462756,"updated_at":1456462756,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1963-07-19","name_first":"version_1","name_middle":null,"name_last":"Kuvalis","address_street1":"64925
+        Botsford Lakes","address_street2":null,"address_city":"Astridchester","address_subdivision":null,"address_postal_code":null,"address_country_code":"AT"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"46685b38272275dca6ed84709bc1cdcf"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - fc3bb30a-2b49-4662-8556-cdb63741a5e7
+      X-Runtime:
+      - '0.018792'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:59:17 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdba4623738000300010b","created_at":1456462756,"updated_at":1456462757,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1963-07-19","name_first":"version_1","name_middle":null,"name_last":"Kuvalis","address_street1":"64925
+        Botsford Lakes","address_street2":null,"address_city":"Astridchester","address_subdivision":null,"address_postal_code":null,"address_country_code":"AT"}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:59:17 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56cfdba4623738000300010b
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdba4623738000300010b","created_at":1456462756,"updated_at":1456462756,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1963-07-19","name_first":"version_2","name_middle":null,"name_last":"Kuvalis","address_street1":"64925
+        Botsford Lakes","address_street2":null,"address_city":"Astridchester","address_subdivision":null,"address_postal_code":null,"address_country_code":"AT"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"be1110bcaeada49542e7455d77148ecc"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 62e15e34-6b26-4696-b34b-59d4f8f37138
+      X-Runtime:
+      - '0.018904'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:59:17 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdba4623738000300010b","created_at":1456462756,"updated_at":1456462757,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1963-07-19","name_first":"version_2","name_middle":null,"name_last":"Kuvalis","address_street1":"64925
+        Botsford Lakes","address_street2":null,"address_city":"Astridchester","address_subdivision":null,"address_postal_code":null,"address_country_code":"AT"}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:59:17 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56cfdba4623738000300010b/history
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"7173d9b44f11d30f95f1402bc28fb56a"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - e33ae293-2800-4c28-8adc-29a61316a4ee
+      X-Runtime:
+      - '0.013039'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:59:18 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"object":"candidate","id":"56cfdba4623738000300010b","created_at":1456462756,"updated_at":1456462757,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1963-07-19","name_first":"version_2","name_middle":null,"name_last":"Kuvalis","address_street1":"64925
+        Botsford Lakes","address_street2":null,"address_city":"Astridchester","address_subdivision":null,"address_postal_code":null,"address_country_code":"AT"},{"object":"candidate","id":"56cfdba4623738000300010b","created_at":1456462756,"updated_at":1456462757,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1963-07-19","name_first":"version_1","name_middle":null,"name_last":"Kuvalis","address_street1":"64925
+        Botsford Lakes","address_street2":null,"address_city":"Astridchester","address_subdivision":null,"address_postal_code":null,"address_country_code":"AT"},{"object":"candidate","id":"56cfdba4623738000300010b","created_at":1456462756,"updated_at":1456462756,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1963-07-19","name_first":"version_0","name_middle":null,"name_last":"Kuvalis","address_street1":"64925
+        Botsford Lakes","address_street2":null,"address_city":"Astridchester","address_subdivision":null,"address_postal_code":null,"address_country_code":"AT"}]'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:59:18 GMT
+recorded_with: VCR 3.0.1

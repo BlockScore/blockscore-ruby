@@ -1,0 +1,116 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1937-05-16","name_first":"Shaina","name_last":"Bahringer","address_street1":"5891
+        Estel Light","address_city":"Lake Helenaburgh","address_country_code":"SY"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"7ce3fb04687e77546640bb241ced40a4"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - eb3837bd-7236-47cc-9f9a-667f90c2cb64
+      X-Runtime:
+      - '0.034315'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 05:00:12 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdbdc6237380003000141","created_at":1456462812,"updated_at":1456462812,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1937-05-16","name_first":"Shaina","name_middle":null,"name_last":"Bahringer","address_street1":"5891
+        Estel Light","address_street2":null,"address_city":"Lake Helenaburgh","address_subdivision":null,"address_postal_code":null,"address_country_code":"SY"}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 05:00:12 GMT
+- request:
+    method: delete
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56cfdbdc6237380003000141
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"e839e3a1abf6f75cbc492d1d082dc437"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 004c7820-3726-4050-9282-1670bd2c7602
+      X-Runtime:
+      - '0.020766'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 05:00:12 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdbdc6237380003000141","created_at":1456462812,"updated_at":1456462812,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1937-05-16","name_first":"Shaina","name_middle":null,"name_last":"Bahringer","address_street1":"5891
+        Estel Light","address_street2":null,"address_city":"Lake Helenaburgh","address_subdivision":null,"address_postal_code":null,"address_country_code":"SY","deleted":true}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 05:00:12 GMT
+recorded_with: VCR 3.0.1

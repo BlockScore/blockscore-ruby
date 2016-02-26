@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Johnson","name_last":"Schneider","document_type":"ssn","document_value":"0001","birth_day":12,"birth_month":8,"birth_year":1976,"address_street1":"48338
+        Walsh Keys","address_city":"Port Lianaport","address_subdivision":"NJ","address_postal_code":"97445","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"3c69bb5a67b952d357b7ea7568038eff"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 9319a612-bb71-403d-b5bf-9b4aee1f7fc1
+      X-Runtime:
+      - '0.257226'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:59:41 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"56cfdbbd6237380003000122","created_at":1456462781,"updated_at":1456462781,"status":"invalid","livemode":false,"phone_number":null,"ip_address":null,"birth_day":12,"birth_month":8,"birth_year":1976,"name_first":"Johnson","name_middle":null,"name_last":"Schneider","address_street1":"48338
+        Walsh Keys","address_street2":null,"address_city":"Port Lianaport","address_subdivision":"NJ","address_postal_code":"97445","address_country_code":"US","document_type":"ssn","document_value":"0001","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:59:41 GMT
+recorded_with: VCR 3.0.1

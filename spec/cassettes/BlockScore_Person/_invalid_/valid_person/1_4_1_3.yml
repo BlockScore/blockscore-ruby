@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Pauline","name_last":"Robel","document_type":"ssn","document_value":"0000","birth_day":12,"birth_month":8,"birth_year":1921,"address_street1":"85361
+        Adeline Mountains","address_city":"Hansenfurt","address_subdivision":"MO","address_postal_code":"50963-9379","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"5d5dbcac958720b9a4a05d09f5e22d93"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 9d99ed81-efe7-449b-8810-bddfadb82ebf
+      X-Runtime:
+      - '0.260681'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:59:44 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"56cfdbbf6237380003000126","created_at":1456462783,"updated_at":1456462783,"status":"valid","livemode":false,"phone_number":null,"ip_address":null,"birth_day":12,"birth_month":8,"birth_year":1921,"name_first":"Pauline","name_middle":null,"name_last":"Robel","address_street1":"85361
+        Adeline Mountains","address_street2":null,"address_city":"Hansenfurt","address_subdivision":"MO","address_postal_code":"50963-9379","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:59:44 GMT
+recorded_with: VCR 3.0.1

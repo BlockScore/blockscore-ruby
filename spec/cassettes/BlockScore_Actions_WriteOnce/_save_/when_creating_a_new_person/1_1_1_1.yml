@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Johanna","name_last":"Mohr","document_type":"ssn","document_value":"0000","birth_day":12,"birth_month":5,"birth_year":1973,"address_street1":"73192
+        Dixie Lodge","address_city":"Hyattshire","address_subdivision":"MD","address_postal_code":"37688","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"a588c4a12471ad4f43379a3ee5297476"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 3441ced1-caf4-4ba6-828b-2c445b20bf4f
+      X-Runtime:
+      - '0.261206'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:58:48 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"56cfdb8862373800030000fa","created_at":1456462728,"updated_at":1456462728,"status":"valid","livemode":false,"phone_number":null,"ip_address":null,"birth_day":12,"birth_month":5,"birth_year":1973,"name_first":"Johanna","name_middle":null,"name_last":"Mohr","address_street1":"73192
+        Dixie Lodge","address_street2":null,"address_city":"Hyattshire","address_subdivision":"MD","address_postal_code":"37688","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:58:48 GMT
+recorded_with: VCR 3.0.1

@@ -1,0 +1,117 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1995-09-29","name_first":"John","name_last":"Powlowski","address_street1":"5819
+        Boehm Skyway","address_city":"Baileyview","address_country_code":"MW"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"1479bb446284b92a8f2dfd59a2679975"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ac3f747b-2704-4d35-b217-bd0f9a6314f0
+      X-Runtime:
+      - '0.036407'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 05:00:00 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdbd06237380003000135","created_at":1456462800,"updated_at":1456462800,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1995-09-29","name_first":"John","name_middle":null,"name_last":"Powlowski","address_street1":"5819
+        Boehm Skyway","address_street2":null,"address_city":"Baileyview","address_subdivision":null,"address_postal_code":null,"address_country_code":"MW"}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 05:00:00 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56cfdbd06237380003000135
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdbd06237380003000135","created_at":1456462800,"updated_at":1456462800,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1995-09-29","name_first":"Jane","name_middle":null,"name_last":"Powlowski","address_street1":"5819
+        Boehm Skyway","address_street2":null,"address_city":"Baileyview","address_subdivision":null,"address_postal_code":null,"address_country_code":"MW"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"7a8fcd29bbf92afa96b795821fadee90"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e013c610-f6e4-4e9a-91aa-3024e10a585f
+      X-Runtime:
+      - '0.027869'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 05:00:00 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdbd06237380003000135","created_at":1456462800,"updated_at":1456462800,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1995-09-29","name_first":"Jane","name_middle":null,"name_last":"Powlowski","address_street1":"5819
+        Boehm Skyway","address_street2":null,"address_city":"Baileyview","address_subdivision":null,"address_postal_code":null,"address_country_code":"MW"}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 05:00:00 GMT
+recorded_with: VCR 3.0.1

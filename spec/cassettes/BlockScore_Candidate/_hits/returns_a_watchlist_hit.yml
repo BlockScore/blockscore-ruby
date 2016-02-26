@@ -1,0 +1,356 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":null,"date_of_birth":null,"name_first":"John","name_last":"Bredenkamp","address_street1":null,"address_city":null,"address_country_code":null}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"fa93ef78e8baeb1603f2c6eea94a7041"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 3d802c3f-5733-41ae-9e8c-e9c955cfcffb
+      X-Runtime:
+      - '0.032536'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 05:07:45 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdda1623738000300018d","created_at":1456463265,"updated_at":1456463265,"livemode":false,"note":null,"ssn":null,"passport":null,"date_of_birth":null,"name_first":"John","name_middle":null,"name_last":"Bredenkamp","address_street1":null,"address_street2":null,"address_city":null,"address_subdivision":null,"address_postal_code":null,"address_country_code":null}'
+    http_version: 
+  recorded_at: Fri, 26 Feb 2016 05:07:45 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/watchlists
+    body:
+      encoding: UTF-8
+      string: '{"candidate_id":"56cfdda1623738000300018d"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"ea97ec10d87b1310a2bcefe4d694ddad"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e13cf343-02c7-44e0-ad6d-b4d2f559f0c5
+      X-Runtime:
+      - '0.048278'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 05:07:45 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"livemode":false,"searched_lists":[],"count":1,"matches":[{"id":"ent_554056e4b4cf7103000009d5","watchlist_name":"US_SDN","entry_type":"individual","matching_info":["name"],"confidence":1.0,"url":null,"notes":null,"title":null,"name_full":"John
+        Bredenkamp","alternate_names":"John A. Bredenkamp; John Arnold Bredenkamp","date_of_birth":"1940-8-11","passport":"367537C;
+        Z153612; Z01024064; ND1285143","ssn":null,"address_street1":"62 Chester Square","address_street2":null,"address_city":"London","address_state":null,"address_postal_code":null,"address_country_code":"GB","address_raw":"62
+        Chester Square, London, GB","names":[{"name_primary":true,"name_full":"John
+        Bredenkamp","name_strength":"medium"},{"name_primary":false,"name_full":"John
+        A. Bredenkamp","name_strength":"medium"},{"name_primary":false,"name_full":"John
+        Arnold Bredenkamp","name_strength":"medium"}],"births":[{"birth_day":11,"birth_month":8,"birth_year":1940,"birth_day_end":null,"birth_month_end":null,"birth_year_end":null}],"documents":[{"document_type":"passport","document_value":"367537C","document_country_code":"SR"},{"document_type":"passport","document_value":"Z153612","document_country_code":"NL"},{"document_type":"passport","document_value":"Z01024064","document_country_code":"NL"},{"document_type":"passport","document_value":"ND1285143","document_country_code":"NL"}],"addresses":[{"address_street1":"62
+        Chester Square","address_street2":null,"address_city":"London","address_state":null,"address_postal_code":null,"address_country_code":"GB","address_full":"62
+        Chester Square, London, GB"},{"address_street1":"Dennerlei 30","address_street2":null,"address_city":"Schoten","address_state":null,"address_postal_code":null,"address_country_code":"BE","address_full":"Dennerlei
+        30, Schoten, BE"},{"address_street1":"Mapstone House","address_street2":"Mapstone
+        Hill Lustleigh","address_city":"Newton Abbot","address_state":null,"address_postal_code":"TQ13
+        9SE","address_country_code":"GB","address_full":"Mapstone House, Mapstone
+        Hill Lustleigh, Newton Abbot, Devon, TQ13 9SE, GB"},{"address_street1":"New
+        Boundary House","address_street2":"London Road Sunningdale","address_city":"Ascot","address_state":null,"address_postal_code":"SL5
+        0DJ","address_country_code":"GB","address_full":"New Boundary House, London
+        Road Sunningdale, Ascot, Berkshire, SL5 0DJ, GB"},{"address_street1":"Middleton
+        House","address_street2":"Titlarks Hill Road Sunningdale","address_city":"Ascot","address_state":null,"address_postal_code":"SL5
+        0JB","address_country_code":"GB","address_full":"Middleton House, Titlarks
+        Hill Road Sunningdale, Ascot, Berkshire, SL5 0JB, GB"},{"address_street1":"Hurst
+        Grove","address_street2":"Sanford Lane Hurst","address_city":"Reading","address_state":null,"address_postal_code":"RG10
+        0SQ","address_country_code":"GB","address_full":"Hurst Grove, Sanford Lane
+        Hurst, Reading, Berkshire, RG10 0SQ, GB"},{"address_street1":"10 Montpelier
+        Square","address_street2":null,"address_city":"London","address_state":null,"address_postal_code":"SW7
+        1JU","address_country_code":"GB","address_full":"10 Montpelier Square, London,
+        SW7 1JU, GB"},{"address_street1":"Thetford Farm","address_street2":"P.O. Box
+        HP86 Mount Pleasant","address_city":"Harare","address_state":null,"address_postal_code":null,"address_country_code":"ZW","address_full":"Thetford
+        Farm, P.O. Box HP86 Mount Pleasant, Harare, ZW"}]}]}'
+    http_version: 
+  recorded_at: Fri, 26 Feb 2016 05:07:46 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56cfdda1623738000300018d/hits
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"305860599c62ce3d57b15d7374ae72da"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 9c515203-ed7f-4b24-a0df-5f1dcd22dc72
+      X-Runtime:
+      - '0.022046'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 05:07:46 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"list","data":[]}'
+    http_version: 
+  recorded_at: Fri, 26 Feb 2016 05:07:46 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56cfdda1623738000300018d/hits
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"571c342d856ce661515ab8cb385cb3a0"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 28e3b081-21c5-4fc6-9a1c-03b895886ade
+      X-Runtime:
+      - '0.029365'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 05:07:47 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"list","data":[{"id":"ent_554056e4b4cf7103000009d5","list":"US_SDN","entry_type":"individual","matching_info":["name"],"confidence":1.0,"livemode":false,"url":null,"notes":null,"title":null,"name_full":"John
+        Arnold Bredenkamp","alternate_names":"John A. Bredenkamp; John Bredenkamp","date_of_birth":"1940-8-11","id_type":"passport","id_value":"367537C","address_street1":"62
+        Chester Square","address_street2":null,"address_city":"London","address_state":null,"address_postal_code":null,"address_country_code":"GB","address_raw":"62
+        Chester Square, London, GB","names":[{"name_primary":false,"name_full":"John
+        Arnold Bredenkamp","name_strength":"medium"},{"name_primary":false,"name_full":"John
+        A. Bredenkamp","name_strength":"medium"},{"name_primary":true,"name_full":"John
+        Bredenkamp","name_strength":"medium"}],"births":[{"birth_day":11,"birth_month":8,"birth_year":1940,"birth_day_end":null,"birth_month_end":null,"birth_year_end":null}],"documents":[{"document_type":"passport","document_value":"367537C","document_country_code":"SR"},{"document_type":"passport","document_value":"Z153612","document_country_code":"NL"},{"document_type":"passport","document_value":"Z01024064","document_country_code":"NL"},{"document_type":"passport","document_value":"ND1285143","document_country_code":"NL"}],"addresses":[{"address_street1":"62
+        Chester Square","address_street2":null,"address_city":"London","address_state":null,"address_postal_code":null,"address_country_code":"GB","address_full":"62
+        Chester Square, London, GB"},{"address_street1":"Dennerlei 30","address_street2":null,"address_city":"Schoten","address_state":null,"address_postal_code":null,"address_country_code":"BE","address_full":"Dennerlei
+        30, Schoten, BE"},{"address_street1":"Mapstone House","address_street2":"Mapstone
+        Hill Lustleigh","address_city":"Newton Abbot","address_state":null,"address_postal_code":"TQ13
+        9SE","address_country_code":"GB","address_full":"Mapstone House, Mapstone
+        Hill Lustleigh, Newton Abbot, Devon, TQ13 9SE, GB"},{"address_street1":"New
+        Boundary House","address_street2":"London Road Sunningdale","address_city":"Ascot","address_state":null,"address_postal_code":"SL5
+        0DJ","address_country_code":"GB","address_full":"New Boundary House, London
+        Road Sunningdale, Ascot, Berkshire, SL5 0DJ, GB"},{"address_street1":"Middleton
+        House","address_street2":"Titlarks Hill Road Sunningdale","address_city":"Ascot","address_state":null,"address_postal_code":"SL5
+        0JB","address_country_code":"GB","address_full":"Middleton House, Titlarks
+        Hill Road Sunningdale, Ascot, Berkshire, SL5 0JB, GB"},{"address_street1":"Hurst
+        Grove","address_street2":"Sanford Lane Hurst","address_city":"Reading","address_state":null,"address_postal_code":"RG10
+        0SQ","address_country_code":"GB","address_full":"Hurst Grove, Sanford Lane
+        Hurst, Reading, Berkshire, RG10 0SQ, GB"},{"address_street1":"10 Montpelier
+        Square","address_street2":null,"address_city":"London","address_state":null,"address_postal_code":"SW7
+        1JU","address_country_code":"GB","address_full":"10 Montpelier Square, London,
+        SW7 1JU, GB"},{"address_street1":"Thetford Farm","address_street2":"P.O. Box
+        HP86 Mount Pleasant","address_city":"Harare","address_state":null,"address_postal_code":null,"address_country_code":"ZW","address_full":"Thetford
+        Farm, P.O. Box HP86 Mount Pleasant, Harare, ZW"}]}]}'
+    http_version: 
+  recorded_at: Fri, 26 Feb 2016 05:07:48 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56cfdda1623738000300018d/hits
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"571c342d856ce661515ab8cb385cb3a0"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 60675306-70ac-4787-93c2-900681ccea42
+      X-Runtime:
+      - '0.037971'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 05:07:48 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"list","data":[{"id":"ent_554056e4b4cf7103000009d5","list":"US_SDN","entry_type":"individual","matching_info":["name"],"confidence":1.0,"livemode":false,"url":null,"notes":null,"title":null,"name_full":"John
+        Arnold Bredenkamp","alternate_names":"John A. Bredenkamp; John Bredenkamp","date_of_birth":"1940-8-11","id_type":"passport","id_value":"367537C","address_street1":"62
+        Chester Square","address_street2":null,"address_city":"London","address_state":null,"address_postal_code":null,"address_country_code":"GB","address_raw":"62
+        Chester Square, London, GB","names":[{"name_primary":false,"name_full":"John
+        Arnold Bredenkamp","name_strength":"medium"},{"name_primary":false,"name_full":"John
+        A. Bredenkamp","name_strength":"medium"},{"name_primary":true,"name_full":"John
+        Bredenkamp","name_strength":"medium"}],"births":[{"birth_day":11,"birth_month":8,"birth_year":1940,"birth_day_end":null,"birth_month_end":null,"birth_year_end":null}],"documents":[{"document_type":"passport","document_value":"367537C","document_country_code":"SR"},{"document_type":"passport","document_value":"Z153612","document_country_code":"NL"},{"document_type":"passport","document_value":"Z01024064","document_country_code":"NL"},{"document_type":"passport","document_value":"ND1285143","document_country_code":"NL"}],"addresses":[{"address_street1":"62
+        Chester Square","address_street2":null,"address_city":"London","address_state":null,"address_postal_code":null,"address_country_code":"GB","address_full":"62
+        Chester Square, London, GB"},{"address_street1":"Dennerlei 30","address_street2":null,"address_city":"Schoten","address_state":null,"address_postal_code":null,"address_country_code":"BE","address_full":"Dennerlei
+        30, Schoten, BE"},{"address_street1":"Mapstone House","address_street2":"Mapstone
+        Hill Lustleigh","address_city":"Newton Abbot","address_state":null,"address_postal_code":"TQ13
+        9SE","address_country_code":"GB","address_full":"Mapstone House, Mapstone
+        Hill Lustleigh, Newton Abbot, Devon, TQ13 9SE, GB"},{"address_street1":"New
+        Boundary House","address_street2":"London Road Sunningdale","address_city":"Ascot","address_state":null,"address_postal_code":"SL5
+        0DJ","address_country_code":"GB","address_full":"New Boundary House, London
+        Road Sunningdale, Ascot, Berkshire, SL5 0DJ, GB"},{"address_street1":"Middleton
+        House","address_street2":"Titlarks Hill Road Sunningdale","address_city":"Ascot","address_state":null,"address_postal_code":"SL5
+        0JB","address_country_code":"GB","address_full":"Middleton House, Titlarks
+        Hill Road Sunningdale, Ascot, Berkshire, SL5 0JB, GB"},{"address_street1":"Hurst
+        Grove","address_street2":"Sanford Lane Hurst","address_city":"Reading","address_state":null,"address_postal_code":"RG10
+        0SQ","address_country_code":"GB","address_full":"Hurst Grove, Sanford Lane
+        Hurst, Reading, Berkshire, RG10 0SQ, GB"},{"address_street1":"10 Montpelier
+        Square","address_street2":null,"address_city":"London","address_state":null,"address_postal_code":"SW7
+        1JU","address_country_code":"GB","address_full":"10 Montpelier Square, London,
+        SW7 1JU, GB"},{"address_street1":"Thetford Farm","address_street2":"P.O. Box
+        HP86 Mount Pleasant","address_city":"Harare","address_state":null,"address_postal_code":null,"address_country_code":"ZW","address_full":"Thetford
+        Farm, P.O. Box HP86 Mount Pleasant, Harare, ZW"}]}]}'
+    http_version: 
+  recorded_at: Fri, 26 Feb 2016 05:07:48 GMT
+recorded_with: VCR 3.0.1

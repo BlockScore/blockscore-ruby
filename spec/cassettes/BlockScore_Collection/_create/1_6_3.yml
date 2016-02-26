@@ -1,0 +1,126 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Meredith","name_last":"Jenkins","document_type":"ssn","document_value":"0000","birth_day":12,"birth_month":2,"birth_year":1990,"address_street1":"43534
+        Verona Point","address_city":"North Daxtown","address_subdivision":"ID","address_postal_code":"46234-5047","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"27273d6bfa0d421569a8fee05530782f"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 17e018e3-66d2-4ac1-ab90-f188e756b4e4
+      X-Runtime:
+      - '0.267878'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:59:28 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"56cfdbb06237380003000116","created_at":1456462768,"updated_at":1456462768,"status":"valid","livemode":false,"phone_number":null,"ip_address":null,"birth_day":12,"birth_month":2,"birth_year":1990,"name_first":"Meredith","name_middle":null,"name_last":"Jenkins","address_street1":"43534
+        Verona Point","address_street2":null,"address_city":"North Daxtown","address_subdivision":"ID","address_postal_code":"46234-5047","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:59:29 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/question_sets
+    body:
+      encoding: UTF-8
+      string: '{"person_id":"56cfdbb06237380003000116"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"05a751912900c9d72b74a7df05dd6540"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a8f8b102-62e2-4009-86a3-5ad99d3702db
+      X-Runtime:
+      - '0.091800'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:59:29 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"question_set","id":"56cfdbb136636100030000b0","created_at":1456462769,"updated_at":1456462769,"livemode":false,"person_id":"56cfdbb06237380003000116","score":null,"expired":false,"time_limit":0,"questions":[{"id":1,"question":"What
+        state was your SSN issued in?","answers":[{"id":1,"answer":"New Hampshire"},{"id":2,"answer":"Oklahoma"},{"id":3,"answer":"Delaware"},{"id":4,"answer":"Maine"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":2,"question":"Which one of the following zip codes
+        is associated with you?","answers":[{"id":1,"answer":"49209"},{"id":2,"answer":"49557"},{"id":3,"answer":"49532"},{"id":4,"answer":"49230"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":3,"question":"Which one of the following adult individuals
+        is most closely associated with you?","answers":[{"id":1,"answer":"Cecilia"},{"id":2,"answer":"Evan"},{"id":3,"answer":"Luis"},{"id":4,"answer":"Miranda"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":4,"question":"Which one of the following addresses
+        is associated with you?","answers":[{"id":1,"answer":"31 Cottage Ct"},{"id":2,"answer":"430
+        Dwight"},{"id":3,"answer":"309 Colver Rd"},{"id":4,"answer":"52 Canandaigua
+        Rd"},{"id":5,"answer":"None Of The Above"}]},{"id":5,"question":"Which one
+        of the following area codes is associated with you?","answers":[{"id":1,"answer":"812"},{"id":2,"answer":"308"},{"id":3,"answer":"605"},{"id":4,"answer":"336"},{"id":5,"answer":"None
+        Of The Above"}]}]}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:59:29 GMT
+recorded_with: VCR 3.0.1

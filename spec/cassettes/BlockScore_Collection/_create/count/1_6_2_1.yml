@@ -1,0 +1,125 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Aurelio","name_last":"Kulas","document_type":"ssn","document_value":"0000","birth_day":12,"birth_month":7,"birth_year":1966,"address_street1":"868
+        Bayer Views","address_city":"Lake Wileyton","address_subdivision":"OH","address_postal_code":"30776-0837","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f9325416d8a7b413ba9a4b719c3790ae"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 86aa55ea-ef2c-40c0-bbdf-9c189a5cd127
+      X-Runtime:
+      - '0.260132'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:59:31 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"56cfdbb36237380003000118","created_at":1456462771,"updated_at":1456462771,"status":"valid","livemode":false,"phone_number":null,"ip_address":null,"birth_day":12,"birth_month":7,"birth_year":1966,"name_first":"Aurelio","name_middle":null,"name_last":"Kulas","address_street1":"868
+        Bayer Views","address_street2":null,"address_city":"Lake Wileyton","address_subdivision":"OH","address_postal_code":"30776-0837","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:59:31 GMT
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/question_sets
+    body:
+      encoding: UTF-8
+      string: '{"person_id":"56cfdbb36237380003000118"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"efff368d336a2aa62076d7ab1d9ec103"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b37129bd-e4a0-46b6-9fa2-b1c4d05983c0
+      X-Runtime:
+      - '0.102644'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:59:31 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"question_set","id":"56cfdbb365663600030000c9","created_at":1456462771,"updated_at":1456462771,"livemode":false,"person_id":"56cfdbb36237380003000118","score":null,"expired":false,"time_limit":0,"questions":[{"id":1,"question":"Which
+        one of the following adult individuals is most closely associated with you?","answers":[{"id":1,"answer":"Cecilia"},{"id":2,"answer":"Jason"},{"id":3,"answer":"Miranda"},{"id":4,"answer":"Nicole"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":2,"question":"Which one of the following addresses
+        is associated with you?","answers":[{"id":1,"answer":"309 Colver Rd"},{"id":2,"answer":"430
+        Dwight"},{"id":3,"answer":"902 Grass Lake Rd"},{"id":4,"answer":"467 Meridian
+        Rd"},{"id":5,"answer":"None Of The Above"}]},{"id":3,"question":"Which one
+        of the following area codes is associated with you?","answers":[{"id":1,"answer":"812"},{"id":2,"answer":"308"},{"id":3,"answer":"832"},{"id":4,"answer":"904"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":4,"question":"Which one of the following counties is
+        associated with you?","answers":[{"id":1,"answer":"Schoharie"},{"id":2,"answer":"Sangamon"},{"id":3,"answer":"Niagara"},{"id":4,"answer":"Jasper"},{"id":5,"answer":"None
+        Of The Above"}]},{"id":5,"question":"What state was your SSN issued in?","answers":[{"id":1,"answer":"Oregon"},{"id":2,"answer":"Maine"},{"id":3,"answer":"Delaware"},{"id":4,"answer":"Idaho"},{"id":5,"answer":"None
+        Of The Above"}]}]}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:59:31 GMT
+recorded_with: VCR 3.0.1

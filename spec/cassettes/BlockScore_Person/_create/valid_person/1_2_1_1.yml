@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Olen","name_last":"Lesch","document_type":"ssn","document_value":"0000","birth_day":12,"birth_month":4,"birth_year":1920,"address_street1":"73290
+        Kelton Forge","address_city":"South Rico","address_subdivision":"WI","address_postal_code":"80210","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"2bd4ed26bb737285fe3ca0492f698721"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - d7029b9e-71a8-475c-a2d8-a0118453998f
+      X-Runtime:
+      - '0.286594'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:59:39 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"56cfdbba34626100030000c7","created_at":1456462778,"updated_at":1456462778,"status":"valid","livemode":false,"phone_number":null,"ip_address":null,"birth_day":12,"birth_month":4,"birth_year":1920,"name_first":"Olen","name_middle":null,"name_last":"Lesch","address_street1":"73290
+        Kelton Forge","address_street2":null,"address_city":"South Rico","address_subdivision":"WI","address_postal_code":"80210","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:59:39 GMT
+recorded_with: VCR 3.0.1

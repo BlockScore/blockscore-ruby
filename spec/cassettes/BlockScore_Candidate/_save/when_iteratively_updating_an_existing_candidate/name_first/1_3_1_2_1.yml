@@ -1,0 +1,174 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1969-07-01","name_first":"John","name_last":"Homenick","address_street1":"153
+        Seth Unions","address_city":"Mooreview","address_country_code":"KP"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"373a0c6587b9e6c209517b1928abb3c7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e7e3b77d-ac82-4f3d-bae3-bf19a2501256
+      X-Runtime:
+      - '0.031603'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:58:52 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdb8c62373800030000fe","created_at":1456462732,"updated_at":1456462732,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1969-07-01","name_first":"John","name_middle":null,"name_last":"Homenick","address_street1":"153
+        Seth Unions","address_street2":null,"address_city":"Mooreview","address_subdivision":null,"address_postal_code":null,"address_country_code":"KP"}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:58:52 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56cfdb8c62373800030000fe
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdb8c62373800030000fe","created_at":1456462732,"updated_at":1456462732,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1969-07-01","name_first":"Jane","name_middle":null,"name_last":"Homenick","address_street1":"153
+        Seth Unions","address_street2":null,"address_city":"Mooreview","address_subdivision":null,"address_postal_code":null,"address_country_code":"KP"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"ef1d3e79feec5a0ae1af449e6203bc5b"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - bd89d87e-2251-4304-b5be-487a8ce62bbb
+      X-Runtime:
+      - '0.018604'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:58:53 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdb8c62373800030000fe","created_at":1456462732,"updated_at":1456462733,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1969-07-01","name_first":"Jane","name_middle":null,"name_last":"Homenick","address_street1":"153
+        Seth Unions","address_street2":null,"address_city":"Mooreview","address_subdivision":null,"address_postal_code":null,"address_country_code":"KP"}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:58:53 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56cfdb8c62373800030000fe
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdb8c62373800030000fe","created_at":1456462732,"updated_at":1456462732,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1969-07-01","name_first":"Jane","name_middle":"Arel","name_last":"Homenick","address_street1":"153
+        Seth Unions","address_street2":null,"address_city":"Mooreview","address_subdivision":null,"address_postal_code":null,"address_country_code":"KP"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"8ab4765ed83a79ad28ca5d9a8199157b"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 11197076-a2cc-4d82-a120-00ebb9b072ad
+      X-Runtime:
+      - '0.019743'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:58:53 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdb8c62373800030000fe","created_at":1456462732,"updated_at":1456462733,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1969-07-01","name_first":"Jane","name_middle":"Arel","name_last":"Homenick","address_street1":"153
+        Seth Unions","address_street2":null,"address_city":"Mooreview","address_subdivision":null,"address_postal_code":null,"address_country_code":"KP"}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:58:53 GMT
+recorded_with: VCR 3.0.1

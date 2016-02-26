@@ -1,0 +1,116 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"2006-03-16","name_first":"Odessa","name_last":"Watsica","address_street1":"393
+        Dock Meadows","address_city":"Port Kristoferton","address_country_code":"SB"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"7516c9b5a1f3e6d2020a959f3312dbae"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e89b9424-ea7d-47e8-84be-bff0ef8d95a0
+      X-Runtime:
+      - '0.047368'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 05:00:13 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdbdd6237380003000142","created_at":1456462813,"updated_at":1456462813,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2006-03-16","name_first":"Odessa","name_middle":null,"name_last":"Watsica","address_street1":"393
+        Dock Meadows","address_street2":null,"address_city":"Port Kristoferton","address_subdivision":null,"address_postal_code":null,"address_country_code":"SB"}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 05:00:13 GMT
+- request:
+    method: delete
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56cfdbdd6237380003000142
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"17c87c89e5fd545a76af36dc8df8b42a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 3f727c5a-3eb4-4366-bad9-8323acda465e
+      X-Runtime:
+      - '0.018707'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 05:00:13 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdbdd6237380003000142","created_at":1456462813,"updated_at":1456462813,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"2006-03-16","name_first":"Odessa","name_middle":null,"name_last":"Watsica","address_street1":"393
+        Dock Meadows","address_street2":null,"address_city":"Port Kristoferton","address_subdivision":null,"address_postal_code":null,"address_country_code":"SB","deleted":true}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 05:00:13 GMT
+recorded_with: VCR 3.0.1

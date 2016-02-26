@@ -1,0 +1,116 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Guillermo","name_last":"Kilback","document_type":"ssn","document_value":"0000","birth_day":12,"birth_month":10,"birth_year":1941,"address_street1":"3609
+        Jaida Plain","address_city":"Johnpaulburgh","address_subdivision":"MD","address_postal_code":"89946-0540","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"c6117a034bb25c0293d69233992484d1"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - f396b654-d94f-46a6-ac35-4c5658c08cd6
+      X-Runtime:
+      - '0.257743'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 05:00:07 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"56cfdbd7623738000300013b","created_at":1456462807,"updated_at":1456462807,"status":"valid","livemode":false,"phone_number":null,"ip_address":null,"birth_day":12,"birth_month":10,"birth_year":1941,"name_first":"Guillermo","name_middle":null,"name_last":"Kilback","address_street1":"3609
+        Jaida Plain","address_street2":null,"address_city":"Johnpaulburgh","address_subdivision":"MD","address_postal_code":"89946-0540","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 05:00:07 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people/56cfdbd7623738000300013b
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"c6117a034bb25c0293d69233992484d1"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - a37db406-f1dc-4498-918d-44686287d8aa
+      X-Runtime:
+      - '0.015347'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 05:00:07 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"56cfdbd7623738000300013b","created_at":1456462807,"updated_at":1456462807,"status":"valid","livemode":false,"phone_number":null,"ip_address":null,"birth_day":12,"birth_month":10,"birth_year":1941,"name_first":"Guillermo","name_middle":null,"name_last":"Kilback","address_street1":"3609
+        Jaida Plain","address_street2":null,"address_city":"Johnpaulburgh","address_subdivision":"MD","address_postal_code":"89946-0540","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 05:00:07 GMT
+recorded_with: VCR 3.0.1

@@ -1,0 +1,174 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1927-08-31","name_first":"John","name_last":"Senger","address_street1":"2034
+        Smith Ports","address_city":"New Nedra","address_country_code":"ER"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"2f5d4b9ca542f60213c9f8750ee3983e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 3b5b1d4e-d19b-4873-b9e0-f87c68015d74
+      X-Runtime:
+      - '0.047830'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:58:51 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdb8b62373800030000fd","created_at":1456462731,"updated_at":1456462731,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1927-08-31","name_first":"John","name_middle":null,"name_last":"Senger","address_street1":"2034
+        Smith Ports","address_street2":null,"address_city":"New Nedra","address_subdivision":null,"address_postal_code":null,"address_country_code":"ER"}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:58:51 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56cfdb8b62373800030000fd
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdb8b62373800030000fd","created_at":1456462731,"updated_at":1456462731,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1927-08-31","name_first":"Jane","name_middle":null,"name_last":"Senger","address_street1":"2034
+        Smith Ports","address_street2":null,"address_city":"New Nedra","address_subdivision":null,"address_postal_code":null,"address_country_code":"ER"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f64fee78709714ce204d21bd5f79ff5a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a4488143-c912-4cfa-9a39-21d5b0081dd6
+      X-Runtime:
+      - '0.020262'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:58:51 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdb8b62373800030000fd","created_at":1456462731,"updated_at":1456462731,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1927-08-31","name_first":"Jane","name_middle":null,"name_last":"Senger","address_street1":"2034
+        Smith Ports","address_street2":null,"address_city":"New Nedra","address_subdivision":null,"address_postal_code":null,"address_country_code":"ER"}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:58:51 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56cfdb8b62373800030000fd
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdb8b62373800030000fd","created_at":1456462731,"updated_at":1456462731,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1927-08-31","name_first":"Jane","name_middle":"Arel","name_last":"Senger","address_street1":"2034
+        Smith Ports","address_street2":null,"address_city":"New Nedra","address_subdivision":null,"address_postal_code":null,"address_country_code":"ER"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"a5950816803ba740f78798801bc326fa"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 135f3e6a-7037-4e3d-9ef5-aa1739b30e33
+      X-Runtime:
+      - '0.021752'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:58:52 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdb8b62373800030000fd","created_at":1456462731,"updated_at":1456462732,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1927-08-31","name_first":"Jane","name_middle":"Arel","name_last":"Senger","address_street1":"2034
+        Smith Ports","address_street2":null,"address_city":"New Nedra","address_subdivision":null,"address_postal_code":null,"address_country_code":"ER"}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:58:52 GMT
+recorded_with: VCR 3.0.1

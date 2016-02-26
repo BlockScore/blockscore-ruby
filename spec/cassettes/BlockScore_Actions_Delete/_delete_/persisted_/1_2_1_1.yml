@@ -1,11 +1,12 @@
 ---
 http_interactions:
 - request:
-    method: delete
-    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
     body:
       encoding: UTF-8
-      string: "{}"
+      string: '{"ssn":"0000","date_of_birth":"1943-03-23","name_first":"Reuben","name_last":"Lesch","address_street1":"46196
+        Briana Light","address_city":"West Myrtleborough","address_country_code":"KN"}'
     headers:
       Accept:
       - application/vnd.blockscore+json;version=4
@@ -15,32 +16,101 @@ http_interactions:
       - application/json
   response:
     status:
-      code: 404
-      message: Not Found
+      code: 201
+      message: Created
     headers:
       Server:
       - Cowboy
       Connection:
       - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
       Content-Type:
       - application/json; charset=utf-8
+      Etag:
+      - W/"776fc06033f285f7f6c69559eb2022f9"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 04d3900c-1b0e-4dff-9ed0-26e18cdcce5e
+      - da734f60-a564-4d6e-bdf6-123d7476ff23
       X-Runtime:
-      - '0.002580'
+      - '0.031100'
       Strict-Transport-Security:
       - max-age=31536000
       Date:
-      - Mon, 22 Feb 2016 21:24:06 GMT
+      - Fri, 26 Feb 2016 05:00:17 GMT
       X-Rack-Cache:
       - invalidate, pass
-      Content-Length:
-      - '36'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"status":"404","error":"Not Found"}'
+      string: '{"object":"candidate","id":"56cfdbe16237380003000146","created_at":1456462817,"updated_at":1456462817,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1943-03-23","name_first":"Reuben","name_middle":null,"name_last":"Lesch","address_street1":"46196
+        Briana Light","address_street2":null,"address_city":"West Myrtleborough","address_subdivision":null,"address_postal_code":null,"address_country_code":"KN"}'
     http_version:
-  recorded_at: Mon, 22 Feb 2016 21:24:06 GMT
+  recorded_at: Fri, 26 Feb 2016 05:00:17 GMT
+- request:
+    method: delete
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56cfdbe16237380003000146
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b162dfb996a0d31908792d939d8a3923"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 77a2f3b5-ad6a-4ebc-b103-1110e3f98cc0
+      X-Runtime:
+      - '0.018905'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 05:00:18 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdbe16237380003000146","created_at":1456462817,"updated_at":1456462818,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1943-03-23","name_first":"Reuben","name_middle":null,"name_last":"Lesch","address_street1":"46196
+        Briana Light","address_street2":null,"address_city":"West Myrtleborough","address_subdivision":null,"address_postal_code":null,"address_country_code":"KN","deleted":true}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 05:00:18 GMT
 recorded_with: VCR 3.0.1

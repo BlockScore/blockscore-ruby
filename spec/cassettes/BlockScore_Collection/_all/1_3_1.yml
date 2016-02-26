@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Annabel","name_last":"Stehr","document_type":"ssn","document_value":"0000","birth_day":12,"birth_month":3,"birth_year":1950,"address_street1":"812
+        Thiel Loaf","address_city":"Colinshire","address_subdivision":"VT","address_postal_code":"14016","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"5e5b5fd1d87b8eb93857562190f09c82"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 6ab091ff-b3de-4e20-b5e0-6e3ac24aeda7
+      X-Runtime:
+      - '0.297059'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:59:23 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"56cfdbab6237380003000110","created_at":1456462763,"updated_at":1456462763,"status":"valid","livemode":false,"phone_number":null,"ip_address":null,"birth_day":12,"birth_month":3,"birth_year":1950,"name_first":"Annabel","name_middle":null,"name_last":"Stehr","address_street1":"812
+        Thiel Loaf","address_street2":null,"address_city":"Colinshire","address_subdivision":"VT","address_postal_code":"14016","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:59:23 GMT
+recorded_with: VCR 3.0.1

@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"Lee","name_last":"Cartwright","document_type":"ssn","document_value":"0000","birth_day":12,"birth_month":6,"birth_year":1987,"address_street1":"12622
+        Carolanne Overpass","address_city":"Lake Gregory","address_subdivision":"LA","address_postal_code":"64966-8785","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"a86d0d9b92d3ffb66a877854d2fb77c5"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 64eab02a-4807-4faf-b365-43715007c035
+      X-Runtime:
+      - '0.275756'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:59:26 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"56cfdbae34626100030000c5","created_at":1456462766,"updated_at":1456462766,"status":"valid","livemode":false,"phone_number":null,"ip_address":null,"birth_day":12,"birth_month":6,"birth_year":1987,"name_first":"Lee","name_middle":null,"name_last":"Cartwright","address_street1":"12622
+        Carolanne Overpass","address_street2":null,"address_city":"Lake Gregory","address_subdivision":"LA","address_postal_code":"64966-8785","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:59:27 GMT
+recorded_with: VCR 3.0.1

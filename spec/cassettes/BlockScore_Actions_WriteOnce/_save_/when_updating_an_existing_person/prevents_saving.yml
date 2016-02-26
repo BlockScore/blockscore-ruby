@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/people
+    body:
+      encoding: UTF-8
+      string: '{"name_first":"John","name_last":"Wilkinson","document_type":"ssn","document_value":"0000","birth_day":12,"birth_month":1,"birth_year":1958,"address_street1":"479
+        Koch Forks","address_city":"North Emmanuelmouth","address_subdivision":"IN","address_postal_code":"36058-0299","address_country_code":"US"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"bc24e3e30fc5398007c26e1955ded507"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - dd2f2588-81b5-41c1-b1bb-70e550967aa2
+      X-Runtime:
+      - '0.274866'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:58:49 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"person","id":"56cfdb8934626100030000bf","created_at":1456462729,"updated_at":1456462729,"status":"valid","livemode":false,"phone_number":null,"ip_address":null,"birth_day":12,"birth_month":1,"birth_year":1958,"name_first":"John","name_middle":null,"name_last":"Wilkinson","address_street1":"479
+        Koch Forks","address_street2":null,"address_city":"North Emmanuelmouth","address_subdivision":"IN","address_postal_code":"36058-0299","address_country_code":"US","document_type":"ssn","document_value":"0000","note":null,"details":{"address":"no_match","address_risk":"low","identification":"no_match","date_of_birth":"not_found","ofac":"no_match","pep":"no_match"},"question_sets":[]}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:58:49 GMT
+recorded_with: VCR 3.0.1

@@ -1,0 +1,116 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1942-08-12","name_first":"Gerhard","name_last":"Pollich","address_street1":"612
+        Joan Street","address_city":"Blockfort","address_country_code":"BV"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"ef95dce837cf4797f661d16318fdb47c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 64710725-b6bd-4178-953c-53c78fe9fec8
+      X-Runtime:
+      - '0.033333'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 05:00:14 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdbde6237380003000143","created_at":1456462814,"updated_at":1456462814,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1942-08-12","name_first":"Gerhard","name_middle":null,"name_last":"Pollich","address_street1":"612
+        Joan Street","address_street2":null,"address_city":"Blockfort","address_subdivision":null,"address_postal_code":null,"address_country_code":"BV"}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 05:00:14 GMT
+- request:
+    method: delete
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56cfdbde6237380003000143
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"e8a3934351715fc4622828e3e05a6e6e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 6998f07e-696c-45cc-9a17-3f0c0034739a
+      X-Runtime:
+      - '0.017821'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 05:00:14 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdbde6237380003000143","created_at":1456462814,"updated_at":1456462814,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1942-08-12","name_first":"Gerhard","name_middle":null,"name_last":"Pollich","address_street1":"612
+        Joan Street","address_street2":null,"address_city":"Blockfort","address_subdivision":null,"address_postal_code":null,"address_country_code":"BV","deleted":true}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 05:00:14 GMT
+recorded_with: VCR 3.0.1

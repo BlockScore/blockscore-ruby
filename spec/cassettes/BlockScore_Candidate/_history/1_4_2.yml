@@ -1,0 +1,232 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates
+    body:
+      encoding: UTF-8
+      string: '{"ssn":"0000","date_of_birth":"1961-04-02","name_first":"version_0","name_last":"Beier","address_street1":"2018
+        Jerel Radial","address_city":"Port Amiraton","address_country_code":"ES"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"2d956c7074ed34ca71d21ecb00b1f0e1"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 821126c2-270c-4c69-8663-a48d7193bdb2
+      X-Runtime:
+      - '0.032153'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:59:18 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdba6623738000300010c","created_at":1456462758,"updated_at":1456462758,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1961-04-02","name_first":"version_0","name_middle":null,"name_last":"Beier","address_street1":"2018
+        Jerel Radial","address_street2":null,"address_city":"Port Amiraton","address_subdivision":null,"address_postal_code":null,"address_country_code":"ES"}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:59:18 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56cfdba6623738000300010c
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdba6623738000300010c","created_at":1456462758,"updated_at":1456462758,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1961-04-02","name_first":"version_1","name_middle":null,"name_last":"Beier","address_street1":"2018
+        Jerel Radial","address_street2":null,"address_city":"Port Amiraton","address_subdivision":null,"address_postal_code":null,"address_country_code":"ES"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"c852b863d1ca43b6a881565737ee8e23"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 592fed5d-4701-4a68-907c-6b3ea8327611
+      X-Runtime:
+      - '0.021273'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:59:19 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdba6623738000300010c","created_at":1456462758,"updated_at":1456462759,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1961-04-02","name_first":"version_1","name_middle":null,"name_last":"Beier","address_street1":"2018
+        Jerel Radial","address_street2":null,"address_city":"Port Amiraton","address_subdivision":null,"address_postal_code":null,"address_country_code":"ES"}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:59:19 GMT
+- request:
+    method: patch
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56cfdba6623738000300010c
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdba6623738000300010c","created_at":1456462758,"updated_at":1456462758,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1961-04-02","name_first":"version_2","name_middle":null,"name_last":"Beier","address_street1":"2018
+        Jerel Radial","address_street2":null,"address_city":"Port Amiraton","address_subdivision":null,"address_postal_code":null,"address_country_code":"ES"}'
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"082e2b5a50f94d7fe441b86c8e179862"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 496ae7b9-2572-43cc-92ee-1295e7b4135c
+      X-Runtime:
+      - '0.022865'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:59:19 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"object":"candidate","id":"56cfdba6623738000300010c","created_at":1456462758,"updated_at":1456462759,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1961-04-02","name_first":"version_2","name_middle":null,"name_last":"Beier","address_street1":"2018
+        Jerel Radial","address_street2":null,"address_city":"Port Amiraton","address_subdivision":null,"address_postal_code":null,"address_country_code":"ES"}'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:59:19 GMT
+- request:
+    method: get
+    uri: https://BLOCKSCORE_TEST_KEY:@api.blockscore.com/candidates/56cfdba6623738000300010c/history
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.blockscore+json;version=4
+      User-Agent:
+      - blockscore-ruby/4.2.1 (https://github.com/BlockScore/blockscore-ruby)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"184b4f549e6fe5fe3309789ae727eb87"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 42495088-67f6-44c8-942d-de85cb268c6c
+      X-Runtime:
+      - '0.012968'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Fri, 26 Feb 2016 04:59:20 GMT
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"object":"candidate","id":"56cfdba6623738000300010c","created_at":1456462758,"updated_at":1456462759,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1961-04-02","name_first":"version_2","name_middle":null,"name_last":"Beier","address_street1":"2018
+        Jerel Radial","address_street2":null,"address_city":"Port Amiraton","address_subdivision":null,"address_postal_code":null,"address_country_code":"ES"},{"object":"candidate","id":"56cfdba6623738000300010c","created_at":1456462758,"updated_at":1456462759,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1961-04-02","name_first":"version_1","name_middle":null,"name_last":"Beier","address_street1":"2018
+        Jerel Radial","address_street2":null,"address_city":"Port Amiraton","address_subdivision":null,"address_postal_code":null,"address_country_code":"ES"},{"object":"candidate","id":"56cfdba6623738000300010c","created_at":1456462758,"updated_at":1456462758,"livemode":false,"note":null,"ssn":"0000","passport":null,"date_of_birth":"1961-04-02","name_first":"version_0","name_middle":null,"name_last":"Beier","address_street1":"2018
+        Jerel Radial","address_street2":null,"address_city":"Port Amiraton","address_subdivision":null,"address_postal_code":null,"address_country_code":"ES"}]'
+    http_version:
+  recorded_at: Fri, 26 Feb 2016 04:59:20 GMT
+recorded_with: VCR 3.0.1
