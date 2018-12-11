@@ -8,7 +8,7 @@ module BlockScore
     def data
       @data ||= begin
         if watchlist_search?
-          body.fetch(:matches)
+          WatchlistSearchResult.new(body[:matches], searched_lists: body[:searched_lists])
         elsif resource_index?
           body.fetch(:data)
         else
