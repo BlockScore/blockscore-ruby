@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'httparty', '~> 0.11'
 
   spec.add_development_dependency 'rdoc', '~> 3.12'
-  spec.add_development_dependency 'rake', '~> 10.4'
+  spec.add_development_dependency 'rake', '~> 12.3'
   spec.add_development_dependency 'bundler', '~> 1.0'
   spec.add_development_dependency 'simplecov', '~> 0'
   spec.add_development_dependency 'rspec', '~> 3'
